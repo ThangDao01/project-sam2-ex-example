@@ -66,12 +66,12 @@
                             <td>{{$data->words_en}}</td>
                             <td>
                                 <audio controls style="width: 100px;">
-                                <source src="voice/vi/{{$data->voice_vi}}" type="audio/ogg">
+                                <source src="/voice/vi/{{$data->voice_vi}}" type="audio/ogg">
                                 </audio>
                             </td>
                             <td>
                                 <audio controls style="width: 100px;">
-                                <source src="voice/en/{{$data->voice_en}}" type="audio/ogg">
+                                <source src="/voice/en/{{$data->voice_en}}" type="audio/ogg">
 [                                </audio>
 
                             </td>
