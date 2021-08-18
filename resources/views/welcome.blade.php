@@ -1,591 +1,1602 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta charset="UTF-8">
+    <meta name="csrf-token" content="vADeoBTpAGDD2RJSSVZgA7BMnu1VHRVTbWtYpXve">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Monkey Junior - Ứng dụng số 1 cho trẻ mới bắt đầu học tiếng Anh </title>
+    <meta name="description" content="Monkey Junior là chương trình dành cho trẻ 0 - 10 tuổi giúp trẻ bắt đầu học tiếng Anh dễ dàng, thú vị và hiệu quả hơn.">
+    <meta name="keyword" content="">
+    <script src="https://connect.facebook.net/signals/config/251806315213206?v=2.9.44&amp;r=stable" async=""></script>
+    <script src="https://connect.facebook.net/signals/config/348913062202988?v=2.9.44&amp;r=stable" async=""></script>
+    <script src="https://connect.facebook.net/signals/plugins/identity.js?v=2.9.44" async=""></script>
+    <script type="text/javascript" async="" src="https://connect.facebook.net/en_US/fbevents.js"></script>
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
+    <script async="" src="https://www.google-analytics.com/analytics.js"></script>
+    <script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-PS37S79"></script>
+    <script>
+        window.addEventListener('load',function(){
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-PS37S79');
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function() {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+                a.async = true;
+                a.src = g;
+                m.parentNode.insertBefore(a, m);
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+            ga( 'create', 'UA-156172818-2', 'auto' );
+            ga( 'send', 'pageview' );
+        })
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <link rel="canonical" href="https://www.monkeyjunior.vn">
+    <link media="all" type="text/css" rel="stylesheet" href="https://www.monkeyjunior.vn/themes/monkey-junior-v2/assets//css/bootstrap.min.css">
+    <link media="all" type="text/css" rel="stylesheet" href="https://www.monkeyjunior.vn/themes/monkey-junior-v2/assets//css/styles.min.css?v=19">
+
+    <script type="text/javascript" src="https://monkeymedia2020.s3.ap-southeast-1.amazonaws.com/upload%2Fweb%2Ffiles__js_web%2Fjquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="https://monkeymedia2020.s3.ap-southeast-1.amazonaws.com/upload%2Fweb%2Ffiles__js_web%2Fjquery.lazy.min.js"></script>
 
-    <title>Laravel</title>
-    <link rel="icon" href="{{asset('images/logo-ek-title.png')}}">
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-
-    <!-- Styles -->
-    <style>
-        /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
-        html {
-            line-height: 1.15;
-            -webkit-text-size-adjust: 100%
-        }
-
-        body {
-            margin: 0
-        }
-
-        a {
-            background-color: transparent
-        }
-
-        [hidden] {
-            display: none
-        }
-
-        html {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-            line-height: 1.5
-        }
-
-        *, :after, :before {
-            box-sizing: border-box;
-            border: 0 solid #e2e8f0
-        }
-
-        a {
-            color: inherit;
-            text-decoration: inherit
-        }
-
-        svg, video {
-            display: block;
-            vertical-align: middle
-        }
-
-        video {
-            max-width: 100%;
-            height: auto
-        }
-
-        .bg-white {
-            --bg-opacity: 1;
-            background-color: #fff;
-            background-color: rgba(255, 255, 255, var(--bg-opacity))
-        }
-
-        .bg-gray-100 {
-            --bg-opacity: 1;
-            background-color: #f7fafc;
-            background-color: rgba(247, 250, 252, var(--bg-opacity))
-        }
-
-        .border-gray-200 {
-            --border-opacity: 1;
-            border-color: #edf2f7;
-            border-color: rgba(237, 242, 247, var(--border-opacity))
-        }
-
-        .border-t {
-            border-top-width: 1px
-        }
-
-        .flex {
-            display: flex
-        }
-
-        .grid {
-            display: grid
-        }
-
-        .hidden {
-            display: none
-        }
-
-        .items-center {
-            align-items: center
-        }
-
-        .justify-center {
-            justify-content: center
-        }
-
-        .font-semibold {
-            font-weight: 600
-        }
-
-        .h-5 {
-            height: 1.25rem
-        }
-
-        .h-8 {
-            height: 2rem
-        }
-
-        .h-16 {
-            height: 4rem
-        }
-
-        .text-sm {
-            font-size: .875rem
-        }
-
-        .text-lg {
-            font-size: 1.125rem
-        }
-
-        .leading-7 {
-            line-height: 1.75rem
-        }
-
-        .mx-auto {
-            margin-left: auto;
-            margin-right: auto
-        }
-
-        .ml-1 {
-            margin-left: .25rem
-        }
-
-        .mt-2 {
-            margin-top: .5rem
-        }
-
-        .mr-2 {
-            margin-right: .5rem
-        }
-
-        .ml-2 {
-            margin-left: .5rem
-        }
-
-        .mt-4 {
-            margin-top: 1rem
-        }
-
-        .ml-4 {
-            margin-left: 1rem
-        }
-
-        .mt-8 {
-            margin-top: 2rem
-        }
-
-        .ml-12 {
-            margin-left: 3rem
-        }
-
-        .-mt-px {
-            margin-top: -1px
-        }
-
-        .max-w-6xl {
-            max-width: 72rem
-        }
-
-        .min-h-screen {
-            min-height: 100vh
-        }
-
-        .overflow-hidden {
-            overflow: hidden
-        }
-
-        .p-6 {
-            padding: 1.5rem
-        }
-
-        .py-4 {
-            padding-top: 1rem;
-            padding-bottom: 1rem
-        }
-
-        .px-6 {
-            padding-left: 1.5rem;
-            padding-right: 1.5rem
-        }
-
-        .pt-8 {
-            padding-top: 2rem
-        }
-
-        .fixed {
-            position: fixed
-        }
-
-        .relative {
-            position: relative
-        }
-
-        .top-0 {
-            top: 0
-        }
-
-        .right-0 {
-            right: 0
-        }
-
-        .shadow {
-            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06)
-        }
-
-        .text-center {
-            text-align: center
-        }
-
-        .text-gray-200 {
-            --text-opacity: 1;
-            color: #edf2f7;
-            color: rgba(237, 242, 247, var(--text-opacity))
-        }
-
-        .text-gray-300 {
-            --text-opacity: 1;
-            color: #e2e8f0;
-            color: rgba(226, 232, 240, var(--text-opacity))
-        }
-
-        .text-gray-400 {
-            --text-opacity: 1;
-            color: #cbd5e0;
-            color: rgba(203, 213, 224, var(--text-opacity))
-        }
-
-        .text-gray-500 {
-            --text-opacity: 1;
-            color: #a0aec0;
-            color: rgba(160, 174, 192, var(--text-opacity))
-        }
-
-        .text-gray-600 {
-            --text-opacity: 1;
-            color: #718096;
-            color: rgba(113, 128, 150, var(--text-opacity))
-        }
-
-        .text-gray-700 {
-            --text-opacity: 1;
-            color: #4a5568;
-            color: rgba(74, 85, 104, var(--text-opacity))
-        }
-
-        .text-gray-900 {
-            --text-opacity: 1;
-            color: #1a202c;
-            color: rgba(26, 32, 44, var(--text-opacity))
-        }
-
-        .underline {
-            text-decoration: underline
-        }
-
-        .antialiased {
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale
-        }
-
-        .w-5 {
-            width: 1.25rem
-        }
-
-        .w-8 {
-            width: 2rem
-        }
-
-        .w-auto {
-            width: auto
-        }
-
-        .grid-cols-1 {
-            grid-template-columns:repeat(1, minmax(0, 1fr))
-        }
-
-        @media (min-width: 640px) {
-            .sm\:rounded-lg {
-                border-radius: .5rem
-            }
-
-            .sm\:block {
-                display: block
-            }
-
-            .sm\:items-center {
-                align-items: center
-            }
-
-            .sm\:justify-start {
-                justify-content: flex-start
-            }
-
-            .sm\:justify-between {
-                justify-content: space-between
-            }
-
-            .sm\:h-20 {
-                height: 5rem
-            }
-
-            .sm\:ml-0 {
-                margin-left: 0
-            }
-
-            .sm\:px-6 {
-                padding-left: 1.5rem;
-                padding-right: 1.5rem
-            }
-
-            .sm\:pt-0 {
-                padding-top: 0
-            }
-
-            .sm\:text-left {
-                text-align: left
-            }
-
-            .sm\:text-right {
-                text-align: right
-            }
-        }
-
-        @media (min-width: 768px) {
-            .md\:border-t-0 {
-                border-top-width: 0
-            }
-
-            .md\:border-l {
-                border-left-width: 1px
-            }
-
-            .md\:grid-cols-2 {
-                grid-template-columns:repeat(2, minmax(0, 1fr))
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .lg\:px-8 {
-                padding-left: 2rem;
-                padding-right: 2rem
-            }
-        }
-
-        @media (prefers-color-scheme: dark) {
-            .dark\:bg-gray-800 {
-                --bg-opacity: 1;
-                background-color: #2d3748;
-                background-color: rgba(45, 55, 72, var(--bg-opacity))
-            }
-
-            .dark\:bg-gray-900 {
-                --bg-opacity: 1;
-                background-color: #1a202c;
-                background-color: rgba(26, 32, 44, var(--bg-opacity))
-            }
-
-            .dark\:border-gray-700 {
-                --border-opacity: 1;
-                border-color: #4a5568;
-                border-color: rgba(74, 85, 104, var(--border-opacity))
-            }
-
-            .dark\:text-white {
-                --text-opacity: 1;
-                color: #fff;
-                color: rgba(255, 255, 255, var(--text-opacity))
-            }
-
-            .dark\:text-gray-400 {
-                --text-opacity: 1;
-                color: #cbd5e0;
-                color: rgba(203, 213, 224, var(--text-opacity))
-            }
-        }
-    </style>
-
-    <style>
-        body {
-            font-family: 'Nunito', sans-serif;
-        }
-    </style>
 </head>
-<body class="antialiased">
-<div
-    class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-    @if (Route::has('login'))
-        <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-            @auth
-                <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline">Home</a>
-            @else
-                <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Log in</a>
-
-                @if (Route::has('register'))
-                    <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
-                @endif
-            @endauth
-        </div>
-    @endif
-
-    <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-        <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
-            <svg viewBox="0 0 651 192" fill="none" xmlns="http://www.w3.org/2000/svg"
-                 class="h-16 w-auto text-gray-700 sm:h-20">
-                <g clip-path="url(#clip0)" fill="#EF3B2D">
-                    <path
-                        d="M248.032 44.676h-16.466v100.23h47.394v-14.748h-30.928V44.676zM337.091 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.431 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162-.001 2.863-.479 5.584-1.432 8.161zM463.954 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.432 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162 0 2.863-.479 5.584-1.432 8.161zM650.772 44.676h-15.606v100.23h15.606V44.676zM365.013 144.906h15.607V93.538h26.776V78.182h-42.383v66.724zM542.133 78.182l-19.616 51.096-19.616-51.096h-15.808l25.617 66.724h19.614l25.617-66.724h-15.808zM591.98 76.466c-19.112 0-34.239 15.706-34.239 35.079 0 21.416 14.641 35.079 36.239 35.079 12.088 0 19.806-4.622 29.234-14.688l-10.544-8.158c-.006.008-7.958 10.449-19.832 10.449-13.802 0-19.612-11.127-19.612-16.884h51.777c2.72-22.043-11.772-40.877-33.023-40.877zm-18.713 29.28c.12-1.284 1.917-16.884 18.589-16.884 16.671 0 18.697 15.598 18.813 16.884h-37.402zM184.068 43.892c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002-35.648-20.524a2.971 2.971 0 00-2.964 0l-35.647 20.522-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v38.979l-29.706 17.103V24.493a3 3 0 00-.103-.776c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002L40.098 1.396a2.971 2.971 0 00-2.964 0L1.487 21.919l-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v122.09c0 1.063.568 2.044 1.489 2.575l71.293 41.045c.156.089.324.143.49.202.078.028.15.074.23.095a2.98 2.98 0 001.524 0c.069-.018.132-.059.2-.083.176-.061.354-.119.519-.214l71.293-41.045a2.971 2.971 0 001.489-2.575v-38.979l34.158-19.666a2.971 2.971 0 001.489-2.575V44.666a3.075 3.075 0 00-.106-.774zM74.255 143.167l-29.648-16.779 31.136-17.926.001-.001 34.164-19.669 29.674 17.084-21.772 12.428-43.555 24.863zm68.329-76.259v33.841l-12.475-7.182-17.231-9.92V49.806l12.475 7.182 17.231 9.92zm2.97-39.335l29.693 17.095-29.693 17.095-29.693-17.095 29.693-17.095zM54.06 114.089l-12.475 7.182V46.733l17.231-9.92 12.475-7.182v74.537l-17.231 9.921zM38.614 7.398l29.693 17.095-29.693 17.095L8.921 24.493 38.614 7.398zM5.938 29.632l12.475 7.182 17.231 9.92v79.676l.001.005-.001.006c0 .114.032.221.045.333.017.146.021.294.059.434l.002.007c.032.117.094.222.14.334.051.124.088.255.156.371a.036.036 0 00.004.009c.061.105.149.191.222.288.081.105.149.22.244.314l.008.01c.084.083.19.142.284.215.106.083.202.178.32.247l.013.005.011.008 34.139 19.321v34.175L5.939 144.867V29.632h-.001zm136.646 115.235l-65.352 37.625V148.31l48.399-27.628 16.953-9.677v33.862zm35.646-61.22l-29.706 17.102V66.908l17.231-9.92 12.475-7.182v33.841z"/>
-                </g>
-            </svg>
-        </div>
-
-        <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
-            <div class="grid grid-cols-1 md:grid-cols-2">
-                <div class="p-6">
-                    <div class="flex items-center">
-                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                             stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500">
-                            <path
-                                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
-                        </svg>
-                        <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel.com/docs"
-                                                                             class="underline text-gray-900 dark:text-white">Documentation</a>
+<body class="home">
+<header id="monkey-header" class="monkey-header monkey-bg-white monkey-nav-wrapper">
+    <div class="container-fluid container-xl">
+        <nav class="navbar navbar-expand-lg navbar-light p-0 monkey-nav">
+          <span class="toggler-icon d-mobile">
+            <span class="hamburger"></span>
+          </span>
+            <a class="p-0 m-auto d-desktop" href="/">
+                <img class="logo" src="{{URL::asset('/images/logo-ek.png')}}" alt="#">
+            </a>
+            <div class="monkey-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item monkey-nav-item pr-4">
+                        <a class="nav-link nav-link-monkey distance-center">
+                            Giới thiệu
+                            <span class="icon-caret-down"><i class="icon-monkey-dropdown" aria-hidden="true"></i></span>
+                        </a>
+                        <div class="monkey-dropdown-menu">
+                            <a class="d-block monkey-dropdown-item subsite_menu_course" target="_self" href="/chuong-trinh-hoc">
+                                Chương trình học
+                            </a>
                         </div>
-                    </div>
+                    </li>
+                    <li class="nav-item monkey-nav-item">
+                        <a class="nav-link nav-link-monkey distance-center" target="_self" href="/phuong-phap">
+                            Phương pháp
+                        </a>
+                    </li>
+                    <li class="nav-item monkey-nav-item">
+                        <a class="nav-link nav-link-monkey distance-center" href="/loi-ich" target="_self">
+                            Lợi ích
+                        </a>
+                    </li>
+                    <li class="nav-item monkey-nav-item">
+                        <a class="nav-link nav-link-monkey distance-center" href="/huong-dan-hoc" target="_self">
+                            Hướng dẫn học
+                        </a>
+                    </li>
 
-                    <div class="ml-12">
-                        <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                            Laravel has wonderful, thorough documentation covering every aspect of the framework.
-                            Whether you are new to the framework or have previous experience with Laravel, we recommend
-                            reading all of the documentation from beginning to end.
-                        </div>
-                    </div>
-                </div>
+                    <li class="nav-item monkey-nav-item">
+                        <a class="nav-link nav-link-monkey distance-center" href="/bang-gia" target="_self">
+                            Bảng giá
+                        </a>
+                    </li>
 
-                <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l">
-                    <div class="flex items-center">
-                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                             stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500">
-                            <path
-                                d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
-                            <path d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                        </svg>
-                        <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laracasts.com"
-                                                                             class="underline text-gray-900 dark:text-white">Laracasts</a>
-                        </div>
-                    </div>
-
-                    <div class="ml-12">
-                        <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                            Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development.
-                            Check them out, see for yourself, and massively level up your development skills in the
-                            process.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="p-6 border-t border-gray-200 dark:border-gray-700">
-                    <div class="flex items-center">
-                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                             stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500">
-                            <path
-                                d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path>
-                        </svg>
-                        <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel-news.com/"
-                                                                             class="underline text-gray-900 dark:text-white">Laravel
-                                News</a></div>
-                    </div>
-
-                    <div class="ml-12">
-                        <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                            Laravel News is a community driven portal and newsletter aggregating all of the latest and
-                            most important news in the Laravel ecosystem, including new package releases and tutorials.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-l">
-                    <div class="flex items-center">
-                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                             stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500">
-                            <path
-                                d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
-                        <div class="ml-4 text-lg leading-7 font-semibold text-gray-900 dark:text-white">Vibrant
-                            Ecosystem
-                        </div>
-                    </div>
-
-                    <div class="ml-12">
-                        <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                            Laravel's robust library of first-party tools and libraries, such as <a
-                                href="https://forge.laravel.com" class="underline">Forge</a>, <a
-                                href="https://vapor.laravel.com" class="underline">Vapor</a>, <a
-                                href="https://nova.laravel.com" class="underline">Nova</a>, and <a
-                                href="https://envoyer.io" class="underline">Envoyer</a> help you take your projects to
-                            the next level. Pair them with powerful open source libraries like <a
-                                href="https://laravel.com/docs/billing" class="underline">Cashier</a>, <a
-                                href="https://laravel.com/docs/dusk" class="underline">Dusk</a>, <a
-                                href="https://laravel.com/docs/broadcasting" class="underline">Echo</a>, <a
-                                href="https://laravel.com/docs/horizon" class="underline">Horizon</a>, <a
-                                href="https://laravel.com/docs/sanctum" class="underline">Sanctum</a>, <a
-                                href="https://laravel.com/docs/telescope" class="underline">Telescope</a>, and more.
-                        </div>
-                    </div>
-                </div>
+                    <li class="nav-item monkey-nav-item">
+                        <a class="nav-link nav-link-monkey distance-center" href="/ho-tro-khach-hang" target="_blank">
+                            Hỗ trợ khách hàng
+                        </a>
+                    </li>
+                    <li class="nav-item distance-center d-desktop">
+                        <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homems_menu_registration',
+                            'eventAction': 'Click', 'eventLabel': 'menu MS dang ky'})" class="btn monkey-color-green monkey-bc-green rounded-pill monkey-f-bold distance-center hvr-icon-registration-white" href="https://www.monkeyjunior.vn/bang-gia.html">
+                            <i class="icon-lang rounded-circle icon-monkey-registration monkey-fz-18 mr-1 distance-center"></i>Đăng ký
+                        </a>
+                    </li>
+                </ul>
             </div>
+        </nav>
+    </div>
+    <div class="dropdown-languages nav-item monkey-nav-item d-desktop">
+        <a class="nav-link nav-link-languages d-flex justify-content-end cursor">
+            <img id="icon-lang" class="icon-lang rounded-circle border lazyLoading" data-src="https://monkeymedia.vcdn.com.vn/upload/web/background-web/vi.svg" alt="#" src="https://monkeymedia.vcdn.com.vn/upload/web/background-web/vi.svg">
+        </a>
+
+        <div class="monkey-dropdown-menu monkey-dropdown-languages monkey-bg-white">
+            <a class="dropdown-item item-language" href="https://www.monkeyjunior.vn/">
+                <span class="mr-2"><img class="icon-lang border rounded-circle" src="https://monkeymedia.vcdn.com.vn/upload/web/background-web/vi.svg" alt="#"></span>Việt Nam</a>
         </div>
+    </div>
+</header>
+@yield('headers')
+<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PS37S79" height="0" width="0" style="display:none;visibility:hidden">
+</iframe>
+<section id="popup-loading" class="popup-loading">
+    <div class="popup-loading-content distance-center">
+        <div class="text-center">
+        </div>
+    </div>
+</section>
 
-        <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
-            <div class="text-center text-sm text-gray-500 sm:text-left">
-                <div class="flex items-center">
-                    <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
-                         stroke="currentColor" class="-mt-px w-5 h-5 text-gray-400">
-                        <path
-                            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                    </svg>
+<script>
+    function onShowPopupLoading () {
+        const nameId         = document.getElementById ('popup-loading');
+        nameId.style.display = "block";
+    }
 
-                    <a href="https://laravel.bigcartel.com" class="ml-1 underline">
-                        Shop
-                    </a>
+    function onHiddenPopupLoading () {
+        const nameId         = document.getElementById ('popup-loading');
+        nameId.style.display = "none";
+    }
+</script>
+<div class="body-bottom">
 
-                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                         stroke-width="2" viewBox="0 0 24 24" class="ml-4 -mt-px w-5 h-5 text-gray-400">
-                        <path
-                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                    </svg>
-
-                    <a href="https://github.com/sponsors/taylorotwell" class="ml-1 underline">
-                        Sponsor
-                    </a>
-                </div>
-            </div>
-
-            <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
-                Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
-            </div>
+    <div class="go-top">
+        <div class="go-top-body">
+            <a onclick="onGoTop('breadcrumb-monkey')" class="go-item distance-center cursor go-top-item">
+                <i class="icon-monkey-go-top monkey-fz-15"></i>
+                <div class="text-item text-go-top">Kéo lên</div>
+            </a>
         </div>
     </div>
 </div>
-<div style="background-color: blue;width: 1000px;height: 1000px;">
-    <img src="{{asset('images/logo-ek.png')}}"  style="width: 100px;" alt="">
-    <img src="{{asset('images/logo-ek-title.png')}}"  style="width: 100px;" alt="">
+<script>
+    const elePopupSeoContent = document.getElementById("popup-seo-content");
+    if (elePopupSeoContent) {
+        window.addEventListener("scroll", function() {
+            if (
+                window.pageYOffset > 500 &&
+                localStorage.getItem("showCampaignPopup") === "true"
+            ) {
+                $("#popup-seo")
+                    .fancybox({
+                        overlayShow: true,
+                        smallBtn: false,
+                        clickSlide: false,
+                    })
+                    .trigger("click");
+                localStorage.setItem("showCampaignPopup", "false");
+            }
+        });
+    }
+</script>
 
-    <audio controls>
-        <source src="{{asset('voice/en/dog.mp3')}}" type="audio/ogg">
-    </audio>
+<script>
+    const elemGoTop = document.querySelector (".go-top-item");
+    if (elemGoTop) {
+        window.addEventListener ("scroll", () => {
+            if (window.pageYOffset > 600) {
+                elemGoTop.style.display = "grid";
+            } else {
+                elemGoTop.style.display = "none";
+            }
+        });
+    }
+
+    localStorage.setItem ('language', '{"language":"vi","country":"VN","phone_code":"84"}')
+    if (localStorage.getItem ('showCampaignPopup') === null) {
+        localStorage.setItem ('showCampaignPopup', 'true');
+    }
+</script>
+
+<main>
+    <div class="home-wrapper">
+        <div class="monkey-bg-light-gray">
+            <section id="home" class="banner-monkey background-style lazyLoading" data-src="https://monkeymedia.vcdn.com.vn/upload/web/storage_web/31-03-2021_14:27:12_bannerMJ_PC.png" style="background-image: url('https://monkeymedia.vcdn.com.vn/upload/web/storage_web/31-03-2021_14:27:12_bannerMJ_PC.png');">
+                <div class="container-fluid container-xl">
+                    <div class="row justify-content-center align-items-center">
+                        <div class="col-lg-6">
+                            <div class="monkey-f-header title monkey-fz-30 text-center monkey-color-white mb-4 mt-4 d-mobile">ENGLIST KIST - TIẾNG ANH <br> CHO TRẺ MỚI BẮT ĐẦU
+                            </div>
+                            <div class="banner-video background-style distance-center lazyLoading" data-src="{{URL::asset('images/monkey-junior-tieng-anh-cho-tre-moi-bat-dau.png')}}" style="background-image: url('/image/monkey-junior-tieng-anh-cho-tre-moi-bat-dau.png');">
+                                <a data-fancybox="" href="https://youtu.be/C3tXhUBYJIE">
+                                    <img data-src="https://monkeymedia.vcdn.com.vn/upload/web/background-web/icon-play.svg" class="card-img-top icon-play cursor lazyLoading" alt="#" src="https://monkeymedia.vcdn.com.vn/upload/web/background-web/icon-play.svg">
+
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 align-items-start d-desktop">
+                            <div class="banner-content">
+                                <div class="monkey-f-header monkey-fz-40 monkey-color-white mb-5">ENGLIST KIST - TIẾNG ANH <br> CHO TRẺ MỚI BẮT ĐẦU
+                                </div>
+                                <div class="monkey-color-white"><p>Tiên phong tại Việt Nam<br>
+                                        về&nbsp;Tiếng Anh và Giáo dục sớm cho mọi trẻ em</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+        </div>
+        <section class="vocabulary-course" id="breadcrumb-monkey">
+            <div class="container-fluid container-xl">
+                <div class="row justify-content-center">
+                    <div class="col-lg-11">
+                        <div class="title-wrapper text-center monkey-fz-32 monkey-f-header distance-center mt-5 mb-4">
+                            <div class="icon">
+                                <div class="distance-center bg-icon-title  mr-2">
+                                    <i class="icon-monkey-group monkey-fz-24 monkey-color-white "></i>
+
+                                </div>
+                            </div>
+                            <div class="monkey-f-header monkey-fz-30 monkey-color-green">
+                                <span class="text-uppercase">Lượng từ vựng khổng lồ - Học ngay tại nhà</span>
+                            </div>
+                        </div>
+                        <div class="vocabulary-course-1 ">
+                            <div class="row">
+                                <div class=" col-12  col-md-4 m-auto">
+                                    <div class="vocabulary-course-item mb-3">
+                                        <div class="card border-radius-1 overflow-hidden">
+                                            <div style="max-height: 14rem">
+                                                <img data-src="https://media.monkeyuni.com/upload/web/storage_web/06-12-2020_11:42:46_MJ_home_box1_1.png" class="card-img-top lazyLoading" alt="#" src="https://media.monkeyuni.com/upload/web/storage_web/06-12-2020_11:42:46_MJ_home_box1_1.png">
+
+                                            </div>
+                                            <div class="card-body text-center pt-3 pb-3 distance-center pl-0 pr-0" style="height: 7.8125rem">
+                                                <div class="card-text">
+                                                    <p style="text-align: center;"><strong><span style="font-size:28px;">3000+</span> từ vựng</strong></p>
+
+                                                    <p style="text-align: center;">3 cấp độ <strong>từ dễ đến nâng cao</strong></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class=" col-12  col-md-4 m-auto">
+                                    <div class="vocabulary-course-item mb-3">
+                                        <div class="card border-radius-1 overflow-hidden">
+                                            <div style="max-height: 14rem">
+                                                <img data-src="https://media.monkeyuni.com/upload/web/storage_web/06-12-2020_11:44:11_MJ_home_box1_2.png" class="card-img-top lazy" alt="#" src="https://media.monkeyuni.com/upload/web/storage_web/06-12-2020_11:44:11_MJ_home_box1_2.png">
+
+                                            </div>
+                                            <div class="card-body text-center pt-3 pb-3 distance-center pl-0 pr-0" style="height: 7.8125rem">
+                                                <div class="card-text">
+                                                    <p style="text-align: center;">Thuộc&nbsp;<strong><span style="font-size:28px;">48</span> chủ đề</strong></p>
+
+                                                    <p style="text-align: center;"><strong>phổ biến nhất</strong></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class=" col-12  col-md-4 m-auto">
+                                    <div class="vocabulary-course-item mb-3">
+                                        <div class="card border-radius-1 overflow-hidden">
+                                            <div style="max-height: 14rem">
+                                                <img data-src="https://media.monkeyuni.com/upload/web/storage_web/06-12-2020_11:46:40_MJ_home_box1_3.png" class="card-img-top lazy" alt="#" src="https://media.monkeyuni.com/upload/web/storage_web/06-12-2020_11:46:40_MJ_home_box1_3.png">
+
+                                            </div>
+                                            <div class="card-body text-center pt-3 pb-3 distance-center pl-0 pr-0" style="height: 7.8125rem">
+                                                <div class="card-text">
+                                                    <p style="text-align: center;">Được sử dụng với</p>
+
+                                                    <p style="text-align: center;"><strong><span style="font-size:28px;">6000+</span> mẫu câu</strong></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="text-center mt-3 mb-4">
+                                <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homemj_vocab_more',
+                'eventAction': 'Click', 'eventLabel': 'trang chu MJ button section 1'})" href="/loi-ich/hoc-luong-tu-vung-khong-lo-ngay-tai-nha-cung-monkey-junior.html" class="btn rounded-pill  monkey-bc-green hvr-icon-registration-white pr-3 pl-3">
+                                    Xem thêm
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="pronunciation-course" >
+            <div class="container-fluid container-xl">
+                <div class="row justify-content-center">
+                    <div class="col-lg-11">
+                        <div class="title-wrapper text-center monkey-fz-32 monkey-f-header distance-center mt-5 mb-4">
+                            <div class="icon">
+                                <div class="distance-center bg-icon-title  mr-2">
+                                    <i class="icon-monkey-reading-book monkey-fz-24 monkey-color-white "></i>
+
+                                </div>
+                            </div>
+                            <div class="monkey-f-header monkey-fz-30 monkey-color-green">
+                                <span class="text-uppercase">Phát âm chuẩn anh mỹ - ngay từ đầu</span>
+                            </div>
+                        </div>
+                        <div class="vocabulary-course-2 border-bottom">
+                            <div class="row">
+                                <div class=" col-12  col-md-4 m-auto">
+                                    <div class="vocabulary-course-item mb-3">
+                                        <div class="card border-radius-1 overflow-hidden">
+                                            <div style="max-height: 14rem">
+                                                <img data-src="{{URL::asset('/images/rectangle-53.png')}}" class="card-img-top lazyLoading" alt="#" src="{{URL::asset('/images/rectangle-53.png')}}">
+
+                                            </div>
+                                            <div class="card-body text-center pt-3 pb-3 distance-center pl-0 pr-0" style="height: 7.8125rem">
+                                                <div class="card-text">
+                                                    <p style="text-align: center;">
+                                                        <strong>Giọng đọc chuẩn Anh - Mỹ</strong> do người bản xứ đọc tạo môi trường nghe chuẩn ngay tại nhà.</p>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class=" col-12  col-md-4 m-auto">
+                                    <div class="vocabulary-course-item mb-3">
+                                        <div class="card border-radius-1 overflow-hidden">
+                                            <div style="max-height: 14rem">
+                                                <img data-src="{{URL::asset('/images/image_2021_08_06T15_07_33_138Z.png')}}" class="card-img-top lazy" alt="#">
+                                            </div>
+                                            <div class="card-body text-center pt-3 pb-3 distance-center pl-0 pr-0" style="height: 7.8125rem">
+                                                <div class="card-text">
+                                                    <p style="text-align: center;"><meta charset="utf-8">
+                                                        <span style="font-size:28px;"><strong>10.000</strong>
+                                                        </span> audio giọng đọc đa dạng giúp trẻ có <strong>ngữ điệu tự nhiên như người bản xứ</strong>.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class=" col-12  col-md-4 m-auto">
+                                    <div class="vocabulary-course-item mb-3">
+                                        <div class="card border-radius-1 overflow-hidden">
+                                            <div style="max-height: 14rem">
+                                                <img data-src="https://media.monkeyuni.com/upload/web/storage_web/03-12-2020_09:25:10_MJ_Home_box2_3.png" class="card-img-top lazy" alt="#">
+                                            </div>
+                                            <div class="card-body text-center pt-3 pb-3 distance-center pl-0 pr-0" style="height: 7.8125rem">
+                                                <div class="card-text">
+                                                    <p style="text-align: center;">
+                                                        <meta charset="utf-8">Phương pháp Phonics giúp trẻ <strong>phát âm chuẩn từ mới dù chưa từng gặp</strong>.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="text-center mt-3 mb-4">
+                                <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homemj_pronunciation_more',
+                'eventAction': 'Click', 'eventLabel': 'trang chu MJ button section 2'})" href="/loi-ich/phat-am-chuan-anh-my-ngay-tu-dau-cung-monkey-junior.html" class="btn rounded-pill  monkey-bc-green hvr-icon-registration-white pr-3 pl-3">
+                                    Xem thêm
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="monkey-optimal-effective" >
+            <div class="container-fluid container-xl">
+                <div class="row justify-content-center">
+                    <div class="col-lg-11">
+                        <div class="title-wrapper text-center monkey-fz-32 monkey-f-header distance-center mt-5 mb-4">
+                            <div class="icon">
+                                <div class="distance-center bg-icon-title  mr-2">
+                                    <i class="icon-monkey-benefit-a monkey-fz-24 monkey-color-white "></i>
+
+                                </div>
+                            </div>
+                            <div class="monkey-f-header monkey-fz-30 monkey-color-green">
+                                <span class="text-uppercase">Tối ưu thời gian &amp; hiệu quả nhờ lộ trình học bài bản</span>
+                            </div>
+                        </div>
+                        <div class="vocabulary-course-3 border-bottom">
+                            <div class="row">
+                                <div class=" col-12  col-md-4 m-auto">
+                                    <div class="vocabulary-course-item mb-3">
+                                        <div class="card border-radius-1 overflow-hidden">
+                                            <div style="max-height: 14rem">
+                                                <img data-src="{{URL::asset('/images/home-31.jpg')}}" class="card-img-top lazyLoading" alt="#" src="{{URL::asset('/images/home-31.jpg')}}">
+
+                                            </div>
+                                            <div class="card-body text-center pt-3 pb-3 distance-center pl-0 pr-0" style="height: 7.8125rem">
+                                                <div class="card-text">
+                                                    <p style="text-align: center;">Lộ trình do chuyên gia ngôn ngữ hàng đầu biên soạn.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class=" col-12  col-md-4 m-auto">
+                                    <div class="vocabulary-course-item mb-3">
+                                        <div class="card border-radius-1 overflow-hidden">
+                                            <div style="max-height: 14rem">
+                                                <img data-src="{{URL::asset('/images/home-32.jpg')}}" class="card-img-top lazy" alt="#">
+
+                                            </div>
+                                            <div class="card-body text-center pt-3 pb-3 distance-center pl-0 pr-0" style="height: 7.8125rem">
+                                                <div class="card-text">
+                                                    <p style="text-align: center;"><strong><span style="font-size:24px;">3</span> cấp độ:</strong></p>
+
+                                                    <p style="text-align: center;">Dễ - Trung Bình - Nâng Cao</p>
+
+                                                    <p style="text-align: center;">dạy từ - cụm từ - câu hoàn chỉnh</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class=" col-12  col-md-4 m-auto">
+                                    <div class="vocabulary-course-item mb-3">
+                                        <div class="card border-radius-1 overflow-hidden">
+                                            <div style="max-height: 14rem">
+                                                <img data-src="{{URL::asset('/images/home-33.jpg')}}" class="card-img-top lazy" alt="#">
+
+                                            </div>
+                                            <div class="card-body text-center pt-3 pb-3 distance-center pl-0 pr-0" style="height: 7.8125rem">
+                                                <div class="card-text">
+                                                    <p style="text-align: center;">Tính nhắc lại và phát triển qua các bài học, giúp từ vựng trở thành trí nhớ vĩnh cửu của trẻ em.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="text-center mt-3 mb-4">
+                                <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homemj_timing_more',
+                'eventAction': 'Click', 'eventLabel': 'trang chu MJ button section 3'})" href="/loi-ich/lo-trinh-hoc-bai-ban-cua-monkey-junior-giup-toi-uu-thoi-gian-hoc-va-giup-be-hoc-hieu-qua-hon.html" class="btn rounded-pill  monkey-bc-green hvr-icon-registration-white pr-3 pl-3">
+                                    Xem thêm
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="monkey-growth" id="">
+            <div class="container-fluid container-xl">
+                <div class="row justify-content-center">
+                    <div class="col-lg-11">
+                        <div class="title-wrapper text-center monkey-fz-32 monkey-f-header distance-center mt-5 mb-4">
+                            <div class="icon">
+                                <div class="distance-center bg-icon-title  mr-2">
+                                    <i class="icon-monkey-benefit-a monkey-fz-24 monkey-color-white "></i>
+
+                                </div>
+                            </div>
+                            <div class="monkey-f-header monkey-fz-30 monkey-color-green">
+                                <span class="text-uppercase">Phát triển mạnh 2 bán cầu não <br> nhờ các phương pháp giáo dục sớm</span>
+                            </div>
+                        </div>
+                        <div class="vocabulary-course-4 border-bottom">
+                            <div class="row">
+                                <div class=" col-12  col-md-4 m-auto">
+                                    <div class="vocabulary-course-item mb-3">
+                                        <div class="card border-radius-1 overflow-hidden">
+                                            <div style="max-height: 14rem">
+                                                <img data-src="{{URL::asset('/images/rectangle-74.png')}}" class="card-img-top lazyLoading" alt="#" >
+                                            </div>
+                                            <div class="card-body text-center pt-3 pb-3 distance-center pl-0 pr-0" style="height: 7.8125rem">
+                                                <div class="card-text">
+                                                    <p style="text-align: center;"><strong>Phương pháp tráo thẻ nhanh và kích thích não phải Glenn Doman</strong> giúp trẻ tăng khả năng nhân diện mặt chữ.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class=" col-12  col-md-4 m-auto">
+                                    <div class="vocabulary-course-item mb-3">
+                                        <div class="card border-radius-1 overflow-hidden">
+                                            <div style="max-height: 14rem">
+                                                <img data-src="{{URL::asset('/images/rectangle-48.png')}}" class="card-img-top lazy" alt="#">
+
+                                            </div>
+                                            <div class="card-body text-center pt-3 pb-3 distance-center pl-0 pr-0" style="height: 7.8125rem">
+                                                <div class="card-text">
+                                                    <p style="text-align: center;">
+                                                        <strong>Phương pháp chụp hình nguyên từ kết hợp Phonics</strong>&nbsp;kích thích tối đa tư duy và tiềm năng 2 bán cầu não.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class=" col-12  col-md-4 m-auto">
+                                    <div class="vocabulary-course-item mb-3">
+                                        <div class="card border-radius-1 overflow-hidden">
+                                            <div style="max-height: 14rem">
+                                                <img data-src="{{URL::asset('/images/rectangle-75.png')}}" class="card-img-top lazy" alt="#">
+
+                                            </div>
+                                            <div class="card-body text-center pt-3 pb-3 distance-center pl-0 pr-0" style="height: 7.8125rem">
+                                                <div class="card-text">
+                                                    <p style="text-align: center;">
+                                                        <strong>Phương pháp đa giác quan của Giáo sư, Tiến sĩ Robert C. Titzer (Mỹ)</strong> giúp trẻ tăng khả năng ghi nhớ.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="text-center mt-3 mb-4">
+                                <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homemj_braingrowth_more',
+                'eventAction': 'Click', 'eventLabel': 'trang chu MJ button section 4'})" href="/loi-ich/chuong-trinh-hoc-cua-monkey-junior-ho-tro-phat-trien-2-ban-cau-nao-cua-tre-trong-giai-doan-vang.html" class="btn rounded-pill  monkey-bc-green hvr-icon-registration-white pr-3 pl-3">
+                                    Xem thêm
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="monkey-bg-light-gray">
+            <section id="registration-mobile" class="registration-mobile background-style mt-4 mb-4 pb-4">
+                <div class="container-fluid container-xl">
+                    <div class="d-mobile pt-2">
+                        <div class="title-wrapper text-center monkey-fz-32 monkey-f-header distance-center mt-5 mb-4">
+                            <div class="icon">
+                                <div class="distance-center bg-icon-title  mr-2">
+                                    <i class="icon-monkey-support-form monkey-fz-24 monkey-color-white "></i>
+
+                                </div>
+                            </div>
+                            <div class="monkey-f-header monkey-fz-30 monkey-color-green">
+                                <span class="text-uppercase">Nhận tư vấn miễn phí</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-lg-11">
+                            <div class="registration-wrapper background-style p-3 monkey-bg-red d-flex monkey-mt-20">
+                                <div class="media">
+                                    <div class="mr-3 d-desktop media-title monkey-color-white monkey-f-bold monkey-fz-19">
+                                        <p>
+                                            Ba mẹ muốn được tư vấn lộ trình học để giúp con phát triển Tiếng Anh?<br>Vui lòng điền thông tin ba mẹ tại đây!
+                                        </p>
+                                    </div>
+                                    <div class="media-body">
+                                        <form id="form-registration" class="form-registration background-style" onsubmit="registrationOrder(event)">
+                                            <div class="monkey-bg-white form-body overflow-hidden">
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <div class="input-group-text monkey-bg-transparent">
+                                                            <i class="icon-monkey-name monkey-color-green monkey-fz-18"></i>
+                                                        </div>
+                                                    </div>
+                                                    <input type="text" class="form-control" placeholder="Họ tên" id="form-registration-name">
+                                                </div>
+                                                <div class="monkey-color-red pl-3 pt-2 pb-2" id="val-name" style="display: none">
+                                                    <i class="monkey-fz-12">*Vui lòng kiểm tra lại họ tên</i>
+                                                </div>
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <div class="input-group-text monkey-bg-transparent">
+                                                            <i class="icon-monkey-phone monkey-color-green monkey-fz-16"></i>
+                                                        </div>
+                                                    </div>
+                                                    <input type="text" class="form-control" placeholder="Số điện thoại" id="form-registration-phone">
+                                                </div>
+                                                <div class="monkey-color-red pl-3 pt-2 pb-2" id="val-phone" style="display: none">
+                                                    <i class="monkey-fz-12">*Vui lòng kiểm tra lại SĐT</i>
+                                                </div>
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <div class="input-group-text monkey-bg-transparent">
+                                                            <i class="icon-monkey-email monkey-color-green monkey-fz-12"></i>
+                                                        </div>
+                                                    </div>
+                                                    <input type="text" class="form-control" placeholder="Email" id="form-registration-email">
+                                                </div>
+                                                <div class="monkey-color-red pl-3 pt-2 pb-2" id="val-email" style="display: none">
+                                                    <i class="monkey-fz-12">*Vui lòng kiểm tra lại Email</i>
+                                                </div>
+                                            </div>
+                                            <div class="text-center">
+                                                <button id="button-registration-1" type="submit" data-toggle="modal" class="mt-3 monkey-color-white btn-registration btn btn-warning rounded-pill monkey-fz-f17">
+                                                    <i class="icon-monkey-loading monkey-fz-20 mr-2 align-middle" id="icon-loading" style="display: none"></i>
+                                                    Đăng ký tư vấn miễn phí
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="popup" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+                                <div class="modal-content p-4">
+                                    <div class="modal-body text-center">
+                                        <div class="icon-monkey-popup mb-3">
+                                        </div>
+                                        <p class="monkey-f-regular monkey-fz-22"></p><p style="text-align: center;"><strong>Monkey Junior đã nhận được đăng ký của ba mẹ.</strong></p>
+
+                                        <p style="text-align: center;"><strong>Monkey Junior sẽ liên hệ ba mẹ để tư vấn trong thời gian sớm nhất!</strong></p>
+                                    </div>
+                                    <div class="mt-2 text-center">
+                                        <a href="#" class="btn rounded-pill  monkey-color-white monkey-bg-green" data-dismiss="modal">
+                                            Hoàn thành
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="popup-error" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog modal-sm modal-dialog-centered modal-dialog-scrollable">
+                                <div class="modal-content pt-3 pb-3">
+                                    <div class="modal-body text-center pr-0 pl-0">
+                                        <div class="icon-monkey-popup mb-3">
+                                            <img data-src="https://www.monkeyjunior.vn/themes/monkey-junior-v2/assets/img/icons/img-error.png" class=" lazy" alt="#">
+
+                                        </div>
+                                        <p class="monkey-f-regular monkey-fz-22">Oops!!! Đã có lỗi xảy ra!!!<br>Ba mẹ vui lòng thử lại nhé!
+                                        </p></div>
+                                    <div class="mt-2 text-center">
+                                        <a href="#" class="btn rounded-pill  monkey-color-white monkey-bg-red" data-dismiss="modal">
+                                            Đồng ý
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <script>
+                            const registrationOrder = async (e) => {
+                                e.stopPropagation ();
+                                e.preventDefault ();
+                                let name    = $ ('#form-registration-name').val ().trim ();
+                                let phone   = $ ('#form-registration-phone').val ().trim ();
+                                let email   = $ ('#form-registration-email').val ().trim ();
+
+                                let resultName  = validateName (name, "val-name");
+                                let resultEmail = validateEmail (email, "val-email");
+                                let resultPhone = validatePhone (phone, "val-phone");
+                                const country_code = JSON.parse(localStorage.getItem("language"))["phone_code"];
+                                if (!resultName || !resultEmail || !resultPhone ) {
+                                    return false
+                                }
+                                document.getElementById ("icon-loading").setAttribute ('style', 'display: inline-block');
+                                document.getElementById ("button-registration-1").setAttribute ('disabled', 'true');
+
+                                let fullDomain = document.URL;
+                                let domain = fullDomain.split("/");
+                                var url_current = domain[0] + "//" + domain[2] + "/order-register-custom";
+
+                                var options = {
+                                    method  : 'POST',
+                                    headers : {
+                                        "Content-Type" : "application/json"
+                                    },
+                                    body    : JSON.stringify ({
+                                        phone      : phone,
+                                        email      : email,
+                                        name       : name,
+                                        country_code:country_code,
+                                        p          : 2,
+                                        product_id : 'com.earlystart.ltr.1year',
+                                    })
+                                };
+
+                                var aPromise = fetch (url_current, options);
+                                aPromise
+                                    .then (response => response.json ())
+                                    .then (data => {
+                                        ga('send',{'hitType': 'event', 'eventCategory': 'homemj_orderbox1',
+                                            'eventAction': 'Click', 'eventLabel': 'trang chu MJ form tu van 1'});
+                                        document.getElementById ("icon-loading").setAttribute ('style', 'display: none');
+                                        document.getElementById ("button-registration-1").removeAttribute ('disabled');
+                                        if (data['code'] == 200) {
+                                            $ ('#popup').modal ('toggle');
+                                            document.getElementById ("form-registration-name").value  = '';
+                                            document.getElementById ("form-registration-phone").value = '';
+                                            document.getElementById ("form-registration-email").value = '';
+                                        } else {
+                                            $ ('#popup-error').modal ('toggle');
+                                        }
+                                    })
+                                    .catch (error => {
+                                        document.getElementById ("icon-loading").setAttribute ('style', 'display: none');
+                                        document.getElementById ("button-registration-1").removeAttribute ('disabled');
+                                        $ ('#popup-error').modal ('toggle')
+                                    });
+
+                            }
+                        </script>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+        <section class="representative-students representative-students background-style pt-4">
+            <div class="container-fluid container-xl">
+
+                <div class="title-wrapper text-center monkey-fz-32 monkey-f-header distance-center ">
+                    <div class="icon">
+                        <div class="distance-center bg-icon-title  mr-2">
+                            <i class="icon-monkey-box-content-a monkey-fz-24 monkey-color-white "></i>
+
+                        </div>
+                    </div>
+                    <div class="monkey-f-header monkey-fz-30 monkey-color-green">
+                        <span class="text-uppercase">học viên tiêu biểu</span>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-11">
+                        <div class="mt-5 mb-5">
+                            <div class="owl-carousel owl-theme owl-loaded owl-drag" id="owl-typical-student">
+                                <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-1591px, 0px, 0px); transition: all 0.5s ease 0s; width: 3582px; padding-left: 40px; padding-right: 40px;"><div class="owl-item cloned" style="width: 298.333px; margin-right: 20px;"><div class="representative-students-wrapper">
+                                                <div class="representative-students-video background-style d-flex justify-content-center align-items-end lazy" data-src="/image/original//blog/blog/2020/10/09/041847991/images/mj-1-anna.png">
+                                                    <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homemj_HVTB_video',
+                'eventAction': 'Click', 'eventLabel': 'trang chu MJ hoc vien tieu bieu'})" data-fancybox="" href="https://youtu.be/V_f6QJyh4LA">
+                                                        <img data-src="https://monkeymedia.vcdn.com.vn/upload/web/background-web/icon-play.svg" class="card-img-top icon-play cursor lazy" alt="#">
+
+                                                    </a>
+                                                </div>
+                                                <div class="content-video monkey-color-gray">
+                                                    <p class="mb-3 mt-3">
+                                                        <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homemj_HVTB_post',
+                    'eventAction': 'Click', 'eventLabel': 'trang chu MJ tieu de hoc vien tieu bieu'})" class="monkey-fz-18 monkey-f-bold monkey-color-gray cursor" href="https://www.monkeyjunior.vn/hoc-vien-tieu-bieu/be-anna-br-hoc-vien-monkey-junior.html">Bé Anna<br>Học viên Monkey Junior</a>
+                                                    </p>
+                                                    <p> "Monkey Junior là chương trình mà 2 mẹ con đã cùng lựa chọn để học ngoại ngữ"
+                                                        <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homemj_HVTB_post',
+                    'eventAction': 'Click', 'eventLabel': 'trang chu MJ tieu de hoc vien tieu bieu'})" class="monkey-color-green ml-2" href="https://www.monkeyjunior.vn/hoc-vien-tieu-bieu/be-anna-br-hoc-vien-monkey-junior.html"> Xem thêm</a>
+                                                    </p>
+
+                                                </div>
+                                            </div></div><div class="owl-item cloned" style="width: 298.333px; margin-right: 20px;"><div class="representative-students-wrapper">
+                                                <div class="representative-students-video background-style d-flex justify-content-center align-items-end lazy" data-src="/image/original//blog/blog/2020/10/09/044326277/images/mj-3-kieu-diem.png">
+                                                    <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homemj_HVTB_video',
+                'eventAction': 'Click', 'eventLabel': 'trang chu MJ hoc vien tieu bieu'})" data-fancybox="" href="https://youtu.be/8-AVFMmOZKo">
+                                                        <img data-src="https://monkeymedia.vcdn.com.vn/upload/web/background-web/icon-play.svg" class="card-img-top icon-play cursor lazy" alt="#">
+
+                                                    </a>
+                                                </div>
+                                                <div class="content-video monkey-color-gray">
+                                                    <p class="mb-3 mt-3">
+                                                        <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homemj_HVTB_post',
+                    'eventAction': 'Click', 'eventLabel': 'trang chu MJ tieu de hoc vien tieu bieu'})" class="monkey-fz-18 monkey-f-bold monkey-color-gray cursor" href="https://www.monkeyjunior.vn/hoc-vien-tieu-bieu/be-diem-kieu-br-hoc-vien-monkey-junior.html">Bé Diễm Kiều<br>Học viên Monkey Junior</a>
+                                                    </p>
+                                                    <p> "Bé phát âm tốt, biết nhận dạng mặt chữ, thuộc nhiều từ vựng, ví dụ bé đã...
+                                                        <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homemj_HVTB_post',
+                    'eventAction': 'Click', 'eventLabel': 'trang chu MJ tieu de hoc vien tieu bieu'})" class="monkey-color-green ml-2" href="https://www.monkeyjunior.vn/hoc-vien-tieu-bieu/be-diem-kieu-br-hoc-vien-monkey-junior.html"> Xem thêm</a>
+                                                    </p>
+
+                                                </div>
+                                            </div></div><div class="owl-item cloned" style="width: 298.333px; margin-right: 20px;"><div class="representative-students-wrapper">
+                                                <div class="representative-students-video background-style d-flex justify-content-center align-items-end lazy" data-src="/image/original//blog/blog/2020/10/09/062313468/images/mj-4-hoang-trang.png">
+                                                    <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homemj_HVTB_video',
+                'eventAction': 'Click', 'eventLabel': 'trang chu MJ hoc vien tieu bieu'})" data-fancybox="" href="https://youtu.be/B-X2Tpz0UjE">
+                                                        <img data-src="https://monkeymedia.vcdn.com.vn/upload/web/background-web/icon-play.svg" class="card-img-top icon-play cursor lazy" alt="#">
+
+                                                    </a>
+                                                </div>
+                                                <div class="content-video monkey-color-gray">
+                                                    <p class="mb-3 mt-3">
+                                                        <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homemj_HVTB_post',
+                    'eventAction': 'Click', 'eventLabel': 'trang chu MJ tieu de hoc vien tieu bieu'})" class="monkey-fz-18 monkey-f-bold monkey-color-gray cursor" href="https://www.monkeyjunior.vn/hoc-vien-tieu-bieu/be-nguyen-thi-hoang-trang-br-hoc-vien-monkey-junior.html">Bé Nguyễn Thị Hoàng Trang<br>Học viên Monkey Junior</a>
+                                                    </p>
+                                                    <p> "Con đã rất say mê và hứng thú khi được học cùng Monkey Junior. Con đã học...
+                                                        <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homemj_HVTB_post',
+                    'eventAction': 'Click', 'eventLabel': 'trang chu MJ tieu de hoc vien tieu bieu'})" class="monkey-color-green ml-2" href="https://www.monkeyjunior.vn/hoc-vien-tieu-bieu/be-nguyen-thi-hoang-trang-br-hoc-vien-monkey-junior.html"> Xem thêm</a>
+                                                    </p>
+
+                                                </div>
+                                            </div></div><div class="owl-item" style="width: 298.333px; margin-right: 20px;"><div class="representative-students-wrapper">
+                                                <div class="representative-students-video background-style d-flex justify-content-center align-items-end lazy" data-src="https://media.monkeyuni.com/upload/web/storage_web/09-01-2021_11:16:13_hvtb_anhthu.png">
+                                                    <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homemj_HVTB_video',
+                'eventAction': 'Click', 'eventLabel': 'trang chu MJ hoc vien tieu bieu'})" data-fancybox="" href="https://www.youtube.com/watch?v=EQ2Yz4qePZ8">
+                                                        <img data-src="https://monkeymedia.vcdn.com.vn/upload/web/background-web/icon-play.svg" class="card-img-top icon-play cursor lazy" alt="#">
+
+                                                    </a>
+                                                </div>
+                                                <div class="content-video monkey-color-gray">
+                                                    <p class="mb-3 mt-3">
+                                                        <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homemj_HVTB_post',
+                    'eventAction': 'Click', 'eventLabel': 'trang chu MJ tieu de hoc vien tieu bieu'})" class="monkey-fz-18 monkey-f-bold monkey-color-gray cursor" href="https://www.monkeyjunior.vn/hoc-vien-tieu-bieu/be-anh-thu-br-hoc-vien-monkey-junior.html">Bé Anh Thư<br>Học viên Monkey Junior</a>
+                                                    </p>
+                                                    <p> Cô bé 10 tuổi tại Nghệ An mỗi tuần vượt 25 km đường đèo để làm phiên...
+                                                        <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homemj_HVTB_post',
+                    'eventAction': 'Click', 'eventLabel': 'trang chu MJ tieu de hoc vien tieu bieu'})" class="monkey-color-green ml-2" href="https://www.monkeyjunior.vn/hoc-vien-tieu-bieu/be-anh-thu-br-hoc-vien-monkey-junior.html"> Xem thêm</a>
+                                                    </p>
+
+                                                </div>
+                                            </div></div><div class="owl-item" style="width: 298.333px; margin-right: 20px;"><div class="representative-students-wrapper">
+                                                <div class="representative-students-video background-style d-flex justify-content-center align-items-end lazy" data-src="/image/original//blog/blog/2020/10/09/114325163/images/mj-duc-toan.png">
+                                                    <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homemj_HVTB_video',
+                'eventAction': 'Click', 'eventLabel': 'trang chu MJ hoc vien tieu bieu'})" data-fancybox="" href="https://www.youtube.com/watch?v=L_6c5lwsut0">
+                                                        <img data-src="https://monkeymedia.vcdn.com.vn/upload/web/background-web/icon-play.svg" class="card-img-top icon-play cursor lazy" alt="#">
+
+                                                    </a>
+                                                </div>
+                                                <div class="content-video monkey-color-gray">
+                                                    <p class="mb-3 mt-3">
+                                                        <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homemj_HVTB_post',
+                    'eventAction': 'Click', 'eventLabel': 'trang chu MJ tieu de hoc vien tieu bieu'})" class="monkey-fz-18 monkey-f-bold monkey-color-gray cursor" href="https://www.monkeyjunior.vn/hoc-vien-tieu-bieu/be-duc-toan-br-hoc-vien-monkey-junior.html">Bé Đức Toàn<br>Học viên Monkey Junior</a>
+                                                    </p>
+                                                    <p> Hành trình từ một cậu bé chậm nói đến giao tiếp thành thạo cả tiếng Anh lẫn...
+                                                        <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homemj_HVTB_post',
+                    'eventAction': 'Click', 'eventLabel': 'trang chu MJ tieu de hoc vien tieu bieu'})" class="monkey-color-green ml-2" href="https://www.monkeyjunior.vn/hoc-vien-tieu-bieu/be-duc-toan-br-hoc-vien-monkey-junior.html"> Xem thêm</a>
+                                                    </p>
+
+                                                </div>
+                                            </div></div><div class="owl-item active" style="width: 298.333px; margin-right: 20px;"><div class="representative-students-wrapper">
+                                                <div class="representative-students-video background-style d-flex justify-content-center align-items-end lazy" data-src="/image/original//blog/blog/2020/10/09/041847991/images/mj-1-anna.png">
+                                                    <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homemj_HVTB_video',
+                'eventAction': 'Click', 'eventLabel': 'trang chu MJ hoc vien tieu bieu'})" data-fancybox="" href="https://youtu.be/V_f6QJyh4LA">
+                                                        <img data-src="https://monkeymedia.vcdn.com.vn/upload/web/background-web/icon-play.svg" class="card-img-top icon-play cursor lazy" alt="#">
+
+                                                    </a>
+                                                </div>
+                                                <div class="content-video monkey-color-gray">
+                                                    <p class="mb-3 mt-3">
+                                                        <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homemj_HVTB_post',
+                    'eventAction': 'Click', 'eventLabel': 'trang chu MJ tieu de hoc vien tieu bieu'})" class="monkey-fz-18 monkey-f-bold monkey-color-gray cursor" href="https://www.monkeyjunior.vn/hoc-vien-tieu-bieu/be-anna-br-hoc-vien-monkey-junior.html">Bé Anna<br>Học viên Monkey Junior</a>
+                                                    </p>
+                                                    <p> "Monkey Junior là chương trình mà 2 mẹ con đã cùng lựa chọn để học ngoại ngữ"
+                                                        <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homemj_HVTB_post',
+                    'eventAction': 'Click', 'eventLabel': 'trang chu MJ tieu de hoc vien tieu bieu'})" class="monkey-color-green ml-2" href="https://www.monkeyjunior.vn/hoc-vien-tieu-bieu/be-anna-br-hoc-vien-monkey-junior.html"> Xem thêm</a>
+                                                    </p>
+
+                                                </div>
+                                            </div></div><div class="owl-item active" style="width: 298.333px; margin-right: 20px;"><div class="representative-students-wrapper">
+                                                <div class="representative-students-video background-style d-flex justify-content-center align-items-end lazy" data-src="/image/original//blog/blog/2020/10/09/044326277/images/mj-3-kieu-diem.png">
+                                                    <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homemj_HVTB_video',
+                'eventAction': 'Click', 'eventLabel': 'trang chu MJ hoc vien tieu bieu'})" data-fancybox="" href="https://youtu.be/8-AVFMmOZKo">
+                                                        <img data-src="https://monkeymedia.vcdn.com.vn/upload/web/background-web/icon-play.svg" class="card-img-top icon-play cursor lazy" alt="#">
+
+                                                    </a>
+                                                </div>
+                                                <div class="content-video monkey-color-gray">
+                                                    <p class="mb-3 mt-3">
+                                                        <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homemj_HVTB_post',
+                    'eventAction': 'Click', 'eventLabel': 'trang chu MJ tieu de hoc vien tieu bieu'})" class="monkey-fz-18 monkey-f-bold monkey-color-gray cursor" href="https://www.monkeyjunior.vn/hoc-vien-tieu-bieu/be-diem-kieu-br-hoc-vien-monkey-junior.html">Bé Diễm Kiều<br>Học viên Monkey Junior</a>
+                                                    </p>
+                                                    <p> "Bé phát âm tốt, biết nhận dạng mặt chữ, thuộc nhiều từ vựng, ví dụ bé đã...
+                                                        <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homemj_HVTB_post',
+                    'eventAction': 'Click', 'eventLabel': 'trang chu MJ tieu de hoc vien tieu bieu'})" class="monkey-color-green ml-2" href="https://www.monkeyjunior.vn/hoc-vien-tieu-bieu/be-diem-kieu-br-hoc-vien-monkey-junior.html"> Xem thêm</a>
+                                                    </p>
+
+                                                </div>
+                                            </div></div><div class="owl-item active" style="width: 298.333px; margin-right: 20px;"><div class="representative-students-wrapper">
+                                                <div class="representative-students-video background-style d-flex justify-content-center align-items-end lazy" data-src="/image/original//blog/blog/2020/10/09/062313468/images/mj-4-hoang-trang.png">
+                                                    <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homemj_HVTB_video',
+                'eventAction': 'Click', 'eventLabel': 'trang chu MJ hoc vien tieu bieu'})" data-fancybox="" href="https://youtu.be/B-X2Tpz0UjE">
+                                                        <img data-src="https://monkeymedia.vcdn.com.vn/upload/web/background-web/icon-play.svg" class="card-img-top icon-play cursor lazy" alt="#">
+
+                                                    </a>
+                                                </div>
+                                                <div class="content-video monkey-color-gray">
+                                                    <p class="mb-3 mt-3">
+                                                        <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homemj_HVTB_post',
+                    'eventAction': 'Click', 'eventLabel': 'trang chu MJ tieu de hoc vien tieu bieu'})" class="monkey-fz-18 monkey-f-bold monkey-color-gray cursor" href="https://www.monkeyjunior.vn/hoc-vien-tieu-bieu/be-nguyen-thi-hoang-trang-br-hoc-vien-monkey-junior.html">Bé Nguyễn Thị Hoàng Trang<br>Học viên Monkey Junior</a>
+                                                    </p>
+                                                    <p> "Con đã rất say mê và hứng thú khi được học cùng Monkey Junior. Con đã học...
+                                                        <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homemj_HVTB_post',
+                    'eventAction': 'Click', 'eventLabel': 'trang chu MJ tieu de hoc vien tieu bieu'})" class="monkey-color-green ml-2" href="https://www.monkeyjunior.vn/hoc-vien-tieu-bieu/be-nguyen-thi-hoang-trang-br-hoc-vien-monkey-junior.html"> Xem thêm</a>
+                                                    </p>
+
+                                                </div>
+                                            </div></div><div class="owl-item cloned" style="width: 298.333px; margin-right: 20px;"><div class="representative-students-wrapper">
+                                                <div class="representative-students-video background-style d-flex justify-content-center align-items-end lazy" data-src="https://media.monkeyuni.com/upload/web/storage_web/09-01-2021_11:16:13_hvtb_anhthu.png">
+                                                    <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homemj_HVTB_video',
+                'eventAction': 'Click', 'eventLabel': 'trang chu MJ hoc vien tieu bieu'})" data-fancybox="" href="https://www.youtube.com/watch?v=EQ2Yz4qePZ8">
+                                                        <img data-src="https://monkeymedia.vcdn.com.vn/upload/web/background-web/icon-play.svg" class="card-img-top icon-play cursor lazy" alt="#">
+
+                                                    </a>
+                                                </div>
+                                                <div class="content-video monkey-color-gray">
+                                                    <p class="mb-3 mt-3">
+                                                        <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homemj_HVTB_post',
+                    'eventAction': 'Click', 'eventLabel': 'trang chu MJ tieu de hoc vien tieu bieu'})" class="monkey-fz-18 monkey-f-bold monkey-color-gray cursor" href="https://www.monkeyjunior.vn/hoc-vien-tieu-bieu/be-anh-thu-br-hoc-vien-monkey-junior.html">Bé Anh Thư<br>Học viên Monkey Junior</a>
+                                                    </p>
+                                                    <p> Cô bé 10 tuổi tại Nghệ An mỗi tuần vượt 25 km đường đèo để làm phiên...
+                                                        <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homemj_HVTB_post',
+                    'eventAction': 'Click', 'eventLabel': 'trang chu MJ tieu de hoc vien tieu bieu'})" class="monkey-color-green ml-2" href="https://www.monkeyjunior.vn/hoc-vien-tieu-bieu/be-anh-thu-br-hoc-vien-monkey-junior.html"> Xem thêm</a>
+                                                    </p>
+
+                                                </div>
+                                            </div></div><div class="owl-item cloned" style="width: 298.333px; margin-right: 20px;"><div class="representative-students-wrapper">
+                                                <div class="representative-students-video background-style d-flex justify-content-center align-items-end lazy" data-src="/image/original//blog/blog/2020/10/09/114325163/images/mj-duc-toan.png">
+                                                    <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homemj_HVTB_video',
+                'eventAction': 'Click', 'eventLabel': 'trang chu MJ hoc vien tieu bieu'})" data-fancybox="" href="https://www.youtube.com/watch?v=L_6c5lwsut0">
+                                                        <img data-src="https://monkeymedia.vcdn.com.vn/upload/web/background-web/icon-play.svg" class="card-img-top icon-play cursor lazy" alt="#">
+
+                                                    </a>
+                                                </div>
+                                                <div class="content-video monkey-color-gray">
+                                                    <p class="mb-3 mt-3">
+                                                        <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homemj_HVTB_post',
+                    'eventAction': 'Click', 'eventLabel': 'trang chu MJ tieu de hoc vien tieu bieu'})" class="monkey-fz-18 monkey-f-bold monkey-color-gray cursor" href="https://www.monkeyjunior.vn/hoc-vien-tieu-bieu/be-duc-toan-br-hoc-vien-monkey-junior.html">Bé Đức Toàn<br>Học viên Monkey Junior</a>
+                                                    </p>
+                                                    <p> Hành trình từ một cậu bé chậm nói đến giao tiếp thành thạo cả tiếng Anh lẫn...
+                                                        <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homemj_HVTB_post',
+                    'eventAction': 'Click', 'eventLabel': 'trang chu MJ tieu de hoc vien tieu bieu'})" class="monkey-color-green ml-2" href="https://www.monkeyjunior.vn/hoc-vien-tieu-bieu/be-duc-toan-br-hoc-vien-monkey-junior.html"> Xem thêm</a>
+                                                    </p>
+
+                                                </div>
+                                            </div></div><div class="owl-item cloned" style="width: 298.333px; margin-right: 20px;"><div class="representative-students-wrapper">
+                                                <div class="representative-students-video background-style d-flex justify-content-center align-items-end lazy" data-src="/image/original//blog/blog/2020/10/09/041847991/images/mj-1-anna.png">
+                                                    <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homemj_HVTB_video',
+                'eventAction': 'Click', 'eventLabel': 'trang chu MJ hoc vien tieu bieu'})" data-fancybox="" href="https://youtu.be/V_f6QJyh4LA">
+                                                        <img data-src="https://monkeymedia.vcdn.com.vn/upload/web/background-web/icon-play.svg" class="card-img-top icon-play cursor lazy" alt="#">
+
+                                                    </a>
+                                                </div>
+                                                <div class="content-video monkey-color-gray">
+                                                    <p class="mb-3 mt-3">
+                                                        <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homemj_HVTB_post',
+                    'eventAction': 'Click', 'eventLabel': 'trang chu MJ tieu de hoc vien tieu bieu'})" class="monkey-fz-18 monkey-f-bold monkey-color-gray cursor" href="https://www.monkeyjunior.vn/hoc-vien-tieu-bieu/be-anna-br-hoc-vien-monkey-junior.html">Bé Anna<br>Học viên Monkey Junior</a>
+                                                    </p>
+                                                    <p> "Monkey Junior là chương trình mà 2 mẹ con đã cùng lựa chọn để học ngoại ngữ"
+                                                        <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homemj_HVTB_post',
+                    'eventAction': 'Click', 'eventLabel': 'trang chu MJ tieu de hoc vien tieu bieu'})" class="monkey-color-green ml-2" href="https://www.monkeyjunior.vn/hoc-vien-tieu-bieu/be-anna-br-hoc-vien-monkey-junior.html"> Xem thêm</a>
+                                                    </p>
+
+                                                </div>
+                                            </div></div></div></div><div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><div class="icon-owlCarousel d-flex justify-content-center align-items-center monkey-color-white monkey-bg-light-silver rounded-circle"><i class="icon-monkey-next"></i> </div></button><button type="button" role="presentation" class="owl-next"><div class="icon-owlCarousel d-flex justify-content-center align-items-center monkey-color-white monkey-bg-light-silver rounded-circle"><i class="icon-monkey-next"></i> </div></button></div><div class="owl-dots disabled"></div></div>
+                            <script type="text/javascript">
+                                $ (document).ready (function () {
+                                    let number                = '5';
+                                    const dataOwlResponsive   = {
+                                        0    : {
+                                            items : 1,
+                                            nav   : false,
+                                            dots  : true,
+                                            loop  : true,
+                                        },
+                                        600  : {
+                                            items : 2,
+                                            nav   : false,
+                                            dots  : true,
+                                            loop  : true,
+                                        },
+                                        1024 : {
+                                            items : 3,
+                                        },
+                                    };
+                                    const dataOwlResponsive_2 = {
+                                        0    : {
+                                            items : 1,
+                                            nav   : false,
+                                            dots  : true,
+                                            loop  : true,
+                                        },
+                                        600  : {
+                                            items : 3,
+                                            nav   : false,
+                                            dots  : true,
+                                            loop  : true,
+                                        },
+                                        1024 : {
+                                            items : 4,
+                                        },
+                                    };
+                                    const iconOwlCarousel     = [
+                                        "<div class='icon-owlCarousel d-flex justify-content-center align-items-center monkey-color-white monkey-bg-light-silver rounded-circle'><i class='icon-monkey-next'></i> </div>",
+                                        "<div class='icon-owlCarousel d-flex justify-content-center align-items-center monkey-color-white monkey-bg-light-silver rounded-circle'><i class='icon-monkey-next'></i> </div>",
+                                    ];
+                                    const customerOwl         = {
+                                        loop               : false,
+                                        nav                : true,
+                                        margin             : 20,
+                                        autoplayHoverPause : true,
+                                        dots               : false,
+                                        autoplaySpeed      : 500,
+                                        autoplay           : true,
+                                        dotsEach           : true,
+                                        slideSpeed         : 500,
+                                        stagePadding       : 40,
+                                    };
+
+                                    switch ('owl-typical-student') {
+                                        case 'owl-carousel-multi-language':
+                                            $ ("#owl-carousel-multi-language").owlCarousel ({
+                                                navText    : iconOwlCarousel,
+                                                responsive : dataOwlResponsive_2,
+                                                ...customerOwl,
+                                                loop       : number > 3 ? true : false,
+                                            });
+                                            break;
+                                        case 'owl-parents-share':
+                                            $ ("#owl-parents-share").owlCarousel ({
+                                                navText    : iconOwlCarousel,
+                                                responsive : dataOwlResponsive,
+                                                ...customerOwl,
+                                                loop       : number > 3 ? true : false,
+                                            });
+                                            break;
+                                        case 'owl-talk-about-monkey':
+                                            $ ("#owl-talk-about-monkey").owlCarousel ({
+                                                navText    : iconOwlCarousel,
+                                                responsive : dataOwlResponsive,
+                                                ...customerOwl,
+                                                loop       : number > 3 ? true : false,
+                                            });
+                                            break;
+                                        case 'owl-monkey-awards':
+                                            $ ("#owl-monkey-awards").owlCarousel ({
+                                                navText    : iconOwlCarousel,
+                                                responsive : dataOwlResponsive,
+                                                ...customerOwl,
+                                                loop       : number > 3 ? true : false,
+                                            });
+                                            break;
+                                        case 'owl-representative-students':
+                                            $ ("#owl-representative-students").owlCarousel ({
+                                                navText    : iconOwlCarousel,
+                                                responsive : dataOwlResponsive,
+                                                ...customerOwl,
+                                                loop       : number > 3 ? true : false,
+                                            });
+                                            break;
+                                        case 'owl-typical-student':
+                                            $ ("#owl-typical-student").owlCarousel ({
+                                                navText    : iconOwlCarousel,
+                                                responsive : dataOwlResponsive,
+                                                ...customerOwl,
+                                                loop       : number > 3 ? true : false,
+                                            });
+                                            break;
+                                        case 'owl-news-posts':
+                                            $ ("#owl-news-posts").owlCarousel ({
+                                                navText    : iconOwlCarousel,
+                                                responsive : dataOwlResponsive,
+                                                ...customerOwl,
+                                                loop       : number > 3 ? true : false,
+                                            });
+                                            break;
+                                        case 'owl-learning-methods':
+                                            $ ("#owl-learning-methods").owlCarousel ({
+                                                navText    : iconOwlCarousel,
+                                                responsive : dataOwlResponsive_2,
+                                                ...customerOwl,
+                                                loop       : number > 4 ? true : false,
+                                            });
+                                            break;
+                                        case 'owl-learn-more-about-the-curriculum':
+                                            $ ("#owl-learn-more-about-the-curriculum").owlCarousel ({
+                                                navText    : iconOwlCarousel,
+                                                responsive : dataOwlResponsive_2,
+                                                ...customerOwl,
+                                                loop       : number > 3 ? true : false,
+                                            });
+                                            break;
+                                    }
+                                });
+                            </script>
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+                <i class="icon-monkey-representative-students-bg icon-bg-representative-students d-mobile"></i>
+            </div>
+        </section>
+
+        <script>
+            function openPopupTalkAboutMoney (id) {
+                const data = newData.filter((item) => item.id == id)[0];
+                document.getElementById ('images-thumb').src = data.image_cv;
+                var content       = document.getElementById ('popup-talk-about-monkey-content');
+                content.innerHTML = data.description + '<br>' + data.content;
+                var date          = document.getElementById ('popup-talk-about-monkey-date');
+                date.innerHTML    = formatDate (data.publish_date * 1000);
+                var view          = document.getElementById ('popup-talk-about-monkey-view');
+                view.innerHTML    = data.viewcount + ' views';
+                var header        = document.getElementById ('popup-talk-about-monkey-layout');
+                let title         = '<a class="monkey-color-green" href="https://www.monkey.edu.vn/tin-tuc/' + data.alias + '.html">' + data.title + '</a>';
+                header.innerHTML  = title;
+
+                var url_current = "https://www.monkeyjunior.vn/" + "/api/increase-views";
+
+                var options = {
+                    method  : 'POST',
+                    headers : {
+                        "Content-Type" : "application/json"
+                    },
+                    body    : JSON.stringify ({
+                        'id' : data.id
+                    })
+                };
+
+                var aPromise = fetch (url_current, options);
+                aPromise
+                    .then (response => response.json ())
+                    .then (data => {
+                    })
+                    .catch (error => {
+                    });
+
+            }
+
+            function formatDate (date) {
+                var d     = new Date (date),
+                    month = '' + ( d.getMonth () + 1 ),
+                    day   = '' + d.getDate (),
+                    year  = d.getFullYear ();
+
+                if (month.length < 2)
+                    month = '0' + month;
+                if (day.length < 2)
+                    day = '0' + day;
+
+                return [day, month, year].join ('-');
+            }
+        </script>
+
+        <section id="registration-mobile" class="registration-mobile monkey-bg-white background-style mt-4 mb-4">
+            <div class="container-fluid container-xl">
+                <div class="d-desktop">
+                    <div class="title-wrapper text-center monkey-fz-32 monkey-f-header distance-center mb-4">
+                        <div class="monkey-f-header monkey-fz-30 monkey-color-green">
+                            <span class="text-uppercase">"TRẺ SƠ SINH ĐẾN NGÀY THỨ 3 MỚI BẮT ĐẦU DẠY DỖ LÀ ĐÃ CHẬM MẤT 2 NGÀY"<br>- NHÀ SINH HỌC NGƯỜI NGA IVAN PETROVICH PAVLOV -</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-mobile pt-2">
+                    <div class="title-wrapper text-center monkey-fz-32 monkey-f-header distance-center mt-5 mb-4">
+                        <div class="icon">
+                            <div class="distance-center bg-icon-title  mr-2">
+                                <i class="icon-monkey-support-form monkey-fz-24 monkey-color-white "></i>
+
+                            </div>
+                        </div>
+                        <div class="monkey-f-header monkey-fz-30 monkey-color-green">
+                            <span class="text-uppercase">Nhận tư vấn miễn phí</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-11">
+                        <div class="registration-wrapper background-style p-3 monkey-bg-red d-flex monkey-mt-20">
+                            <div class="media">
+                                <div class="mr-3 d-desktop media-title monkey-color-white monkey-f-bold monkey-fz-19">
+                                    <p>
+                                        Kích hoạt tư duy ngôn ngữ và giúp con bắt đầu học Tiếng Anh với Monkey Junior ngay hôm nay!
+                                    </p>
+                                </div>
+                                <div class="media-body">
+                                    <form id="form-registration-2" class="form-registration background-style" onsubmit="registrationOrder2(event)">
+                                        <div class="monkey-bg-white form-body overflow-hidden">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text monkey-bg-transparent">
+                                                        <i class="icon-monkey-name monkey-color-green monkey-fz-18"></i>
+                                                    </div>
+                                                </div>
+                                                <input type="text" class="form-control" placeholder="Họ tên" id="form-registration-name-2">
+                                            </div>
+                                            <div class="monkey-color-red pl-3 pt-2 pb-2" id="val-name-2" style="display: none">
+                                                <i class="monkey-fz-12">*Vui lòng kiểm tra lại họ tên</i>
+                                            </div>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text monkey-bg-transparent">
+                                                        <i class="icon-monkey-phone monkey-color-green monkey-fz-16"></i>
+                                                    </div>
+                                                </div>
+                                                <input type="text" class="form-control" placeholder="Số điện thoại" id="form-registration-phone-2">
+                                            </div>
+                                            <div class="monkey-color-red pl-3 pt-2 pb-2" id="val-phone-2" style="display: none">
+                                                <i class="monkey-fz-12">*Vui lòng kiểm tra lại SĐT</i>
+                                            </div>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text monkey-bg-transparent">
+                                                        <i class="icon-monkey-email monkey-color-green monkey-fz-12"></i>
+                                                    </div>
+                                                </div>
+                                                <input type="text" class="form-control" placeholder="Email" id="form-registration-email-2">
+                                            </div>
+                                            <div class="monkey-color-red pl-3 pt-2 pb-2" id="val-email-2" style="display: none">
+                                                <i class="monkey-fz-12">*Vui lòng kiểm tra lại Email</i>
+                                            </div>
+                                        </div>
+                                        <div class="text-center">
+                                            <button id="button-registration-2" type="submit" data-toggle="modal" class="mt-3 monkey-color-white btn-registration btn btn-warning rounded-pill monkey-fz-f17">
+                                                <i class="icon-monkey-loading monkey-fz-20 mr-2 align-middle" id="icon-loading-1" style="display: none"></i>
+                                                Đăng ký tư vấn miễn phí
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="popup" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+                            <div class="modal-content p-4">
+                                <div class="modal-body text-center">
+                                    <div class="icon-monkey-popup mb-3">
+                                    </div>
+                                    <p class="monkey-f-regular monkey-fz-22"></p><p style="text-align: center;"><strong>Monkey Junior đã nhận được đăng ký của ba mẹ.</strong></p>
+
+                                    <p style="text-align: center;"><strong>Monkey Junior sẽ liên hệ ba mẹ để tư vấn trong thời gian sớm nhất!</strong></p>
+                                </div>
+                                <div class="mt-2 text-center">
+                                    <a href="#" class="btn rounded-pill  monkey-color-white monkey-bg-green" data-dismiss="modal">
+                                        Hoàn thành
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="popup-error" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog modal-sm modal-dialog-centered modal-dialog-scrollable">
+                            <div class="modal-content pt-3 pb-3">
+                                <div class="modal-body text-center pr-0 pl-0">
+                                    <div class="icon-monkey-popup mb-3">
+                                        <img data-src="https://www.monkeyjunior.vn/themes/monkey-junior-v2/assets/img/icons/img-error.png" class=" lazy" alt="#">
+
+                                    </div>
+                                    <p class="monkey-f-regular monkey-fz-22">Oops!!! Đã có lỗi xảy ra!!!<br>Ba mẹ vui lòng thử lại nhé!
+                                    </p></div>
+                                <div class="mt-2 text-center">
+                                    <a href="#" class="btn rounded-pill  monkey-color-white monkey-bg-red" data-dismiss="modal">
+                                        Đồng ý
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <script>
+                        const registrationOrder2 = async (e) => {
+                            e.stopPropagation ();
+                            e.preventDefault ();
+                            let name    = $ ('#form-registration-name-2').val ().trim ();
+                            let phone   = $ ('#form-registration-phone-2').val ().trim ();
+                            let email   = $ ('#form-registration-email-2').val ().trim ();
+                            const country_code = JSON.parse(localStorage.getItem("language"))["phone_code"];
+                            let resultName  = validateName (name, "val-name-2");
+                            let resultEmail = validateEmail (email, "val-email-2");
+                            let resultPhone = validatePhone (phone, "val-phone-2");
+
+                            if (!resultName || !resultEmail || !resultPhone ) {
+                                return false
+                            }
+                            document.getElementById ("icon-loading-1").setAttribute ('style', 'display: inline-block');
+                            document.getElementById ("button-registration-2").setAttribute ('disabled', 'true');
+
+                            let fullDomain = document.URL;
+                            let domain = fullDomain.split("/");
+                            var url_current = domain[0] + "//" + domain[2] + "/order-register-custom";
+
+                            var options = {
+                                method  : 'POST',
+                                headers : {
+                                    "Content-Type" : "application/json"
+                                },
+                                body    : JSON.stringify ({
+                                    phone      : phone,
+                                    email      : email,
+                                    name       : name,
+                                    country_code:country_code,
+                                    p          : 2,
+                                    product_id : 'com.earlystart.ltr.1year',
+                                })
+                            };
+
+                            var aPromise = fetch (url_current, options);
+                            aPromise
+                                .then (response => response.json ())
+                                .then (data => {
+                                    ga('send',{'hitType': 'event', 'eventCategory': 'homemj_orderbox2',
+                                        'eventAction': 'Click', 'eventLabel': 'trang chu MJ form tu van 2'});
+                                    document.getElementById ("icon-loading-1").setAttribute ('style', 'display: none');
+                                    document.getElementById ("button-registration-2").removeAttribute ('disabled');
+                                    if (data['code'] == 200) {
+                                        $ ('#popup').modal ('toggle')
+                                        document.getElementById ("form-registration-name-2").value  = '';
+                                        document.getElementById ("form-registration-phone-2").value = '';
+                                        document.getElementById ("form-registration-email-2").value = '';
+                                    } else {
+                                        $ ('#popup-error').modal ('toggle')
+                                    }
+                                })
+                                .catch (error => {
+                                    document.getElementById ("icon-loading-1").setAttribute ('style', 'display: none');
+                                    document.getElementById ("button-registration-2").removeAttribute ('disabled');
+                                    $ ('#popup-error').modal ('toggle')
+                                });
+
+                        }
+                    </script>
+                </div>
+            </div>
+        </section>
+        <section class="parents-share parents-share-mobile mb-4">
+            <div class="container-fluid container-xl">
+                <div class="row justify-content-center">
+                    <div class="col-lg-11">
+                        <div class="parents-share-body background-style border-radius">
+                            <div class="title-wrapper text-center monkey-fz-32 monkey-f-header distance-center ">
+                                <div class="icon">
+                                    <div class="distance-center size-icon-title monkey-lg-bg-green  mr-2">
+                                        <i class="icon-monkey-representative-students-1 monkey-fz-24 monkey-lg-color-white "></i>
+
+                                    </div>
+                                </div>
+                                <div class="monkey-f-header monkey-fz-30 monkey-lg-color-green">
+                                    <span class="text-uppercase">Ba mẹ cần biết</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="media mt-5 parents-share-media">
+                                        <div class="media-image effect-hover-circle }">
+                                            <img data-src="https://monkeymedia.vcdn.com.vn/upload/web/storage_web/17-07-2021_09:29:07_thu-thach-ke-chuyen-nguoi-ban-10-trieu-5.jpg" class=" lazy" alt="#">
+
+                                        </div>
+                                        <div class="media-body">
+                                            <h5 class="mt-0 monkey-f-bold monkey-fz-17">
+                                                <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homemj_news_post',
+                                    'eventAction': 'Click', 'eventLabel': 'trang chu MJ tiêu đề ba me can biet'})" class="cursor" href="https://www.monkey.edu.vn/ba-me-can-biet/hoi-dap-thu-thach-ke-chuyen-nguoi-ban-“10-trieu”.html">Hỏi đáp Thử thách Kể chuyện Người bạn “10 triệu”</a>
+
+                                            </h5>
+                                            <div class="monkey-fz-15 monkey-f-medium monkey-color-gray text-justify">
+                                                Tại bài viết này, Monkey sẽ giải đáp mọi thắc mắc cho ba mẹ về chương trình Kể chuyện Người bạn “10 triệu” được tổ...
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="media mt-5 parents-share-media">
+                                        <div class="media-image effect-hover-circle }">
+                                            <img data-src="https://monkeymedia.vcdn.com.vn/upload/web/storage_web/15-07-2021_09:42:08_thu-thach-ke-chuyen-nguoi-ban-10-trieu-3.jpg" class=" lazy" alt="#">
+
+                                        </div>
+                                        <div class="media-body">
+                                            <h5 class="mt-0 monkey-f-bold monkey-fz-17">
+                                                <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homemj_news_post',
+                                    'eventAction': 'Click', 'eventLabel': 'trang chu MJ tiêu đề ba me can biet'})" class="cursor" href="https://www.monkey.edu.vn/ba-me-can-biet/the-le-thu-thach-ke-chuyen-nguoi-ban-“10-trieu”.html">Thể lệ Thử thách Kể chuyện Người bạn “10 triệu”</a>
+
+                                            </h5>
+                                            <div class="monkey-fz-15 monkey-f-medium monkey-color-gray text-justify">
+                                                Nhân dịp Monkey đạt mốc 10 triệu người dùng, Monkey tổ chức Thử thách Kể chuyện Người bạn “10 triệu” (#nguoiban10trieu). Đây là dịp để...
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="media mt-5 parents-share-media">
+                                        <div class="media-image effect-hover-circle }">
+                                            <img data-src="https://monkeymedia.vcdn.com.vn/upload/web/storage_web/08-06-2021_02:18:40_faq_thumb.jpg" class=" lazy" alt="#">
+
+                                        </div>
+                                        <div class="media-body">
+                                            <h5 class="mt-0 monkey-f-bold monkey-fz-17">
+                                                <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homemj_news_post',
+                                    'eventAction': 'Click', 'eventLabel': 'trang chu MJ tiêu đề ba me can biet'})" class="cursor" href="https://www.monkey.edu.vn/ba-me-can-biet/hoi-dap-ve-chuong-trinh-khi-o-nha-me-la-co-giao.html">Hỏi đáp về chương trình "Khi ở nhà Mẹ là cô giáo"</a>
+
+                                            </h5>
+                                            <div class="monkey-fz-15 monkey-f-medium monkey-color-gray text-justify">
+                                                Tại bài viết này, Monkey sẽ giải đáp các thắc mắc của ba mẹ về chương trình "Khi ở nhà Mẹ là cô giáo".
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="media mt-5 parents-share-media">
+                                        <div class="media-image effect-hover-circle }">
+                                            <img data-src="https://monkeymedia.vcdn.com.vn/upload/web/storage_web/09-06-2021_16:21:42_vdsc5_thumb.jpg" class=" lazy" alt="#">
+
+                                        </div>
+                                        <div class="media-body">
+                                            <h5 class="mt-0 monkey-f-bold monkey-fz-17">
+                                                <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homemj_news_post',
+                                    'eventAction': 'Click', 'eventLabel': 'trang chu MJ tiêu đề ba me can biet'})" class="cursor" href="https://www.monkey.edu.vn/ba-me-can-biet/be-jerry-va-me-ngoc-tran-da-hoc-tieng-anh-nhu-the-nao-viet-de-se-chia-thang-10-2020.html">Bé Jerry và mẹ Ngọc Trần đã học tiếng Anh như thế nào - Viết để sẻ chia Tháng 10/2020</a>
+
+                                            </h5>
+                                            <div class="monkey-fz-15 monkey-f-medium monkey-color-gray text-justify">
+                                                Dưới đây là chia sẻ của mẹ Ngọc Trần trong hoạt động "Viết để sẻ chia". Hoạt động này được Monkey phát động và tổ...
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <div class="modal fade" id="popup-talk-about-monkey" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="modal-title monkey-f-bold monkey-color-black monkey-fz-20 text-left" id="popup-talk-about-monkey-header">
+
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row popup-talk-about-monkey-header text-left monkey-fz-14">
+                            <div class="col-6">
+                                <span class="mr-5" id="popup-talk-about-monkey-date"></span>
+                                <span id="popup-talk-about-monkey-view">2500 lượt xem</span>
+                            </div>
+                        </div>
+                        <div class="monkey-fz-14 popup-talk-about-monkey-content">
+                            <div class="new-image mb-4 text-center background-style">
+                                <img src="" id="image-thumb" class="img-fluid">
+                            </div>
+                            <div class="mb-4 mt-4 text-left" id="popup-talk-about-monkey-content">
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="close-wrap">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+        </div>
+
+
+    </div>
+
+</main>
+<footer id="footer">
+    <div class="monkey-bg-green title text-center monkey-pt-20 monkey-pb-20 text-uppercase monkey-color-white monkey-fz-30 monkey-f-header">Liên hệ</div>
+    <div class="footer-body monkey-bg-green monkey-pt-25 monkey-pb-25">
+        <div class="container-fluid container-xl">
+            <div class="contact-content text-center">
+                <ul class="list-inline monkey-color-white ">
+                    <li class="list-inline-item border-line monkey-f-bold text-left mb-2 monkey-color-white"><a x-apple-data-detectors="true">Hotline: 1900 1508</a></li>
+                    <li class="list-inline-item d-lg-none d-block monkey-fz-12 monkey-f-regular text-left mb-2">[7h00 - 22h00 các ngày trong tuần]</li>
+                    <li class="list-inline-item monkey-f-bold">englistkist@k&e.com</li>
+                    <li>
+                        <span class="email monkey-fz-12 monkey-f-regular d-lg-block d-none">[7h00 - 22h00 các ngày trong tuần]</span>
+                    </li>
+                </ul>
+
+                <ul class="list-inline">
+                    <li class="list-inline-item cursor">
+                        <a class="size-icon-title monkey-bg-white distance-center rounded-circle" href="https://www.facebook.com/groups/donghanhcungconhocmonkey?utm_source=Brand&amp;utm_medium=middlefooter&amp;utm_campaign=Inbound&amp;utm_content=Chi" target="_blank">
+                            <i class="icon-monkey-share monkey-color-green monkey-fz-18"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item cursor">
+                        <a class="size-icon-title monkey-bg-white distance-center rounded-circle" href="https://www.youtube.com/user/monkeyjuniorapps?utm_source=Brand&amp;utm_medium=topfooter&amp;utm_campaign=Inbound&amp;utm_content=Chi" target="_blank">
+                            <i class="icon-monkey-youtube monkey-color-green monkey-fz-18"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item cursor">
+                        <a class="size-icon-title monkey-bg-white distance-center rounded-circle" href="https://www.facebook.com/Monkey.edu.vn?utm_source=Brand&amp;utm_medium=topfooterMJ&amp;utm_campaign=Inbound&amp;utm_content=Chi" target="_blank">
+                            <i class="icon-monkey-face monkey-color-green monkey-fz-18"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-group mt-2 mb-2 text-center monkey-color-white">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10 col-xl-9">
+                        <div class="footer-group-body pt-3 pb-3 d-flex justify-content-center align-items-center border monkey-bc-white">
+                            <div class="monkey-fz-14 monkey-f-medium footer-group-text">
+                                Cộng đồng hơn 140.000 ba mẹ thông thái <span class="monkey-f-bold monkey-fz-16">Đồng hành cùng con học Monkey:</span>
+                            </div>
+                            <a target="_blank" href="https://www.facebook.com/groups/donghanhcungconhocmonkey?utm_source=Brand&amp;utm_medium=middlefooter&amp;utm_campaign=Inbound&amp;utm_content=Chi" class="hvr-icon-registration ml-md-3 btn monkey-bc-white rounded-pill monkey-color-white monkey-fz-14 monkey-f-bold">
+                                THAM GIA NGAY</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="monkey-f-bold footer-item monkey-color-white d-block d-lg-flex">
+
+                <a class="monkey-color-white mr-lg-3 ml-ld-3 d-flex" href="https://www.monkeyvietnam.online/daily?utm_source=Brand&amp;utm_medium=topfooter&amp;utm_campaign=Inbound&amp;utm_content=Chi" target="_blank">
+                    <span class="mr-2">	●</span>
+                    <span>Đăng ký Đại lý</span>
+                </a>
+                <a class="monkey-color-white mr-lg-3 ml-ld-3 d-flex" href="https://www.monkey.edu.vn/active-account.html?utm_source=Brand&amp;utm_medium=topfooter&amp;utm_campaign=Inbound&amp;utm_content=Chi" target="_blank">
+                    <span class="mr-2">	●</span>
+                    <span>Kích hoạt tài khoản</span>
+                </a>
+                <a class="monkey-color-white mr-lg-3 ml-ld-3 d-flex" href="http://tuyendung.monkey.edu.vn/?utm_source=Brand&amp;utm_medium=topfooter&amp;utm_campaign=Inbound&amp;utm_content=Chi" target="_blank">
+                    <span class="mr-2">	●</span>
+                    <span>Tuyển dụng</span>
+                </a>
+                <a class="monkey-color-white mr-lg-3 ml-ld-3 d-flex" href="https://www.monkeyjunior.vn/tai-tu-dong.html?app_id=2" target="_blank">
+                    <span class="mr-2">	●</span>
+                    <span>Tải App</span>
+                </a>
+                <a class="monkey-color-white mr-lg-3 ml-ld-3 d-flex" href="https://www.monkey.edu.vn/tin-tuc/chinh-sach-bao-mat.html" target="_self">
+                    <span class="mr-2">	●</span>
+                    <span>Chính sách bảo mật</span>
+                </a>
+                <a class="monkey-color-white mr-lg-3 ml-ld-3 d-flex" href="https://www.monkey.edu.vn/tin-tuc/dieu-khoan-su-dung.html" target="_blank">
+                    <span class="mr-2">	●</span>
+                    <span>Điều khoản sử dụng</span>
+                </a>
+                <a href="http://www.online.gov.vn/Home/WebDetails/40473" alt="#">
+                    <img data-src="https://monkeymedia.vcdn.com.vn/upload/web/background-web/logo-footer" class="img-certification d-block d-lg-none lazy" alt="#">
+
+                </a>
+
+            </div>
+            <div class="address-content monkey-pt-20 monkey-pb-20 mt-3 mb-3">
+                <div class="row justify-content-center">
+                    <div class="col-lg-11">
+                        <div class="row justify-content-end">
+                            <div class="col-lg-9 monkey-f-regular monkey-color-white text-center">
+                                <p class="monkey-fz-12"></p><p class="monkey-fz-12">© 2020 - Bản quyền của Công Ty Cổ phần Early Start</p>
+
+                                <p class="monkey-fz-12">Trụ sở chính: Tầng 2, Tòa nhà FS, TTTM TNR Gold Season, số 47 Nguyễn Tuân, P. Thanh Xuân Trung, Q. Thanh Xuân, TP. Hà Nội</p>
+
+                                <p class="monkey-fz-12 monkey-color-white">Giấy phép DKKD số <a x-apple-data-detectors="true">0106651756</a> do Sở Kế hoạch và Đầu tư TP Hà Nội cấp. Ngày cấp: 01/10/2014</p><p></p>
+                            </div>
+                            <div class="col-lg-2 d-lg-block d-none">
+                                <a href="http://www.online.gov.vn/Home/WebDetails/40473" alt="#">
+                                    <img data-src="https://monkeymedia.vcdn.com.vn/upload/web/background-web/logo-footer" class="img-certification lazy" alt="#">
+
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-11">
+                    <div class="seo-body text-center monkey-color-white">
+                        <ul class="list-inline monkey-f-regular monkey-fz-12">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</footer>
+<div id="fb-root"></div>
+<div class="fb-customerchat" attribution="setup_tool" page_id="1658165124411579" theme_color="#92c83e" logged_in_greeting="Chào ba mẹ! Monkey có thể hỗ trợ ba mẹ thông tin gì?" logged_out_greeting="Chào ba mẹ! Monkey có thể hỗ trợ ba mẹ thông tin gì?">
 </div>
 <script>
-    var string = "vainoiluon abcxyz"
-    var maxChar = "";
-    var max = 0;
-    string.replace(/r/g, '');
+    window.addEventListener("scroll",function(){
+        window.fbAsyncInit = function() {
+            FB.init({
+                xfbml            : true,
+                version          : 'v9.0'
+            });
+        };
 
-    for (let i = 0; i < string.length; i++) {
-        var count = 0;
-        if (string[i] !== " ") {
-            count = (string.split(string[i]).length - 1);
-        }
-        if (max < count) {
-            max = count;
-        }
-    }
-    for (let i = 0; i < string.length; i++) {
-        if (max === (string.split(string[i]).length - 1)){
-            console.log("Kí tự max là " + max + " Lặp lại " + string[i] + " lần");
-        }
-    }
-    var str = 'xin  chao manh'
-    function reverseStr(a){
-        var string = "";
-        for(i = a.length - 1 ; i >= 0 ; i-- ){
-            string = a.split(a[i]).reverse().join('')
-        }return string
-    }
-        console.log(reverseStr(str))
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    })
 </script>
+<script type="text/javascript" src="https://monkeymedia2020.s3.ap-southeast-1.amazonaws.com/upload%2Fweb%2Ffiles__js_web%2Fowl.carousel.min.js"></script>
+<script type="text/javascript" src="https://monkeymedia2020.s3.ap-southeast-1.amazonaws.com/upload%2Fweb%2Ffiles__js_web%2Fbootstrap4.min.js"></script>
+<script type="text/javascript" src="https://monkeymedia2020.s3.ap-southeast-1.amazonaws.com/upload%2Fweb%2Ffiles__js_web%2Fjquery.fancybox.min.js"></script>
+<script type="text/javascript" src="https://monkeymedia2020.s3.ap-southeast-1.amazonaws.com/upload%2Fweb%2Ffiles__js_web%2Fmodernizr-3.6.0.min.js"></script>
+<script type="text/javascript" src="https://www.monkeyjunior.vn/themes/monkey-junior-v2/assets/js/site.js?v=19"></script>
+</body>
 </body>
 </html>
