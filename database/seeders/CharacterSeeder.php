@@ -15,7 +15,6 @@ class CharacterSeeder extends Seeder
     {
         \Illuminate\Support\Facades\DB::table('data_supports')->insert([
             [
-                'id' => '0',
                 'values' => 'A',
                 'words_vi' => 'A',
                 'words_en' => 'A',
@@ -25,7 +24,6 @@ class CharacterSeeder extends Seeder
                 'key' => 'character',
                 'createBy' => 'hungpvth2008007@fpt.edu.vn',
             ],[
-                'id' => '1',
                 'values' => 'B',
                 'words_vi' => 'B',
                 'words_en' => 'B',
@@ -35,7 +33,6 @@ class CharacterSeeder extends Seeder
                 'key' => 'character',
                 'createBy' => 'hungpvth2008007@fpt.edu.vn',
             ],[
-                'id' => '2',
                 'values' => 'C',
                 'words_vi' => 'C',
                 'words_en' => 'C',
@@ -45,7 +42,6 @@ class CharacterSeeder extends Seeder
                 'key' => 'character',
                 'createBy' => 'hungpvth2008007@fpt.edu.vn',
             ],[
-                'id' => '3',
                 'values' => 'D',
                 'words_vi' => 'D',
                 'words_en' => 'D',
@@ -55,7 +51,6 @@ class CharacterSeeder extends Seeder
                 'key' => 'character',
                 'createBy' => 'hungpvth2008007@fpt.edu.vn',
             ],[
-                'id' => '4',
                 'values' => 'E',
                 'words_vi' => 'E',
                 'words_en' => 'E',
@@ -65,7 +60,6 @@ class CharacterSeeder extends Seeder
                 'key' => 'character',
                 'createBy' => 'hungpvth2008007@fpt.edu.vn',
             ],[
-                'id' => '5',
                 'values' => 'F',
                 'words_vi' => 'F',
                 'words_en' => 'F',
@@ -75,7 +69,6 @@ class CharacterSeeder extends Seeder
                 'key' => 'character',
                 'createBy' => 'hungpvth2008007@fpt.edu.vn',
             ],[
-                'id' => '6',
                 'values' => 'G',
                 'words_vi' => 'G',
                 'words_en' => 'G',
@@ -85,7 +78,6 @@ class CharacterSeeder extends Seeder
                 'key' => 'character',
                 'createBy' => 'hungpvth2008007@fpt.edu.vn',
             ],[
-                'id' => '7',
                 'values' => 'H',
                 'words_vi' => 'H',
                 'words_en' => 'H',
@@ -95,7 +87,6 @@ class CharacterSeeder extends Seeder
                 'key' => 'character',
                 'createBy' => 'hungpvth2008007@fpt.edu.vn',
             ],[
-                'id' => '8',
                 'values' => 'I',
                 'words_vi' => 'I',
                 'words_en' => 'I',
@@ -105,7 +96,6 @@ class CharacterSeeder extends Seeder
                 'key' => 'character',
                 'createBy' => 'hungpvth2008007@fpt.edu.vn',
             ],[
-                'id' => '9',
                 'values' => 'J',
                 'words_vi' => 'J',
                 'words_en' => 'J',
@@ -115,7 +105,6 @@ class CharacterSeeder extends Seeder
                 'key' => 'character',
                 'createBy' => 'hungpvth2008007@fpt.edu.vn',
             ],[
-                'id' => '10',
                 'values' => 'K',
                 'words_vi' => 'K',
                 'words_en' => 'K',
@@ -125,7 +114,6 @@ class CharacterSeeder extends Seeder
                 'key' => 'character',
                 'createBy' => 'hungpvth2008007@fpt.edu.vn',
             ],[
-                'id' => '11',
                 'values' => 'L',
                 'words_vi' => 'L',
                 'words_en' => 'L',
@@ -135,7 +123,6 @@ class CharacterSeeder extends Seeder
                 'key' => 'character',
                 'createBy' => 'hungpvth2008007@fpt.edu.vn',
             ],[
-                'id' => '12',
                 'values' => 'M',
                 'words_vi' => 'M',
                 'words_en' => 'M',
@@ -145,7 +132,6 @@ class CharacterSeeder extends Seeder
                 'key' => 'character',
                 'createBy' => 'hungpvth2008007@fpt.edu.vn',
             ],[
-                'id' => '13',
                 'values' => 'N',
                 'words_vi' => 'N',
                 'words_en' => 'N',
@@ -155,7 +141,6 @@ class CharacterSeeder extends Seeder
                 'key' => 'character',
                 'createBy' => 'hungpvth2008007@fpt.edu.vn',
             ],[
-                'id' => '14',
                 'values' => 'O',
                 'words_vi' => 'O',
                 'words_en' => 'O',
@@ -165,7 +150,6 @@ class CharacterSeeder extends Seeder
                 'key' => 'character',
                 'createBy' => 'hungpvth2008007@fpt.edu.vn',
             ],[
-                'id' => '15',
                 'values' => 'P',
                 'words_vi' => 'P',
                 'words_en' => 'P',
@@ -175,7 +159,6 @@ class CharacterSeeder extends Seeder
                 'key' => 'character',
                 'createBy' => 'hungpvth2008007@fpt.edu.vn',
             ],[
-                'id' => '16',
                 'values' => 'Q',
                 'words_vi' => 'Q',
                 'words_en' => 'Q',
@@ -185,7 +168,6 @@ class CharacterSeeder extends Seeder
                 'key' => 'character',
                 'createBy' => 'hungpvth2008007@fpt.edu.vn',
             ],[
-                'id' => '17',
                 'values' => 'R',
                 'words_vi' => 'R',
                 'words_en' => 'R',
@@ -195,7 +177,6 @@ class CharacterSeeder extends Seeder
                 'key' => 'character',
                 'createBy' => 'hungpvth2008007@fpt.edu.vn',
             ],[
-                'id' => '18',
                 'values' => 'S',
                 'words_vi' => 'S',
                 'words_en' => 'S',
@@ -205,7 +186,6 @@ class CharacterSeeder extends Seeder
                 'key' => 'character',
                 'createBy' => 'hungpvth2008007@fpt.edu.vn',
             ],[
-                'id' => '19',
                 'values' => 'T',
                 'words_vi' => 'T',
                 'words_en' => 'T',
@@ -215,7 +195,6 @@ class CharacterSeeder extends Seeder
                 'key' => 'character',
                 'createBy' => 'hungpvth2008007@fpt.edu.vn',
             ],[
-                'id' => '20',
                 'values' => 'U',
                 'words_vi' => 'U',
                 'words_en' => 'U',
@@ -225,7 +204,6 @@ class CharacterSeeder extends Seeder
                 'key' => 'character',
                 'createBy' => 'hungpvth2008007@fpt.edu.vn',
             ],[
-                'id' => '21',
                 'values' => 'V',
                 'words_vi' => 'V',
                 'words_en' => 'V',
@@ -235,7 +213,6 @@ class CharacterSeeder extends Seeder
                 'key' => 'character',
                 'createBy' => 'hungpvth2008007@fpt.edu.vn',
             ],[
-                'id' => '22',
                 'values' => 'W',
                 'words_vi' => 'W',
                 'words_en' => 'W',
@@ -245,7 +222,6 @@ class CharacterSeeder extends Seeder
                 'key' => 'character',
                 'createBy' => 'hungpvth2008007@fpt.edu.vn',
             ],[
-                'id' => '23',
                 'values' => 'X',
                 'words_vi' => 'X',
                 'words_en' => 'X',
@@ -255,7 +231,6 @@ class CharacterSeeder extends Seeder
                 'key' => 'character',
                 'createBy' => 'hungpvth2008007@fpt.edu.vn',
             ],[
-                'id' => '23',
                 'values' => 'Y',
                 'words_vi' => 'Y',
                 'words_en' => 'Y',
@@ -265,7 +240,6 @@ class CharacterSeeder extends Seeder
                 'key' => 'character',
                 'createBy' => 'hungpvth2008007@fpt.edu.vn',
             ],[
-                'id' => '24',
                 'values' => 'Z',
                 'words_vi' => 'Z',
                 'words_en' => 'Z',
@@ -275,7 +249,6 @@ class CharacterSeeder extends Seeder
                 'key' => 'character',
                 'createBy' => 'hungpvth2008007@fpt.edu.vn',
             ],[
-                'id' => '25',
                 'values' => '0',
                 'words_vi' => 'Không',
                 'words_en' => 'zero',
@@ -285,7 +258,6 @@ class CharacterSeeder extends Seeder
                 'key' => 'character',
                 'createBy' => 'hungpvth2008007@fpt.edu.vn',
             ],[
-                'id' => '26',
                 'values' => '1',
                 'words_vi' => 'một',
                 'words_en' => 'one',
@@ -295,7 +267,6 @@ class CharacterSeeder extends Seeder
                 'key' => 'number',
                 'createBy' => 'hungpvth2008007@fpt.edu.vn',
             ],[
-                'id' => '27',
                 'values' => '2',
                 'words_vi' => 'hai',
                 'words_en' => 'two',
@@ -305,7 +276,6 @@ class CharacterSeeder extends Seeder
                 'key' => 'number',
                 'createBy' => 'hungpvth2008007@fpt.edu.vn',
             ],[
-                'id' => '28',
                 'values' => '3',
                 'words_vi' => 'ba',
                 'words_en' => 'three',
@@ -315,7 +285,6 @@ class CharacterSeeder extends Seeder
                 'key' => 'number',
                 'createBy' => 'hungpvth2008007@fpt.edu.vn',
             ],[
-                'id' => '29',
                 'values' => '4',
                 'words_vi' => 'bốn',
                 'words_en' => 'four',
@@ -325,7 +294,6 @@ class CharacterSeeder extends Seeder
                 'key' => 'number',
                 'createBy' => 'hungpvth2008007@fpt.edu.vn',
             ],[
-                'id' => '30',
                 'values' => '5',
                 'words_vi' => 'năm',
                 'words_en' => 'five',
@@ -335,7 +303,6 @@ class CharacterSeeder extends Seeder
                 'key' => 'number',
                 'createBy' => 'hungpvth2008007@fpt.edu.vn',
             ],[
-                'id' => '31',
                 'values' => '6',
                 'words_vi' => 'sáu',
                 'words_en' => 'six',
@@ -345,7 +312,6 @@ class CharacterSeeder extends Seeder
                 'key' => 'number',
                 'createBy' => 'hungpvth2008007@fpt.edu.vn',
             ],[
-                'id' => '32',
                 'values' => '7',
                 'words_vi' => 'bảy',
                 'words_en' => 'seven',
@@ -355,7 +321,6 @@ class CharacterSeeder extends Seeder
                 'key' => 'number',
                 'createBy' => 'hungpvth2008007@fpt.edu.vn',
             ],[
-                'id' => '33',
                 'values' => '8',
                 'words_vi' => 'tám',
                 'words_en' => 'eight',
@@ -365,7 +330,6 @@ class CharacterSeeder extends Seeder
                 'key' => 'number',
                 'createBy' => 'hungpvth2008007@fpt.edu.vn',
             ],[
-                'id' => '34',
                 'values' => '9',
                 'words_vi' => 'chín',
                 'words_en' => 'nine',
@@ -375,7 +339,6 @@ class CharacterSeeder extends Seeder
                 'key' => 'number',
                 'createBy' => 'hungpvth2008007@fpt.edu.vn',
             ],[
-                'id' => '35',
                 'values' => '10',
                 'words_vi' => 'mười',
                 'words_en' => 'ten',
