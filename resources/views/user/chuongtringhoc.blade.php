@@ -246,10 +246,10 @@
                                 <ol class="breadcrumb monkey-bg-transparent mb-0 p-0">
                                     <li class="breadcrumb-item ">
                                         <a class="monkey-f-medium text-uppercase"
-                                           href="https://www.monkey.edu.vn/">Trang chủ</a>
+                                           href="/home">Trang chủ</a>
                                     </li>
                                     <li class="breadcrumb-item active ">
-                                        <a href="https://www.monkey.edu.vn#"
+                                        <a href="#"
                                            class="monkey-f-bold text-uppercase"> Chương trình học</a>
                                     </li>
                                 </ol>

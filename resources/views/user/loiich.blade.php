@@ -173,7 +173,7 @@
                    onclick="ga('send',{'hitType': 'event', 'eventCategory': 'homemj_support_button',
                    'eventAction': 'Click', 'eventLabel': 'trang tru button support'})
                    "
-                   href="" target="_blank">
+                   href="/coming-soon" target="_blank">
                     <i class="icon-monkey-support monkey-fz-20"></i>
                     <div class="text-item text-support">Hỗ trợ khách hàng</div>
                 </a>
@@ -275,10 +275,8 @@
                             </h3>
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <div
-                                        class="banner-video background-style distance-center mb-3 lazyLoading"
-                                        data-src="https://media.monkeyuni.com/upload/web/storage_web/11-12-2020_08:37:34_LI_MJ.jpg"
-                                    >
+                                    <div class="banner-video background-style distance-center mb-3 lazyLoading"
+                                         data-src = "{{URL::asset('/images/loi-ich.png')}}">
                                     </div>
 
                                 </div>
