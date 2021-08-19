@@ -107,7 +107,7 @@
                         </li>
                         <li class="nav-item distance-center d-desktop">
                             <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homems_menu_registration',
-                            'eventAction': 'Click', 'eventLabel': 'menu MS dang ky'})" class="btn monkey-color-green monkey-bc-green rounded-pill monkey-f-bold distance-center hvr-icon-registration-white" href="https://www.monkeyjunior.vn/bang-gia.html">
+                            'eventAction': 'Click', 'eventLabel': 'menu MS dang ky'})" class="btn monkey-color-green monkey-bc-green rounded-pill monkey-f-bold distance-center hvr-icon-registration-white" href="/coming-soon">
                                 <i class="icon-lang rounded-circle icon-monkey-registration monkey-fz-18 mr-1 distance-center"></i>Đăng ký
                             </a>
                         </li>
@@ -327,7 +327,7 @@
                                     >
                                         <div class="mr-3 media-image effect-hover-circle ">
                                             <img
-                                                data-src="https://media.monkeyuni.com/upload/web/storage_web/01-11-2020_16:29:41_LI3_thumb.jpg"
+                                                data-src="{{asset('/images/anh2-loiich.PNG')}}"
                                                 class=" lazy" alt="#"
                                             />
 
@@ -344,7 +344,7 @@
                                             <p
                                                 class="monkey-f-medium monkey-color-gray mb-4 text-justify custom-text-box-6 "
                                             >
-                                                Với nền tảng là kho từ vựng và mẫu câu khổng lồ, Monkey Junior tự tin
+                                                Với nền tảng là kho từ vựng và mẫu câu khổng lồ, E&K tự tin
                                                 khẳng định giúp trẻ tích lũy và tư duy trực diện hơn 3,000 từ vựng,
                                                 6,000 mẫu câu thuộc nhiều chủ đề tiếng Anh trong giai đoạn đầu tiếp xúc,
                                                 tạo nền tảng vững vàng để trẻ có thể học lên các trình độ...
@@ -367,11 +367,7 @@
                                         class="media parents-share-media"
                                     >
                                         <div class="mr-3 media-image effect-hover-circle ">
-                                            <img
-                                                data-src="https://media.monkeyuni.com/upload/web/storage_web/01-11-2020_16:21:24_LI2_thumb.jpg"
-                                                class=" lazy" alt="#"
-                                            />
-
+                                            <img src="{{asset('/images/anh3-loiich.png')}}" alt="#"/>
                                         </div>
                                         <div class="media-body columns-2-4">
                                             <h5
@@ -387,7 +383,7 @@
                                             >
                                                 Một trong những vấn đề lớn nhất trẻ em Việt Nam gặp phải khi học tiếng
                                                 Anh chính là việc phát âm sai do không có môi trường rèn luyện tiếng Anh
-                                                chuẩn. Với Monkey Junior, bé sẽ phát âm chuẩn ngay từ khi bắt đầu học
+                                                chuẩn. Với E&K, bé sẽ phát âm chuẩn ngay từ khi bắt đầu học
                                                 với các audio do chính người bản xứ đọc.
                                             </p>
                                             <a class="monkey-color-gray monkey-f-bold cursor"
@@ -402,19 +398,19 @@
                                     <h5 class="mb-3">
                                         <a class="monkey-f-bold monkey-fz-18 monkey-color-green d-block d-md-none custom-text-title-2 /loi-ich/lo-trinh-hoc-bai-ban-cua-monkey-junior-giup-toi-uu-thoi-gian-hoc-va-giup-be-hoc-hieu-qua-hon.html"
                                            href="">Lộ
-                                            trình học bài bản của Monkey Junior giúp tối ưu thời gian học và giúp bé học
+                                            trình học bài bản của E&K giúp tối ưu thời gian học và giúp bé học
                                             hiệu quả hơn</a>
                                     </h5>
                                     <div class="media parents-share-media">
                                         <div class="mr-3 media-image effect-hover-circle ">
-                                            <img data-src="https://media.monkeyuni.com/upload/web/storage_web/01-11-2020_16:18:08_LI1_thumb.jpg" class=" lazy" alt="#"/>
+                                            <img data-src="{{asset('/images/anh4-loiich.PNG')}}" class=" lazy" alt="#"/>
 
                                         </div>
                                         <div class="media-body columns-2-4">
                                             <h5 class="mt-0 monkey-f-bold monkey-fz-18 custom-text-title-2 d-none d-md-block">
                                                 <a class="/loi-ich/lo-trinh-hoc-bai-ban-cua-monkey-junior-giup-toi-uu-thoi-gian-hoc-va-giup-be-hoc-hieu-qua-hon.html"
                                                    href="">Lộ
-                                                    trình học bài bản của Monkey Junior giúp tối ưu thời gian học và
+                                                    trình học bài bản của E&K giúp tối ưu thời gian học và
                                                     giúp bé học hiệu quả hơn</a>
 
                                             </h5>
@@ -442,10 +438,7 @@
                                     <div
                                         class="media parents-share-media">
                                         <div class="mr-3 media-image effect-hover-circle ">
-                                            <img
-                                                data-src="https://media.monkeyuni.com/upload/web/storage_web/01-11-2020_16:45:56_LI4_thumb.jpg"
-                                                class=" lazy" alt="#"
-                                            />
+                                            <img src="{{asset('/images/anh5-loiich.PNG')}}" alt="#"/>
 
                                         </div>
                                         <div class="media-body columns-2-4">
@@ -597,7 +590,7 @@
                                                     vấn trong thời gian sớm nhất!</strong></p>
                                         </div>
                                         <div class="mt-2 text-center">
-                                            <a href="#" class="btn rounded-pill  monkey-color-white monkey-bg-green"
+                                            <a href="/coming-soon" class="btn rounded-pill  monkey-color-white monkey-bg-green"
                                                data-dismiss=modal>
                                                 Hoàn thành
                                             </a>
@@ -624,7 +617,7 @@
                                                 mẹ vui lòng thử lại nhé!
                                         </div>
                                         <div class="mt-2 text-center">
-                                            <a href="#" class="btn rounded-pill  monkey-color-white monkey-bg-red"
+                                            <a href="/coming-soon" class="btn rounded-pill  monkey-color-white monkey-bg-red"
                                                data-dismiss=modal>
                                                 Đồng ý
                                             </a>
@@ -710,26 +703,21 @@
                 <div class="contact-content text-center">
                     <ul class="list-inline monkey-color-white ">
                         <li class="list-inline-item border-line monkey-f-bold text-left mb-2 monkey-color-white"><a x-apple-data-detectors="true">Hotline: 1900 1508</a></li>
-                        <li class="list-inline-item d-lg-none d-block monkey-fz-12 monkey-f-regular text-left mb-2">[7h00 - 22h00 các ngày trong tuần]</li>
-                        <li class="list-inline-item monkey-f-bold">englistkist@k&e.com</li>
-                        <li>
-                            <span class="email monkey-fz-12 monkey-f-regular d-lg-block d-none">[7h00 - 22h00 các ngày trong tuần]</span>
-                        </li>
                     </ul>
 
                     <ul class="list-inline">
                         <li class="list-inline-item cursor">
-                            <a class="size-icon-title monkey-bg-white distance-center rounded-circle" href="https://www.facebook.com/groups/donghanhcungconhocmonkey?utm_source=Brand&amp;utm_medium=middlefooter&amp;utm_campaign=Inbound&amp;utm_content=Chi" target="_blank">
+                            <a class="size-icon-title monkey-bg-white distance-center rounded-circle" href="/coming-soon" target="_blank">
                                 <i class="icon-monkey-share monkey-color-green monkey-fz-18"></i>
                             </a>
                         </li>
                         <li class="list-inline-item cursor">
-                            <a class="size-icon-title monkey-bg-white distance-center rounded-circle" href="https://www.youtube.com/user/monkeyjuniorapps?utm_source=Brand&amp;utm_medium=topfooter&amp;utm_campaign=Inbound&amp;utm_content=Chi" target="_blank">
+                            <a class="size-icon-title monkey-bg-white distance-center rounded-circle" href="/coming-soon" target="_blank">
                                 <i class="icon-monkey-youtube monkey-color-green monkey-fz-18"></i>
                             </a>
                         </li>
                         <li class="list-inline-item cursor">
-                            <a class="size-icon-title monkey-bg-white distance-center rounded-circle" href="https://www.facebook.com/Monkey.edu.vn?utm_source=Brand&amp;utm_medium=topfooterMJ&amp;utm_campaign=Inbound&amp;utm_content=Chi" target="_blank">
+                            <a class="size-icon-title monkey-bg-white distance-center rounded-circle" href="/coming-soon" target="_blank">
                                 <i class="icon-monkey-face monkey-color-green monkey-fz-18"></i>
                             </a>
                         </li>
@@ -740,9 +728,9 @@
                         <div class="col-lg-10 col-xl-9">
                             <div class="footer-group-body pt-3 pb-3 d-flex justify-content-center align-items-center border monkey-bc-white">
                                 <div class="monkey-fz-14 monkey-f-medium footer-group-text">
-                                    Cộng đồng hơn 140.000 ba mẹ thông thái <span class="monkey-f-bold monkey-fz-16">Đồng hành cùng con học Monkey:</span>
+                                    Cộng đồng hơn 140.000 ba mẹ thông thái <span class="monkey-f-bold monkey-fz-16">Đồng hành cùng con học E&K:</span>
                                 </div>
-                                <a target="_blank" href="https://www.facebook.com/groups/donghanhcungconhocmonkey?utm_source=Brand&amp;utm_medium=middlefooter&amp;utm_campaign=Inbound&amp;utm_content=Chi" class="hvr-icon-registration ml-md-3 btn monkey-bc-white rounded-pill monkey-color-white monkey-fz-14 monkey-f-bold">
+                                <a target="_blank" href="" class="hvr-icon-registration ml-md-3 btn monkey-bc-white rounded-pill monkey-color-white monkey-fz-14 monkey-f-bold">
                                     THAM GIA NGAY</a>
                             </div>
                         </div>
@@ -751,27 +739,27 @@
                 </div>
                 <div class="monkey-f-bold footer-item monkey-color-white d-block d-lg-flex">
 
-                    <a class="monkey-color-white mr-lg-3 ml-ld-3 d-flex" href="https://www.monkeyvietnam.online/daily?utm_source=Brand&amp;utm_medium=topfooter&amp;utm_campaign=Inbound&amp;utm_content=Chi" target="_blank">
+                    <a class="monkey-color-white mr-lg-3 ml-ld-3 d-flex" href="/coming-soon" target="_blank">
                         <span class="mr-2">	●</span>
                         <span>Đăng ký Đại lý</span>
                     </a>
-                    <a class="monkey-color-white mr-lg-3 ml-ld-3 d-flex" href="https://www.monkey.edu.vn/active-account.html?utm_source=Brand&amp;utm_medium=topfooter&amp;utm_campaign=Inbound&amp;utm_content=Chi" target="_blank">
+                    <a class="monkey-color-white mr-lg-3 ml-ld-3 d-flex" href="/coming-soon" target="_blank">
                         <span class="mr-2">	●</span>
                         <span>Kích hoạt tài khoản</span>
                     </a>
-                    <a class="monkey-color-white mr-lg-3 ml-ld-3 d-flex" href="http://tuyendung.monkey.edu.vn/?utm_source=Brand&amp;utm_medium=topfooter&amp;utm_campaign=Inbound&amp;utm_content=Chi" target="_blank">
+                    <a class="monkey-color-white mr-lg-3 ml-ld-3 d-flex" href="/coming-soon" target="_blank">
                         <span class="mr-2">	●</span>
                         <span>Tuyển dụng</span>
                     </a>
-                    <a class="monkey-color-white mr-lg-3 ml-ld-3 d-flex" href="https://www.monkeyjunior.vn/tai-tu-dong.html?app_id=2" target="_blank">
+                    <a class="monkey-color-white mr-lg-3 ml-ld-3 d-flex" href="/coming-soon" target="_blank">
                         <span class="mr-2">	●</span>
                         <span>Tải App</span>
                     </a>
-                    <a class="monkey-color-white mr-lg-3 ml-ld-3 d-flex" href="https://www.monkey.edu.vn/tin-tuc/chinh-sach-bao-mat.html" target="_self">
+                    <a class="monkey-color-white mr-lg-3 ml-ld-3 d-flex" href="/coming-soon" target="_self">
                         <span class="mr-2">	●</span>
                         <span>Chính sách bảo mật</span>
                     </a>
-                    <a class="monkey-color-white mr-lg-3 ml-ld-3 d-flex" href="https://www.monkey.edu.vn/tin-tuc/dieu-khoan-su-dung.html" target="_blank">
+                    <a class="monkey-color-white mr-lg-3 ml-ld-3 d-flex" href="/coming-soon" target="_blank">
                         <span class="mr-2">	●</span>
                         <span>Điều khoản sử dụng</span>
                     </a>
@@ -786,16 +774,11 @@
                         <div class="col-lg-11">
                             <div class="row justify-content-end">
                                 <div class="col-lg-9 monkey-f-regular monkey-color-white text-center">
-                                    <p class="monkey-fz-12"></p><p class="monkey-fz-12">© 2020 - Bản quyền của Công Ty Cổ phần Early Start</p>
-
-                                    <p class="monkey-fz-12">Trụ sở chính: Tầng 2, Tòa nhà FS, TTTM TNR Gold Season, số 47 Nguyễn Tuân, P. Thanh Xuân Trung, Q. Thanh Xuân, TP. Hà Nội</p>
-
-                                    <p class="monkey-fz-12 monkey-color-white">Giấy phép DKKD số <a x-apple-data-detectors="true">0106651756</a> do Sở Kế hoạch và Đầu tư TP Hà Nội cấp. Ngày cấp: 01/10/2014</p><p></p>
+                                    <p class="monkey-fz-12"></p><p class="monkey-fz-12">© 2021 - Bản quyền của T2009A-Dev4Fun</p>
                                 </div>
                                 <div class="col-lg-2 d-lg-block d-none">
                                     <a href="http://www.online.gov.vn/Home/WebDetails/40473" alt="#">
                                         <img data-src="https://monkeymedia.vcdn.com.vn/upload/web/background-web/logo-footer" class="img-certification lazy" alt="#">
-
                                     </a>
                                 </div>
                             </div>

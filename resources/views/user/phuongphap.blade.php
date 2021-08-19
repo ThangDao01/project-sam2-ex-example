@@ -9,7 +9,7 @@
     <meta name="keyword" content="">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="apple-touch-icon" href="https://www.monkeyjunior.vn/apple-touch-icon.png">
+    <link rel="icon" href="{{asset('images/logo-ek-title.png')}}">
     <script>
         window.addEventListener('load',function(){
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -97,7 +97,7 @@
                         </li>
                         <li class="nav-item distance-center d-desktop">
                             <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homems_menu_registration',
-                            'eventAction': 'Click', 'eventLabel': 'menu MS dang ky'})" class="btn monkey-color-green monkey-bc-green rounded-pill monkey-f-bold distance-center hvr-icon-registration-white" href="https://www.monkeyjunior.vn/bang-gia.html">
+                            'eventAction': 'Click', 'eventLabel': 'menu MS dang ky'})" class="btn monkey-color-green monkey-bc-green rounded-pill monkey-f-bold distance-center hvr-icon-registration-white" href="/coming-soon">
                                 <i class="icon-lang rounded-circle icon-monkey-registration monkey-fz-18 mr-1 distance-center"></i>Đăng ký
                             </a>
                         </li>
@@ -153,8 +153,6 @@
         }
     </script>
     <div class = "body-bottom" >
-        <div class="btn-shop-cart mb-4"><a href="https://www.monkey.edu.vn/cart/cartStep1">
-                <i class="btn-shop-cart icon-monkey-shop-cart-bottom monkey-fz-25 monkey-color-white monkey-bg-green distance-center cursor"></i></a></div>
         <div class = "go-top" >
             <div class = "go-top-body" >
                 <a
@@ -229,10 +227,10 @@
                                 >
                                     <li class="breadcrumb-item ">
                                         <a class="monkey-f-medium text-uppercase"
-                                           href="https://www.monkey.edu.vn/">Trang chủ</a>
+                                           href="/home">Trang chủ</a>
                                     </li>
                                     <li class="breadcrumb-item active ">
-                                        <a href="https://www.monkey.edu.vn#"
+                                        <a href="#"
                                            class="monkey-f-bold text-uppercase"> Phương pháp</a>
                                     </li>
                                 </ol>
@@ -301,31 +299,27 @@
 
                                 <div class="manual-content-item border-bottom pb-3 mb-3">
                                     <h5 class="mb-3">
-                                        <a class="monkey-f-bold monkey-fz-18 monkey-color-green d-block d-md-none custom-text-title-2 /phuong-phap/monkey-junior-ap-dung-phuong-phap-trao-the-nhanh-glenn-doman-nhu-the-nao.html" href="/phuong-phap/monkey-junior-ap-dung-phuong-phap-trao-the-nhanh-glenn-doman-nhu-the-nao.html">Monkey Junior áp dụng phương pháp tráo thẻ nhanh Glenn Doman như thế nào?</a>
+                                        <a class="monkey-f-bold monkey-fz-18 monkey-color-green d-block d-md-none custom-text-title-2 /phuong-phap/monkey-junior-ap-dung-phuong-phap-trao-the-nhanh-glenn-doman-nhu-the-nao.html" href="/coming-soon">E&K áp dụng phương pháp tráo thẻ nhanh Glenn Doman như thế nào?</a>
                                     </h5>
                                     <div
                                         class="media parents-share-media"
                                     >
                                         <div class="mr-3 media-image effect-hover-circle ">
-                                            <img
-                                                data-src = "https://media.monkeyuni.com/upload/web/storage_web/31-10-2020_17:40:28_PP1_thumb.jpg"
-                                                class = " lazy" alt = "#"
-                                            />
-
+                                            <img src = "{{asset('/images/rectangle-41.png')}}" alt = "#"/>
                                         </div>
                                         <div class="media-body columns-2-4">
                                             <h5
                                                 class="mt-0 monkey-f-bold monkey-fz-18 custom-text-title-2 d-none d-md-block"
                                             >
-                                                <a class="/phuong-phap/monkey-junior-ap-dung-phuong-phap-trao-the-nhanh-glenn-doman-nhu-the-nao.html" href="/phuong-phap/monkey-junior-ap-dung-phuong-phap-trao-the-nhanh-glenn-doman-nhu-the-nao.html" >Monkey Junior áp dụng phương pháp tráo thẻ nhanh Glenn Doman như thế nào?</a>
+                                                <a class="/phuong-phap/monkey-junior-ap-dung-phuong-phap-trao-the-nhanh-glenn-doman-nhu-the-nao.html" href="/coming-soon" >E&K áp dụng phương pháp tráo thẻ nhanh Glenn Doman như thế nào?</a>
 
                                             </h5>
                                             <p
                                                 class="monkey-f-medium monkey-color-gray mb-4 text-justify custom-text-box-6 "
                                             >
-                                                Tiên phong tại Việt Nam trong việc sử dụng các phương pháp giáo dục sớm vào việc dạy học tiếng Anh cho trẻ em, Monkey Junior sẽ giúp ba mẹ áp dụng Glenn Doman - một trong những phương pháp giáo dục sớm nổi tiếng nhất một cách dễ dàng, đúng cách với chi phí bình dân để giúp trẻ...
+                                                Tiên phong tại Việt Nam trong việc sử dụng các phương pháp giáo dục sớm vào việc dạy học tiếng Anh cho trẻ em, E&K sẽ giúp ba mẹ áp dụng Glenn Doman - một trong những phương pháp giáo dục sớm nổi tiếng nhất một cách dễ dàng, đúng cách với chi phí bình dân để giúp trẻ...
                                             </p>
-                                            <a class="monkey-color-gray monkey-f-bold cursor" href="/phuong-phap/monkey-junior-ap-dung-phuong-phap-trao-the-nhanh-glenn-doman-nhu-the-nao.html"> Chi tiết</a>
+                                            <a class="monkey-color-gray monkey-f-bold cursor" href="/coming-soon"> Chi tiết</a>
                                         </div>
                                     </div>
 
@@ -333,32 +327,28 @@
                                 </div>
                                 <div class="manual-content-item border-bottom pb-3 mb-3">
                                     <h5 class="mb-3">
-                                        <a class="monkey-f-bold monkey-fz-18 monkey-color-green d-block d-md-none custom-text-title-2 /phuong-phap/phuong-phap-phonics-kich-thich-toi-da-tu-duy-va-tiem-nang-cua-nao-trai.html" href="/phuong-phap/phuong-phap-phonics-kich-thich-toi-da-tu-duy-va-tiem-nang-cua-nao-trai.html">Phương pháp Phonics kích thích tối đa tư duy và tiềm năng của não trái</a>
+                                        <a class="monkey-f-bold monkey-fz-18 monkey-color-green d-block d-md-none custom-text-title-2 /phuong-phap/phuong-phap-phonics-kich-thich-toi-da-tu-duy-va-tiem-nang-cua-nao-trai.html" href="/coming-soon">Phương pháp Phonics kích thích tối đa tư duy và tiềm năng của não trái</a>
                                     </h5>
                                     <div
                                         class="media parents-share-media"
                                     >
                                         <div class="mr-3 media-image effect-hover-circle ">
-                                            <img
-                                                data-src = "https://media.monkeyuni.com/upload/web/storage_web/01-11-2020_09:47:55_PP2_thumb.jpg"
-                                                class = " lazy" alt = "#"
-                                            />
-
+                                            <img src = "{{asset('/images/rectangle-42.png')}}" alt = "#"/>
                                         </div>
                                         <div class="media-body columns-2-4">
                                             <h5
                                                 class="mt-0 monkey-f-bold monkey-fz-18 custom-text-title-2 d-none d-md-block"
                                             >
-                                                <a class="/phuong-phap/phuong-phap-phonics-kich-thich-toi-da-tu-duy-va-tiem-nang-cua-nao-trai.html" href="/phuong-phap/phuong-phap-phonics-kich-thich-toi-da-tu-duy-va-tiem-nang-cua-nao-trai.html" >Phương pháp Phonics kích thích tối đa tư duy và tiềm năng của não trái</a>
+                                                <a class="/phuong-phap/phuong-phap-phonics-kich-thich-toi-da-tu-duy-va-tiem-nang-cua-nao-trai.html" href="/coming-soon" >Phương pháp Phonics kích thích tối đa tư duy và tiềm năng của não trái</a>
 
                                             </h5>
                                             <p
                                                 class="monkey-f-medium monkey-color-gray mb-4 text-justify custom-text-box-6 "
                                             >
-                                                Phương pháp phonics dạy trẻ bóc tách từ ngữ để tập đánh vần. Việc kết hợp phương pháp Phonics với các phương pháp Glenn Doman một cách&nbsp;nhịp nhàng trong Monkey Junior&nbsp;mang lại hiệu quả tối đa&nbsp;cho trẻ mới bắt đầu học tiếng Anh.&nbsp;
+                                                Phương pháp phonics dạy trẻ bóc tách từ ngữ để tập đánh vần. Việc kết hợp phương pháp Phonics với các phương pháp Glenn Doman một cách&nbsp;nhịp nhàng trong E&K&nbsp;mang lại hiệu quả tối đa&nbsp;cho trẻ mới bắt đầu học tiếng Anh.&nbsp;
                                                 &nbsp;
                                             </p>
-                                            <a class="monkey-color-gray monkey-f-bold cursor" href="/phuong-phap/phuong-phap-phonics-kich-thich-toi-da-tu-duy-va-tiem-nang-cua-nao-trai.html"> Chi tiết</a>
+                                            <a class="monkey-color-gray monkey-f-bold cursor" href="/coming-soon"> Chi tiết</a>
                                         </div>
                                     </div>
 
@@ -366,23 +356,20 @@
                                 </div>
                                 <div class="manual-content-item border-bottom pb-3 mb-3">
                                     <h5 class="mb-3">
-                                        <a class="monkey-f-bold monkey-fz-18 monkey-color-green d-block d-md-none custom-text-title-2 /phuong-phap/phuong-phap-da-giac-quan-trong-monkey-junior-huy-dong-tat-ca-giac-quan-cua-tre-vao-bai-hoc.html" href="/phuong-phap/phuong-phap-da-giac-quan-trong-monkey-junior-huy-dong-tat-ca-giac-quan-cua-tre-vao-bai-hoc.html">Phương pháp “Đa giác quan” trong Monkey Junior - huy động tất cả giác quan của trẻ vào bài học</a>
+                                        <a class="monkey-f-bold monkey-fz-18 monkey-color-green d-block d-md-none custom-text-title-2 /phuong-phap/phuong-phap-da-giac-quan-trong-monkey-junior-huy-dong-tat-ca-giac-quan-cua-tre-vao-bai-hoc.html" href="/coming-soon">Phương pháp “Đa giác quan” trong E&K - huy động tất cả giác quan của trẻ vào bài học</a>
                                     </h5>
                                     <div
                                         class="media parents-share-media"
                                     >
                                         <div class="mr-3 media-image effect-hover-circle ">
-                                            <img
-                                                data-src = "https://media.monkeyuni.com/upload/web/storage_web/01-11-2020_10:02:24_PP3_thumb.jpg"
-                                                class = " lazy" alt = "#"
-                                            />
+                                            <img src = "{{asset('/images/rectangle-43.png')}}" alt = "#"/>
 
                                         </div>
                                         <div class="media-body columns-2-4">
                                             <h5
                                                 class="mt-0 monkey-f-bold monkey-fz-18 custom-text-title-2 d-none d-md-block"
                                             >
-                                                <a class="/phuong-phap/phuong-phap-da-giac-quan-trong-monkey-junior-huy-dong-tat-ca-giac-quan-cua-tre-vao-bai-hoc.html" href="/phuong-phap/phuong-phap-da-giac-quan-trong-monkey-junior-huy-dong-tat-ca-giac-quan-cua-tre-vao-bai-hoc.html" >Phương pháp “Đa giác quan” trong Monkey Junior - huy động tất cả giác quan của trẻ vào bài học</a>
+                                                <a class="/phuong-phap/phuong-phap-da-giac-quan-trong-monkey-junior-huy-dong-tat-ca-giac-quan-cua-tre-vao-bai-hoc.html" href="/coming-soon" >Phương pháp “Đa giác quan” trong E&K - huy động tất cả giác quan của trẻ vào bài học</a>
 
                                             </h5>
                                             <p
@@ -391,7 +378,7 @@
                                                 Phương pháp này khắc phục những hạn chế của việc học trên thiết bị di động, giúp trẻ mang tất cả các giác quan của trẻ vào bài học để trẻ được là người chủ động tiếp thu kiến thức, ghi nhớ bài học tốt hơn và yêu thích việc học hơn.&nbsp;
                                                 &nbsp;
                                             </p>
-                                            <a class="monkey-color-gray monkey-f-bold cursor" href="/phuong-phap/phuong-phap-da-giac-quan-trong-monkey-junior-huy-dong-tat-ca-giac-quan-cua-tre-vao-bai-hoc.html"> Chi tiết</a>
+                                            <a class="monkey-color-gray monkey-f-bold cursor" href="/coming-soon"> Chi tiết</a>
                                         </div>
                                     </div>
 
@@ -399,7 +386,7 @@
                                 </div>
                                 <div class="manual-content-item border-bottom pb-3 mb-3">
                                     <h5 class="mb-3">
-                                        <a class="monkey-f-bold monkey-fz-18 monkey-color-green d-block d-md-none custom-text-title-2 /phuong-phap/hieu-ve-hoc-tap-thong-qua-vui-choi-xoa-di-sai-lam-thuong-gap-trong-cach-day-con.html" href="/phuong-phap/hieu-ve-hoc-tap-thong-qua-vui-choi-xoa-di-sai-lam-thuong-gap-trong-cach-day-con.html">Hiểu về “Học tập thông qua vui chơi” - xóa đi sai lầm thường gặp trong cách dạy con</a>
+                                        <a class="monkey-f-bold monkey-fz-18 monkey-color-green d-block d-md-none custom-text-title-2 /phuong-phap/hieu-ve-hoc-tap-thong-qua-vui-choi-xoa-di-sai-lam-thuong-gap-trong-cach-day-con.html" href="/coming-soon">Hiểu về “Học tập thông qua vui chơi” - xóa đi sai lầm thường gặp trong cách dạy con</a>
                                     </h5>
                                     <div
                                         class="media parents-share-media">
@@ -411,16 +398,16 @@
                                         <div class="media-body columns-2-4">
                                             <h5
                                                 class="mt-0 monkey-f-bold monkey-fz-18 custom-text-title-2 d-none d-md-block">
-                                                <a class="/phuong-phap/hieu-ve-hoc-tap-thong-qua-vui-choi-xoa-di-sai-lam-thuong-gap-trong-cach-day-con.html" href="/phuong-phap/hieu-ve-hoc-tap-thong-qua-vui-choi-xoa-di-sai-lam-thuong-gap-trong-cach-day-con.html"
+                                                <a class="/phuong-phap/hieu-ve-hoc-tap-thong-qua-vui-choi-xoa-di-sai-lam-thuong-gap-trong-cach-day-con.html" href="/coming-soon"
                                                 >Hiểu về “Học tập thông qua vui chơi” - xóa đi sai lầm thường gặp trong cách dạy con</a>
 
                                             </h5>
                                             <p class="monkey-f-medium monkey-color-gray mb-4 text-justify custom-text-box-6 ">
                                                 “Liệu con có thực sự học được gì không, hay con chỉ đang chơi đùa?”. Có lẽ đây là câu hỏi của nhiều
                                                 ba mẹ chưa hiểu rõ về phương pháp đã được các nền giáo dục tiên tiến trên
-                                                thế giới áp dụng từ lâu: “học tập thông qua vui chơi” (play-based learning”). Thông qua bài viết này, Monkey...
+                                                thế giới áp dụng từ lâu: “học tập thông qua vui chơi” (play-based learning”). Thông qua bài viết này, E&K...
                                             </p>
-                                            <a class="monkey-color-gray monkey-f-bold cursor" href="/phuong-phap/hieu-ve-hoc-tap-thong-qua-vui-choi-xoa-di-sai-lam-thuong-gap-trong-cach-day-con.html">
+                                            <a class="monkey-color-gray monkey-f-bold cursor" href="/coming-soon">
                                                 Chi tiết</a>
                                         </div>
                                     </div>
@@ -445,7 +432,7 @@
                                 </div>
                                 <div class="box-registration-footer">
                                     <a style="min-width: 9.375rem" class="monkey-color-white monkey-bg-sunshine btn rounded-pill distance-center"
-                                       href="https://www.monkeyjunior.vn/bang-gia.html">
+                                       href="/coming-soon">
                                         Đăng ký ngay
                                     </a>
                                 </div>
@@ -461,158 +448,99 @@
         <div class="monkey-bg-green title text-center monkey-pt-20 monkey-pb-20 text-uppercase monkey-color-white monkey-fz-30 monkey-f-header">Liên hệ</div>
         <div class="footer-body monkey-bg-green monkey-pt-25 monkey-pb-25">
             <div class="container-fluid container-xl">
-                <div class = "contact-content text-center" >
-                    <ul class = "list-inline monkey-color-white " >
-                        <li class = "list-inline-item border-line monkey-f-bold text-left mb-2 monkey-color-white" ><a
-                                x-apple-data-detectors = "true" >Hotline: 1900 1508</a ></li >
-                        <li class = "list-inline-item d-lg-none d-block monkey-fz-12 monkey-f-regular text-left mb-2" >[7h00 - 22h00 các ngày trong tuần]</li >
-                        <li class = "list-inline-item monkey-f-bold" >englist@e&k.com</li >
-                        <li >
-                            <span class = "email monkey-fz-12 monkey-f-regular d-lg-block d-none" >[7h00 - 22h00 các ngày trong tuần]</span >
-                        </li >
-                    </ul >
+                <div class="contact-content text-center">
+                    <ul class="list-inline monkey-color-white ">
+                        <li class="list-inline-item border-line monkey-f-bold text-left mb-2 monkey-color-white"><a x-apple-data-detectors="true">Hotline: 1900 1508</a></li>
+                    </ul>
 
-                    <ul class = "list-inline" >
-                        <li class = "list-inline-item cursor" >
-                            <a class = "size-icon-title monkey-bg-white distance-center rounded-circle"
-                               href = "https://www.facebook.com/groups/donghanhcungconhocmonkey?utm_source=Brand&utm_medium=middlefooter&utm_campaign=Inbound&utm_content=Chi"
-                               target = "_blank" >
-                                <i class = "icon-monkey-share monkey-color-green monkey-fz-18" ></i >
-                            </a >
-                        </li >
-                        <li class = "list-inline-item cursor" >
-                            <a class = "size-icon-title monkey-bg-white distance-center rounded-circle"
-                               href = "https://www.youtube.com/user/monkeyjuniorapps?utm_source=Brand&utm_medium=topfooter&utm_campaign=Inbound&utm_content=Chi"
-                               target = "_blank" >
-                                <i class = "icon-monkey-youtube monkey-color-green monkey-fz-18" ></i >
-                            </a >
-                        </li >
-                        <li class = "list-inline-item cursor" >
-                            <a class = "size-icon-title monkey-bg-white distance-center rounded-circle"
-                               href = "https://www.facebook.com/Monkey.edu.vn?utm_source=Brand&utm_medium=topfooterMJ&utm_campaign=Inbound&utm_content=Chi"
-                               target = "_blank" >
-                                <i class = "icon-monkey-face monkey-color-green monkey-fz-18" ></i >
-                            </a >
-                        </li >
-                    </ul >
-                </div >
-                <div class = "footer-group mt-2 mb-2 text-center monkey-color-white" >
-                    <div class = "row justify-content-center" >
-                        <div class = "col-lg-10 col-xl-9" >
-                            <div class = "footer-group-body pt-3 pb-3 d-flex justify-content-center align-items-center border monkey-bc-white" >
-                                <div class = "monkey-fz-14 monkey-f-medium footer-group-text" >
-                                    Cộng đồng hơn 140.000 ba mẹ thông thái <span class="monkey-f-bold monkey-fz-16">Đồng hành cùng con học Monkey:</span>
-                                </div >
-                                <a
+                    <ul class="list-inline">
+                        <li class="list-inline-item cursor">
+                            <a class="size-icon-title monkey-bg-white distance-center rounded-circle" href="/coming-soon" target="_blank">
+                                <i class="icon-monkey-share monkey-color-green monkey-fz-18"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item cursor">
+                            <a class="size-icon-title monkey-bg-white distance-center rounded-circle" href="/coming-soon" target="_blank">
+                                <i class="icon-monkey-youtube monkey-color-green monkey-fz-18"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item cursor">
+                            <a class="size-icon-title monkey-bg-white distance-center rounded-circle" href="/coming-soon" target="_blank">
+                                <i class="icon-monkey-face monkey-color-green monkey-fz-18"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-group mt-2 mb-2 text-center monkey-color-white">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-10 col-xl-9">
+                            <div class="footer-group-body pt-3 pb-3 d-flex justify-content-center align-items-center border monkey-bc-white">
+                                <div class="monkey-fz-14 monkey-f-medium footer-group-text">
+                                    Cộng đồng hơn 140.000 ba mẹ thông thái <span class="monkey-f-bold monkey-fz-16">Đồng hành cùng con học E&K:</span>
+                                </div>
+                                <a target="_blank" href="" class="hvr-icon-registration ml-md-3 btn monkey-bc-white rounded-pill monkey-color-white monkey-fz-14 monkey-f-bold">
+                                    THAM GIA NGAY</a>
+                            </div>
+                        </div>
+                    </div>
 
+                </div>
+                <div class="monkey-f-bold footer-item monkey-color-white d-block d-lg-flex">
 
-
-                                    target="_blank"
-                                    href = "https://www.facebook.com/groups/donghanhcungconhocmonkey?utm_source=Brand&utm_medium=middlefooter&utm_campaign=Inbound&utm_content=Chi"
-                                    class = "hvr-icon-registration ml-md-3 btn monkey-bc-white rounded-pill monkey-color-white monkey-fz-14 monkey-f-bold" >
-                                    THAM GIA NGAY</a >
-                            </div >
-                        </div >
-                    </div >
-
-                </div >
-                <div class = "monkey-f-bold footer-item monkey-color-white d-block d-lg-flex" >
-
-                    <a class = "monkey-color-white mr-lg-3 ml-ld-3 d-flex"
-
-
-
-                       href = "https://www.monkeyvietnam.online/daily?utm_source=Brand&utm_medium=topfooter&utm_campaign=Inbound&utm_content=Chi"
-                       target = "_blank" >
-                        <span class = "mr-2" >	&#9679;</span >
-                        <span >Đăng ký Đại lý</span >
-                    </a >
-                    <a class = "monkey-color-white mr-lg-3 ml-ld-3 d-flex"
-
-
-
-                       href = "https://www.monkey.edu.vn/active-account.html?utm_source=Brand&utm_medium=topfooter&utm_campaign=Inbound&utm_content=Chi"
-                       target = "_blank" >
-                        <span class = "mr-2" >	&#9679;</span >
-                        <span >Kích hoạt tài khoản</span >
-                    </a >
-                    <a class = "monkey-color-white mr-lg-3 ml-ld-3 d-flex"
-
-
-
-                       href = "http://tuyendung.monkey.edu.vn/?utm_source=Brand&utm_medium=topfooter&utm_campaign=Inbound&utm_content=Chi"
-                       target = "_blank" >
-                        <span class = "mr-2" >	&#9679;</span >
-                        <span >Tuyển dụng</span >
-                    </a >
-                    <a class = "monkey-color-white mr-lg-3 ml-ld-3 d-flex"
-
-
-
-                       href = "https://www.monkeyjunior.vn/tai-tu-dong.html?app_id=2"
-                       target = "_blank" >
-                        <span class = "mr-2" >	&#9679;</span >
-                        <span >Tải App</span >
-                    </a >
-                    <a class = "monkey-color-white mr-lg-3 ml-ld-3 d-flex"
-
-
-
-                       href = "https://www.monkey.edu.vn/tin-tuc/chinh-sach-bao-mat.html"
-                       target = "_self" >
-                        <span class = "mr-2" >	&#9679;</span >
-                        <span >Chính sách bảo mật</span >
-                    </a >
-                    <a class = "monkey-color-white mr-lg-3 ml-ld-3 d-flex"
-
-
-
-                       href = "https://www.monkey.edu.vn/tin-tuc/dieu-khoan-su-dung.html"
-                       target = "_blank" >
-                        <span class = "mr-2" >	&#9679;</span >
-                        <span >Điều khoản sử dụng</span >
-                    </a >
-                    <a href = "http://www.online.gov.vn/Home/WebDetails/40473" alt = "#">
-                        <img
-                            data-src = "https://monkeymedia.vcdn.com.vn/upload/web/background-web/logo-footer"
-                            class = "img-certification d-block d-lg-none lazy" alt = "#"
-                        />
+                    <a class="monkey-color-white mr-lg-3 ml-ld-3 d-flex" href="/coming-soon" target="_blank">
+                        <span class="mr-2">	●</span>
+                        <span>Đăng ký Đại lý</span>
+                    </a>
+                    <a class="monkey-color-white mr-lg-3 ml-ld-3 d-flex" href="/coming-soon" target="_blank">
+                        <span class="mr-2">	●</span>
+                        <span>Kích hoạt tài khoản</span>
+                    </a>
+                    <a class="monkey-color-white mr-lg-3 ml-ld-3 d-flex" href="/coming-soon" target="_blank">
+                        <span class="mr-2">	●</span>
+                        <span>Tuyển dụng</span>
+                    </a>
+                    <a class="monkey-color-white mr-lg-3 ml-ld-3 d-flex" href="/coming-soon" target="_blank">
+                        <span class="mr-2">	●</span>
+                        <span>Tải App</span>
+                    </a>
+                    <a class="monkey-color-white mr-lg-3 ml-ld-3 d-flex" href="/coming-soon" target="_self">
+                        <span class="mr-2">	●</span>
+                        <span>Chính sách bảo mật</span>
+                    </a>
+                    <a class="monkey-color-white mr-lg-3 ml-ld-3 d-flex" href="/coming-soon" target="_blank">
+                        <span class="mr-2">	●</span>
+                        <span>Điều khoản sử dụng</span>
+                    </a>
+                    <a href="http://www.online.gov.vn/Home/WebDetails/40473" alt="#">
+                        <img data-src="https://monkeymedia.vcdn.com.vn/upload/web/background-web/logo-footer" class="img-certification d-block d-lg-none lazy" alt="#">
 
                     </a>
 
-                </div >
-                <div class = "address-content monkey-pt-20 monkey-pb-20 mt-3 mb-3" >
-                    <div class = "row justify-content-center" >
-                        <div class = "col-lg-11" >
-                            <div class = "row justify-content-end" >
-                                <div class = "col-lg-9 monkey-f-regular monkey-color-white text-center" >
-                                    <p class = "monkey-fz-12" ><p class="monkey-fz-12">© 2020 - Bản quyền của Công Ty Cổ phần Early Start</p>
-
-                                    <p class="monkey-fz-12">Trụ sở chính: Tầng 2, Tòa nhà FS, TTTM TNR Gold Season, số 47 Nguyễn Tuân, P. Thanh Xuân Trung, Q. Thanh Xuân, TP. Hà Nội</p>
-
-                                    <p class="monkey-fz-12 monkey-color-white">Giấy phép DKKD số <a x-apple-data-detectors="true">0106651756</a> do Sở Kế hoạch và Đầu tư TP Hà Nội cấp. Ngày cấp: 01/10/2014</p></p >
-                                </div >
-                                <div class = "col-lg-2 d-lg-block d-none" >
-                                    <a href = "http://www.online.gov.vn/Home/WebDetails/40473" alt = "#" >
-                                        <img
-                                            data-src = "https://monkeymedia.vcdn.com.vn/upload/web/background-web/logo-footer"
-                                            class = "img-certification lazy" alt = "#"
-                                        />
-
-                                    </a >
-                                </div >
-                            </div >
-                        </div >
-                    </div >
-                </div >
-                <div class = "row justify-content-center" >
-                    <div class = "col-lg-11" >
-                        <div class = "seo-body text-center monkey-color-white" >
-                            <ul class = "list-inline monkey-f-regular monkey-fz-12" >
-                            </ul >
-                        </div >
-                    </div >
-                </div >
+                </div>
+                <div class="address-content monkey-pt-20 monkey-pb-20 mt-3 mb-3">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-11">
+                            <div class="row justify-content-end">
+                                <div class="col-lg-9 monkey-f-regular monkey-color-white text-center">
+                                    <p class="monkey-fz-12"></p><p class="monkey-fz-12">© 2021 - Bản quyền của T2009A-Dev4Fun</p>
+                                </div>
+                                <div class="col-lg-2 d-lg-block d-none">
+                                    <a href="http://www.online.gov.vn/Home/WebDetails/40473" alt="#">
+                                        <img data-src="https://monkeymedia.vcdn.com.vn/upload/web/background-web/logo-footer" class="img-certification lazy" alt="#">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-11">
+                        <div class="seo-body text-center monkey-color-white">
+                            <ul class="list-inline monkey-f-regular monkey-fz-12">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </div>
