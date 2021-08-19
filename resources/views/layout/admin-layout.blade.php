@@ -384,8 +384,155 @@
                                 </a>
                                 <ul class="nav nav-children">
                                     <li>
-                                        <a href="/admin/data-support">
+                                        <a href="/admin/data-support/create">
                                             Data Support
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="nav nav-children">
+                                    <li>
+                                        <a href="/admin/data-support/list">
+                                            Data list
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-parent">
+                                <a>
+                                    <i class="fa fa-copy" aria-hidden="true"></i>
+                                    <span>Tracking</span>
+                                </a>
+                                <ul class="nav nav-children">
+                                    <li>
+                                        <a href="/admin/tracking/create">
+                                            Tracking Create
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="nav nav-children">
+                                    <li>
+                                        <a href="/admin/tracking/list">
+                                            Tracking list
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-parent">
+                                <a>
+                                    <i class="fa fa-copy" aria-hidden="true"></i>
+                                    <span>Course</span>
+                                </a>
+                                <ul class="nav nav-children">
+                                    <li>
+                                        <a href="/admin/course/create">
+                                            Course create
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="nav nav-children">
+                                    <li>
+                                        <a href="/admin/course/list">
+                                            Course list
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-parent">
+                                <a>
+                                    <i class="fa fa-copy" aria-hidden="true"></i>
+                                    <span>Account</span>
+                                </a>
+                                <ul class="nav nav-children">
+                                    <li>
+                                        <a href="/admin/account/create">
+                                            account create
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="nav nav-children">
+                                    <li>
+                                        <a href="/admin/account/list">
+                                            account list
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-parent">
+                                <a>
+                                    <i class="fa fa-copy" aria-hidden="true"></i>
+                                    <span>Article</span>
+                                </a>
+                                <ul class="nav nav-children">
+                                    <li>
+                                        <a href="/admin/article/create">
+                                            article create
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="nav nav-children">
+                                    <li>
+                                        <a href="/admin/article/list">
+                                            article list
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-parent">
+                                <a>
+                                    <i class="fa fa-copy" aria-hidden="true"></i>
+                                    <span>Lesson</span>
+                                </a>
+                                <ul class="nav nav-children">
+                                    <li>
+                                        <a href="/admin/lesson/create">
+                                            lesson create
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="nav nav-children">
+                                    <li>
+                                        <a href="/admin/lesson/list">
+                                            lesson list
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-parent">
+                                <a>
+                                    <i class="fa fa-copy" aria-hidden="true"></i>
+                                    <span>feedback</span>
+                                </a>
+                                <ul class="nav nav-children">
+                                    <li>
+                                        <a href="/admin/feedback/create">
+                                            feedback create
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="nav nav-children">
+                                    <li>
+                                        <a href="/admin/feedback/list">
+                                            feedback list
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-parent">
+                                <a>
+                                    <i class="fa fa-copy" aria-hidden="true"></i>
+                                    <span>Material</span>
+                                </a>
+                                <ul class="nav nav-children">
+                                    <li>
+                                        <a href="/admin/material/create">
+                                            material create
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="nav nav-children">
+                                    <li>
+                                        <a href="/admin/material/list">
+                                            material list
                                         </a>
                                     </li>
                                 </ul>
