@@ -22,7 +22,7 @@ class CreateDataSupportsTable extends Migration
             $table->string('voice_en');
             $table->string('images');
             $table->string('key');
-            $table->string('createBy');
+            $table->integer('createByID');
             $table->timestamps();
         });
     }

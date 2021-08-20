@@ -1,778 +1,388 @@
 @extends('layout.admin-layout')
+@section('title')
+    Admin
+@endsection
 @section('detail')
-    <section role="main" class="content-body">
-        <header class="page-header">
-            <h2>Dashboard</h2>
-
-            <div class="right-wrapper pull-right">
-                <ol class="breadcrumbs">
-                    <li>
-                        <a href="index.html">
-                            <i class="fa fa-home"></i>
-                        </a>
-                    </li>
-                    <li><span>Dashboard</span></li>
-                </ol>
-
-                <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
-            </div>
-        </header>
-
-        <div class="row">
-            <div class="col-md-6">
-                <section class="panel">
-                    <header class="panel-heading">
-                        <div class="panel-actions">
-                            <a href="#" class="fa fa-caret-down"></a>
-                            <a href="#" class="fa fa-times"></a>
+        <section class="wrapper">
+            <!-- //market-->
+            <div class="market-updates">
+                <div class="col-md-3 market-update-gd">
+                    <div class="market-update-block clr-block-2">
+                        <div class="col-md-4 market-update-right">
+                            <i class="fa fa-eye"> </i>
                         </div>
-
-                        <h2 class="panel-title">Best Seller</h2>
-                        <p class="panel-subtitle">Customize the graphs as much as you want, there are so many options and features to display information using JSOFT Admin Template.</p>
-                    </header>
-                    <div class="panel-body">
-
-                        <!-- Flot: Basic -->
-                        <div class="chart chart-md" id="flotDashBasic"></div>
-                        <script>
-
-                            var flotDashBasicData = [{
-                                data: [
-                                    [0, 170],
-                                    [1, 169],
-                                    [2, 173],
-                                    [3, 188],
-                                    [4, 147],
-                                    [5, 113],
-                                    [6, 128],
-                                    [7, 169],
-                                    [8, 173],
-                                    [9, 128],
-                                    [10, 128]
-                                ],
-                                label: "Series 1",
-                                color: "#0088cc"
-                            }, {
-                                data: [
-                                    [0, 115],
-                                    [1, 124],
-                                    [2, 114],
-                                    [3, 121],
-                                    [4, 115],
-                                    [5, 83],
-                                    [6, 102],
-                                    [7, 148],
-                                    [8, 147],
-                                    [9, 103],
-                                    [10, 113]
-                                ],
-                                label: "Series 2",
-                                color: "#2baab1"
-                            }, {
-                                data: [
-                                    [0, 70],
-                                    [1, 69],
-                                    [2, 73],
-                                    [3, 88],
-                                    [4, 47],
-                                    [5, 13],
-                                    [6, 28],
-                                    [7, 69],
-                                    [8, 73],
-                                    [9, 28],
-                                    [10, 28]
-                                ],
-                                label: "Series 3",
-                                color: "#734ba9"
-                            }];
-
-                            // See: assets/javascripts/dashboard/examples.dashboard.js for more settings.
-
-                        </script>
-
-                    </div>
-                </section>
-            </div>
-            <div class="col-md-6">
-                <section class="panel">
-                    <header class="panel-heading">
-                        <div class="panel-actions">
-                            <a href="#" class="fa fa-caret-down"></a>
-                            <a href="#" class="fa fa-times"></a>
+                        <div class="col-md-8 market-update-left">
+                            <h4>Visitors</h4>
+                            <h3>13,500</h3>
+                            <p>Other hand, we denounce</p>
                         </div>
-                        <h2 class="panel-title">Server Usage</h2>
-                        <p class="panel-subtitle">It's easy to create custom graphs on JSOFT Admin Template, there are several graph types that you can use, such as lines, bars, pie charts, etc...</p>
-                    </header>
-                    <div class="panel-body">
-
-                        <!-- Flot: Curves -->
-                        <div class="chart chart-md" id="flotDashRealTime"></div>
-
+                        <div class="clearfix"></div>
                     </div>
-                </section>
+                </div>
+                <div class="col-md-3 market-update-gd">
+                    <div class="market-update-block clr-block-1">
+                        <div class="col-md-4 market-update-right">
+                            <i class="fa fa-users"></i>
+                        </div>
+                        <div class="col-md-8 market-update-left">
+                            <h4>Users</h4>
+                            <h3>1,250</h3>
+                            <p>Other hand, we denounce</p>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div class="col-md-3 market-update-gd">
+                    <div class="market-update-block clr-block-3">
+                        <div class="col-md-4 market-update-right">
+                            <i class="fa fa-usd"></i>
+                        </div>
+                        <div class="col-md-8 market-update-left">
+                            <h4>Sales</h4>
+                            <h3>1,500</h3>
+                            <p>Other hand, we denounce</p>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div class="col-md-3 market-update-gd">
+                    <div class="market-update-block clr-block-4">
+                        <div class="col-md-4 market-update-right">
+                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                        </div>
+                        <div class="col-md-8 market-update-left">
+                            <h4>Orders</h4>
+                            <h3>1,500</h3>
+                            <p>Other hand, we denounce</p>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
             </div>
-        </div>
+            <!-- //market-->
+            <div class="row">
+                <div class="panel-body">
+                    <div class="col-md-12 w3ls-graph">
+                        <!--agileinfo-grap-->
+                        <div class="agileinfo-grap">
+                            <div class="agileits-box">
+                                <header class="agileits-box-header clearfix">
+                                    <h3>Visitor Statistics</h3>
+                                    <div class="toolbar">
 
-        <!-- start: page -->
-        <div class="row">
-            <div class="col-md-6 col-lg-12 col-xl-6">
-                <section class="panel">
-                    <div class="panel-body">
-                        <div class="row">
-                            <div class="col-lg-8">
-                                <div class="chart-data-selector" id="salesSelectorWrapper">
-                                    <h2>
-                                        Sales:
-                                        <strong>
-                                            <select class="form-control" id="salesSelector">
-                                                <option value="JSOFT Admin" selected>JSOFT Admin</option>
-                                                <option value="JSOFT Drupal" >JSOFT Drupal</option>
-                                                <option value="JSOFT Wordpress" >JSOFT Wordpress</option>
-                                            </select>
-                                        </strong>
-                                    </h2>
 
-                                    <div id="salesSelectorItems" class="chart-data-selector-items mt-sm">
-                                        <!-- Flot: Sales JSOFT Admin -->
-                                        <div class="chart chart-sm" data-sales-rel="JSOFT Admin" id="flotDashSales1" class="chart-active"></div>
-                                        <script>
-
-                                            var flotDashSales1Data = [{
-                                                data: [
-                                                    ["Jan", 140],
-                                                    ["Feb", 240],
-                                                    ["Mar", 190],
-                                                    ["Apr", 140],
-                                                    ["May", 180],
-                                                    ["Jun", 320],
-                                                    ["Jul", 270],
-                                                    ["Aug", 180]
-                                                ],
-                                                color: "#0088cc"
-                                            }];
-
-                                            // See: assets/javascripts/dashboard/examples.dashboard.js for more settings.
-
-                                        </script>
-
-                                        <!-- Flot: Sales JSOFT Drupal -->
-                                        <div class="chart chart-sm" data-sales-rel="JSOFT Drupal" id="flotDashSales2" class="chart-hidden"></div>
-                                        <script>
-
-                                            var flotDashSales2Data = [{
-                                                data: [
-                                                    ["Jan", 240],
-                                                    ["Feb", 240],
-                                                    ["Mar", 290],
-                                                    ["Apr", 540],
-                                                    ["May", 480],
-                                                    ["Jun", 220],
-                                                    ["Jul", 170],
-                                                    ["Aug", 190]
-                                                ],
-                                                color: "#2baab1"
-                                            }];
-
-                                            // See: assets/javascripts/dashboard/examples.dashboard.js for more settings.
-
-                                        </script>
-
-                                        <!-- Flot: Sales JSOFT Wordpress -->
-                                        <div class="chart chart-sm" data-sales-rel="JSOFT Wordpress" id="flotDashSales3" class="chart-hidden"></div>
-                                        <script>
-
-                                            var flotDashSales3Data = [{
-                                                data: [
-                                                    ["Jan", 840],
-                                                    ["Feb", 740],
-                                                    ["Mar", 690],
-                                                    ["Apr", 940],
-                                                    ["May", 1180],
-                                                    ["Jun", 820],
-                                                    ["Jul", 570],
-                                                    ["Aug", 780]
-                                                ],
-                                                color: "#734ba9"
-                                            }];
-
-                                            // See: assets/javascripts/dashboard/examples.dashboard.js for more settings.
-
-                                        </script>
                                     </div>
-
-                                </div>
-                            </div>
-                            <div class="col-lg-4 text-center">
-                                <h2 class="panel-title mt-md">Sales Goal</h2>
-                                <div class="liquid-meter-wrapper liquid-meter-sm mt-lg">
-                                    <div class="liquid-meter">
-                                        <meter min="0" max="100" value="35" id="meterSales"></meter>
-                                    </div>
-                                    <div class="liquid-meter-selector" id="meterSalesSel">
-                                        <a href="#" data-val="35" class="active">Monthly Goal</a>
-                                        <a href="#" data-val="28">Annual Goal</a>
-                                    </div>
+                                </header>
+                                <div class="agileits-box-body clearfix">
+                                    <div id="hero-area"></div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </section>
-            </div>
-            <div class="col-md-6 col-lg-12 col-xl-6">
-                <div class="row">
-                    <div class="col-md-12 col-lg-6 col-xl-6">
-                        <section class="panel panel-featured-left panel-featured-primary">
-                            <div class="panel-body">
-                                <div class="widget-summary">
-                                    <div class="widget-summary-col widget-summary-col-icon">
-                                        <div class="summary-icon bg-primary">
-                                            <i class="fa fa-life-ring"></i>
-                                        </div>
-                                    </div>
-                                    <div class="widget-summary-col">
-                                        <div class="summary">
-                                            <h4 class="title">Support Questions</h4>
-                                            <div class="info">
-                                                <strong class="amount">1281</strong>
-                                                <span class="text-primary">(14 unread)</span>
-                                            </div>
-                                        </div>
-                                        <div class="summary-footer">
-                                            <a class="text-muted text-uppercase">(view all)</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-                    <div class="col-md-12 col-lg-6 col-xl-6">
-                        <section class="panel panel-featured-left panel-featured-secondary">
-                            <div class="panel-body">
-                                <div class="widget-summary">
-                                    <div class="widget-summary-col widget-summary-col-icon">
-                                        <div class="summary-icon bg-secondary">
-                                            <i class="fa fa-usd"></i>
-                                        </div>
-                                    </div>
-                                    <div class="widget-summary-col">
-                                        <div class="summary">
-                                            <h4 class="title">Total Profit</h4>
-                                            <div class="info">
-                                                <strong class="amount">$ 14,890.30</strong>
-                                            </div>
-                                        </div>
-                                        <div class="summary-footer">
-                                            <a class="text-muted text-uppercase">(withdraw)</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-                    <div class="col-md-12 col-lg-6 col-xl-6">
-                        <section class="panel panel-featured-left panel-featured-tertiary">
-                            <div class="panel-body">
-                                <div class="widget-summary">
-                                    <div class="widget-summary-col widget-summary-col-icon">
-                                        <div class="summary-icon bg-tertiary">
-                                            <i class="fa fa-shopping-cart"></i>
-                                        </div>
-                                    </div>
-                                    <div class="widget-summary-col">
-                                        <div class="summary">
-                                            <h4 class="title">Today's Orders</h4>
-                                            <div class="info">
-                                                <strong class="amount">38</strong>
-                                            </div>
-                                        </div>
-                                        <div class="summary-footer">
-                                            <a class="text-muted text-uppercase">(statement)</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-                    <div class="col-md-12 col-lg-6 col-xl-6">
-                        <section class="panel panel-featured-left panel-featured-quartenary">
-                            <div class="panel-body">
-                                <div class="widget-summary">
-                                    <div class="widget-summary-col widget-summary-col-icon">
-                                        <div class="summary-icon bg-quartenary">
-                                            <i class="fa fa-user"></i>
-                                        </div>
-                                    </div>
-                                    <div class="widget-summary-col">
-                                        <div class="summary">
-                                            <h4 class="title">Today's Visitors</h4>
-                                            <div class="info">
-                                                <strong class="amount">3765</strong>
-                                            </div>
-                                        </div>
-                                        <div class="summary-footer">
-                                            <a class="text-muted text-uppercase">(report)</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
+                        <!--//agileinfo-grap-->
+
                     </div>
                 </div>
             </div>
-        </div>
-
-
-
-        <div class="row">
-            <div class="col-xl-3 col-lg-6">
-                <section class="panel panel-transparent">
-                    <header class="panel-heading">
-                        <div class="panel-actions">
-                            <a href="#" class="fa fa-caret-down"></a>
-                            <a href="#" class="fa fa-times"></a>
+            <div class="agil-info-calendar">
+                <!-- calendar -->
+                <div class="col-md-6 agile-calendar">
+                    <div class="calendar-widget">
+                        <div class="panel-heading ui-sortable-handle">
+					<span class="panel-icon">
+                      <i class="fa fa-calendar-o"></i>
+                    </span>
+                            <span class="panel-title"> Calendar Widget</span>
                         </div>
+                        <!-- grids -->
+                        <div class="agile-calendar-grid">
+                            <div class="page">
 
-                        <h2 class="panel-title">My Profile</h2>
-                    </header>
-                    <div class="panel-body">
-                        <section class="panel panel-group">
-                            <header class="panel-heading bg-primary">
+                                <div class="w3l-calendar-left">
+                                    <div class="calendar-heading">
 
-                                <div class="widget-profile-info">
-                                    <div class="profile-picture">
-                                        <img src="assets/images/!logged-user.jpg">
                                     </div>
-                                    <div class="profile-info">
-                                        <h4 class="name text-semibold">John Doe</h4>
-                                        <h5 class="role">Administrator</h5>
-                                        <div class="profile-footer">
-                                            <a href="#">(edit profile)</a>
-                                        </div>
-                                    </div>
+                                    <div class="monthly" id="mycalendar"></div>
                                 </div>
 
-                            </header>
-                            <div id="accordion">
-                                <div class="panel panel-accordion panel-accordion-first">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title">
-                                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse1One">
-                                                <i class="fa fa-check"></i> Tasks
-                                            </a>
-                                        </h4>
-                                    </div>
-                                    <div id="collapse1One" class="accordion-body collapse in">
-                                        <div class="panel-body">
-                                            <ul class="widget-todo-list">
-                                                <li>
-                                                    <div class="checkbox-custom checkbox-default">
-                                                        <input type="checkbox" checked="" id="todoListItem1" class="todo-check">
-                                                        <label class="todo-label" for="todoListItem1"><span>Lorem ipsum dolor sit amet</span></label>
-                                                    </div>
-                                                    <div class="todo-actions">
-                                                        <a class="todo-remove" href="#">
-                                                            <i class="fa fa-times"></i>
-                                                        </a>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="checkbox-custom checkbox-default">
-                                                        <input type="checkbox" id="todoListItem2" class="todo-check">
-                                                        <label class="todo-label" for="todoListItem2"><span>Lorem ipsum dolor sit amet</span></label>
-                                                    </div>
-                                                    <div class="todo-actions">
-                                                        <a class="todo-remove" href="#">
-                                                            <i class="fa fa-times"></i>
-                                                        </a>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="checkbox-custom checkbox-default">
-                                                        <input type="checkbox" id="todoListItem3" class="todo-check">
-                                                        <label class="todo-label" for="todoListItem3"><span>Lorem ipsum dolor sit amet</span></label>
-                                                    </div>
-                                                    <div class="todo-actions">
-                                                        <a class="todo-remove" href="#">
-                                                            <i class="fa fa-times"></i>
-                                                        </a>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="checkbox-custom checkbox-default">
-                                                        <input type="checkbox" id="todoListItem4" class="todo-check">
-                                                        <label class="todo-label" for="todoListItem4"><span>Lorem ipsum dolor sit amet</span></label>
-                                                    </div>
-                                                    <div class="todo-actions">
-                                                        <a class="todo-remove" href="#">
-                                                            <i class="fa fa-times"></i>
-                                                        </a>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="checkbox-custom checkbox-default">
-                                                        <input type="checkbox" id="todoListItem5" class="todo-check">
-                                                        <label class="todo-label" for="todoListItem5"><span>Lorem ipsum dolor sit amet</span></label>
-                                                    </div>
-                                                    <div class="todo-actions">
-                                                        <a class="todo-remove" href="#">
-                                                            <i class="fa fa-times"></i>
-                                                        </a>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="checkbox-custom checkbox-default">
-                                                        <input type="checkbox" id="todoListItem6" class="todo-check">
-                                                        <label class="todo-label" for="todoListItem6"><span>Lorem ipsum dolor sit amet</span></label>
-                                                    </div>
-                                                    <div class="todo-actions">
-                                                        <a class="todo-remove" href="#">
-                                                            <i class="fa fa-times"></i>
-                                                        </a>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                            <hr class="solid mt-sm mb-lg">
-                                            <form method="get" class="form-horizontal form-bordered">
-                                                <div class="form-group">
-                                                    <div class="col-sm-12">
-                                                        <div class="input-group mb-md">
-                                                            <input type="text" class="form-control">
-                                                            <div class="input-group-btn">
-                                                                <button type="button" class="btn btn-primary" tabindex="-1">Add</button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="panel panel-accordion">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title">
-                                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse1Two">
-                                                <i class="fa fa-comment"></i> Messages
-                                            </a>
-                                        </h4>
-                                    </div>
-                                    <div id="collapse1Two" class="accordion-body collapse">
-                                        <div class="panel-body">
-                                            <ul class="simple-user-list mb-xlg">
-                                                <li>
-                                                    <figure class="image rounded">
-                                                        <img src="assets/images/!sample-user.jpg" alt="Joseph Doe Junior" class="img-circle">
-                                                    </figure>
-                                                    <span class="title">Joseph Doe Junior</span>
-                                                    <span class="message">Lorem ipsum dolor sit.</span>
-                                                </li>
-                                                <li>
-                                                    <figure class="image rounded">
-                                                        <img src="assets/images/!sample-user.jpg" alt="Joseph Junior" class="img-circle">
-                                                    </figure>
-                                                    <span class="title">Joseph Junior</span>
-                                                    <span class="message">Lorem ipsum dolor sit.</span>
-                                                </li>
-                                                <li>
-                                                    <figure class="image rounded">
-                                                        <img src="assets/images/!sample-user.jpg" alt="Joe Junior" class="img-circle">
-                                                    </figure>
-                                                    <span class="title">Joe Junior</span>
-                                                    <span class="message">Lorem ipsum dolor sit.</span>
-                                                </li>
-                                                <li>
-                                                    <figure class="image rounded">
-                                                        <img src="assets/images/!sample-user.jpg" alt="Joseph Doe Junior" class="img-circle">
-                                                    </figure>
-                                                    <span class="title">Joseph Doe Junior</span>
-                                                    <span class="message">Lorem ipsum dolor sit.</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //calendar -->
+                <div class="col-md-6 w3agile-notifications">
+                    <div class="notifications">
+                        <!--notification start-->
+
+                        <header class="panel-heading">
+                            Notification
+                        </header>
+                        <div class="notify-w3ls">
+                            <div class="alert alert-info clearfix">
+                                <span class="alert-icon"><i class="fa fa-envelope-o"></i></span>
+                                <div class="notification-info">
+                                    <ul class="clearfix notification-meta">
+                                        <li class="pull-left notification-sender"><span><a
+                                                    href="/coming-soon">Jonathan Smith</a></span> send you a mail
+                                        </li>
+                                        <li class="pull-right notification-time">1 min ago</li>
+                                    </ul>
+                                    <p>
+                                        Urgent meeting for next proposal
+                                    </p>
                                 </div>
                             </div>
-                        </section>
+                            <div class="alert alert-danger">
+                                <span class="alert-icon"><i class="fa fa-facebook"></i></span>
+                                <div class="notification-info">
+                                    <ul class="clearfix notification-meta">
+                                        <li class="pull-left notification-sender"><span><a
+                                                    href="/coming-soon">Jonathan Smith</a></span> mentioned you in a
+                                            post
+                                        </li>
+                                        <li class="pull-right notification-time">7 Hours Ago</li>
+                                    </ul>
+                                    <p>
+                                        Very cool photo jack
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="alert alert-success ">
+                                <span class="alert-icon"><i class="fa fa-comments-o"></i></span>
+                                <div class="notification-info">
+                                    <ul class="clearfix notification-meta">
+                                        <li class="pull-left notification-sender">You have 5 message unread</li>
+                                        <li class="pull-right notification-time">1 min ago</li>
+                                    </ul>
+                                    <p>
+                                        <a href="/coming-soon">Anjelina Mewlo, Jack Flip</a> and <a href="/coming-soon">3
+                                            others</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="alert alert-warning ">
+                                <span class="alert-icon"><i class="fa fa-bell-o"></i></span>
+                                <div class="notification-info">
+                                    <ul class="clearfix notification-meta">
+                                        <li class="pull-left notification-sender">Domain Renew Deadline 7 days ahead
+                                        </li>
+                                        <li class="pull-right notification-time">5 Days Ago</li>
+                                    </ul>
+                                    <p>
+                                        Next 5 July Thursday is the last day
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="alert alert-info clearfix">
+                                <span class="alert-icon"><i class="fa fa-envelope-o"></i></span>
+                                <div class="notification-info">
+                                    <ul class="clearfix notification-meta">
+                                        <li class="pull-left notification-sender"><span><a
+                                                    href="/coming-soon">Jonathan Smith</a></span> send you a mail
+                                        </li>
+                                        <li class="pull-right notification-time">1 min ago</li>
+                                    </ul>
+                                    <p>
+                                        Urgent meeting for next proposal
+                                    </p>
+                                </div>
+                            </div>
 
+                        </div>
+
+                        <!--notification end-->
                     </div>
-                </section>
+                </div>
+                <div class="clearfix"></div>
             </div>
-            <div class="col-xl-3 col-lg-6">
-                <section class="panel panel-transparent">
-                    <header class="panel-heading">
-                        <div class="panel-actions">
-                            <a href="#" class="fa fa-caret-down"></a>
-                            <a href="#" class="fa fa-times"></a>
+            <!-- tasks -->
+            <div class="agile-last-grids">
+                <div class="col-md-4 agile-last-left">
+                    <div class="agile-last-grid">
+                        <div class="area-grids-heading">
+                            <h3>Monthly</h3>
                         </div>
+                        <div id="graph7"></div>
+                        <script>
+                            // This crosses a DST boundary in the UK.
+                            Morris.Area({
+                                element: 'graph7',
+                                data: [
+                                    {x: '2013-03-30 22:00:00', y: 3, z: 3},
+                                    {x: '2013-03-31 00:00:00', y: 2, z: 0},
+                                    {x: '2013-03-31 02:00:00', y: 0, z: 2},
+                                    {x: '2013-03-31 04:00:00', y: 4, z: 4}
+                                ],
+                                xkey: 'x',
+                                ykeys: ['y', 'z'],
+                                labels: ['Y', 'Z']
+                            });
+                        </script>
 
-                        <h2 class="panel-title">My Stats</h2>
-                    </header>
-                    <div class="panel-body">
-                        <section class="panel">
-                            <div class="panel-body">
-                                <div class="small-chart pull-right" id="sparklineBarDash"></div>
-                                <script type="text/javascript">
-                                    var sparklineBarDashData = [5, 6, 7, 2, 0, 4 , 2, 4, 2, 0, 4 , 2, 4, 2, 0, 4];
-                                </script>
-                                <div class="h4 text-bold mb-none">488</div>
-                                <p class="text-xs text-muted mb-none">Average Profile Visits</p>
-                            </div>
-                        </section>
-                        <section class="panel">
-                            <div class="panel-body">
-                                <div class="circular-bar circular-bar-xs m-none mt-xs mr-md pull-right">
-                                    <div class="circular-bar-chart" data-percent="45" data-plugin-options='{ "barColor": "#2baab1", "delay": 300, "size": 50, "lineWidth": 4 }'>
-                                        <strong>Average</strong>
-                                        <label><span class="percent">45</span>%</label>
-                                    </div>
-                                </div>
-                                <div class="h4 text-bold mb-none">12</div>
-                                <p class="text-xs text-muted mb-none">Working Projects</p>
-                            </div>
-                        </section>
-                        <section class="panel">
-                            <div class="panel-body">
-                                <div class="small-chart pull-right" id="sparklineLineDash"></div>
-                                <script type="text/javascript">
-                                    var sparklineLineDashData = [15, 16, 17, 19, 10, 15, 13, 12, 12, 14, 16, 17];
-                                </script>
-                                <div class="h4 text-bold mb-none">89</div>
-                                <p class="text-xs text-muted mb-none">Pending Tasks</p>
-                            </div>
-                        </section>
                     </div>
-                </section>
-                <section class="panel">
-                    <header class="panel-heading">
-                        <div class="panel-actions">
-                            <a href="#" class="fa fa-caret-down"></a>
-                            <a href="#" class="fa fa-times"></a>
+                </div>
+                <div class="col-md-4 agile-last-left agile-last-middle">
+                    <div class="agile-last-grid">
+                        <div class="area-grids-heading">
+                            <h3>Daily</h3>
                         </div>
+                        <div id="graph8"></div>
+                        <script>
+                            /* data stolen from http://howmanyleft.co.uk/vehicle/jaguar_'e'_type */
+                            var day_data = [
+                                {"period": "2016-10-01", "licensed": 3407, "sorned": 660},
+                                {"period": "2016-09-30", "licensed": 3351, "sorned": 629},
+                                {"period": "2016-09-29", "licensed": 3269, "sorned": 618},
+                                {"period": "2016-09-20", "licensed": 3246, "sorned": 661},
+                                {"period": "2016-09-19", "licensed": 3257, "sorned": 667},
+                                {"period": "2016-09-18", "licensed": 3248, "sorned": 627},
+                                {"period": "2016-09-17", "licensed": 3171, "sorned": 660},
+                                {"period": "2016-09-16", "licensed": 3171, "sorned": 676},
+                                {"period": "2016-09-15", "licensed": 3201, "sorned": 656},
+                                {"period": "2016-09-10", "licensed": 3215, "sorned": 622}
+                            ];
+                            Morris.Bar({
+                                element: 'graph8',
+                                data: day_data,
+                                xkey: 'period',
+                                ykeys: ['licensed', 'sorned'],
+                                labels: ['Licensed', 'SORN'],
+                                xLabelAngle: 60
+                            });
+                        </script>
+                    </div>
+                </div>
+                <div class="col-md-4 agile-last-left agile-last-right">
+                    <div class="agile-last-grid">
+                        <div class="area-grids-heading">
+                            <h3>Yearly</h3>
+                        </div>
+                        <div id="graph9"></div>
+                        <script>
+                            var day_data = [
+                                {"elapsed": "I", "value": 34},
+                                {"elapsed": "II", "value": 24},
+                                {"elapsed": "III", "value": 3},
+                                {"elapsed": "IV", "value": 12},
+                                {"elapsed": "V", "value": 13},
+                                {"elapsed": "VI", "value": 22},
+                                {"elapsed": "VII", "value": 5},
+                                {"elapsed": "VIII", "value": 26},
+                                {"elapsed": "IX", "value": 12},
+                                {"elapsed": "X", "value": 19}
+                            ];
+                            Morris.Line({
+                                element: 'graph9',
+                                data: day_data,
+                                xkey: 'elapsed',
+                                ykeys: ['value'],
+                                labels: ['value'],
+                                parseTime: false
+                            });
+                        </script>
 
-                        <h2 class="panel-title">
-                            <span class="label label-primary label-sm text-normal va-middle mr-sm">198</span>
-                            <span class="va-middle">Friends</span>
-                        </h2>
-                    </header>
-                    <div class="panel-body">
-                        <div class="content">
-                            <ul class="simple-user-list">
-                                <li>
-                                    <figure class="image rounded">
-                                        <img src="assets/images/!sample-user.jpg" alt="Joseph Doe Junior" class="img-circle">
-                                    </figure>
-                                    <span class="title">Joseph Doe Junior</span>
-                                    <span class="message truncate">Lorem ipsum dolor sit.</span>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <!-- //tasks -->
+            <div class="agileits-w3layouts-stats">
+                <div class="col-md-4 stats-info widget">
+                    <div class="stats-info-agileits">
+                        <div class="stats-title">
+                            <h4 class="title">Browser Stats</h4>
+                        </div>
+                        <div class="stats-body">
+                            <ul class="list-unstyled">
+                                <li>GoogleChrome <span class="pull-right">85%</span>
+                                    <div class="progress progress-striped active progress-right">
+                                        <div class="bar green" style="width:85%;') }}"></div>
+                                    </div>
                                 </li>
-                                <li>
-                                    <figure class="image rounded">
-                                        <img src="assets/images/!sample-user.jpg" alt="Joseph Junior" class="img-circle">
-                                    </figure>
-                                    <span class="title">Joseph Junior</span>
-                                    <span class="message truncate">Lorem ipsum dolor sit.</span>
+                                <li>Firefox <span class="pull-right">35%</span>
+                                    <div class="progress progress-striped active progress-right">
+                                        <div class="bar yellow" style="width:35%;') }}"></div>
+                                    </div>
                                 </li>
-                                <li>
-                                    <figure class="image rounded">
-                                        <img src="assets/images/!sample-user.jpg" alt="Joe Junior" class="img-circle">
-                                    </figure>
-                                    <span class="title">Joe Junior</span>
-                                    <span class="message truncate">Lorem ipsum dolor sit.</span>
+                                <li>Internet Explorer <span class="pull-right">78%</span>
+                                    <div class="progress progress-striped active progress-right">
+                                        <div class="bar red" style="width:78%;') }}"></div>
+                                    </div>
+                                </li>
+                                <li>Safari <span class="pull-right">50%</span>
+                                    <div class="progress progress-striped active progress-right">
+                                        <div class="bar blue" style="width:50%;') }}"></div>
+                                    </div>
+                                </li>
+                                <li>Opera <span class="pull-right">80%</span>
+                                    <div class="progress progress-striped active progress-right">
+                                        <div class="bar light-blue" style="width:80%;') }}"></div>
+                                    </div>
+                                </li>
+                                <li class="last">Others <span class="pull-right">60%</span>
+                                    <div class="progress progress-striped active progress-right">
+                                        <div class="bar orange" style="width:60%;') }}"></div>
+                                    </div>
                                 </li>
                             </ul>
-                            <hr class="dotted short">
-                            <div class="text-right">
-                                <a class="text-uppercase text-muted" href="#">(View All)</a>
-                            </div>
                         </div>
                     </div>
-                    <div class="panel-footer">
-                        <div class="input-group input-search">
-                            <input type="text" class="form-control" name="q" id="q" placeholder="Search...">
-                            <span class="input-group-btn">
-											<button class="btn btn-default" type="submit"><i class="fa fa-search"></i>
-											</button>
-										</span>
-                        </div>
+                </div>
+                <div class="col-md-8 stats-info stats-last widget-shadow">
+                    <div class="stats-last-agile">
+                        <table class="table stats-table ">
+                            <thead>
+                            <tr>
+                                <th>S.NO</th>
+                                <th>PRODUCT</th>
+                                <th>STATUS</th>
+                                <th>PROGRESS</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Lorem ipsum</td>
+                                <td><span class="label label-success">In progress</span></td>
+                                <td><h5>85% <i class="fa fa-level-up"></i></h5></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Aliquam</td>
+                                <td><span class="label label-warning">New</span></td>
+                                <td><h5>35% <i class="fa fa-level-up"></i></h5></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Lorem ipsum</td>
+                                <td><span class="label label-danger">Overdue</span></td>
+                                <td><h5 class="down">40% <i class="fa fa-level-down"></i></h5></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td>Aliquam</td>
+                                <td><span class="label label-info">Out of stock</span></td>
+                                <td><h5>100% <i class="fa fa-level-up"></i></h5></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">5</th>
+                                <td>Lorem ipsum</td>
+                                <td><span class="label label-success">In progress</span></td>
+                                <td><h5 class="down">10% <i class="fa fa-level-down"></i></h5></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">6</th>
+                                <td>Aliquam</td>
+                                <td><span class="label label-warning">New</span></td>
+                                <td><h5>38% <i class="fa fa-level-up"></i></h5></td>
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
-                </section>
+                </div>
+                <div class="clearfix"></div>
             </div>
-            <div class="col-xl-6 col-lg-12">
-                <section class="panel">
-                    <header class="panel-heading panel-heading-transparent">
-                        <div class="panel-actions">
-                            <a href="#" class="fa fa-caret-down"></a>
-                            <a href="#" class="fa fa-times"></a>
-                        </div>
-
-                        <h2 class="panel-title">Company Activity</h2>
-                    </header>
-                    <div class="panel-body">
-                        <div class="timeline timeline-simple mt-xlg mb-md">
-                            <div class="tm-body">
-                                <div class="tm-title">
-                                    <h3 class="h5 text-uppercase">November 2013</h3>
-                                </div>
-                                <ol class="tm-items">
-                                    <li>
-                                        <div class="tm-box">
-                                            <p class="text-muted mb-none">7 months ago.</p>
-                                            <p>
-                                                It's awesome when we find a good solution for our projects, JSOFT Admin is <span class="text-primary">#awesome</span>
-                                            </p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="tm-box">
-                                            <p class="text-muted mb-none">7 months ago.</p>
-                                            <p>
-                                                Checkout! How cool is that!
-                                            </p>
-                                            <div class="thumbnail-gallery">
-                                                <a class="img-thumbnail lightbox" href="assets/images/projects/project-4.jpg" data-plugin-options='{ "type":"image" }'>
-                                                    <img class="img-responsive" width="215" src="assets/images/projects/project-4.jpg">
-                                                    <span class="zoom">
-																	<i class="fa fa-search"></i>
-																</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ol>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-6 col-md-12">
-                <section class="panel panel-transparent">
-                    <header class="panel-heading">
-                        <div class="panel-actions">
-                            <a href="#" class="fa fa-caret-down"></a>
-                            <a href="#" class="fa fa-times"></a>
-                        </div>
-
-                        <h2 class="panel-title">Global Stats</h2>
-                    </header>
-                    <div class="panel-body">
-                        <div id="vectorMapWorld" style="height: 350px; width: 100%;"></div>
-                    </div>
-                </section>
-            </div>
-            <div class="col-lg-6 col-md-12">
-                <section class="panel">
-                    <header class="panel-heading panel-heading-transparent">
-                        <div class="panel-actions">
-                            <a href="#" class="fa fa-caret-down"></a>
-                            <a href="#" class="fa fa-times"></a>
-                        </div>
-
-                        <h2 class="panel-title">Projects Stats</h2>
-                    </header>
-                    <div class="panel-body">
-                        <div class="table-responsive">
-                            <table class="table table-striped mb-none">
-                                <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Project</th>
-                                    <th>Status</th>
-                                    <th>Progress</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>JSOFT - Responsive HTML5 Template</td>
-                                    <td><span class="label label-success">Success</span></td>
-                                    <td>
-                                        <div class="progress progress-sm progress-half-rounded m-none mt-xs light">
-                                            <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
-                                                100%
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>JSOFT - Responsive Drupal 7 Theme</td>
-                                    <td><span class="label label-success">Success</span></td>
-                                    <td>
-                                        <div class="progress progress-sm progress-half-rounded m-none mt-xs light">
-                                            <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
-                                                100%
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Tucson - Responsive HTML5 Template</td>
-                                    <td><span class="label label-warning">Warning</span></td>
-                                    <td>
-                                        <div class="progress progress-sm progress-half-rounded m-none mt-xs light">
-                                            <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                                                60%
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>Tucson - Responsive Business WordPress Theme</td>
-                                    <td><span class="label label-success">Success</span></td>
-                                    <td>
-                                        <div class="progress progress-sm progress-half-rounded m-none mt-xs light">
-                                            <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
-                                                90%
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td>JSOFT - Responsive Admin HTML5 Template</td>
-                                    <td><span class="label label-warning">Warning</span></td>
-                                    <td>
-                                        <div class="progress progress-sm progress-half-rounded m-none mt-xs light">
-                                            <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 45%;">
-                                                45%
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>6</td>
-                                    <td>JSOFT - Responsive HTML5 Template</td>
-                                    <td><span class="label label-danger">Danger</span></td>
-                                    <td>
-                                        <div class="progress progress-sm progress-half-rounded m-none mt-xs light">
-                                            <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
-                                                40%
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>7</td>
-                                    <td>JSOFT - Responsive Drupal 7 Theme</td>
-                                    <td><span class="label label-success">Success</span></td>
-                                    <td>
-                                        <div class="progress progress-sm progress-half-rounded mt-xs light">
-                                            <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 95%;">
-                                                95%
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </div>
-        <!-- end: page -->
-    </section>
+        </section>
 
 @endsection

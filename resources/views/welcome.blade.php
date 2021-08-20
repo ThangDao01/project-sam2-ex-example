@@ -199,10 +199,6 @@
                             <div class="monkey-f-header title monkey-fz-30 text-center monkey-color-white mb-4 mt-4 d-mobile">ENGLIST KIST - TIẾNG ANH <br> CHO TRẺ MỚI BẮT ĐẦU
                             </div>
                             <div class="banner-video background-style distance-center lazyLoading" data-src="{{URL::asset('images/monkey-junior-tieng-anh-cho-tre-moi-bat-dau.png')}}" style="background-image: url('/image/monkey-junior-tieng-anh-cho-tre-moi-bat-dau.png');">
-                                <a data-fancybox="" href="https://youtu.be/C3tXhUBYJIE">
-                                    <img data-src="https://monkeymedia.vcdn.com.vn/upload/web/background-web/icon-play.svg" class="card-img-top icon-play cursor lazyLoading" alt="#" src="https://monkeymedia.vcdn.com.vn/upload/web/background-web/icon-play.svg">
-
-                                </a>
                             </div>
                         </div>
                         <div class="col-lg-6 align-items-start d-desktop">
