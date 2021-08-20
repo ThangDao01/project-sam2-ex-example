@@ -16,7 +16,14 @@ class AccountController extends Controller
     public function index()
     {
         //
-        return view('admin.Account.list' , ['list' => Account::paginate(10)]);
+
+        return view('admin.Account.list' , ['list' => Account::paginate(20)]);
+    }
+    public function loginView()
+    {
+        //
+
+        return view('admin.Account.login' , ['list' => Account::paginate(20)]);
     }
 
     /**
@@ -24,15 +31,16 @@ class AccountController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function createView()
+    public function registerView()
     {
         //
-        return view('admin.Account.create');
+        return view('admin.Account.register');
     }
 
     public function Create()
     {
         //
+
     }
 
     /**

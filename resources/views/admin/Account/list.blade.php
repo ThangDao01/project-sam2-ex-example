@@ -1,98 +1,73 @@
 @extends('layout.admin-layout')
+@section('title')
+    Account
+@endsection
 @section('detail')
-    <section role="main" class="content-body">
-        <header class="page-header">
-            <h2>Editable Tables</h2>
 
-            <div class="right-wrapper pull-right">
-                <ol class="breadcrumbs">
-                    <li>
-                        <a href="index.html">
-                            <i class="fa fa-home"></i>
-                        </a>
-                    </li>
-                    <li><span>Tables</span></li>
-                    <li><span>Editable</span></li>
-                </ol>
-
-                <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
-            </div>
-        </header>
-
-        <!-- start: page -->
-        <section class="panel">
-            <header class="panel-heading">
-                <div class="panel-actions">
-                    <a href="#" class="fa fa-caret-down"></a>
-                    <a href="#" class="fa fa-times"></a>
+    <section class="wrapper">
+        <div class="table-agile-info" style="min-height: 550px">
+            <div class="panel panel-default">
+                @if($list == null)
+                    Null table  <i class="fa fa-frown-o"></i>
+                @else()
+                <div class="panel-heading">
+                    Basic table
                 </div>
+                <div>
+                    <table class="table" ui-jq="footable" ui-options="{
+        &quot;paging&quot;: {
+          &quot;enabled&quot;: true
+        },
+        &quot;filtering&quot;: {
+          &quot;enabled&quot;: true
+        },
+        &quot;sorting&quot;: {
+          &quot;enabled&quot;: true
+        }}">
+                        <thead>
+                        <tr>
+                            <th data-breakpoints="xs">ID</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th data-breakpoints="xs sm" data-title="DOB">Email</th>
 
-                <h2 class="panel-title">Default</h2>
-            </header>
-            <div class="panel-body">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="mb-md">
+                            <th data-breakpoints="xs">Age</th>
+                            <th data-breakpoints="xs">Role</th>
+                            <th data-breakpoints="xs sm md" data-title="DOB">Status</th>
+                            <th data-breakpoints="xs sm md" data-title="DOB">Create At</th>
+                            <th data-breakpoints="xs sm md" data-title="DOB">Update At</th>
 
-                            <a href="/admin/account/create">
-                                <button id="addToTable" class="btn btn-primary">Add <i class="fa fa-plus"></i></button>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <table class="table table-bordered table-striped mb-none" id="datatable-editable">
-                    <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>FirstName</th>
-                        <th>LastName</th>
-                        <th>Email</th>
-                        <th>Password</th>
-                        <th>Salt</th>
-                        <th>Age</th>
-                        <th>RoleId</th>
-                        <th>CourseId</th>
-                        <th>Status</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-{{--                    @foreach($list as $data)--}}
-                        <tr class="gradeX">
-{{--                            <td>{{$data->Id}}</td>--}}
-{{--                            <td>{{$data->FirstName}}</td>--}}
-{{--                            <td>{{$data->LastName}}</td>--}}
-{{--                            <td>{{$data->Email}}</td>--}}
-{{--                            <td>{{$data->Password}}</td>--}}
-{{--                            <td>{{$data->Salt}}</td>--}}
-{{--                            <td>{{$data->Age}}</td>--}}
-{{--                            <td>{{$data->RoleId}}</td>--}}
-{{--                            <td>{{$data->CourseId}}</td>--}}
-{{--                            <td>{{$data->Status}}</td>--}}
-                            <td class="actions">
-                                <a href="#" class="hidden on-editing save-row"><i class="fa fa-save"></i></a>
-                                <a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a>
-                                <a href="#" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
-                                <a href="#" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
-                            </td>
                         </tr>
-{{--                    @endforeach--}}
-                    </tbody>
-                </table>
-                <div class="row datatables-footer">
-                    <div class="col-sm-12 col-md-6">
-                        <div class="dataTables_info" id="datatable-default_info" role="status" aria-live="polite">
-                            Showing 1 to 5 of 5 entries
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-6">
-                        <div class="dataTables_paginate paging_bs_normal" id="datatable-default_paginate">
-{{--                                                    {!! $list->links() !!}--}}
-                            @include('pagination.default', ['paginator' => $list])
-                        </div>
-                    </div>
+                        </thead>
+                        <tbody>
+                        @foreach($list as $account)
+                        <tr data-expanded="true">
+                            <td>{{$account->id}}</td>
+                            <td>{{$account->FirstName}}</td>
+                            <td>{{$account->LastName}}</td>
+                            <td>{{$account->Email}}</td>
+                            <td>{{$account->Age}}</td>
+                            <td>{{$account->Role}}</td>
+                            <td>{{$account->create_At}}</td>
+                            <td>{{$account->update_At}}</td>
+
+                        </tr>
+                        @endforeach
+                        <tr data-expanded="true">
+                            <td>1</td>
+                            <td>Dennise</td>
+                            <td>Fuhrman</td>
+                            <td>High School History Teacher</td>
+
+                            <td>July 25th 1960</td>
+                        </tr>
+                        </tbody>
+                    </table>
+
                 </div>
+                @endif
+
             </div>
-        </section>
-        <!-- end: page -->
+        </div>
     </section>
 @endsection

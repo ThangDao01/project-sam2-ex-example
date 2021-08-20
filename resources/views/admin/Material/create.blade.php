@@ -1,99 +1,66 @@
 @extends('layout.admin-layout')
+@section('title')
+    Material-create
+@endsection
 @section('detail')
-    <section role="main" class="content-body">
-        <header class="page-header">
-            <h2>Create Data</h2>
-
-            <div class="right-wrapper pull-right">
-                <ol class="breadcrumbs">
-                    <li>
-                        <a href="index.html">
-                            <i class="fa fa-home"></i>
-                        </a>
-                    </li>
-                    <li><span>Create Data</span></li>
-                </ol>
-
-                <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
-            </div>
-        </header>
-        <section>
-            <div class="container">
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
-                <h2>Data form</h2>
-                <form action="/admin/material/create" method="post">
-                    @csrf
-                    <div class="form-group">
-                        <label class="col-md-3 control-label" for="MaterialName"><h4>Material Name</h4></label>
-                        <div class="col-md-6">
-                            <input type="text" class="form-control" id="MaterialName" placeholder="Enter MaterialName....." name="MaterialName">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-3 control-label" for="ListData"><h4>List Data</h4></label>
-                        <div class="col-md-6">
-                            <input type="text" class="form-control" id="ListData" placeholder="Enter ListData....."
-                                   name="ListData">
-                            <div id="words_vi-demo">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-3 control-label" for="status"><h4>status</h4></label>
-                        <div class="col-md-6">
-                            <input type="text" class="form-control" id="status" placeholder="Enter status....."
-                                   name="status">
-                            <div id="words_en-demo">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-3 control-label" for="Commit"><h4>Commit</h4></label>
-                        <div class="col-md-6">
-                            <input type="text" class="form-control" id="Commit" placeholder="Enter Commit....."
-                                   name="commit">
-                            <div id="voice_vi-demo">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-3 control-label" for="voice_en"><h4>status</h4></label>
-                        <div class="col-md-6">
-                            <input type="text" class="form-control" id="status" placeholder="Enter status....." name="status">
-                            <div id="voice_en-demo">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-3 control-label"></label>
-                        <div class="col-md-6 col-xs-11">
-                            <button class="btn btn-sm btn-primary colorpicker-element">
-                                Submit
-                            </button>
-                            <button class="btn btn-sm btn-default colorpicker-element">
-                                Reset
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-
-        </section>
-        <!-- end: page -->
+    <section class="wrapper" style="padding: 0">
     </section>
-{{--    <script>--}}
-{{--        var a = document.getElementById('images');--}}
-{{--        var demo = document.getElementById('images-demo');--}}
-{{--        a.onchange = function (){--}}
-{{--            demo.innerHTML = `<img src="/images/`+ a.files[0].name +`"  style="width: 100px;" alt="`+a.files[0].name+`">`--}}
-{{--        }--}}
-{{--    </script>--}}
+    <section class="panel" style="min-height: 550px;">
+        <p class="panel-heading">
+            Form Material-create
+        </p>
+        <div class="panel-body">
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+            <form class="form-horizontal bucket-form" method="get">
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Material Name</label>
+                    <div class="col-sm-6">
+                        <input type="text" name="material_name" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Material Location</label>
+                    <div class="col-sm-6">
+                        <input type="text" name="material_location" class="form-control" placeholder="Link">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">List Data</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" name="list-data">
+                    </div>
+                </div>
+
+                <div class="col-md-4 form-group" style="margin-left: 170px;">
+                    <label class="col-sm-3 control-label col-lg-3" for="inputSuccess">Status</label>
+                    <div class="col-lg-6">
+                        <select class="form-control m-bot15">
+                            <option value="1">Active</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-12 form-group" style="text-align: center">
+                    <button type="submit" class="btn btn-info">Submit</button>
+                    <button type="reset" class="btn btn-warning">Reset</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    {{--    <script>--}}
+    {{--        var a = document.getElementById('images');--}}
+    {{--        var demo = document.getElementById('images-demo');--}}
+    {{--        a.onchange = function (){--}}
+    {{--            demo.innerHTML = `<img src="/images/`+ a.files[0].name +`"  style="width: 100px;" alt="`+a.files[0].name+`">`--}}
+    {{--        }--}}
+    {{--    </script>--}}
+
 @endsection

@@ -15,8 +15,7 @@ class feedbackController extends Controller
     public function index()
     {
         //
-        return view('admin.FeedBack.list' , ['list' => FeedBack::paginate(10)]);
-
+        return view('admin.FeedBack.list' , ['list' => FeedBack::all()]);
     }
 
     /**

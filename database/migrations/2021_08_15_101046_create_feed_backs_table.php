@@ -15,6 +15,10 @@ class CreateFeedBacksTable extends Migration
     {
         Schema::create('feed_backs', function (Blueprint $table) {
             $table->id();
+            $table->integer('AccountID');
+            $table->string('Message');
+            $table->integer('Vote');
+            $table->boolean('Seen');
             $table->timestamps();
         });
     }
