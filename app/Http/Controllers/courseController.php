@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\courseRequest;
 use App\Models\Course;
 use Illuminate\Http\Request;
 
@@ -27,9 +28,10 @@ class courseController extends Controller
     public function createview()
     {
         //
-        return view('admin.course.create');
+        return view('admin.Course.create');
 
     }
+
 
     /**
      * Store a newly created resource in storage.
@@ -37,9 +39,10 @@ class courseController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function create(courseRequest $request)
     {
         //
+
     }
 
     /**
@@ -62,6 +65,11 @@ class courseController extends Controller
     public function edit($id)
     {
         //
+        $obj = Course::find($id);
+        if ($obj == null){
+            return view('error.404', ['msg'=>'']);
+        }
+        return view('admin.Course.edit', ['obj'=>$obj]);
     }
 
     /**
@@ -74,6 +82,16 @@ class courseController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $request->validate(
+            [
+
+            ]
+        );
+        $obj = Course::find($id);
+        if ($obj == null){
+            return view('admin.error.404', ['msg'=>'không tìm thấy tin tức']);
+        }
+        return redirect('/admin/course/list');
     }
 
     /**
@@ -85,5 +103,11 @@ class courseController extends Controller
     public function destroy($id)
     {
         //
+        $obj = Course::find($id);
+        if ($obj == null){
+            return view('error.404', ['msg'=> 'không tìm thấy tin tức']);
+        }
+        $obj->delete();
+        return redirect('/admin/course/list');
     }
 }

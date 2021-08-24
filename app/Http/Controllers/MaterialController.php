@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Account;
+use App\Models\Material;
+use App\Models\Materinal;
 use Illuminate\Http\Request;
 
 class MaterialController extends Controller
@@ -62,6 +64,11 @@ class MaterialController extends Controller
     public function edit($id)
     {
         //
+        $obj = Material::find($id);
+        if ($obj == null){
+            return view('error.404', ['msg'=>'không tìm thấy tin tức']);
+        }
+        return view('admin.material.edit', ['obj'=>$obj]);
     }
 
     /**
@@ -74,6 +81,13 @@ class MaterialController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $request->validate([]);
+        $obj = Material::find($id);
+        if ($obj == null){
+            return view('error.404', ['msg'=>'không tìm thấy tin tức']);
+        }
+        $obj->save();
+        return redirect('/admin/material/list');
     }
 
     /**
@@ -85,5 +99,12 @@ class MaterialController extends Controller
     public function destroy($id)
     {
         //
+        $obj = Material::find($id);
+        if ($obj == null){
+            return view('error.404', ['msg'=>'không tìm thấy tin tức']);
+        }
+        $obj->delete();
+        return redirect('/admin/material/list');
+
     }
 }

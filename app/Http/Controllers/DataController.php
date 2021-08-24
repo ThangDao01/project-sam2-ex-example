@@ -49,9 +49,9 @@ class DataController extends Controller
         $request->validated();
         $obj = new DataSupport();
         $obj->values = $request->get('values');
-        $obj->words_vi = $request->get('words_vi');
+        $obj->color = $request->get('color');
         $obj->words_en = $request->get('words_en');
-        $obj->voice_vi = $request->get('voice_vi');
+        $obj->video = $request->get('video');
         $obj->voice_en = $request->get('voice_en');
         $obj->images = $request->get('images');
         $obj->key = $request->get('key');
@@ -59,6 +59,7 @@ class DataController extends Controller
         $obj->created_at = Carbon::now();
         $obj->updated_at = Carbon::now();
         Session::put('dataSupport', $obj);
+        $obj->save();
         return redirect('/admin/data-support/list');
     }
 
@@ -93,6 +94,11 @@ class DataController extends Controller
     public function edit($id)
     {
         //
+        $obj = DataSupport::find($id);
+        if ($obj == null){
+            return view('admin.error.404', ['msg'=>'không tìm thấy tin tức']);
+        }
+        return view('admin.data.edit', ['obj'=>$obj]);
     }
 
     /**
@@ -105,6 +111,30 @@ class DataController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $request->validate(
+            [
+                'values' => 'required',
+                'color' => 'required',
+                'words_en' => 'required',
+                'video' => 'required',
+                'voice_en' => 'required',
+                'images' => 'required',
+                'key' => 'required'
+            ]
+        );
+        $obj = DataSupport::find($id);
+        if ($obj == null){
+            return view('admin.error.404', ['msg'=>'không tìm thấy tin tức']);
+        }
+        $obj->values = $request->get('values');
+        $obj->color = $request->get('color');
+        $obj->words_en = $request->get('words_en');
+        $obj->video = $request->get('video');
+        $obj->voice_en = $request->get('voice_en');
+        $obj->images = $request->get('images');
+        $obj->key = $request->get('key');
+        $obj->save();
+        return redirect('/admin/data-support/list');
     }
 
     /**
@@ -116,5 +146,11 @@ class DataController extends Controller
     public function destroy($id)
     {
         //
+        $obj = DataSupport::find($id);
+        if ($obj == null){
+            return view('error.404', ['msg'=>'không tìm thấy tin tức']);
+        }
+        $obj->delete();
+        return redirect('/admin/data-support/list');
     }
 }

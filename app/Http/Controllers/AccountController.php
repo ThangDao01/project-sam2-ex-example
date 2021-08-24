@@ -74,6 +74,11 @@ class AccountController extends Controller
     public function edit($id)
     {
         //
+        $obj = Account::find($id);
+        if ($obj == null){
+            return view('error.404', ['msg'=>'không tìm thấy tin tức']);
+        }
+        return view('admin.Account.edit', ['obj' => $obj]);
     }
 
     /**
@@ -85,7 +90,16 @@ class AccountController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate(
+                    [
+                    ]
+                );
+                $obj = Account::find($id);
+                if ($obj == null){
+                    return view('admin.error.404', ['msg'=>'không tìm thấy tin tức']);
+                }
+
+                return redirect('/admin/account/list');
     }
 
     /**
@@ -97,5 +111,11 @@ class AccountController extends Controller
     public function destroy($id)
     {
         //
+        $obj = Account::find($id);
+        if ($obj == null){
+            return view('error.404',['msg'=> 'không tìm thấy tin tức']);
+        }
+        $obj->delete();
+        return redirect('admin/account/list');
     }
 }

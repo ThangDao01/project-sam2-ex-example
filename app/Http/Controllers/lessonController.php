@@ -37,7 +37,7 @@ class lessonController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function create(Request $request)
     {
         //
     }
@@ -62,6 +62,11 @@ class lessonController extends Controller
     public function edit($id)
     {
         //
+        $obj = Lesson::find($id);
+        if ($obj == null){
+            return view('error.404', ['msg'=>'không tìm thấy tin tức']);
+        }
+        return view('admin.lesson.edit', ['obj'=>$obj]);
     }
 
     /**
@@ -74,6 +79,15 @@ class lessonController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $request->validate([
+
+        ]
+        );
+        $obj = Lesson::find($id);
+        if ($obj == null){
+            return view('error.404', ['msg'=>'không tìm thấy tin tức']);
+        }
+        return redirect('admin/lesson/list');
     }
 
     /**
@@ -85,5 +99,11 @@ class lessonController extends Controller
     public function destroy($id)
     {
         //
+        $obj = Lesson::find($id);
+        if ($obj == null){
+            return view('error.404', ['msg'=>'không tìm thấy tin tức']);
+        }
+        $obj->delete();
+        return redirect('admin/lesson/list');
     }
 }

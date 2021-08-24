@@ -61,6 +61,11 @@ class feedbackController extends Controller
     public function edit($id)
     {
         //
+        $obj = FeedBack::find($id);
+        if ($obj == null){
+            return view('error.404', ['msg'=>'không tìm thấy tin tức']);
+        }
+        return view('admin.feedback.edit', ['obj'=>$obj]);
     }
 
     /**
@@ -73,6 +78,14 @@ class feedbackController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $request->validate([]);
+
+        $obj = FeedBack::find($id);
+        if ($obj == null) {
+            return view('error.404', ['msg' => 'không tìm thấy tin tức']);
+        }
+        $obj->save();
+        return redirect('/admin/feedback/list');
     }
 
     /**
@@ -84,5 +97,11 @@ class feedbackController extends Controller
     public function destroy($id)
     {
         //
+        $obj = FeedBack::find($id);
+        if ($obj == null){
+            return view('error.404', ['msg'=>'không tìm thấy tin tức']);
+        }
+        $obj->delete();
+        return redirect('/admin/feedback/list');
     }
 }
