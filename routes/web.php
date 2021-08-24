@@ -21,13 +21,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //Route::get('/voice-xyz/{id}',[DataController::class,'voice']);
+
+
+
 Route::get('/cr={idCr}',[courseController::class,'index']);
 Route::get('/cr={idCr}/ls={idLs}',[lessonController::class,'index']);
-Route::get('/cr={idCr}/ls={idLs}/mt={idMt}',[MaterialController::class,'index']);
+Route::get('/cr={idCr}/ls={idLs}/mt={crMt}',[MaterialController::class,'index']);
 
 
-Route::get('/con',function (){return view('user.congratulations');});
 
+
+Route::get('/bang-gia',function (){
+    return view('user.banggia');
+});
 
 
 
@@ -97,6 +103,7 @@ Route::get('/admin/feedback/list', [feedbackController::class,'index']);
 Route::get('/admin/material/create', [MaterialController::class,'createView']);
 Route::post('/admin/material/create', [MaterialController::class,'create']);
 Route::get('/admin/material/list', [MaterialController::class,'index']);
+Route::get('/admin/material/delete/{id}', [MaterialController::class,'index']);
 
 
 

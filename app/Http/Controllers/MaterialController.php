@@ -9,7 +9,9 @@ use Illuminate\Http\Request;
 class MaterialController extends Controller
 {
     public function index($a,$b,$c){
+
         dd($a,$b,$c);
+
     }
 
 
@@ -28,6 +30,7 @@ class MaterialController extends Controller
         do {
             $data2ID = rand($min, $max);
         } while ($data2ID == $id || $data2ID == $data1ID);
+
 // tạo 2 dữ liệu mẫu
         $data1 = DataSupport::find($data1ID);
         $data2 = DataSupport::find($data2ID);
@@ -64,6 +67,7 @@ class MaterialController extends Controller
             '' => $main
         ]);
     }
+
 
 
     public function whereIsThe($id)
