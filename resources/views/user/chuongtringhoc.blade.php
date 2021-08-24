@@ -9,7 +9,7 @@
     <meta name="keyword" content="">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="apple-touch-icon" href="https://www.monkeyjunior.vn/apple-touch-icon.png')}}">
+    <link rel="icon" href="{{asset('images/logo-ek-title.png')}}">
     <script>
         window.addEventListener('load',function(){
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -52,7 +52,7 @@
           <span class="toggler-icon d-mobile">
             <span class="hamburger"></span>
           </span>
-                <a class="p-0 m-auto d-desktop" href="/">
+                <a class="p-0 m-auto d-desktop" href="/home">
                     <img class="logo" src="{{URL::asset('/images/logo-ek.png')}}" alt="#">
                 </a>
                 <div class="monkey-collapse">
@@ -97,7 +97,7 @@
                         </li>
                         <li class="nav-item distance-center d-desktop">
                             <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homems_menu_registration',
-                            'eventAction': 'Click', 'eventLabel': 'menu MS dang ky'})" class="btn monkey-color-green monkey-bc-green rounded-pill monkey-f-bold distance-center hvr-icon-registration-white" href="https://www.monkeyjunior.vn/bang-gia.html">
+                            'eventAction': 'Click', 'eventLabel': 'menu MS dang ky'})" class="btn monkey-color-green monkey-bc-green rounded-pill monkey-f-bold distance-center hvr-icon-registration-white" href="/coming-soon">
                                 <i class="icon-lang rounded-circle icon-monkey-registration monkey-fz-18 mr-1 distance-center"></i>Đăng ký
                             </a>
                         </li>
@@ -152,8 +152,6 @@
         }
     </script>
     <div class = "body-bottom" >
-        <div class="btn-shop-cart mb-4"><a href="https://www.monkey.edu.vn/cart/cartStep1">
-                <i class="btn-shop-cart icon-monkey-shop-cart-bottom monkey-fz-25 monkey-color-white monkey-bg-green distance-center cursor"></i></a></div>
         <div class = "go-top" >
             <div class = "go-top-body" >
                 <a
@@ -167,7 +165,7 @@
                    onclick = "ga('send',{'hitType': 'event', 'eventCategory': 'homemj_support_button',
                    'eventAction': 'Click', 'eventLabel': 'trang tru button support'})
                    "
-                   href = "https://www.monkey.edu.vn/ho-tro-khach-hang.html" target = "_blank" >
+                   href = "/coming-soon" target = "_blank" >
                     <i class = "icon-monkey-support monkey-fz-20" ></i >
                     <div class = "text-item text-support" >Hỗ trợ khách hàng</div >
                 </a >
@@ -248,10 +246,10 @@
                                 <ol class="breadcrumb monkey-bg-transparent mb-0 p-0">
                                     <li class="breadcrumb-item ">
                                         <a class="monkey-f-medium text-uppercase"
-                                           href="https://www.monkey.edu.vn/">Trang chủ</a>
+                                           href="/home">Trang chủ</a>
                                     </li>
                                     <li class="breadcrumb-item active ">
-                                        <a href="https://www.monkey.edu.vn#"
+                                        <a href="#"
                                            class="monkey-f-bold text-uppercase"> Chương trình học</a>
                                     </li>
                                 </ol>
@@ -389,7 +387,7 @@
 
                                     </div >
                                     <div class = "text-center mt-3 mb-4" >
-                                        <a href="/chuong-trinh-hoc/tim-hieu-noi-dung-chuong-trinh-hoc-cua-monkey-junior-tieng-anh-cho-tre-moi-bat-dau.html" class="btn rounded-pill  monkey-bc-green hvr-icon-registration-white pr-3 pl-3" >
+                                        <a href="/coming-soon" class="btn rounded-pill  monkey-bc-green hvr-icon-registration-white pr-3 pl-3" >
                                             Xem thêm
                                         </a>
 
@@ -470,7 +468,7 @@
                                         </div >
                                     </div >
                                     <div class = "text-center mt-3 mb-4" >
-                                        <a href="/chuong-trinh-hoc/tim-hieu-noi-dung-chuong-trinh-hoc-cua-monkey-junior-tieng-anh-cho-tre-moi-bat-dau.html#phan-2-bai-8" class="btn rounded-pill  monkey-bc-green hvr-icon-registration-white pr-3 pl-3" >
+                                        <a href="/coming-soon" class="btn rounded-pill  monkey-bc-green hvr-icon-registration-white pr-3 pl-3" >
                                             Xem thêm
                                         </a>
                                     </div >
@@ -537,7 +535,7 @@
                                         </div >
                                     </div >
                                     <div class = "text-center mt-3 mb-4" >
-                                        <a href="/chuong-trinh-hoc/tim-hieu-noi-dung-chuong-trinh-hoc-cua-monkey-junior-tieng-anh-cho-tre-moi-bat-dau.html#2-cach-hoc-bai-8" class="btn rounded-pill  monkey-bc-green hvr-icon-registration-white pr-3 pl-3" >
+                                        <a href="/coming-soon" class="btn rounded-pill  monkey-bc-green hvr-icon-registration-white pr-3 pl-3" >
                                             Xem thêm
                                         </a>
                                     </div >
@@ -607,7 +605,7 @@
                                         </div >
                                     </div >
                                     <div class = "text-center mt-3 mb-4" >
-                                        <a href="/chuong-trinh-hoc/tim-hieu-noi-dung-chuong-trinh-hoc-cua-monkey-junior-tieng-anh-cho-tre-moi-bat-dau.html#phan-3-bai-8" class="btn rounded-pill  monkey-bc-green hvr-icon-registration-white pr-3 pl-3" >
+                                        <a href="/coming-soon" class="btn rounded-pill  monkey-bc-green hvr-icon-registration-white pr-3 pl-3" >
                                             Xem thêm
                                         </a>
                                     </div >
@@ -675,7 +673,7 @@
                                         </div >
                                     </div >
                                     <div class = "text-center mt-3 mb-4" >
-                                        <a href="/chuong-trinh-hoc/tim-hieu-noi-dung-chuong-trinh-hoc-cua-monkey-junior-tieng-anh-cho-tre-moi-bat-dau.html#sticker-bai-8" class="btn rounded-pill  monkey-bc-green hvr-icon-registration-white pr-3 pl-3" >
+                                        <a href="/coming-soon" class="btn rounded-pill  monkey-bc-green hvr-icon-registration-white pr-3 pl-3" >
                                             Xem thêm
                                         </a>
                                     </div >
@@ -798,7 +796,7 @@
                                             </p>
                                         </div>
                                         <div class="mt-2 text-center">
-                                            <a href="#" class="btn rounded-pill  monkey-color-white monkey-bg-green" data-dismiss=modal>
+                                            <a href="/coming-soon" class="btn rounded-pill  monkey-color-white monkey-bg-green" data-dismiss=modal>
                                                 Hoàn thành
                                             </a>
                                         </div>
@@ -880,26 +878,21 @@
                 <div class="contact-content text-center">
                     <ul class="list-inline monkey-color-white ">
                         <li class="list-inline-item border-line monkey-f-bold text-left mb-2 monkey-color-white"><a x-apple-data-detectors="true">Hotline: 1900 1508</a></li>
-                        <li class="list-inline-item d-lg-none d-block monkey-fz-12 monkey-f-regular text-left mb-2">[7h00 - 22h00 các ngày trong tuần]</li>
-                        <li class="list-inline-item monkey-f-bold">englistkist@k&e.com</li>
-                        <li>
-                            <span class="email monkey-fz-12 monkey-f-regular d-lg-block d-none">[7h00 - 22h00 các ngày trong tuần]</span>
-                        </li>
                     </ul>
 
                     <ul class="list-inline">
                         <li class="list-inline-item cursor">
-                            <a class="size-icon-title monkey-bg-white distance-center rounded-circle" href="https://www.facebook.com/groups/donghanhcungconhocmonkey?utm_source=Brand&amp;utm_medium=middlefooter&amp;utm_campaign=Inbound&amp;utm_content=Chi" target="_blank">
+                            <a class="size-icon-title monkey-bg-white distance-center rounded-circle" href="/coming-soon" target="_blank">
                                 <i class="icon-monkey-share monkey-color-green monkey-fz-18"></i>
                             </a>
                         </li>
                         <li class="list-inline-item cursor">
-                            <a class="size-icon-title monkey-bg-white distance-center rounded-circle" href="https://www.youtube.com/user/monkeyjuniorapps?utm_source=Brand&amp;utm_medium=topfooter&amp;utm_campaign=Inbound&amp;utm_content=Chi" target="_blank">
+                            <a class="size-icon-title monkey-bg-white distance-center rounded-circle" href="/coming-soon" target="_blank">
                                 <i class="icon-monkey-youtube monkey-color-green monkey-fz-18"></i>
                             </a>
                         </li>
                         <li class="list-inline-item cursor">
-                            <a class="size-icon-title monkey-bg-white distance-center rounded-circle" href="https://www.facebook.com/Monkey.edu.vn?utm_source=Brand&amp;utm_medium=topfooterMJ&amp;utm_campaign=Inbound&amp;utm_content=Chi" target="_blank">
+                            <a class="size-icon-title monkey-bg-white distance-center rounded-circle" href="/coming-soon" target="_blank">
                                 <i class="icon-monkey-face monkey-color-green monkey-fz-18"></i>
                             </a>
                         </li>
@@ -910,9 +903,9 @@
                         <div class="col-lg-10 col-xl-9">
                             <div class="footer-group-body pt-3 pb-3 d-flex justify-content-center align-items-center border monkey-bc-white">
                                 <div class="monkey-fz-14 monkey-f-medium footer-group-text">
-                                    Cộng đồng hơn 140.000 ba mẹ thông thái <span class="monkey-f-bold monkey-fz-16">Đồng hành cùng con học Monkey:</span>
+                                    Cộng đồng hơn 140.000 ba mẹ thông thái <span class="monkey-f-bold monkey-fz-16">Đồng hành cùng con học E&K:</span>
                                 </div>
-                                <a target="_blank" href="https://www.facebook.com/groups/donghanhcungconhocmonkey?utm_source=Brand&amp;utm_medium=middlefooter&amp;utm_campaign=Inbound&amp;utm_content=Chi" class="hvr-icon-registration ml-md-3 btn monkey-bc-white rounded-pill monkey-color-white monkey-fz-14 monkey-f-bold">
+                                <a target="_blank" href="" class="hvr-icon-registration ml-md-3 btn monkey-bc-white rounded-pill monkey-color-white monkey-fz-14 monkey-f-bold">
                                     THAM GIA NGAY</a>
                             </div>
                         </div>
@@ -921,27 +914,27 @@
                 </div>
                 <div class="monkey-f-bold footer-item monkey-color-white d-block d-lg-flex">
 
-                    <a class="monkey-color-white mr-lg-3 ml-ld-3 d-flex" href="https://www.monkeyvietnam.online/daily?utm_source=Brand&amp;utm_medium=topfooter&amp;utm_campaign=Inbound&amp;utm_content=Chi" target="_blank">
+                    <a class="monkey-color-white mr-lg-3 ml-ld-3 d-flex" href="/coming-soon" target="_blank">
                         <span class="mr-2">	●</span>
                         <span>Đăng ký Đại lý</span>
                     </a>
-                    <a class="monkey-color-white mr-lg-3 ml-ld-3 d-flex" href="https://www.monkey.edu.vn/active-account.html?utm_source=Brand&amp;utm_medium=topfooter&amp;utm_campaign=Inbound&amp;utm_content=Chi" target="_blank">
+                    <a class="monkey-color-white mr-lg-3 ml-ld-3 d-flex" href="/coming-soon" target="_blank">
                         <span class="mr-2">	●</span>
                         <span>Kích hoạt tài khoản</span>
                     </a>
-                    <a class="monkey-color-white mr-lg-3 ml-ld-3 d-flex" href="http://tuyendung.monkey.edu.vn/?utm_source=Brand&amp;utm_medium=topfooter&amp;utm_campaign=Inbound&amp;utm_content=Chi" target="_blank">
+                    <a class="monkey-color-white mr-lg-3 ml-ld-3 d-flex" href="/coming-soon" target="_blank">
                         <span class="mr-2">	●</span>
                         <span>Tuyển dụng</span>
                     </a>
-                    <a class="monkey-color-white mr-lg-3 ml-ld-3 d-flex" href="https://www.monkeyjunior.vn/tai-tu-dong.html?app_id=2" target="_blank">
+                    <a class="monkey-color-white mr-lg-3 ml-ld-3 d-flex" href="/coming-soon" target="_blank">
                         <span class="mr-2">	●</span>
                         <span>Tải App</span>
                     </a>
-                    <a class="monkey-color-white mr-lg-3 ml-ld-3 d-flex" href="https://www.monkey.edu.vn/tin-tuc/chinh-sach-bao-mat.html" target="_self">
+                    <a class="monkey-color-white mr-lg-3 ml-ld-3 d-flex" href="/coming-soon" target="_self">
                         <span class="mr-2">	●</span>
                         <span>Chính sách bảo mật</span>
                     </a>
-                    <a class="monkey-color-white mr-lg-3 ml-ld-3 d-flex" href="https://www.monkey.edu.vn/tin-tuc/dieu-khoan-su-dung.html" target="_blank">
+                    <a class="monkey-color-white mr-lg-3 ml-ld-3 d-flex" href="/coming-soon" target="_blank">
                         <span class="mr-2">	●</span>
                         <span>Điều khoản sử dụng</span>
                     </a>
@@ -956,16 +949,11 @@
                         <div class="col-lg-11">
                             <div class="row justify-content-end">
                                 <div class="col-lg-9 monkey-f-regular monkey-color-white text-center">
-                                    <p class="monkey-fz-12"></p><p class="monkey-fz-12">© 2020 - Bản quyền của Công Ty Cổ phần Early Start</p>
-
-                                    <p class="monkey-fz-12">Trụ sở chính: Tầng 2, Tòa nhà FS, TTTM TNR Gold Season, số 47 Nguyễn Tuân, P. Thanh Xuân Trung, Q. Thanh Xuân, TP. Hà Nội</p>
-
-                                    <p class="monkey-fz-12 monkey-color-white">Giấy phép DKKD số <a x-apple-data-detectors="true">0106651756</a> do Sở Kế hoạch và Đầu tư TP Hà Nội cấp. Ngày cấp: 01/10/2014</p><p></p>
+                                    <p class="monkey-fz-12"></p><p class="monkey-fz-12">© 2021 - Bản quyền của T2009A-Dev4Fun</p>
                                 </div>
                                 <div class="col-lg-2 d-lg-block d-none">
                                     <a href="http://www.online.gov.vn/Home/WebDetails/40473" alt="#">
                                         <img data-src="https://monkeymedia.vcdn.com.vn/upload/web/background-web/logo-footer" class="img-certification lazy" alt="#">
-
                                     </a>
                                 </div>
                             </div>
@@ -989,8 +977,8 @@
          attribution=setup_tool
          page_id="1658165124411579"
          theme_color="#92c83e"
-         logged_in_greeting="Chào ba mẹ! Monkey có thể hỗ trợ ba mẹ thông tin gì?"
-         logged_out_greeting="Chào ba mẹ! Monkey có thể hỗ trợ ba mẹ thông tin gì?">
+         logged_in_greeting="Chào ba mẹ! E&K có thể hỗ trợ ba mẹ thông tin gì?"
+         logged_out_greeting="Chào ba mẹ! E&K có thể hỗ trợ ba mẹ thông tin gì?">
     </div>
     <script>
         window.addEventListener("scroll",function(){
