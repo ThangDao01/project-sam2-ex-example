@@ -14,17 +14,6 @@ class DataSupport extends Seeder
     public function run()
     {
         //
-        \Illuminate\Support\Facades\DB::table('data_supports')->insert([[
-            'values' => '',
-            'words_vi' => '',
-            'words_en' => '',
-            'voice_vi' => '',
-            'voice_en' => '',
-            'images' => '',
-            'key' => '',
-            'createBy' => '',]
-        ]);
-
-
+        \Illuminate\Support\Facades\DB::table('data_supports')->insert([]);
     }
 }

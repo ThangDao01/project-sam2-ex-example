@@ -17,6 +17,10 @@ class DatabaseSeeder extends Seeder
         $this->call(CharacterSeeder::class);
         $this->call(ItemSupport::class);
         $this->call(DataSupport::class);
+<<<<<<< HEAD
+        $this->call(AnimalSeeder::class);
+=======
 
+>>>>>>> 7ceca96b50c039a0ecf5b7e4258f0a86300f4686
     }
 }
