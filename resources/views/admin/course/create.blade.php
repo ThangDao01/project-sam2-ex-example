@@ -19,29 +19,42 @@
                     </ul>
                 </div>
             @endif
-            <form class="form-horizontal bucket-form" method="get">
+            <form class="form-horizontal bucket-form" action="/admin/course/create" method="post">
+                @csrf
                 <div class="form-group">
                     <label class="col-sm-3 control-label">CourseName</label>
                     <div class="col-sm-6">
                         <input type="text" name="course_name" class="form-control" >
+                        @error('course_name')
+                        <div class="text-danger">* {{$message}}</div>
+                        @enderror
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-3 control-label">Price</label>
                     <div class="col-sm-6">
                         <input type="text" class="form-control" name="price">
+                        @error('price')
+                        <div class="text-danger">* {{$message}}</div>
+                        @enderror
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-3 control-label">Description</label>
                     <div class="col-sm-6">
                         <input type="text" class="form-control" name="description">
+                        @error('description')
+                        <div class="text-danger">* {{$message}}</div>
+                        @enderror
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-3 control-label">Time Finish(day)</label>
                     <div class="col-sm-6">
                         <input type="text" class="form-control" name="time_finish">
+                        @error('time_finish')
+                        <div class="text-danger">* {{$message}}</div>
+                        @enderror
                     </div>
                 </div>
                 <div class="col-md-4 form-group" style="margin-left: 170px;">

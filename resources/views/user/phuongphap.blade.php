@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="csrf-token" content="FHr7uxab2BhTUx5nmcpv33yhqqjlETpitARECPFt">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="icon" href="{{URL::asset('images/logo-ek-title.png') }}" type="image/gif">
     <title>Phương pháp </title>
     <meta name="keyword" content="">
     <meta name="description" content="">
@@ -255,10 +256,8 @@
                                 <div class="col-lg-6">
                                     <div
                                         class = "banner-video background-style distance-center mb-3 lazyLoading"
-                                        data-src = "{{URL::asset('/images/phuong-phap-hoc.png')}}"
-                                    >
+                                        data-src = "{{URL::asset('/images/phuong-phap-hoc.png')}}">
                                     </div >
-
                                 </div>
 
 
@@ -266,8 +265,7 @@
                                 <div class="col-lg-6">
                                     <div class="content monkey-color-white">
                                         <h3
-                                            class="monkey-f-bold monkey-fz-30 text-uppercase d-desktop"
-                                        >
+                                            class="monkey-f-bold monkey-fz-30 text-uppercase d-desktop">
                                             DÙNG ĐÚNG CHIẾC CHÌA KHÓA GIÁO DỤC SỚM
                                         </h3>
                                         <p class="monkey-f-medium mt-4">
@@ -285,8 +283,7 @@
                     <div class="row justify-content-center">
                         <div class="col-lg-9">
                             <div
-                                class = "title-wrapper text-center monkey-fz-32 monkey-f-header distance-center mt-5 mb-4"
-                            >
+                                class = "title-wrapper text-center monkey-fz-32 monkey-f-header distance-center mt-5 mb-4">
                                 <div class = "icon" >
                                     <div class = "distance-center bg-icon-title  mr-2" >
                                         <i class = "icon-monkey-benefit-a monkey-fz-24 monkey-color-white " ></i >
@@ -294,36 +291,30 @@
                                     </div >
                                 </div >
                                 <div class = "monkey-f-header monkey-fz-30 monkey-color-green" >
-                                    <span class = "text-uppercase" >Các phương pháp được monkey junior áp dụng</span >
+                                    <span class = "text-uppercase" >Các phương pháp được E&K áp dụng</span >
                                 </div >
                             </div >
                             <div class="monkey-bg-white p-md-4 p-0 border-radius">
 
                                 <div class="manual-content-item border-bottom pb-3 mb-3">
                                     <h5 class="mb-3">
-                                        <a class="monkey-f-bold monkey-fz-18 monkey-color-green d-block d-md-none custom-text-title-2 /phuong-phap/monkey-junior-ap-dung-phuong-phap-trao-the-nhanh-glenn-doman-nhu-the-nao.html" href="/phuong-phap/monkey-junior-ap-dung-phuong-phap-trao-the-nhanh-glenn-doman-nhu-the-nao.html">Monkey Junior áp dụng phương pháp tráo thẻ nhanh Glenn Doman như thế nào?</a>
+                                        <a class="monkey-f-bold monkey-fz-18 monkey-color-green d-block d-md-none custom-text-title-2 /phuong-phap/monkey-junior-ap-dung-phuong-phap-trao-the-nhanh-glenn-doman-nhu-the-nao.html" href="/phuong-phap/monkey-junior-ap-dung-phuong-phap-trao-the-nhanh-glenn-doman-nhu-the-nao.html">E&K áp dụng phương pháp tráo thẻ nhanh Glenn Doman như thế nào?</a>
                                     </h5>
                                     <div
-                                        class="media parents-share-media"
-                                    >
+                                        class="media parents-share-media">
                                         <div class="mr-3 media-image effect-hover-circle ">
                                             <img
                                                 data-src = "https://media.monkeyuni.com/upload/web/storage_web/31-10-2020_17:40:28_PP1_thumb.jpg"
-                                                class = " lazy" alt = "#"
-                                            />
-
+                                                class = " lazy" alt = "#"/>
                                         </div>
                                         <div class="media-body columns-2-4">
                                             <h5
-                                                class="mt-0 monkey-f-bold monkey-fz-18 custom-text-title-2 d-none d-md-block"
-                                            >
-                                                <a class="/phuong-phap/monkey-junior-ap-dung-phuong-phap-trao-the-nhanh-glenn-doman-nhu-the-nao.html" href="/phuong-phap/monkey-junior-ap-dung-phuong-phap-trao-the-nhanh-glenn-doman-nhu-the-nao.html" >Monkey Junior áp dụng phương pháp tráo thẻ nhanh Glenn Doman như thế nào?</a>
-
+                                                class="mt-0 monkey-f-bold monkey-fz-18 custom-text-title-2 d-none d-md-block">
+                                                <a class="/phuong-phap/monkey-junior-ap-dung-phuong-phap-trao-the-nhanh-glenn-doman-nhu-the-nao.html" href="/phuong-phap/monkey-junior-ap-dung-phuong-phap-trao-the-nhanh-glenn-doman-nhu-the-nao.html" >E&K áp dụng phương pháp tráo thẻ nhanh Glenn Doman như thế nào?</a>
                                             </h5>
                                             <p
-                                                class="monkey-f-medium monkey-color-gray mb-4 text-justify custom-text-box-6 "
-                                            >
-                                                Tiên phong tại Việt Nam trong việc sử dụng các phương pháp giáo dục sớm vào việc dạy học tiếng Anh cho trẻ em, Monkey Junior sẽ giúp ba mẹ áp dụng Glenn Doman - một trong những phương pháp giáo dục sớm nổi tiếng nhất một cách dễ dàng, đúng cách với chi phí bình dân để giúp trẻ...
+                                                class="monkey-f-medium monkey-color-gray mb-4 text-justify custom-text-box-6 ">
+                                                Tiên phong tại Việt Nam trong việc sử dụng các phương pháp giáo dục sớm vào việc dạy học tiếng Anh cho trẻ em, E&K sẽ giúp ba mẹ áp dụng Glenn Doman - một trong những phương pháp giáo dục sớm nổi tiếng nhất một cách dễ dàng, đúng cách với chi phí bình dân để giúp trẻ...
                                             </p>
                                             <a class="monkey-color-gray monkey-f-bold cursor" href="/phuong-phap/monkey-junior-ap-dung-phuong-phap-trao-the-nhanh-glenn-doman-nhu-the-nao.html"> Chi tiết</a>
                                         </div>
@@ -347,42 +338,36 @@
                                         </div>
                                         <div class="media-body columns-2-4">
                                             <h5
-                                                class="mt-0 monkey-f-bold monkey-fz-18 custom-text-title-2 d-none d-md-block"
-                                            >
+                                                class="mt-0 monkey-f-bold monkey-fz-18 custom-text-title-2 d-none d-md-block">
                                                 <a class="/phuong-phap/phuong-phap-phonics-kich-thich-toi-da-tu-duy-va-tiem-nang-cua-nao-trai.html" href="/phuong-phap/phuong-phap-phonics-kich-thich-toi-da-tu-duy-va-tiem-nang-cua-nao-trai.html" >Phương pháp Phonics kích thích tối đa tư duy và tiềm năng của não trái</a>
 
                                             </h5>
                                             <p
-                                                class="monkey-f-medium monkey-color-gray mb-4 text-justify custom-text-box-6 "
-                                            >
+                                                class="monkey-f-medium monkey-color-gray mb-4 text-justify custom-text-box-6 ">
                                                 Phương pháp phonics dạy trẻ bóc tách từ ngữ để tập đánh vần. Việc kết hợp phương pháp Phonics với các phương pháp Glenn Doman một cách&nbsp;nhịp nhàng trong Monkey Junior&nbsp;mang lại hiệu quả tối đa&nbsp;cho trẻ mới bắt đầu học tiếng Anh.&nbsp;
                                                 &nbsp;
                                             </p>
                                             <a class="monkey-color-gray monkey-f-bold cursor" href="/phuong-phap/phuong-phap-phonics-kich-thich-toi-da-tu-duy-va-tiem-nang-cua-nao-trai.html"> Chi tiết</a>
                                         </div>
                                     </div>
-
-
                                 </div>
                                 <div class="manual-content-item border-bottom pb-3 mb-3">
                                     <h5 class="mb-3">
-                                        <a class="monkey-f-bold monkey-fz-18 monkey-color-green d-block d-md-none custom-text-title-2 /phuong-phap/phuong-phap-da-giac-quan-trong-monkey-junior-huy-dong-tat-ca-giac-quan-cua-tre-vao-bai-hoc.html" href="/phuong-phap/phuong-phap-da-giac-quan-trong-monkey-junior-huy-dong-tat-ca-giac-quan-cua-tre-vao-bai-hoc.html">Phương pháp “Đa giác quan” trong Monkey Junior - huy động tất cả giác quan của trẻ vào bài học</a>
+                                        <a class="monkey-f-bold monkey-fz-18 monkey-color-green d-block d-md-none custom-text-title-2 /phuong-phap/phuong-phap-da-giac-quan-trong-monkey-junior-huy-dong-tat-ca-giac-quan-cua-tre-vao-bai-hoc.html" href="/phuong-phap/phuong-phap-da-giac-quan-trong-monkey-junior-huy-dong-tat-ca-giac-quan-cua-tre-vao-bai-hoc.html">Phương pháp “Đa giác quan” trong E&K - huy động tất cả giác quan của trẻ vào bài học</a>
                                     </h5>
                                     <div
-                                        class="media parents-share-media"
-                                    >
+                                        class="media parents-share-media">
                                         <div class="mr-3 media-image effect-hover-circle ">
                                             <img
                                                 data-src = "https://media.monkeyuni.com/upload/web/storage_web/01-11-2020_10:02:24_PP3_thumb.jpg"
                                                 class = " lazy" alt = "#"
                                             />
-
                                         </div>
                                         <div class="media-body columns-2-4">
                                             <h5
                                                 class="mt-0 monkey-f-bold monkey-fz-18 custom-text-title-2 d-none d-md-block"
                                             >
-                                                <a class="/phuong-phap/phuong-phap-da-giac-quan-trong-monkey-junior-huy-dong-tat-ca-giac-quan-cua-tre-vao-bai-hoc.html" href="/phuong-phap/phuong-phap-da-giac-quan-trong-monkey-junior-huy-dong-tat-ca-giac-quan-cua-tre-vao-bai-hoc.html" >Phương pháp “Đa giác quan” trong Monkey Junior - huy động tất cả giác quan của trẻ vào bài học</a>
+                                                <a class="/phuong-phap/phuong-phap-da-giac-quan-trong-monkey-junior-huy-dong-tat-ca-giac-quan-cua-tre-vao-bai-hoc.html" href="/phuong-phap/phuong-phap-da-giac-quan-trong-monkey-junior-huy-dong-tat-ca-giac-quan-cua-tre-vao-bai-hoc.html" >Phương pháp “Đa giác quan” trong E&K - huy động tất cả giác quan của trẻ vào bài học</a>
 
                                             </h5>
                                             <p
@@ -418,7 +403,7 @@
                                             <p class="monkey-f-medium monkey-color-gray mb-4 text-justify custom-text-box-6 ">
                                                 “Liệu con có thực sự học được gì không, hay con chỉ đang chơi đùa?”. Có lẽ đây là câu hỏi của nhiều
                                                 ba mẹ chưa hiểu rõ về phương pháp đã được các nền giáo dục tiên tiến trên
-                                                thế giới áp dụng từ lâu: “học tập thông qua vui chơi” (play-based learning”). Thông qua bài viết này, Monkey...
+                                                thế giới áp dụng từ lâu: “học tập thông qua vui chơi” (play-based learning”). Thông qua bài viết này, E&K...
                                             </p>
                                             <a class="monkey-color-gray monkey-f-bold cursor" href="/phuong-phap/hieu-ve-hoc-tap-thong-qua-vui-choi-xoa-di-sai-lam-thuong-gap-trong-cach-day-con.html">
                                                 Chi tiết</a>

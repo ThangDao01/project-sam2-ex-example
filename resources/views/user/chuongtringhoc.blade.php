@@ -6,6 +6,7 @@
     <meta name="csrf-token" content="O7UXThtUxPXRIeibVz5oL2LSDwAOPqdVI0eo4yRn">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Chương trình học </title>
+    <link rel="icon" href="{{URL::asset('images/logo-ek-title.png') }}" type="image/gif">
     <meta name="keyword" content="">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">

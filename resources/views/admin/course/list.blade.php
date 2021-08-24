@@ -10,93 +10,46 @@
                     Basic table
                 </div>
                 <div>
-                    <table class="table" ui-jq="footable" ui-options="{
-        &quot;paging&quot;: {
-          &quot;enabled&quot;: true
-        },
-        &quot;filtering&quot;: {
-          &quot;enabled&quot;: true
-        },
-        &quot;sorting&quot;: {
-          &quot;enabled&quot;: true
-        }}">
+                    <table class="table table-bordered table-striped mb-none" id="datatable-editable">
                         <thead>
                         <tr>
-                            <th data-breakpoints="xs">ID</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th data-breakpoints="xs">Job Title</th>
-
-                            <th data-breakpoints="xs sm md" data-title="DOB">Date of Birth</th>
+                            <th>ID</th>
+                            <th>CourseName</th>
+                            <th>Price</th>
+                            <th>Description</th>
+                            <th>TimeFinish</th>
+                            <th>Status</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr data-expanded="true">
-                            <td>1</td>
-                            <td>Dennise</td>
-                            <td>Fuhrman</td>
-                            <td>High School History Teacher</td>
-
-                            <td>July 25th 1960</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Elodia</td>
-                            <td>Weisz</td>
-                            <td>Wallpaperer Helper</td>
-
-                            <td>March 30th 1982</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Raeann</td>
-                            <td>Haner</td>
-                            <td>Internal Medicine Nurse Practitioner</td>
-
-                            <td>February 26th 1966</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Junie</td>
-                            <td>Landa</td>
-                            <td>Offbearer</td>
-
-                            <td>March 29th 1966</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>Solomon</td>
-                            <td>Bittinger</td>
-                            <td>Roller Skater</td>
-
-                            <td>September 22nd 1964</td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td>Bar</td>
-                            <td>Lewis</td>
-                            <td>Clown</td>
-
-                            <td>August 4th 1991</td>
-                        </tr>
-                        <tr>
-                            <td>7</td>
-                            <td>Usha</td>
-                            <td>Leak</td>
-                            <td>Ships Electronic Warfare Officer</td>
-
-                            <td>November 20th 1979</td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td>Lorriane</td>
-                            <td>Cooke</td>
-                            <td>Technical Services Librarian</td>
-
-                            <td>April 7th 1969</td>
-                        </tr>
+                        @foreach($list as $data)
+                            <tr class="gradeX">
+                                <td>{{$data->id}}</td>
+                                <td>{{$data->CourseName}}</td>
+                                <td>{{$data->Price}}</td>
+                                <td>{{$data->Description}}</td>
+                                <td>{{$data->TimeFinish}}</td>
+                                <td>{{$data->Status}}</td>
+                                <td class="actions">
+                                    <a href="/admin/course/edit/id={{$data->id}}" class="on-default edit-row">
+                                        <i style="font-size: 20px" class="fa fa-pencil-square-o text-success text-active"></i></a>
+                                    <a href="/admin/course/delete/id={{$data->id}}" class="on-default remove-row" onclick="return confirm('Chắc xoá danh muc này?')">
+                                        <i style="font-size: 20px" class="fa fa-times text-danger text"></i></a>
+                                </td>
+                            </tr>
+                        @endforeach
                         </tbody>
                     </table>
+                    <div class="row datatables-footer">
+                        <div class="col-sm-12 col-md-6">
+                        </div>
+                        <div class="col-sm-12 col-md-6">
+                            <div class="dataTables_paginate paging_bs_normal" id="datatable-default_paginate">
+                                {{--                        {!! $list->links() !!}--}}
+                                @include('pagination.default', ['paginator' => $list])
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

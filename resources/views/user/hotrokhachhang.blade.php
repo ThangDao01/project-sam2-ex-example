@@ -5,6 +5,7 @@
     <meta name="csrf-token" content="Y6i0LupPU0BnOuo8BzBwkk9NYRqea78R8lxjOBBU">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Hỗ trợ khách hàng </title>
+    <link rel="icon" href="{{URL::asset('images/logo-ek-title.png') }}" type="image/gif">
     <meta name="keyword" content="">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">

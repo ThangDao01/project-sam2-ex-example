@@ -5,6 +5,7 @@
     <meta name="csrf-token" content="zguHnwCKfphg3GmNdMmbyFYH6PajTTA1RRzJhudI">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Lợi ích </title>
+    <link rel="icon" href="{{URL::asset('images/logo-ek-title.png') }}" type="image/gif">
     <meta name="keyword" content="">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">

@@ -1,105 +1,77 @@
 @extends('layout.admin-layout')
-@section('title')
-    Material-list
-@endsection
 @section('detail')
-
-    <section class="wrapper">
-        <div class="table-agile-info">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    Basic table
+    <!-- start: page -->
+    <section class="panel">
+        <div class="panel-heading">
+            DETAIL
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="mb-md">
+                        <a href="/admin/material/create">
+                            <button id="addToTable" class="btn btn-primary">Add <i class="fa fa-plus"></i></button>
+                        </a>
+                    </div>
                 </div>
-                <div>
-                    <table class="table" ui-jq="footable" ui-options="{
-        &quot;paging&quot;: {
-          &quot;enabled&quot;: true
-        },
-        &quot;filtering&quot;: {
-          &quot;enabled&quot;: true
-        },
-        &quot;sorting&quot;: {
-          &quot;enabled&quot;: true
-        }}">
-                        <thead>
-                        <tr>
-                            <th data-breakpoints="xs">ID</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th data-breakpoints="xs">Job Title</th>
+                <div class="col-sm-3">
+                </div>
+                <div class="col-sm-3">
+                    <div class="input-group">
+                        <input type="text" class="input-sm form-control" placeholder="Search">
+                        <span class="input-group-btn">
+                            <button class="btn btn-sm btn-default" type="button">Go!</button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <table class="table table-bordered table-striped mb-none" id="datatable-editable">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Material Name</th>
+                    <th>Material Location</th>
+                    <th>List Data</th>
+                    <th>Status</th>
+                </tr>
+                </thead>
+                <tbody>
+{{--                @foreach($list as $data)--}}
+                    <tr class="gradeX">
+{{--                        <td>{{$data->id}}</td>--}}
+{{--                        <td>--}}
+{{--                            <img src="/images/{{$data->materialName}}" style="width: 100px;" alt="">--}}
+{{--                        </td>--}}
+{{--                        <td>{{$data->materiallocation}}</td>--}}
+{{--                        <td>{{$data->listData}}</td>--}}
+{{--                        <td>{{$data->status}}</td>--}}
 
-                            <th data-breakpoints="xs sm md" data-title="DOB">Date of Birth</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr data-expanded="true">
-                            <td>1</td>
-                            <td>Dennise</td>
-                            <td>Fuhrman</td>
-                            <td>High School History Teacher</td>
-
-                            <td>July 25th 1960</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Elodia</td>
-                            <td>Weisz</td>
-                            <td>Wallpaperer Helper</td>
-
-                            <td>March 30th 1982</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Raeann</td>
-                            <td>Haner</td>
-                            <td>Internal Medicine Nurse Practitioner</td>
-
-                            <td>February 26th 1966</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Junie</td>
-                            <td>Landa</td>
-                            <td>Offbearer</td>
-
-                            <td>March 29th 1966</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>Solomon</td>
-                            <td>Bittinger</td>
-                            <td>Roller Skater</td>
-
-                            <td>September 22nd 1964</td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td>Bar</td>
-                            <td>Lewis</td>
-                            <td>Clown</td>
-
-                            <td>August 4th 1991</td>
-                        </tr>
-                        <tr>
-                            <td>7</td>
-                            <td>Usha</td>
-                            <td>Leak</td>
-                            <td>Ships Electronic Warfare Officer</td>
-
-                            <td>November 20th 1979</td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td>Lorriane</td>
-                            <td>Cooke</td>
-                            <td>Technical Services Librarian</td>
-
-                            <td>April 7th 1969</td>
-                        </tr>
-                        </tbody>
-                    </table>
+{{--                        <td>{{$data->key}}</td>--}}
+{{--                        <td class="actions">--}}
+{{--                            <a href="/admin/material/edit/id={{$data->id}}" class="on-default edit-row">--}}
+{{--                                <i style="font-size: 20px" class="fa fa-pencil-square-o text-success text-active"></i></a>--}}
+{{--                            <a href="/admin/material/delete/id={{$data->id}}" class="on-default remove-row" onclick="return confirm('Chắc xoá danh muc này?')">--}}
+{{--                                <i style="font-size: 20px" class="fa fa-times text-danger text"></i></a>--}}
+{{--                        </td>--}}
+{{--                    </tr>--}}
+{{--                @endforeach--}}
+                </tbody>
+            </table>
+            <div class="row datatables-footer">
+                <div class="col-sm-12 col-md-6">
+                    <div class="dataTables_info" id="datatable-default_info" role="status" aria-live="polite">
+                        Showing 1 to 10 of 5 entries
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <div class="dataTables_paginate paging_bs_normal" id="datatable-default_paginate">
+                        {{--                        {!! $list->links() !!}--}}
+{{--                        @include('pagination.default', ['paginator' => $list])--}}
+                    </div>
                 </div>
             </div>
         </div>
-
+    </section>
+    <!-- end: page -->
+    </section>
 @endsection

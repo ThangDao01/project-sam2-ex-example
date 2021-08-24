@@ -19,7 +19,8 @@
                     </ul>
                 </div>
             @endif
-            <form class="form-horizontal bucket-form" method="get">
+            <form class="form-horizontal bucket-form" action="/admin/lesson/create" method="post">
+                @csrf
                 <div class="form-group">
                     <label class="col-sm-3 control-label">Lesson Name</label>
                     <div class="col-sm-6">
@@ -35,7 +36,7 @@
                 <div class="form-group">
                     <label class="col-sm-3 control-label">List Material ID</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" name="list_material_ID">
+                        <input type="text" class="form-control" name="list_material_id">
                     </div>
                 </div>
                 <div class="form-group">

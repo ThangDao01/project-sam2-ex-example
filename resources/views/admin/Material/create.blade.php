@@ -19,11 +19,12 @@
                     </ul>
                 </div>
             @endif
-            <form class="form-horizontal bucket-form" method="get">
+            <form class="form-horizontal bucket-form" action="/admin/material/create" method="post">
+                @csrf
                 <div class="form-group">
                     <label class="col-sm-3 control-label">Material Name</label>
                     <div class="col-sm-6">
-                        <input type="text" name="material_name" class="form-control">
+                        <input type="text" name="material_name" class="form-control" >
                     </div>
                 </div>
                 <div class="form-group">
@@ -35,7 +36,7 @@
                 <div class="form-group">
                     <label class="col-sm-3 control-label">List Data</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" name="list-data">
+                        <input type="text" class="form-control" name="list_data">
                     </div>
                 </div>
 

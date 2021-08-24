@@ -10,11 +10,12 @@
             Form Material-create
         </p>
         <div class="panel-body">
-            <form class="form-horizontal bucket-form" method="get">
+            <form class="form-horizontal bucket-form" action="/admin/article/create" method="post">
+                @csrf
                 <div class="form-group">
                     <label class="col-sm-3 control-label">Default</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" name="default">
                     </div>
                 </div>
 

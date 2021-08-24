@@ -10,50 +10,69 @@
             Form Data-create
         </p>
         <div class="panel-body">
-            @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
-            <form class="form-horizontal bucket-form" method="get">
+{{--            @if ($errors->any())--}}
+{{--                <div class="alert alert-danger">--}}
+{{--                    <ul>--}}
+{{--                        @foreach ($errors->all() as $error)--}}
+{{--                            <li>{{ $error }}</li>--}}
+{{--                        @endforeach--}}
+{{--                    </ul>--}}
+{{--                </div>--}}
+{{--            @endif--}}
+            <form class="form-horizontal bucket-form" action="/admin/data-support/create" method="post">
+                @csrf
                 <div class="form-group">
                     <label class="col-sm-3 control-label">Values</label>
                     <div class="col-sm-6">
                         <input type="text" name="values" class="form-control" placeholder="Enter values">
+                        @error ('values')
+                        <div class="text-danger">* {{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label">Words_vi</label>
+                    <label class="col-sm-3 control-label">color</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" placeholder="Enter words_vi" name="words_vi">
+                        <input type="text" class="form-control" placeholder="Enter color" name="color">
+                        @error ('color')
+                        <div class="text-danger">* {{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-3 control-label">Words_en</label>
                     <div class="col-sm-6">
                         <input type="text" class="form-control" placeholder="Enter voice_vi" name="words_en">
+                        @error ('words_en')
+                        <div class="text-danger">* {{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
                 <div class="col-md-6 form-group">
-                    <label class="col-sm-3 control-label" style="margin-left: 125px;">Voice_vi</label>
+                    <label class="col-sm-3 control-label" style="margin-left: 125px;">video</label>
                     <div class="col-sm-6">
-                        <input type="file" class="form-control" name="voice_vi" id="voice_vi">
+                        <input type="file" class="form-control" name="video" id="video">
+                        @error ('video')
+                        <div class="text-danger">* {{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
                 <div class="col-md-6 form-group">
                     <label class="col-sm-3 control-label">Voice_en</label>
                     <div class="col-sm-6">
                         <input type="file" class="form-control" name="voice_en" id="voice_en">
+                        @error ('voice_en')
+                        <div class="text-danger">* {{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
                 <div class="col-md-6 form-group">
                     <label class="col-sm-3 control-label" style="margin-left: 125px;">Images</label>
                     <div class="col-sm-6">
                         <input type="file" class="form-control " id="images" name="images">
+                        @error ('images')
+                        <div class="text-danger">* {{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
                 <div class="col-md-6 form-group">
@@ -67,6 +86,9 @@
                     <label class="col-sm-3 control-label">Key:</label>
                     <div class="col-sm-6">
                         <input type="text" class="form-control" id="key" placeholder="Enter Key" name="key">
+                        @error ('key')
+                        <div class="text-danger">* {{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
 
