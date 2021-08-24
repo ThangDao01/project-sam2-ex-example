@@ -18,7 +18,7 @@ class DataController extends Controller
      */
     public function index()
     {
-        return view('admin.data.list', ['list' => DataSupport::paginate(20)]);
+        return view('admin.data.list', ['list' => DataSupport::paginate(10)]);
     }
     public function testSeed(){
         $data = null;
