@@ -22,17 +22,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-Route::get('/admin/index', function () {
-    return view('admin.index');
-});
-Route::get('/admin/data-support', function () {
-    return view('admin.data.list');
-});
-
 Route::get('/', function (){
     return view('welcome');
 });
+
+
+
 Route::get('/chuong-trinh-hoc', function (){
     return view('user.chuongtringhoc');
 });
@@ -45,10 +40,37 @@ Route::get('/ho-tro-khach-hang', function (){
 Route::get('/loi-ich', function (){
     return view('user.loiich');
 });
+
+/*
+tool
+*/
+//ảnh video => url
+Route::get('/cloudinary',function (){
+    return view('tool.cloudinary');
+});
+
+
+
+
+
+/*
+admin
+*/
+
+
+
+
+Route::get('/admin', function () {
+    return view('admin.index');
+});
+Route::get('/admin/data-support', function () {
+    return view('admin.data.list');
+});
+
 //data
 Route::get('/admin/data-support/create', [DataController::class,'createView']);
 Route::post('/admin/data-support/create', [DataController::class,'create']);
-Route::get('/admin/data-support/result', [DataController::class,'testSeed']);
+Route::get('/admin/data-support/result', [DataController::class,'seedProMax']);
 Route::get('/admin/data-support/list', [DataController::class,'index']);
 Route::get('/admin/data-support/edit/id={id}', [DataController::class, 'edit']);
 Route::put('/admin/data-support/{id}', [DataController::class, 'update']);

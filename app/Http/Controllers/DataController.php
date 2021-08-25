@@ -41,7 +41,10 @@ class DataController extends Controller
     {
         return view('admin.data.create');
     }
-
+    public function seedProMax(){
+        return view('admin.data.result-seed', ['list' => DataSupport::all()]);
+    }
+//    public function create(Request $request)
     public function create(DataSupportRequest $request)
     {
         //
@@ -50,15 +53,14 @@ class DataController extends Controller
         $obj = new DataSupport();
         $obj->values = $request->get('values');
         $obj->color = $request->get('color');
-        $obj->words_en = $request->get('words_en');
+        $obj->words = $request->get('words');
         $obj->video = $request->get('video');
-        $obj->voice_en = $request->get('voice_en');
+        $obj->voice = $request->get('voice');
         $obj->images = $request->get('images');
         $obj->key = $request->get('key');
         $obj->createBy = 0;
         $obj->created_at = Carbon::now();
         $obj->updated_at = Carbon::now();
-        Session::put('dataSupport', $obj);
         $obj->save();
         return redirect('/admin/data-support/list');
     }
