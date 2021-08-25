@@ -14,9 +14,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/cloudinary',function (){
+    return view('cloudinary');
+});
 
 
-Route::get('/admin/index', function () {
+Route::get('/admin', function () {
     return view('admin.index');
 });
 Route::get('/admin/data-support', function () {
@@ -27,6 +30,7 @@ Route::get('/admin/data-support/create', [DataController::class,'createView']);
 Route::post('/admin/data-support/create', [DataController::class,'create']);
 Route::get('/admin/data-support/result', [DataController::class,'testSeed']);
 Route::get('/admin/data-support/list', [DataController::class,'index']);
+
 
 Route::get('/chuong-trinh-hoc', function (){
     return view('user.chuongtringhoc');
