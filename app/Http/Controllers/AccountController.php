@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AccountRequest;
 use App\Models\Account;
 use App\Models\DataSupport;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class AccountController extends Controller
@@ -17,13 +19,13 @@ class AccountController extends Controller
     {
         //
 
-        return view('admin.Account.list' , ['list' => Account::paginate(20)]);
+        return view('admin.Account.list' , ['list' => Account::paginate(10)]);
     }
     public function loginView()
     {
         //
 
-        return view('admin.Account.login' , ['list' => Account::paginate(20)]);
+        return view('admin.Account.login' , ['list' => Account::paginate(10)]);
     }
 
     /**
@@ -49,9 +51,20 @@ class AccountController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AccountRequest $request)
     {
         //
+        $request->validated();
+        $obj = new Account();
+        $obj->CourseName = $request->get('CourseName');
+        $obj->Price = $request->get('Price');
+        $obj->Description = $request->get('Description');
+        $obj->timeFinish = $request->get('timeFinish');
+        $obj->Status = $request->get('Status');
+        $obj->created_at = Carbon::now();
+        $obj->updated_at = Carbon::now();
+        $obj->save();
+        return redirect('/admin/account/list');
     }
 
     /**
@@ -91,15 +104,25 @@ class AccountController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate(
-                    [
-                    ]
-                );
-                $obj = Account::find($id);
-                if ($obj == null){
-                    return view('admin.error.404', ['msg'=>'không tìm thấy tin tức']);
-                }
-
-                return redirect('/admin/account/list');
+            [
+                'CourseName' => 'required',
+                'Price' => 'required',
+                'Description' => 'required',
+                'timeFinish' => 'required',
+                'Status' => 'required',
+            ]
+        );
+        $obj = Account::find($id);
+        if ($obj == null){
+            return view('admin.error.404', ['msg'=>'không tìm thấy tin tức']);
+        }
+        $obj->CourseName = $request->get('CourseName');
+        $obj->Price = $request->get('Price');
+        $obj->Description = $request->get('Description');
+        $obj->timeFinish = $request->get('timeFinish');
+        $obj->Status = $request->get('Status');
+        $obj->save();
+        return redirect('/admin/account/list');
     }
 
     /**
@@ -116,6 +139,6 @@ class AccountController extends Controller
             return view('error.404',['msg'=> 'không tìm thấy tin tức']);
         }
         $obj->delete();
-        return redirect('admin/account/list');
+        return view('admin/account/list');
     }
 }

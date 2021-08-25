@@ -26,10 +26,10 @@ class LessonRequest extends FormRequest
         return [
             //
 
-            'lesson_name' => 'required',
-            'course_ID' => 'required',
-            'list_material_id' => 'required',
-            'data_support_values' => 'required',
+            'LessonName' => 'required',
+            'CourseId' => 'required',
+            'ListMaterialId' => 'required',
+            'DataSupportValues' => 'required',
             'Status' => 'required',
         ];
     }

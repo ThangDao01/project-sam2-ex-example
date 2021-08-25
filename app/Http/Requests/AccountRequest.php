@@ -28,7 +28,7 @@ class AccountRequest extends FormRequest
             'CourseName' => 'required',
             'Price' => 'required',
             'Description' => 'required',
-            'time_finish' => 'required',
+            'timeFinish' => 'required',
             'Status' => 'required',
         ];
     }

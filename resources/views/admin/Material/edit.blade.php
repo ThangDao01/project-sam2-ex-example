@@ -19,34 +19,34 @@
                     </ul>
                 </div>
             @endif
-            <form class="form-horizontal bucket-form" action="/admin/material/create" method="post">
+            <form class="form-horizontal bucket-form" action="/admin/material/{{$obj->id}}" method="post">
+                @method('put')
                 @csrf
                 <div class="form-group">
                     <label class="col-sm-3 control-label">Material Name</label>
                     <div class="col-sm-6">
-                        <input type="text" name="material_name" class="form-control" >
+                        <input type="text" name="materialName" class="form-control" value="{{$obj->materialName}}">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-3 control-label">Material Location</label>
                     <div class="col-sm-6">
-                        <input type="text" name="material_location" class="form-control" placeholder="Link">
+                        <input type="text" name="materialLocation" class="form-control" value="{{$obj->materialLocation}}" >
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-3 control-label">List Data</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" name="list-data">
+                        <input type="text" class="form-control" name="listData" value="{{$obj->listData}}">
                     </div>
                 </div>
 
                 <div class="col-md-4 form-group" style="margin-left: 170px;">
                     <label class="col-sm-3 control-label col-lg-3" for="inputSuccess">Status</label>
-                    <div class="col-lg-6">
-                        <select class="form-control m-bot15">
-                            <option value="1">Active</option>
-                        </select>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" name="status" value="{{$obj->status}}">
                     </div>
+
                 </div>
                 <div class="col-md-12 form-group" style="text-align: center">
                     <button type="submit" class="btn btn-info">Submit</button>

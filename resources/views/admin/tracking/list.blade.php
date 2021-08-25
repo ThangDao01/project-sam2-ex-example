@@ -35,24 +35,24 @@
                     <th>AccountId</th>
                     <th>Commit</th>
                     <th>status</th>
+                    <th>actions</th>
                 </tr>
                 </thead>
                 <tbody>
-{{--                @foreach($list as $data)--}}
-{{--                    <tr class="gradeX">--}}
-{{--                        <td>{{$data->MaterialID}}</td>--}}
-{{--                        <td>{{$data->CourseId}}</td>--}}
-{{--                        <td>{{$data->AccountId}}</td>--}}
-{{--                        <td>{{$data->Commit}}</td>--}}
-{{--                        <td>{{$data->status}}</td>--}}
-{{--                        <td class="actions">--}}
-{{--                            <a href="/admin/tracking/edit/id={{$data->id}}" class="on-default edit-row">--}}
-{{--                                <i style="font-size: 20px" class="fa fa-pencil-square-o text-success text-active"></i></a>--}}
-{{--                            <a href="/admin/tracking/delete/id={{$data->id}}" class="on-default remove-row" onclick="return confirm('Chắc xoá danh muc này?')">--}}
-{{--                                <i style="font-size: 20px" class="fa fa-times text-danger text"></i></a>--}}
-{{--                        </td>--}}
-{{--                    </tr>--}}
-{{--                @endforeach--}}
+                @foreach($list as $data)
+                    <tr class="gradeX">
+                        <td>{{$data->MaterialID}}</td>
+                        <td>{{$data->LessonId}}</td>
+                        <td>{{$data->AccountId}}</td>
+                        <td>{{$data->commit}}</td>
+                        <td class="actions">
+                            <a href="/admin/tracking/edit/id={{$data->id}}" class="on-default edit-row">
+                                <i style="font-size: 20px" class="fa fa-pencil-square-o text-success text-active"></i></a>
+                            <a href="/admin/tracking/delete/id={{$data->id}}" class="on-default remove-row" onclick="return confirm('Chắc xoá danh muc này?')">
+                                <i style="font-size: 20px" class="fa fa-times text-danger text"></i></a>
+                        </td>
+                    </tr>
+                @endforeach
                 </tbody>
             </table>
             <div class="row datatables-footer">

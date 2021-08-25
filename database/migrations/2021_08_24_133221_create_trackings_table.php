@@ -14,7 +14,11 @@ class CreateTrackingsTable extends Migration
     public function up()
     {
         Schema::create('trackings', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->integer('MaterialId');
+            $table->integer('LessonId');
+            $table->integer('AccountId');
+            $table->text('commit');
             $table->timestamps();
         });
     }

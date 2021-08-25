@@ -10,15 +10,6 @@
             Form Data-create
         </p>
         <div class="panel-body">
-{{--            @if ($errors->any())--}}
-{{--                <div class="alert alert-danger">--}}
-{{--                    <ul>--}}
-{{--                        @foreach ($errors->all() as $error)--}}
-{{--                            <li>{{ $error }}</li>--}}
-{{--                        @endforeach--}}
-{{--                    </ul>--}}
-{{--                </div>--}}
-{{--            @endif--}}
             <form class="form-horizontal bucket-form" action="/admin/data-support/{{$obj->id}}" method="post">
                 @method('put')
                 @csrf

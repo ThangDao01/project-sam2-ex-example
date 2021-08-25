@@ -25,10 +25,10 @@ class MaterialRequest extends FormRequest
     {
         return [
             //
-            'material_name' => 'required',
-            'material_location' => 'required',
-            'list_data' => 'required',
-            'Status' => 'required',
+            'materialName' => 'required',
+            'materialLocation' => 'required',
+            'listData' => 'required',
+            'status' => 'required',
         ];
     }
 }

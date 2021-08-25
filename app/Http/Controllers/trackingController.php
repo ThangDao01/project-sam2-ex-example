@@ -15,7 +15,7 @@ class trackingController extends Controller
     public function index()
     {
         //
-        return view('admin.tracking.list');
+        return view('admin.tracking.list' , ['list' => Tracking::paginate(10)]);
 
     }
 

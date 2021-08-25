@@ -10,48 +10,42 @@
             Form tracking-create
         </p>
         <div class="panel-body">
-            @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
             <form class="form-horizontal bucket-form" action="/admin/tracking/create" method="post">
                 @csrf
                 <div class="form-group">
                     <label class="col-sm-3 control-label">MaterialID</label>
                     <div class="col-sm-6">
-                        <input type="text" name="MaterialID" class="form-control" >
+                        <input type="text" name="MaterialId" class="form-control" >
+                        @error('MaterialId')
+                        <div class="text-danger">* {{$message}}</div>
+                        @enderror
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label">CourseId</label>
+                    <label class="col-sm-3 control-label">LessonId</label>
                     <div class="col-sm-6">
-                        <input type="text" name="CourseId" class="form-control" placeholder="Link">
+                        <input type="text" name="LessonId" class="form-control" placeholder="Link">
+                        @error('LessonId')
+                        <div class="text-danger">* {{$message}}</div>
+                        @enderror
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-3 control-label">AccountId</label>
                     <div class="col-sm-6">
                         <input type="text" class="form-control" name="AccountId">
+                        @error('AccountId')
+                        <div class="text-danger">* {{$message}}</div>
+                        @enderror
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label">Commit</label>
+                    <label class="col-sm-3 control-label">commit</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" name="Commit">
-                    </div>
-                </div>
-
-                <div class="col-md-4 form-group" style="margin-left: 170px;">
-                    <label class="col-sm-3 control-label col-lg-3" for="inputSuccess">Status</label>
-                    <div class="col-lg-6">
-                        <select class="form-control m-bot15">
-                            <option value="1">Active</option>
-                        </select>
+                        <input type="text" class="form-control" name="commit">
+                        @error('commit')
+                        <div class="text-danger">* {{$message}}</div>
+                        @enderror
                     </div>
                 </div>
                 <div class="col-md-12 form-group" style="text-align: center">

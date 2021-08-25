@@ -22,9 +22,9 @@
             <form class="form-horizontal bucket-form" action="/admin/feedback/create" method="post">
                 @csrf
                 <div class="form-group">
-                    <label class="col-sm-3 control-label">Account</label>
+                    <label class="col-sm-3 control-label">AccountId</label>
                     <div class="col-sm-6">
-                        <input type="text" name="account" class="form-control">
+                        <input type="text" name="accountId" class="form-control">
                     </div>
                 </div>
                 <div class="form-group">

@@ -33,28 +33,25 @@
                     <th>Material Location</th>
                     <th>List Data</th>
                     <th>Status</th>
+                    <th>actions</th>
                 </tr>
                 </thead>
                 <tbody>
-{{--                @foreach($list as $data)--}}
+                @foreach($list as $data)
                     <tr class="gradeX">
-{{--                        <td>{{$data->id}}</td>--}}
-{{--                        <td>--}}
-{{--                            <img src="/images/{{$data->materialName}}" style="width: 100px;" alt="">--}}
-{{--                        </td>--}}
-{{--                        <td>{{$data->materiallocation}}</td>--}}
-{{--                        <td>{{$data->listData}}</td>--}}
-{{--                        <td>{{$data->status}}</td>--}}
-
-{{--                        <td>{{$data->key}}</td>--}}
-{{--                        <td class="actions">--}}
-{{--                            <a href="/admin/material/edit/id={{$data->id}}" class="on-default edit-row">--}}
-{{--                                <i style="font-size: 20px" class="fa fa-pencil-square-o text-success text-active"></i></a>--}}
-{{--                            <a href="/admin/material/delete/id={{$data->id}}" class="on-default remove-row" onclick="return confirm('Chắc xoá danh muc này?')">--}}
-{{--                                <i style="font-size: 20px" class="fa fa-times text-danger text"></i></a>--}}
-{{--                        </td>--}}
-{{--                    </tr>--}}
-{{--                @endforeach--}}
+                        <td>{{$data->id}}</td>
+                        <td>{{$data->materialName}}</td>
+                        <td>{{$data->materialLocation}}</td>
+                        <td>{{$data->listData}}</td>
+                        <td>{{$data->status}}</td>
+                        <td class="actions">
+                            <a href="/admin/material/edit/id={{$data->id}}" class="on-default edit-row">
+                                <i style="font-size: 20px" class="fa fa-pencil-square-o text-success text-active"></i></a>
+                            <a href="/admin/material/delete/id={{$data->id}}" class="on-default remove-row" onclick="return confirm('Chắc xoá danh muc này?')">
+                                <i style="font-size: 20px" class="fa fa-times text-danger text"></i></a>
+                        </td>
+                    </tr>
+                @endforeach
                 </tbody>
             </table>
             <div class="row datatables-footer">
@@ -66,7 +63,7 @@
                 <div class="col-sm-12 col-md-6">
                     <div class="dataTables_paginate paging_bs_normal" id="datatable-default_paginate">
                         {{--                        {!! $list->links() !!}--}}
-{{--                        @include('pagination.default', ['paginator' => $list])--}}
+                        @include('pagination.default', ['paginator' => $list])
                     </div>
                 </div>
             </div>

@@ -35,6 +35,7 @@
                     <th>Material Location</th>
                     <th>List Data</th>
                     <th>Status</th>
+                    <th>actions</th>
                 </tr>
                 </thead>
                 <tbody>

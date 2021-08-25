@@ -3,33 +3,51 @@
     Course
 @endsection
 @section('detail')
-    <section class="wrapper">
-        <div class="table-agile-info">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    Basic table
+    <section class="panel">
+        <div class="panel-heading">
+            Course
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="mb-md">
+                        <a href="/admin/course/create">
+                            <button id="addToTable" class="btn btn-primary">Add <i class="fa fa-plus"></i></button>
+                        </a>
+                    </div>
                 </div>
-                <div>
-                    <table class="table table-bordered table-striped mb-none" id="datatable-editable">
-                        <thead>
-                        <tr>
+                <div class="col-sm-3">
+                </div>
+                <div class="col-sm-3">
+                    <div class="input-group">
+                        <input type="text" class="input-sm form-control" placeholder="Search">
+                        <span class="input-group-btn">
+                            <button class="btn btn-sm btn-default" type="button">Go!</button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <table class="table table-bordered table-striped mb-none" id="datatable-editable">
+                <thead>
+                <tr>
                             <th>ID</th>
                             <th>CourseName</th>
                             <th>Price</th>
                             <th>Description</th>
                             <th>TimeFinish</th>
                             <th>Status</th>
+                            <th>actions</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($list as $data)
                             <tr class="gradeX">
                                 <td>{{$data->id}}</td>
-                                <td>{{$data->CourseName}}</td>
-                                <td>{{$data->Price}}</td>
-                                <td>{{$data->Description}}</td>
+                                <td>{{$data->course}}</td>
+                                <td>{{$data->price}}</td>
+                                <td>{{$data->description}}</td>
                                 <td>{{$data->TimeFinish}}</td>
-                                <td>{{$data->Status}}</td>
+                                <td>{{$data->status}}</td>
                                 <td class="actions">
                                     <a href="/admin/course/edit/id={{$data->id}}" class="on-default edit-row">
                                         <i style="font-size: 20px" class="fa fa-pencil-square-o text-success text-active"></i></a>

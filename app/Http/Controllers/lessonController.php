@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\LessonRequest;
 use App\Models\Lesson;
 use Illuminate\Http\Request;
 
@@ -37,8 +38,17 @@ class lessonController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create(LessonRequest $request)
     {
+        $request->validated();
+        $obj = new Lesson();
+        $obj->lesson_name  = $request->get('LessonName');
+        $obj->CourseId  = $request->get('CourseId');
+        $obj->ListMaterialId  = $request->get('ListMaterialId');
+        $obj->DataSupportValues  = $request->get('DataSupportValues');
+        $obj->status  = $request->get('status');
+        $obj->save();
+        return redirect('admin/lesson/list');
         //
     }
 
@@ -80,13 +90,23 @@ class lessonController extends Controller
     {
         //
         $request->validate([
-
+            'LessonName' => 'required',
+            'CourseId' => 'required',
+            'ListMaterialId' => 'required',
+            'DataSupportValues' => 'required',
+            'Status' => 'required',
         ]
         );
         $obj = Lesson::find($id);
         if ($obj == null){
             return view('error.404', ['msg'=>'không tìm thấy tin tức']);
         }
+        $obj->lesson_name  = $request->get('LessonName');
+        $obj->CourseId  = $request->get('CourseId');
+        $obj->ListMaterialId  = $request->get('ListMaterialId');
+        $obj->DataSupportValues  = $request->get('DataSupportValues');
+        $obj->status  = $request->get('status');
+        $obj->save();
         return redirect('admin/lesson/list');
     }
 

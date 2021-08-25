@@ -32,6 +32,7 @@
                     <th>Account</th>
                     <th>vote</th>
                     <th>Seen</th>
+                    <th>actions</th>
                 </tr>
                 </thead>
                 <tbody>

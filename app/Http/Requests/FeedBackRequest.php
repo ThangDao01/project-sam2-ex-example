@@ -25,9 +25,9 @@ class FeedBackRequest extends FormRequest
     {
         return [
             //
-            'Account' => 'required',
-            'message' => 'required',
-            'vote' => 'required',
+            'AccountID' => 'required',
+            'Message' => 'required',
+            'Vote' => 'required',
             'Seen' => 'required',
         ];
     }

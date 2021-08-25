@@ -14,7 +14,11 @@ class CreateMaterialsTable extends Migration
     public function up()
     {
         Schema::create('materials', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->string('materialName');
+            $table->string('listData');
+            $table->string('materialLocation');
+            $table->integer('status');
             $table->timestamps();
         });
     }
