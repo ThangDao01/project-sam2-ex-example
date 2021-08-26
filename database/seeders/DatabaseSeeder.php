@@ -15,12 +15,6 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         $this->call(CharacterSeeder::class);
-        $this->call(ItemSupport::class);
-        $this->call(DataSupport::class);
-<<<<<<< HEAD
-        $this->call(AnimalSeeder::class);
-=======
 
->>>>>>> 7ceca96b50c039a0ecf5b7e4258f0a86300f4686
     }
 }

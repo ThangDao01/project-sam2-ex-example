@@ -3,6 +3,7 @@
     E&K - Hỗ trợ khách hàng
 @endsection
 @section('detail')
+>>>>>>> 3afacf4b1ebf166b476569b166c8cbea55aa8858
     <section id="popup-loading" class="popup-loading">
         <div class="popup-loading-content distance-center">
             <div class="text-center">

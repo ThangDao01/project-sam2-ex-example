@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\FeedBackRequest;
 use App\Models\FeedBack;
 use Illuminate\Http\Request;
 
@@ -36,9 +37,17 @@ class feedbackController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function create(FeedBackRequest $request)
     {
         //
+        $request->validated();
+        $obj = new FeedBack();
+        $obj->accountId = $request->get('AccountID');
+        $obj->message = $request->get('Message');
+        $obj->vote = $request->get('Vote');
+        $obj->seen = $request->get('Seen');
+        $obj->save();
+        return redirect('/admin/feedback/list');
     }
 
     /**
@@ -61,6 +70,11 @@ class feedbackController extends Controller
     public function edit($id)
     {
         //
+        $obj = FeedBack::find($id);
+        if ($obj == null){
+            return view('error.404', ['msg'=>'không tìm thấy tin tức']);
+        }
+        return view('admin.feedback.edit', ['obj'=>$obj]);
     }
 
     /**
@@ -73,6 +87,23 @@ class feedbackController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $request->validate([
+            'AccountID' => 'required',
+            'Message' => 'required',
+            'Vote' => 'required',
+            'Seen' => 'required',
+        ]);
+
+        $obj = FeedBack::find($id);
+        if ($obj == null) {
+            return view('error.404', ['msg' => 'không tìm thấy tin tức']);
+        }
+        $obj->accountId = $request->get('AccountID');
+        $obj->message = $request->get('Message');
+        $obj->vote = $request->get('Vote');
+        $obj->seen = $request->get('Seen');
+        $obj->save();
+        return redirect('/admin/feedback/list');
     }
 
     /**
@@ -84,5 +115,11 @@ class feedbackController extends Controller
     public function destroy($id)
     {
         //
+        $obj = FeedBack::find($id);
+        if ($obj == null){
+            return view('error.404', ['msg'=>'không tìm thấy tin tức']);
+        }
+        $obj->delete();
+        return redirect('/admin/feedback/list');
     }
 }

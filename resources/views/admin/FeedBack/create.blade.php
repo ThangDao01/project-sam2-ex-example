@@ -19,48 +19,35 @@
                     </ul>
                 </div>
             @endif
-            <form class="form-horizontal bucket-form" method="get">
+            <form class="form-horizontal bucket-form" action="/admin/feedback/create" method="post">
+                @csrf
                 <div class="form-group">
-                    <label class="col-sm-3 control-label">Values</label>
+                    <label class="col-sm-3 control-label">AccountId</label>
                     <div class="col-sm-6">
-                        <input type="text" name="values" class="form-control">
+                        <input type="text" name="accountId" class="form-control">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label">Default</label>
+                    <label class="col-sm-3 control-label">message</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" name="message">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label">Default</label>
+                    <label class="col-sm-3 control-label">vote</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" name="vote">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label">Default</label>
+                    <label class="col-sm-3 control-label">Seen</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" name="seen">
                     </div>
                 </div>
-                <div class="form-group">
-                    <label class="col-sm-3 control-label">Default</label>
-                    <div class="col-sm-6">
-                        <input type="text" class="form-control">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-3 control-label">Default</label>
-                    <div class="col-sm-6">
-                        <input type="text" class="form-control">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-3 control-label">Default</label>
-                    <div class="col-sm-6">
-                        <input type="text" class="form-control">
-                    </div>
+                <div class="col-md-12 form-group" style="text-align: center">
+                    <button type="submit" class="btn btn-info">Submit</button>
+                    <button type="reset" class="btn btn-warning">Reset</button>
                 </div>
             </form>
         </div>

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class DataSupportRequest extends FormRequest
+class MaterialRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,13 +24,11 @@ class DataSupportRequest extends FormRequest
     public function rules()
     {
         return [
-            'values' => 'required',
-            'color' => 'required',
-            'words' => 'required',
-            'video' => 'required',
-            'voice' => 'required',
-            'images' => 'required',
-            'key' => 'required'
+            //
+            'materialName' => 'required',
+            'materialLocation' => 'required',
+            'listData' => 'required',
+            'status' => 'required',
         ];
     }
 }

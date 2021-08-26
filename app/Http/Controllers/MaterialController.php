@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\MaterialRequest;
 use App\Models\Account;
+use App\Models\Course;
+use App\Models\Material;
 use Illuminate\Http\Request;
 
 class MaterialController extends Controller
@@ -15,7 +18,7 @@ class MaterialController extends Controller
     public function index()
     {
         //
-        return view('admin.Material.list');
+        return view('admin.Material.list' , ['list' => Material::paginate(10)]);
 
     }
 
@@ -27,6 +30,7 @@ class MaterialController extends Controller
     public function createview()
     {
         //
+
         return view('admin.Material.create');
 
     }
@@ -37,9 +41,16 @@ class MaterialController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function create(MaterialRequest $request)
     {
         //
+        $obj = new Material();
+        $obj->materialName = $request->get('materialName');
+        $obj->materialLocation = $request->get('materialLocation');
+        $obj->listData = $request->get('listData');
+        $obj->status = $request->get('status');
+        $obj->save();
+        return redirect('/admin/material/list');
     }
 
     /**
@@ -62,6 +73,11 @@ class MaterialController extends Controller
     public function edit($id)
     {
         //
+        $obj = Material::find($id);
+        if ($obj == null){
+            return view('error.404', ['msg'=>'không tìm thấy tin tức']);
+        }
+        return view('admin.material.edit', ['obj'=>$obj]);
     }
 
     /**
@@ -74,6 +90,22 @@ class MaterialController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $request->validate([
+            'materialName' => 'required',
+            'materialLocation' => 'required',
+            'listData' => 'required',
+            'status' => 'required',
+        ]);
+        $obj = Material::find($id);
+        if ($obj == null){
+            return view('error.404', ['msg'=>'không tìm thấy tin tức']);
+        }
+        $obj->materialName = $request->get('materialName');
+        $obj->listData = $request->get('listData');
+        $obj->materialLocation = $request->get('materialLocation');
+        $obj->status = $request->get('status');
+        $obj->save();
+        return redirect('/admin/material/list');
     }
 
     /**
@@ -85,5 +117,12 @@ class MaterialController extends Controller
     public function destroy($id)
     {
         //
+        $obj = Material::find($id);
+        if ($obj == null){
+            return view('error.404', ['msg'=>'không tìm thấy tin tức']);
+        }
+        $obj->delete();
+        return redirect('/admin/material/list');
+
     }
 }
