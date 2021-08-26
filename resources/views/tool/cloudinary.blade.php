@@ -9,6 +9,7 @@
 </head>
 <body>
 <button id="upload_widget" class="cloudinary-button">Upload files</button>
+<div style="background-color: black;color: white;font-size: 50px"></div>
 
 <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
 

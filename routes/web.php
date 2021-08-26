@@ -22,13 +22,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-<<<<<<< HEAD
-Route::get('/', function (){
-    return view('welcome');
-});
-
-
-
 Route::get('/chuong-trinh-hoc', function (){
     return view('user.chuongtringhoc');
 });
@@ -51,9 +44,6 @@ Route::get('/cloudinary',function (){
 });
 
 
-
-
-
 /*
 admin
 */
@@ -62,10 +52,6 @@ admin
 
 
 Route::get('/admin', function () {
-=======
-
-Route::get('/admin/index', function () {
->>>>>>> 3afacf4b1ebf166b476569b166c8cbea55aa8858
     return view('admin.index');
 });
 Route::get('/admin/data-support', function () {
@@ -132,7 +118,6 @@ Route::get('/admin/feedback/edit/id={id}', [feedbackController::class, 'edit']);
 Route::put('/admin/feedback/{id}', [feedbackController::class, 'update']);
 Route::get('/admin/feedback/delete/id={id}', [feedbackController::class, 'destroy']);
 
-<<<<<<< HEAD
 //material
 Route::get('/admin/material/create', [MaterialController::class,'createView']);
 Route::post('/admin/material/create', [MaterialController::class,'create']);
@@ -140,7 +125,7 @@ Route::get('/admin/material/list', [MaterialController::class,'index']);
 Route::get('/admin/material/edit/id={id}', [MaterialController::class, 'edit']);
 Route::put('/admin/material/{id}', [MaterialController::class, 'update']);
 Route::get('/admin/material/delete/id={id}', [MaterialController::class, 'destroy']);
-=======
+
 Route::get('/chuong-trinh-hoc', function (){
     return view('user.chuongtringhoc');
 });
@@ -160,7 +145,6 @@ Route::get('/huong-dan-hoc', function (){
     return view('user.huongdanhoc');
 });
 
-Route::get('/home', function (){
+Route::get('/', function (){
     return view('user.home');
 });
->>>>>>> 3afacf4b1ebf166b476569b166c8cbea55aa8858
