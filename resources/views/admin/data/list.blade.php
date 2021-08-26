@@ -66,9 +66,9 @@
                             @endif
                         </td>
                         <td>
-                            @if($data->voice_en)
+                            @if($data->voice)
                                 <audio controls style="width: 100px;">
-                                    <source src="/voice/en/{{$data->voice_en}}" type="audio/ogg">
+                                    <source src="{{$data->voice}}" type="audio/ogg">
                                 </audio>
                             @else
                                 null
