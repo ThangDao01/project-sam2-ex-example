@@ -47,7 +47,6 @@ Route::get('/cloudinary',function (){
     return view('tool.cloudinary');
 });
 
-
 /*
 admin
 */
