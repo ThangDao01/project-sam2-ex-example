@@ -53,7 +53,6 @@
                         <td>{{$data->values}}</td>
                         <td>{{$data->words_en}}</td>
                         <td>{{$data->color}}</td>
-
                         <td>
                             @if($data->video)
                                 <iframe width="160" height="240" src="https://www.youtube.com/embed/{{$data->video}}"
@@ -66,9 +65,9 @@
                             @endif
                         </td>
                         <td>
-                            @if($data->voice_en)
+                            @if($data->voice)
                                 <audio controls style="width: 100px;">
-                                    <source src="/voice/en/{{$data->voice_en}}" type="audio/ogg">
+                                    <source src="{{$data->voice}}" type="audio/ogg">
                                 </audio>
                             @else
                                 null
