@@ -3,7 +3,6 @@
    E&K-Chương trình học
 @endsection
 @section('detail')
->>>>>>> 3afacf4b1ebf166b476569b166c8cbea55aa8858
     <iframe src = "https://www.googletagmanager.com/ns.html?id=GTM-PS37S79"
             height = "0" width = "0" style = "display:none;visibility:hidden" >
     </iframe >

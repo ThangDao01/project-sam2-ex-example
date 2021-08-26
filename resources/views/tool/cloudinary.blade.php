@@ -9,8 +9,7 @@
 </head>
 <body>
 <button id="upload_widget" class="cloudinary-button">Upload files</button>
-<div style="background-color: black;color: white;font-size: 50px"></div>
-
+<div style="background-color: black;color: white;font-size: 50px" id="result"></div>
 <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -20,6 +19,7 @@
         }, (error, result) => {
             if (!error && result && result.event === "success") {
                 // console.log('Done! Here is the image info: ', result.info);
+                document.getElementById('result').innerHTML= result.info.secure_url;
                 console.log(result.info.secure_url);
             }
         }

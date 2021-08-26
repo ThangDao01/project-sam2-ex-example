@@ -22,6 +22,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+Route::get('/', function (){
+    return view('welcome');
+});
 Route::get('/chuong-trinh-hoc', function (){
     return view('user.chuongtringhoc');
 });
@@ -47,8 +51,6 @@ Route::get('/cloudinary',function (){
 /*
 admin
 */
-
-
 
 
 Route::get('/admin', function () {
