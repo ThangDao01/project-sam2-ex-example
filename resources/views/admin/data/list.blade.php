@@ -31,10 +31,10 @@
                     <th>ID</th>
                     <th>Images</th>
                     <th style="width: 20px;">Values</th>
-                    <th>Words_en</th>
+                    <th>Words</th>
                     <th>color</th>
                     <th style="width: 160px;">video</th>
-                    <th>Voice_en</th>
+                    <th>Voice</th>
                     <th>Key</th>
                     <th>Actions</th>
                 </tr>
@@ -45,13 +45,13 @@
                         <td>{{$data->id}}</td>
                         <td>
                             @if($data->images)
-                                <img src="/images/{{$data->images}}" style="width: 100px;" alt="{{$data->values}}">
+                                <img src="{{$data->images}}" style="width: 100px;" alt="{{$data->values}}">
                             @else
                                 null
                             @endif
                         </td>
                         <td>{{$data->values}}</td>
-                        <td>{{$data->words_en}}</td>
+                        <td>{{$data->words}}</td>
                         <td>{{$data->color}}</td>
 
                         <td>
@@ -66,9 +66,9 @@
                             @endif
                         </td>
                         <td>
-                            @if($data->voice_en)
+                            @if($data->voice)
                                 <audio controls style="width: 100px;">
-                                    <source src="/voice/en/{{$data->voice_en}}" type="audio/ogg">
+                                    <source src="{{$data->voice}}" type="audio/ogg">
                                 </audio>
                             @else
                                 null

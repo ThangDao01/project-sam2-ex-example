@@ -53,7 +53,7 @@
           <span class="toggler-icon d-mobile">
             <span class="hamburger"></span>
           </span>
-                <a class="p-0 m-auto d-desktop" href="/home">
+                <a class="p-0 m-auto d-desktop" href="/">
                     <img class="logo" src="{{URL::asset('/images/logo-ek.png')}}" alt="#">
                 </a>
                 <div class="monkey-collapse">
@@ -158,38 +158,6 @@
                             </div>
                         </div>
                     </div>
-
-                </div>
-                <div class="monkey-f-bold footer-item monkey-color-white d-block d-lg-flex">
-
-                    <a class="monkey-color-white mr-lg-3 ml-ld-3 d-flex" href="/coming-soon" target="_blank">
-                        <span class="mr-2">	●</span>
-                        <span>Đăng ký Đại lý</span>
-                    </a>
-                    <a class="monkey-color-white mr-lg-3 ml-ld-3 d-flex" href="/coming-soon" target="_blank">
-                        <span class="mr-2">	●</span>
-                        <span>Kích hoạt tài khoản</span>
-                    </a>
-                    <a class="monkey-color-white mr-lg-3 ml-ld-3 d-flex" href="/coming-soon" target="_blank">
-                        <span class="mr-2">	●</span>
-                        <span>Tuyển dụng</span>
-                    </a>
-                    <a class="monkey-color-white mr-lg-3 ml-ld-3 d-flex" href="/coming-soon" target="_blank">
-                        <span class="mr-2">	●</span>
-                        <span>Tải App</span>
-                    </a>
-                    <a class="monkey-color-white mr-lg-3 ml-ld-3 d-flex" href="/coming-soon" target="_self">
-                        <span class="mr-2">	●</span>
-                        <span>Chính sách bảo mật</span>
-                    </a>
-                    <a class="monkey-color-white mr-lg-3 ml-ld-3 d-flex" href="/coming-soon" target="_blank">
-                        <span class="mr-2">	●</span>
-                        <span>Điều khoản sử dụng</span>
-                    </a>
-                    <a href="http://www.online.gov.vn/Home/WebDetails/40473" alt="#">
-                        <img data-src="https://monkeymedia.vcdn.com.vn/upload/web/background-web/logo-footer" class="img-certification d-block d-lg-none lazy" alt="#">
-
-                    </a>
 
                 </div>
                 <div class="address-content monkey-pt-20 monkey-pb-20 mt-3 mb-3">

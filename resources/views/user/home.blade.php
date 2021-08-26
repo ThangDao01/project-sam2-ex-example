@@ -184,7 +184,7 @@
                             </div>
                             <div class="text-center mt-3 mb-4">
                                 <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homemj_vocab_more',
-                'eventAction': 'Click', 'eventLabel': 'trang chu MJ button section 1'})" href="/loi-ich/hoc-luong-tu-vung-khong-lo-ngay-tai-nha-cung-monkey-junior.html" class="btn rounded-pill  monkey-bc-green hvr-icon-registration-white pr-3 pl-3">
+                'eventAction': 'Click', 'eventLabel': 'trang chu MJ button section 1'})" href="/coming-soon" class="btn rounded-pill  monkey-bc-green hvr-icon-registration-white pr-3 pl-3">
                                     Xem thêm
                                 </a>
                             </div>
@@ -265,7 +265,7 @@
                             </div>
                             <div class="text-center mt-3 mb-4">
                                 <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homemj_pronunciation_more',
-                'eventAction': 'Click', 'eventLabel': 'trang chu MJ button section 2'})" href="/loi-ich/phat-am-chuan-anh-my-ngay-tu-dau-cung-monkey-junior.html" class="btn rounded-pill  monkey-bc-green hvr-icon-registration-white pr-3 pl-3">
+                'eventAction': 'Click', 'eventLabel': 'trang chu MJ button section 2'})" href="/coming-soon" class="btn rounded-pill  monkey-bc-green hvr-icon-registration-white pr-3 pl-3">
                                     Xem thêm
                                 </a>
                             </div>
@@ -347,7 +347,7 @@
                             </div>
                             <div class="text-center mt-3 mb-4">
                                 <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homemj_timing_more',
-                'eventAction': 'Click', 'eventLabel': 'trang chu MJ button section 3'})" href="/loi-ich/lo-trinh-hoc-bai-ban-cua-monkey-junior-giup-toi-uu-thoi-gian-hoc-va-giup-be-hoc-hieu-qua-hon.html" class="btn rounded-pill  monkey-bc-green hvr-icon-registration-white pr-3 pl-3">
+                'eventAction': 'Click', 'eventLabel': 'trang chu MJ button section 3'})" href="/coming-soon" class="btn rounded-pill  monkey-bc-green hvr-icon-registration-white pr-3 pl-3">
                                     Xem thêm
                                 </a>
                             </div>
@@ -426,7 +426,7 @@
                             </div>
                             <div class="text-center mt-3 mb-4">
                                 <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homemj_braingrowth_more',
-                'eventAction': 'Click', 'eventLabel': 'trang chu MJ button section 4'})" href="" class="btn rounded-pill  monkey-bc-green hvr-icon-registration-white pr-3 pl-3">
+                'eventAction': 'Click', 'eventLabel': 'trang chu MJ button section 4'})" href="/coming-soon" class="btn rounded-pill  monkey-bc-green hvr-icon-registration-white pr-3 pl-3">
                                     Xem thêm
                                 </a>
                             </div>
@@ -446,7 +446,7 @@
                 var view          = document.getElementById ('popup-talk-about-monkey-view');
                 view.innerHTML    = data.viewcount + ' views';
                 var header        = document.getElementById ('popup-talk-about-monkey-layout');
-                let title         = '<a class="monkey-color-green" href="https://www.monkey.edu.vn/tin-tuc/' + data.alias + '.html">' + data.title + '</a>';
+                let title         = '<a class="monkey-color-green" href="/coming-soon">' + data.title + '</a>';
                 header.innerHTML  = title;
 
                 var url_current = "https://www.monkeyjunior.vn/" + "/api/increase-views";
@@ -744,7 +744,7 @@
                                         <div class="media-body">
                                             <h5 class="mt-0 monkey-f-bold monkey-fz-17">
                                                 <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homemj_news_post',
-                                    'eventAction': 'Click', 'eventLabel': 'trang chu MJ tiêu đề ba me can biet'})" class="cursor" href="">Bé Jerry và mẹ Ngọc Trần đã học tiếng Anh như thế nào - Viết để sẻ chia Tháng 10/2020</a>
+                                    'eventAction': 'Click', 'eventLabel': 'trang chu MJ tiêu đề ba me can biet'})" class="cursor" href="/coming-soon">Bé Jerry và mẹ Ngọc Trần đã học tiếng Anh như thế nào - Viết để sẻ chia Tháng 10/2020</a>
 
                                             </h5>
                                             <div class="monkey-fz-15 monkey-f-medium monkey-color-gray text-justify">

@@ -98,7 +98,7 @@
                         >
                             <li class="breadcrumb-item breadcrumb-no-background">
                                 <a class="monkey-f-medium text-uppercase"
-                                   href="/home">Trang chủ</a>
+                                   href="/">Trang chủ</a>
                             </li>
                             <li class="breadcrumb-item active breadcrumb-no-background">
                                 <a href="#"
@@ -142,13 +142,13 @@
                                                 <div data-v-a3c336fa="" class="col-lg-6">
                                                     <div data-v-a3c336fa="">
                                                         <div data-v-a3c336fa="" class="support-question-item monkey-fz-15 monkey-f-medium monkey-color-gray">
-                                                            <a data-v-a3c336fa="" href="" alt="" target="_blank">
+                                                            <a data-v-a3c336fa="" href="/coming-soon" alt="" target="_blank">
                                                                 <span data-v-a3c336fa="" class="mr-3">1.</span> Làm thế nào kích hoạt gói học đã đăng ký?
                                                                 <i data-v-a3c336fa="" aria-hidden="true" class="fa fa-angle-double-right">
                                                                 </i>
                                                             </a>
                                                         </div>
-                                                        <div data-v-a3c336fa="" href="" data-caption="video" data-fancybox="gallery">
+                                                        <div data-v-a3c336fa="" href="/coming-soon" data-caption="video" data-fancybox="gallery">
                                                             <span data-v-a3c336fa="" class="monkey-color-red cursor">
 												&gt;&gt;&gt; Xem nhanh video hướng dẫn
 											</span>
@@ -156,13 +156,13 @@
                                                     </div><!---->
                                                     <div data-v-a3c336fa="">
                                                         <div data-v-a3c336fa="" class="support-question-item monkey-fz-15 monkey-f-medium monkey-color-gray">
-                                                            <a data-v-a3c336fa="" href="" alt="" target="_blank">
+                                                            <a data-v-a3c336fa="" href="/coming-soon" alt="" target="_blank">
                                                                 <span data-v-a3c336fa="" class="mr-3">3.</span> Hướng dẫn ba mẹ cài đặt ứng dụng E&K trên Máy tính/Laptop
                                                                 <i data-v-a3c336fa="" aria-hidden="true" class="fa fa-angle-double-right">
                                                                 </i>
                                                             </a>
                                                         </div>
-                                                        <div data-v-a3c336fa="" href="" data-caption="video" data-fancybox="gallery">
+                                                        <div data-v-a3c336fa="" href="/coming-soon" data-caption="video" data-fancybox="gallery">
                                                             <span data-v-a3c336fa="" class="monkey-color-red cursor">
 												&gt;&gt;&gt; Xem nhanh video hướng dẫn
 											            </span>
@@ -170,13 +170,13 @@
                                                     </div><!---->
                                                     <div data-v-a3c336fa="">
                                                         <div data-v-a3c336fa="" class="support-question-item monkey-fz-15 monkey-f-medium monkey-color-gray">
-                                                            <a data-v-a3c336fa="" href="" alt="" target="_blank">
+                                                            <a data-v-a3c336fa="" href="/coming-soon" alt="" target="_blank">
                                                                 <span data-v-a3c336fa="" class="mr-3">5.</span> Hướng dẫn tải học liệu trên ứng dụng E&K
                                                                 <i data-v-a3c336fa="" aria-hidden="true" class="fa fa-angle-double-right">
                                                                 </i>
                                                             </a>
                                                         </div>
-                                                        <div data-v-a3c336fa="" href="" data-caption="video" data-fancybox="gallery">
+                                                        <div data-v-a3c336fa="" href="/coming-soon" data-caption="video" data-fancybox="gallery">
                                                             <span data-v-a3c336fa="" class="monkey-color-red cursor">
 												&gt;&gt;&gt; Xem nhanh video hướng dẫn
 											</span>
@@ -186,13 +186,13 @@
                                                 <div data-v-a3c336fa="" class="col-lg-6"><!---->
                                                     <div data-v-a3c336fa="">
                                                         <div data-v-a3c336fa="" class="support-question-item monkey-fz-15 monkey-f-medium monkey-color-gray">
-                                                            <a data-v-a3c336fa="" href="" alt="" target="_blank">
+                                                            <a data-v-a3c336fa="" href="/coming-soon" alt="" target="_blank">
                                                                 <span data-v-a3c336fa="" class="mr-3">2.</span> Hướng dẫn ba mẹ cài đặt các chương trình E&K trên thiết bị di động
                                                                 <i data-v-a3c336fa="" aria-hidden="true" class="fa fa-angle-double-right">
                                                                 </i>
                                                             </a>
                                                         </div>
-                                                        <div data-v-a3c336fa="" href="" data-caption="video" data-fancybox="gallery">
+                                                        <div data-v-a3c336fa="" href="/coming-soon" data-caption="video" data-fancybox="gallery">
                                                             <span data-v-a3c336fa="" class="monkey-color-red cursor">
 												&gt;&gt;&gt; Xem nhanh video hướng dẫn
 											</span>
@@ -200,20 +200,20 @@
                                                     </div><!---->
                                                     <div data-v-a3c336fa="">
                                                         <div data-v-a3c336fa="" class="support-question-item monkey-fz-15 monkey-f-medium monkey-color-gray">
-                                                            <a data-v-a3c336fa="" href="" alt="" target="_blank">
+                                                            <a data-v-a3c336fa="" href="/coming-soon" alt="" target="_blank">
                                                                 <span data-v-a3c336fa="" class="mr-3">4.</span> Hướng dẫn ba mẹ cài đặt ứng dụng E&K trên Máy tính/Laptop
                                                                 <i data-v-a3c336fa="" aria-hidden="true" class="fa fa-angle-double-right">
                                                                 </i>
                                                             </a>
                                                         </div>
-                                                        <div data-v-a3c336fa="" href="" data-caption="video" data-fancybox="gallery">
+                                                        <div data-v-a3c336fa="" href="/coming-soon" data-caption="video" data-fancybox="gallery">
                                                             <span data-v-a3c336fa="" class="monkey-color-red cursor">
 												&gt;&gt;&gt; Xem nhanh video hướng dẫn
 											                </span>
                                                         </div>
                                                     </div><!---->
                                                     <div data-v-a3c336fa=""><div data-v-a3c336fa="" class="support-question-item monkey-fz-15 monkey-f-medium monkey-color-gray">
-                                                            <a data-v-a3c336fa="" href="" alt="" target="_blank">
+                                                            <a data-v-a3c336fa="" href="/coming-soon" alt="" target="_blank">
                                                                 <span data-v-a3c336fa="" class="mr-3">6.</span> Mua ứng dụng học tập E&K được những ưu đãi gì
                                                                 <i data-v-a3c336fa="" aria-hidden="true" class="fa fa-angle-double-right">
 
@@ -303,31 +303,31 @@
                                                                         </div>
                                                                         <div data-v-f7d22084="" class="support-question-content">
                                                                             <div data-v-f7d22084="" class="support-question-item monkey-fz-15 monkey-f-medium monkey-color-gray">
-                                                                                <a data-v-f7d22084="" href="" alt="" target="_blank" class="monkey-color-gray">
+                                                                                <a data-v-f7d22084="" href="/coming-soon" alt="" target="_blank" class="monkey-color-gray">
                                                                                     <span data-v-f7d22084="" class="mr-3">1.</span> Mua ứng dụng học tập E&K được những ưu đãi gì
                                                                                     <i data-v-f7d22084="" aria-hidden="true" class="fa fa-angle-double-right">
                                                                                     </i>
                                                                                 </a>
                                                                             </div>
                                                                             <div data-v-f7d22084="" class="support-question-item monkey-fz-15 monkey-f-medium monkey-color-gray">
-                                                                                <a data-v-f7d22084="" href="" alt="" target="_blank" class="monkey-color-gray">
+                                                                                <a data-v-f7d22084="" href="/coming-soon" alt="" target="_blank" class="monkey-color-gray">
                                                                                     <span data-v-f7d22084="" class="mr-3">2.</span> Sau bao lâu thì ba mẹ nhận được gói học đã đăng ký mua?
                                                                                     <i data-v-f7d22084="" aria-hidden="true" class="fa fa-angle-double-right"></i>
                                                                                 </a>
                                                                             </div>
                                                                             <div data-v-f7d22084="" class="support-question-item monkey-fz-15 monkey-f-medium monkey-color-gray">
-                                                                                <a data-v-f7d22084="" href="" alt="" target="_blank" class="monkey-color-gray">
+                                                                                <a data-v-f7d22084="" href="/coming-soon" alt="" target="_blank" class="monkey-color-gray">
                                                                                     <span data-v-f7d22084="" class="mr-3">3.</span> Mua ứng dụng học tập E&K được những ưu đãi gì?
                                                                                     <i data-v-f7d22084="" aria-hidden="true" class="fa fa-angle-double-right"></i>
                                                                                 </a>
                                                                             </div>
                                                                             <div data-v-f7d22084="" class="support-question-item monkey-fz-15 monkey-f-medium monkey-color-gray">
-                                                                                <a data-v-f7d22084="" href="" alt="" target="_blank" class="monkey-color-gray">
+                                                                                <a data-v-f7d22084="" href="/coming-soon" alt="" target="_blank" class="monkey-color-gray">
                                                                                     <span data-v-f7d22084="" class="mr-3">4.</span> Mua ứng dụng học tập E&K Math được những ưu đãi gì?
                                                                                     <i data-v-f7d22084="" aria-hidden="true" class="fa fa-angle-double-right">
 
                                                                                     </i></a></div><div data-v-f7d22084="" class="support-question-item monkey-fz-15 monkey-f-medium monkey-color-gray">
-                                                                                <a data-v-f7d22084="" href="" alt="" target="_blank" class="monkey-color-gray">
+                                                                                <a data-v-f7d22084="" href="/coming-soon" alt="" target="_blank" class="monkey-color-gray">
                                                                                     <span data-v-f7d22084="" class="mr-3">5.</span> Mua ứng dụng học tập E&K được những ưu đãi gì?
                                                                                     <i data-v-f7d22084="" aria-hidden="true" class="fa fa-angle-double-right">
 
@@ -335,7 +335,7 @@
                                                                                 </a>
                                                                             </div>
                                                                             <div data-v-f7d22084="" class="support-question-item monkey-fz-15 monkey-f-medium monkey-color-gray">
-                                                                                <a data-v-f7d22084="" href="" alt="" target="_blank" class="monkey-color-gray">
+                                                                                <a data-v-f7d22084="" href="/coming-soon" alt="" target="_blank" class="monkey-color-gray">
                                                                                     <span data-v-f7d22084="" class="mr-3">6.</span> Mua giải pháp E&K trọn bộ được những ưu đãi gì?
                                                                                     <i data-v-f7d22084="" aria-hidden="true" class="fa fa-angle-double-right">
 
@@ -361,36 +361,36 @@
                                                                                     <div data-v-f7d22084="" class="question-item-detail position-relative mb-3">
                                                                                         <span data-v-f7d22084="" class="numerical-order">1.</span>
                                                                                         <i data-v-f7d22084="" aria-hidden="true" class="fa fa-angle-double-right"></i>
-                                                                                        <a data-v-f7d22084="" href="https://www.monkey.edu.vn/ho-tro-khach-hang/mua-ung-dung-hoc-tap-monkey-junior-duoc-nhung-uu-dai-gi.html">
+                                                                                        <a data-v-f7d22084="" href="/coming-soon">
                                                                                             Mua ứng dụng học tập E&K được những ưu đãi gì
                                                                                         </a>
                                                                                     </div>
                                                                                     <div data-v-f7d22084="" class="question-item-detail position-relative mb-3">
                                                                                         <span data-v-f7d22084="" class="numerical-order">2.</span>
                                                                                         <i data-v-f7d22084="" aria-hidden="true" class="fa fa-angle-double-right"></i>
-                                                                                        <a data-v-f7d22084="" href="">
+                                                                                        <a data-v-f7d22084="" href="/coming-soon">
                                                                                             Sau bao lâu thì ba mẹ nhận được gói học đã đăng ký mua?
                                                                                         </a>
                                                                                     </div>
                                                                                     <div data-v-f7d22084="" class="question-item-detail position-relative mb-3">
                                                                                         <span data-v-f7d22084="" class="numerical-order">3.</span>
                                                                                         <i data-v-f7d22084="" aria-hidden="true" class="fa fa-angle-double-right"></i>
-                                                                                        <a data-v-f7d22084="" href="">
+                                                                                        <a data-v-f7d22084="" href="/coming-soon">
                                                                                             Mua ứng dụng học tập E&K được những ưu đãi gì?
                                                                                         </a>
                                                                                     </div>
                                                                                     <div data-v-f7d22084="" class="question-item-detail position-relative mb-3">
                                                                                         <span data-v-f7d22084="" class="numerical-order">4.</span>
                                                                                         <i data-v-f7d22084="" aria-hidden="true" class="fa fa-angle-double-right"></i>
-                                                                                        <a data-v-f7d22084="" href="">
+                                                                                        <a data-v-f7d22084="" href="/coming-soon">
                                                                                             Mua ứng dụng học tập E&K Math được những ưu đãi gì?
                                                                                         </a>
                                                                                     </div>
-                                                                                    <div data-v-f7d22084="" class="question-item-detail position-relative mb-3"><span data-v-f7d22084="" class="numerical-order">5.</span> <i data-v-f7d22084="" aria-hidden="true" class="fa fa-angle-double-right"></i> <a data-v-f7d22084="" href="">
+                                                                                    <div data-v-f7d22084="" class="question-item-detail position-relative mb-3"><span data-v-f7d22084="" class="numerical-order">5.</span> <i data-v-f7d22084="" aria-hidden="true" class="fa fa-angle-double-right"></i> <a data-v-f7d22084="" href="/coming-soon">
                                                                                             Mua ứng dụng học tập E&K được những ưu đãi gì?
                                                                                         </a>
                                                                                     </div>
-                                                                                    <div data-v-f7d22084="" class="question-item-detail position-relative mb-3"><span data-v-f7d22084="" class="numerical-order">6.</span> <i data-v-f7d22084="" aria-hidden="true" class="fa fa-angle-double-right"></i> <a data-v-f7d22084="" href="">
+                                                                                    <div data-v-f7d22084="" class="question-item-detail position-relative mb-3"><span data-v-f7d22084="" class="numerical-order">6.</span> <i data-v-f7d22084="" aria-hidden="true" class="fa fa-angle-double-right"></i> <a data-v-f7d22084="" href="/coming-soon">
                                                                                             Mua giải pháp E&K trọn bộ được những ưu đãi gì?
                                                                                         </a>
                                                                                     </div>
@@ -413,14 +413,14 @@
                                                                                     <div data-v-f7d22084="" class="question-item-detail position-relative mb-3">
                                                                                         <span data-v-f7d22084="" class="numerical-order">1.</span>
                                                                                         <i data-v-f7d22084="" aria-hidden="true" class="fa fa-angle-double-right"></i>
-                                                                                        <a data-v-f7d22084="" href="">
+                                                                                        <a data-v-f7d22084="" href="/coming-soon">
                                                                                             Có những hình thức thanh toán nào khi mua ứng dụng học tập của E&K?
                                                                                         </a>
                                                                                     </div>
                                                                                     <div data-v-f7d22084="" class="question-item-detail position-relative mb-3">
                                                                                         <span data-v-f7d22084="" class="numerical-order">2.</span>
                                                                                         <i data-v-f7d22084="" aria-hidden="true" class="fa fa-angle-double-right"></i>
-                                                                                        <a data-v-f7d22084="" href="">
+                                                                                        <a data-v-f7d22084="" href="/coming-soon">
                                                                                             Làm thế nào để chuyển đổi hình thức thanh toán khi mua ứng dụng E&K?
                                                                                         </a>
                                                                                     </div>
