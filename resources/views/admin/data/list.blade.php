@@ -31,7 +31,7 @@
                     <th>ID</th>
                     <th>Images</th>
                     <th style="width: 20px;">Values</th>
-                    <th>Words_en</th>
+                    <th>Words</th>
                     <th>color</th>
                     <th style="width: 160px;">video</th>
                     <th>Voice_en</th>
@@ -51,7 +51,7 @@
                             @endif
                         </td>
                         <td>{{$data->values}}</td>
-                        <td>{{$data->words_en}}</td>
+                        <td>{{$data->words}}</td>
                         <td>{{$data->color}}</td>
                         <td>
                             @if($data->video)
