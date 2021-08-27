@@ -86,7 +86,7 @@
                         </li>
 
                         <li class="nav-item monkey-nav-item">
-                            <a class="nav-link nav-link-monkey distance-center" href="/bang-gia" target="_self">
+                            <a class="nav-link nav-link-monkey distance-center" href="/course" target="_self">
                                 Bảng giá
                             </a>
                         </li>

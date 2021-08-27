@@ -285,6 +285,7 @@
     - `php artisan db:seed --class=UserSeeder` chạy lại file UserSeeder
     - `php artisan migrate:fresh --seed` vừa thực hiện reset hard database (xoá toàn bộ database cũ, migrate lại) và chạy file DatabaseSeeder.
 
+
 ###Model trong laravel.
 - Lấy ra danh sách các bản ghi:
 
