@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DataController;
+use App\Http\Controllers\MainUserController;
 use \App\Http\Controllers\trackingController;
 use \App\Http\Controllers\courseController;
 use \App\Http\Controllers\AccountController;
@@ -24,7 +25,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function (){
-    return view('welcome');
+    return view('user.home');
 });
 Route::get('/chuong-trinh-hoc', function (){
     return view('user.chuongtringhoc');
@@ -38,6 +39,38 @@ Route::get('/ho-tro-khach-hang', function (){
 Route::get('/loi-ich', function (){
     return view('user.loiich');
 });
+Route::get('/bang-gia', function (){
+    return view('user.banggia');
+});
+Route::get('/course',[MainUserController::class,'getCourse']);
+Route::get('/huong-dan-hoc', function (){
+    return view('user.huongdanhoc');
+});
+
+
+
+/*
+ * error
+ */
+
+Route::get('/coming-soon',function (){
+   return view('error.coming-soon');
+});
+
+
+/*
+ * Course
+ */
+Route::get('/test',function (){
+    return view('material.lesson-view');
+});
+
+Route::get('/cr={id}',[MainUserController::class,'getLessonByCourse']);
+Route::get('/ls={id}/mt',[MainUserController::class,'checkMaterial']);
+Route::get('/ls={id}/mt={lc}',[MainUserController::class,'createMaterial']);
+
+
+Route::get('/auto={id}/key={key}',[lessonController::class,'autoCreateLesson']);
 
 /*
 tool
@@ -127,25 +160,5 @@ Route::get('/admin/material/edit/id={id}', [MaterialController::class, 'edit']);
 Route::put('/admin/material/{id}', [MaterialController::class, 'update']);
 Route::get('/admin/material/delete/id={id}', [MaterialController::class, 'destroy']);
 
-Route::get('/chuong-trinh-hoc', function (){
-    return view('user.chuongtringhoc');
-});
-Route::get('/phuong-phap', function (){
-    return view('user.phuongphap');
-});
-Route::get('/ho-tro-khach-hang', function (){
-    return view('user.hotrokhachhang');
-});
-Route::get('/loi-ich', function (){
-    return view('user.loiich');
-});
-Route::get('/bang-gia', function (){
-    return view('user.banggia');
-});
-Route::get('/huong-dan-hoc', function (){
-    return view('user.huongdanhoc');
-});
 
-Route::get('/', function (){
-    return view('user.home');
-});
+
