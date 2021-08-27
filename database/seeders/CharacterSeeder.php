@@ -286,6 +286,17 @@ class CharacterSeeder extends Seeder
                 'images' => 'https://res.cloudinary.com/thangdao04/image/upload/v1629990213/kkeqlaccpjernlyvqbn2.png',
                 'key' => 'character',
                 'createBy' => 'hungpvth2008007@fpt.edu.vn',
+                'created_at' => '2021-08-26 15:02:18',
+                'updated_at' => '2021-08-26 15:02:18'
+            ],
+            ['values' => 'X',
+                'words' => 'X',
+                'color' => 'blue',
+                'video' => '4vxCCAz79iU',
+                'voice' => 'https://res.cloudinary.com/thangdao04/video/upload/v1629990201/rfdopmhnobqlbuylgvor.mp3',
+                'images' => 'https://res.cloudinary.com/thangdao04/image/upload/v1629990213/kkeqlaccpjernlyvqbn2.png',
+                'key' => 'character',
+                'createBy' => 'hungpvth2008007@fpt.edu.vn',
                 'created_at' => '2021-08-26 15:03:42',
                 'updated_at' => '2021-08-26 15:03:42'
             ],
@@ -306,7 +317,7 @@ class CharacterSeeder extends Seeder
                 'video' => 'vxffHm4wy24',
                 'voice' => 'https://res.cloudinary.com/thangdao04/video/upload/v1629990551/p9wj0kydnl4g87qeb9gl.mp3',
                 'images' => 'https://res.cloudinary.com/thangdao04/image/upload/v1629990565/mqxvr5gzca9cszcbzryi.png',
-                'key' => 'character',
+                'key' => 'number',
                 'createBy' => 'hungpvth2008007@fpt.edu.vn',
                 'created_at' => '2021-08-26 15:09:33',
                 'updated_at' => '2021-08-26 15:09:33'
@@ -317,7 +328,7 @@ class CharacterSeeder extends Seeder
                 'video' => 'D32JZKKgjJg',
                 'voice' => 'https://res.cloudinary.com/thangdao04/video/upload/v1629990623/hix6fyp7di0gqyhunjfw.mp3',
                 'images' => 'https://res.cloudinary.com/thangdao04/image/upload/v1629990603/z3ts8zalcuzgcfkvsqzn.png',
-                'key' => 'character',
+                'key' => 'number',
                 'createBy' => 'hungpvth2008007@fpt.edu.vn',
                 'created_at' => '2021-08-26 15:10:31',
                 'updated_at' => '2021-08-26 15:10:31'
@@ -328,7 +339,7 @@ class CharacterSeeder extends Seeder
                 'video' => 'gIlqG3s6XN4',
                 'voice' => 'https://res.cloudinary.com/thangdao04/video/upload/v1629990701/fjexeq1azskpnswjk2c0.mp3',
                 'images' => 'https://res.cloudinary.com/thangdao04/image/upload/v1629990657/du4bag2eamp59xy3jl2o.png',
-                'key' => 'character',
+                'key' => 'number',
                 'createBy' => 'hungpvth2008007@fpt.edu.vn',
                 'created_at' => '2021-08-26 15:11:48',
                 'updated_at' => '2021-08-26 15:11:48'
@@ -339,7 +350,7 @@ class CharacterSeeder extends Seeder
                 'video' => 'UfCj_dvNuPI',
                 'voice' => 'https://res.cloudinary.com/thangdao04/video/upload/v1629990734/han4gx8gqyick0gb2ffx.mp3',
                 'images' => 'https://res.cloudinary.com/thangdao04/image/upload/v1629990744/sprxyhrgrlajvy8bvfdq.png',
-                'key' => 'character',
+                'key' => 'number',
                 'createBy' => 'hungpvth2008007@fpt.edu.vn',
                 'created_at' => '2021-08-26 15:12:38',
                 'updated_at' => '2021-08-26 15:12:38'
@@ -350,7 +361,7 @@ class CharacterSeeder extends Seeder
                 'video' => 'lcRg8AkyuKU',
                 'voice' => 'https://res.cloudinary.com/thangdao04/video/upload/v1629990786/mtnaqxcayt50r4rlyjqy.mp3',
                 'images' => 'https://res.cloudinary.com/thangdao04/image/upload/v1629990807/kqc7cdhf9abuzftjhssb.png',
-                'key' => 'character',
+                'key' => 'number',
                 'createBy' => 'hungpvth2008007@fpt.edu.vn',
                 'created_at' => '2021-08-26 15:13:37',
                 'updated_at' => '2021-08-26 15:13:37'
@@ -361,7 +372,7 @@ class CharacterSeeder extends Seeder
                 'video' => 'oi9tq0PTH7k',
                 'voice' => 'https://res.cloudinary.com/thangdao04/video/upload/v1629990868/dgmiuvhbw2gxhinwvzrr.mp3',
                 'images' => 'https://res.cloudinary.com/thangdao04/image/upload/v1629990884/lxfg7ix2okprdbhplkdc.png',
-                'key' => 'character',
+                'key' => 'number',
                 'createBy' => 'hungpvth2008007@fpt.edu.vn',
                 'created_at' => '2021-08-26 15:15:17',
                 'updated_at' => '2021-08-26 15:15:17'
@@ -372,7 +383,7 @@ class CharacterSeeder extends Seeder
                 'video' => 'mu6mw8aqDCQ',
                 'voice' => 'https://res.cloudinary.com/thangdao04/video/upload/v1629990941/pxqxgs7mcz3kiavhiclu.mp3',
                 'images' => 'https://res.cloudinary.com/thangdao04/image/upload/v1629990953/mpj7n1nw1mjkzxxa2xh5.png',
-                'key' => 'character',
+                'key' => 'number',
                 'createBy' => 'hungpvth2008007@fpt.edu.vn',
                 'created_at' => '2021-08-26 15:16:13',
                 'updated_at' => '2021-08-26 15:16:13'
@@ -383,7 +394,7 @@ class CharacterSeeder extends Seeder
                 'video' => 'n8COZPpQWgQ',
                 'voice' => 'https://res.cloudinary.com/thangdao04/video/upload/v1629991000/uno02xnxqtobh3x1ddpe.mp3',
                 'images' => 'https://res.cloudinary.com/thangdao04/image/upload/v1629991013/cpfaz9fdjlea5x5xgj4q.png',
-                'key' => 'character',
+                'key' => 'number',
                 'createBy' => 'hungpvth2008007@fpt.edu.vn',
                 'created_at' => '2021-08-26 15:17:04',
                 'updated_at' => '2021-08-26 15:17:04'
@@ -394,7 +405,7 @@ class CharacterSeeder extends Seeder
                 'video' => 'rSoYRFYT3fA',
                 'voice' => 'https://res.cloudinary.com/thangdao04/video/upload/v1629991060/ppq3ftlqz0betibfq4yu.mp3',
                 'images' => 'https://res.cloudinary.com/thangdao04/image/upload/v1629991071/xhlswwzzgdljqnas1t1v.png',
-                'key' => 'character',
+                'key' => 'number',
                 'createBy' => 'hungpvth2008007@fpt.edu.vn',
                 'created_at' => '2021-08-26 15:18:02',
                 'updated_at' => '2021-08-26 15:18:02'
@@ -405,7 +416,7 @@ class CharacterSeeder extends Seeder
                 'video' => 'b7hRdKP9HFM',
                 'voice' => 'https://res.cloudinary.com/thangdao04/video/upload/v1629991189/zlzoedu1x56rweoto7fb.mp3',
                 'images' => 'https://res.cloudinary.com/thangdao04/image/upload/v1629991197/ccazz5jaupzbadwonfjz.png',
-                'key' => 'character',
+                'key' => 'number',
                 'createBy' => 'hungpvth2008007@fpt.edu.vn',
                 'created_at' => '2021-08-26 15:20:05',
                 'updated_at' => '2021-08-26 15:20:05'

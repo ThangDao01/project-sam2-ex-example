@@ -213,8 +213,6 @@
                     </div>
                 </div>
             </section>
-
-
         </div>
         <section class="vocabulary-course" id="breadcrumb-monkey">
             <div class="container-fluid container-xl">

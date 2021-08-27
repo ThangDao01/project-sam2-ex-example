@@ -18,7 +18,11 @@
     'images' => '{{$data->images}}',<br>
     'key' => '{{$data->key}}',<br>
     'createBy' => '{{$data->createBy}}',<br>
+<<<<<<< HEAD
     'created_at' =>'{{$data->created_at}}'<br>
+=======
+    'created_at' =>'{{$data->created_at}}',<br>
+>>>>>>> ea1636b328d34475426e9c63cd628aedb1eb3eda
     'updated_at' =>'{{$data->updated_at}}'<br>
     ],<br>
 @endforeach

@@ -53,7 +53,6 @@
                         <td>{{$data->values}}</td>
                         <td>{{$data->words}}</td>
                         <td>{{$data->color}}</td>
-
                         <td>
                             @if($data->video)
                                 <iframe width="160" height="240" src="https://www.youtube.com/embed/{{$data->video}}"

@@ -18,7 +18,8 @@ class CreateCoursesTable extends Migration
             $table->string('course');
             $table->integer('price');
             $table->text('description');
-            $table->dateTime('TimeFinish');
+            $table->string('key');
+            $table->integer('TimeFinish');
             $table->integer('status');
             $table->timestamps();
         });
