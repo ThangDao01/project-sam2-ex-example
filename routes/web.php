@@ -98,7 +98,7 @@ Route::post('/admin/data-support/create', [DataController::class,'create']);
 Route::get('/admin/data-support/result', [DataController::class,'seedProMax']);
 Route::get('/admin/data-support/list', [DataController::class,'index']);
 Route::get('/admin/data-support/edit/id={id}', [DataController::class, 'edit']);
-Route::put('/admin/data-support/{id}', [DataController::class, 'update']);
+Route::post('/admin/data-support/{id}', [DataController::class, 'update']);
 Route::get('/admin/data-support/delete/id={id}', [DataController::class, 'destroy']);
 
 
@@ -157,7 +157,7 @@ Route::get('/admin/material/create', [MaterialController::class,'createView']);
 Route::post('/admin/material/create', [MaterialController::class,'create']);
 Route::get('/admin/material/list', [MaterialController::class,'index']);
 Route::get('/admin/material/edit/id={id}', [MaterialController::class, 'edit']);
-Route::put('/admin/material/{id}', [MaterialController::class, 'update']);
+Route::post('/admin/material/{id}', [MaterialController::class, 'update']);
 Route::get('/admin/material/delete/id={id}', [MaterialController::class, 'destroy']);
 
 

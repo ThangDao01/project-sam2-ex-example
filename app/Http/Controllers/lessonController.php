@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\LessonRequest;
+use App\Models\Course;
 use App\Models\DataSupport;
 use App\Models\Lesson;
 use Illuminate\Http\Request;
@@ -29,7 +30,7 @@ class lessonController extends Controller
     public function createview()
     {
         //
-        return view('admin.Lesson.create');
+        return view('admin.Lesson.create',['list'=> Course::all()]);
 
     }
 
@@ -43,10 +44,10 @@ class lessonController extends Controller
     {
         $request->validated();
         $obj = new Lesson();
-        $obj->lesson_name = $request->get('LessonName');
-        $obj->CourseId = $request->get('CourseId');
-        $obj->ListMaterialId = $request->get('ListMaterialId');
-        $obj->DataSupportValues = $request->get('DataSupportValues');
+        $obj->lessonName = $request->get('lessonName');
+        $obj->courseId = $request->get('courseId');
+        $obj->listMaterialId = $request->get('listMaterialId');
+        $obj->dataSupportId = $request->get('dataSupportId');
         $obj->status = $request->get('status');
         $obj->save();
         return redirect('admin/lesson/list');
@@ -87,7 +88,7 @@ class lessonController extends Controller
         if ($obj == null) {
             return view('error.404', ['msg' => 'không tìm thấy tin tức']);
         }
-        return view('admin.lesson.edit', ['obj' => $obj]);
+        return view('admin.lesson.edit', ['obj' => $obj], ['list'=> Course::all()]);
     }
 
     /**
@@ -101,24 +102,24 @@ class lessonController extends Controller
     {
         //
         $request->validate([
-                'LessonName' => 'required',
-                'CourseId' => 'required',
-                'ListMaterialId' => 'required',
-                'DataSupportValues' => 'required',
-                'Status' => 'required',
+                'lessonName' => 'required',
+                'courseId' => 'required',
+                'listMaterialId' => 'required',
+                'dataSupportId' => 'required',
+                'status' => 'required',
             ]
         );
         $obj = Lesson::find($id);
         if ($obj == null) {
             return view('error.404', ['msg' => 'không tìm thấy tin tức']);
         }
-        $obj->lesson_name = $request->get('LessonName');
-        $obj->CourseId = $request->get('CourseId');
-        $obj->ListMaterialId = $request->get('ListMaterialId');
-        $obj->DataSupportValues = $request->get('DataSupportValues');
+        $obj->lessonName = $request->get('lessonName');
+        $obj->courseId = $request->get('courseId');
+        $obj->listMaterialId = $request->get('listMaterialId');
+        $obj->dataSupportId = $request->get('dataSupportId');
         $obj->status = $request->get('status');
         $obj->save();
-        return redirect('admin/lesson/list');
+        return redirect('admin/lesson/list' ,['list'=> Course::all()]);
     }
 
     /**
