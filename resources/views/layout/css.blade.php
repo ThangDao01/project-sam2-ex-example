@@ -13,3 +13,4 @@
 <link rel="stylesheet" href="{{URL::asset('css/morris.css') }}" type="text/css"/>
 <!-- calendar -->
 <link rel="stylesheet" href="{{URL::asset('css/monthly.css') }}">
+<style></style>

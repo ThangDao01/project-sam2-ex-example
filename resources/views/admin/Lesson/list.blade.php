@@ -31,10 +31,11 @@
                 <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Material Name</th>
-                    <th>Material Location</th>
-                    <th>List Data</th>
-                    <th>Status</th>
+                    <th>lessonName</th>
+                    <th>courseId</th>
+                    <th>lisMaterialId</th>
+                    <th>dataSupportId</th>
+                    <th>status</th>
                     <th>actions</th>
                 </tr>
                 </thead>
@@ -42,9 +43,11 @@
                 @foreach($list as $data)
                     <tr class="gradeX">
                         <td>{{$data->id}}</td>
-                        <td>{{$data->lesson_name}}</td>
-                        <td>{{$data->course_ID}}</td>
-                        <td>{{$data->list_material_ID}}</td>
+                        <td>{{$data->lessonName}}</td>
+                        <td>{{$data->courseId}}</td>
+                        <td>{{$data->listMaterialId}}</td>
+                        <td>{{$data->dataSupportId}}</td>
+                        <td>{{$data->status}}</td>
                         <td class="actions">
                             <a href="/admin/lesson/edit/id={{$data->id}}" class="on-default edit-row">
                                 <i style="font-size: 20px" class="fa fa-pencil-square-o text-success text-active"></i></a>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\courseRequest;
 use App\Models\Course;
+use App\Models\Lesson;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
@@ -15,10 +16,10 @@ class courseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($id)
+    public function index()
     {
         //
-        return view('admin.course.list' , ['list' => Course::all()]);
+        return view('admin.course.list' , ['list' => Course::paginate(10)]);
 
     }
 
@@ -30,7 +31,7 @@ class courseController extends Controller
     public function createview()
     {
         //
-        return view('admin.course.create');
+        return view('admin.course.create', ['list' => Lesson::all()]);
 
     }
 
@@ -50,6 +51,8 @@ class courseController extends Controller
         $obj->Price = $request->get('Price');
         $obj->Description = $request->get('Description');
         $obj->timeFinish = $request->get('timeFinish');
+        $obj->thumbnail = $request->get('thumbnail');
+        $obj->lesson = $request->get('lesson');
         $obj->Status = $request->get('Status');
         $obj->created_at = Carbon::now();
         $obj->updated_at = Carbon::now();
@@ -82,7 +85,7 @@ class courseController extends Controller
         if ($obj == null){
             return view('error.404', ['msg'=>'']);
         }
-        return view('admin.Course.edit', ['obj'=>$obj]);
+        return view('admin.Course.edit', ['obj'=>$obj] , ['list' => Lesson::all()]);
     }
 
     /**
@@ -100,7 +103,9 @@ class courseController extends Controller
                 'course' => 'required',
                 'Price' => 'required',
                 'Description' => 'required',
+                'thumbnail' => 'required',
                 'timeFinish' => 'required',
+                'lesson' => 'required',
                 'Status' => 'required',
             ]
         );
@@ -111,10 +116,12 @@ class courseController extends Controller
         $obj->course = $request->get('course');
         $obj->Price = $request->get('Price');
         $obj->Description = $request->get('Description');
+        $obj->thumbnail = $request->get('thumbnail');
         $obj->timeFinish = $request->get('timeFinish');
+        $obj->lesson = $request->get('lesson');
         $obj->Status = $request->get('Status');
         $obj->save();
-        return redirect('/admin/course/list');
+        return redirect('/admin/course/list' );
     }
 
     /**

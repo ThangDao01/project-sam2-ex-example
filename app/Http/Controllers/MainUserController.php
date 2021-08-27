@@ -15,7 +15,8 @@ class MainUserController extends Controller
             'listCourse' => $obj
         ]);
     }
-    public function getLessonByCourse($id){
-        return view('material.lesson-view' , ['listLesson' => Lesson::all()->where('courseId',$id)]);
+    public function getLessonByCourse($id)
+    {
+        return view('material.lesson-view', ['listLesson' => Lesson::all()->where('courseId', $id)]);
     }
 }

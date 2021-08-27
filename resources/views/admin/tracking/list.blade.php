@@ -41,7 +41,7 @@
                 <tbody>
                 @foreach($list as $data)
                     <tr class="gradeX">
-                        <td>{{$data->MaterialID}}</td>
+                        <td>{{$data->MaterialId}}</td>
                         <td>{{$data->LessonId}}</td>
                         <td>{{$data->AccountId}}</td>
                         <td>{{$data->commit}}</td>

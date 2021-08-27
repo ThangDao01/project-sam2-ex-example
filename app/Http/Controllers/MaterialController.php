@@ -33,6 +33,10 @@ class MaterialController extends Controller
         dd($id,$lc);
     }
 
+    public function createView(){
+        return view('admin.Material.create');
+    }
+
     /**
      * Store a newly created resource in storage.
      *
