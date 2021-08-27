@@ -63,6 +63,7 @@ Route::get('/admin/data-support', function () {
     return view('admin.data.list');
 });
 
+
 //data
 Route::get('/admin/data-support/create', [DataController::class,'createView']);
 Route::post('/admin/data-support/create', [DataController::class,'create']);
