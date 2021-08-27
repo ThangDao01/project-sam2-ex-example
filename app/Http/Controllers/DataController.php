@@ -58,7 +58,7 @@ class DataController extends Controller
         $obj->voice = $request->get('voice');
         $obj->images = $request->get('images');
         $obj->key = $request->get('key');
-        $obj->createBy = 0;
+        $obj->createBy = 'hoadvth2009007@fpt.edu.vn';
         $obj->created_at = Carbon::now();
         $obj->updated_at = Carbon::now();
         $obj->save();
