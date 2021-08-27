@@ -1,6 +1,6 @@
 @extends('layout.user-layout')
 @section('title')
-    E&K - Hỗ trợ khách hàng
+    <title>E&K - Hỗ trợ khách hàng</title>
 @endsection
 @section('detail')
     <section id="popup-loading" class="popup-loading">

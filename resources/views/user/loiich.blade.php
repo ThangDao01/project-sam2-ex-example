@@ -1,6 +1,6 @@
 @extends('layout.user-layout')
 @section('title')
-    E&K - Lợi ích
+    <title>E&K - Lợi ích</title>
 @endsection
 @section('detail')
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PS37S79"

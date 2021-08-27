@@ -65,7 +65,7 @@ Route::get('/test',function (){
     return view('material.lesson-view');
 });
 Route::get('/infor-coures',function (){
-    return view('infor-course');
+    return view('tool.infor-course');
 });
 
 Route::get('/cr={id}',[MainUserController::class,'getLessonByCourse']);

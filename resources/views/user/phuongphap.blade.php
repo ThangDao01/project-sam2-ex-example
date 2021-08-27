@@ -1,6 +1,6 @@
 @extends('layout.user-layout')
 @section('title')
-    E&K - Phương pháp
+    <title>E&K - Phương pháp</title>
 @endsection
 @section('detail')
 

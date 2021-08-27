@@ -1,6 +1,6 @@
 @extends('layout.user-layout')
 @section('title')
-    E&K - Nơi dành cho trẻ mới bắt đầu học tiếng Anh
+    <title>E&K - Nơi dành cho trẻ mới bắt đầu học tiếng Anh</title>
 @endsection
 @section('detail')
 <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PS37S79" height="0" width="0" style="display:none;visibility:hidden">
