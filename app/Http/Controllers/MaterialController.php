@@ -27,12 +27,10 @@ class MaterialController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function createview()
+    public function createMaterial($id,$lc)
     {
         //
-
-        return view('admin.Material.create');
-
+        dd($id,$lc);
     }
 
     /**

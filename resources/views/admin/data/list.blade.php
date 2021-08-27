@@ -45,7 +45,7 @@
                         <td>{{$data->id}}</td>
                         <td>
                             @if($data->images)
-                                <img src="/images/{{$data->images}}" style="width: 100px;" alt="{{$data->values}}">
+                                <img src="{{$data->images}}" style="width: 100px;" alt="{{$data->values}}">
                             @else
                                 null
                             @endif
