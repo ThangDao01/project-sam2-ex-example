@@ -119,11 +119,10 @@ Route::put('/admin/course/{id}', [courseController::class, 'update']);
 Route::get('/admin/course/delete/id={id}', [courseController::class, 'destroy']);
 
 //account
-Route::get('/admin/account/create', [AccountController::class,'createView']);
+Route::get('/admin/register', [AccountController::class,'registerView']);
+Route::get('/admin/login', [AccountController::class,'loginView']);
 Route::post('/admin/account/create', [AccountController::class,'create']);
 Route::get('/admin/account/list', [AccountController::class,'index']);
-Route::get('/admin/account/edit/id={id}', [AccountController::class, 'edit']);
-Route::put('/admin/account/{id}', [AccountController::class, 'update']);
 Route::get('/admin/account/delete/id={id}', [AccountController::class, 'destroy']);
 
 //Article
