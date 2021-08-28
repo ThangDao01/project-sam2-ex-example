@@ -10,8 +10,9 @@
             Form Data-create
         </p>
         <div class="panel-body">
-            <form class="form-horizontal bucket-form" action="/admin/data-support/{{$obj->id}}" method="post">
+            <form class="form-horizontal bucket-form" action="/admin/data-support/edit" method="post">
                 @csrf
+                <input type="hidden" value="{{$obj->id}}" name="id">
                 <div class="form-group">
                     <label class="col-sm-3 control-label">Values</label>
                     <div class="col-sm-6">

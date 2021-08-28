@@ -58,11 +58,7 @@ class DataController extends Controller
         $obj->voice = $request->get('voice');
         $obj->images = $request->get('images');
         $obj->key = $request->get('key');
-<<<<<<< HEAD
         $obj->createBy = 'hungpvth2008007@fpt.edu.vn';
-=======
-        $obj->createBy = 'hoadvth2009007@fpt.edu.vn';
->>>>>>> ea1636b328d34475426e9c63cd628aedb1eb3eda
         $obj->created_at = Carbon::now();
         $obj->updated_at = Carbon::now();
         $obj->save();
@@ -97,7 +93,7 @@ class DataController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function editForm($id)
     {
         //
         $obj = DataSupport::find($id);
@@ -105,6 +101,19 @@ class DataController extends Controller
             return view('admin.error.404', ['msg'=>'không tìm thấy tin tức']);
         }
         return view('admin.data.edit', ['obj'=>$obj]);
+    }
+    public function edit($id,Request $request){
+        $obj = DataSupport::find($id);
+        $obj->values = $request->get('values');
+        $obj->color = $request->get('color');
+        $obj->words = $request->get('words');
+        $obj->video = $request->get('video');
+        $obj->voice = $request->get('voice');
+        $obj->images = $request->get('images');
+        $obj->key = $request->get('key');
+        $obj->updated_at = Carbon::now();
+        $obj->save();
+        return redirect('/admin/data-support/list');
     }
 
     /**
@@ -114,31 +123,23 @@ class DataController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(DataSupportRequest $request)
     {
         //
-        $request->validate(
-            [
-                'values' => 'required',
-                'color' => 'required',
-                'words_en' => 'required',
-                'video' => 'required',
-                'voice_en' => 'required',
-                'images' => 'required',
-                'key' => 'required'
-            ]
-        );
+        $request->validated();
+        $id =$request->get('id');
         $obj = DataSupport::find($id);
         if ($obj == null){
             return view('admin.error.404', ['msg'=>'không tìm thấy tin tức']);
         }
         $obj->values = $request->get('values');
         $obj->color = $request->get('color');
-        $obj->words_en = $request->get('words_en');
+        $obj->words = $request->get('words');
         $obj->video = $request->get('video');
-        $obj->voice_en = $request->get('voice_en');
+        $obj->voice = $request->get('voice');
         $obj->images = $request->get('images');
         $obj->key = $request->get('key');
+        $obj->updated_at = Carbon::now();
         $obj->save();
         return redirect('/admin/data-support/list');
     }

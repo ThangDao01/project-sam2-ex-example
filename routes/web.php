@@ -101,7 +101,8 @@ Route::get('/admin/data-support/create', [DataController::class,'createView']);
 Route::post('/admin/data-support/create', [DataController::class,'create']);
 Route::get('/admin/data-support/result', [DataController::class,'seedProMax']);
 Route::get('/admin/data-support/list', [DataController::class,'index']);
-Route::get('/admin/data-support/edit/id={id}', [DataController::class, 'edit']);
+Route::get('/admin/data-support/edit/id={id}', [DataController::class, 'editForm']);
+Route::post('/admin/data-support/edit', [DataController::class, 'update']);
 Route::post('/admin/data-support/{id}', [DataController::class, 'update']);
 Route::get('/admin/data-support/delete/id={id}', [DataController::class, 'destroy']);
 
