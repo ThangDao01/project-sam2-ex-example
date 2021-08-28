@@ -95,6 +95,10 @@ Route::get('/admin/data-support', function () {
     return view('admin.data.list');
 });
 
+Route::get('/route /policy', function () {
+    return view('user.chinhsachbaomat');
+});
+
 
 //data
 Route::get('/admin/data-support/create', [DataController::class,'createView']);
