@@ -3,6 +3,16 @@
 <script src="{{URL::asset('js/scripts.js') }}"></script>
 <script src="{{URL::asset('js/jquery.slimscroll.js') }}"></script>
 <script src="{{URL::asset('js/jquery.nicescroll.js') }}"></script>
+<script src="{{URL::asset('ckeditor/ckeditor.js')}}"></script>
+<script>
+
+    CKEDITOR.replace('ckeditor');
+    CKEDITOR.replace('ckeditor1');
+    CKEDITOR.replace('ckeditor2');
+    CKEDITOR.replace('ckeditor3');
+    CKEDITOR.replace('ckeditor4');
+    CKEDITOR.replace('id4');
+</script>
 <!--[if lte IE 8]>
 <script language="javascript" type="text/javascript" src="{{URL::asset('js/flot-chart/excanvas.min.js') }}"></script><![endif]-->
 <script src="{{URL::asset('js/jquery.scrollTo.js') }}"></script>

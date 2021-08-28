@@ -15,7 +15,7 @@
                 <div class="form-group">
                     <label class="col-sm-3 control-label">MaterialID</label>
                     <div class="col-sm-6">
-                        <input type="text" name="MaterialId" class="form-control" >
+                        <input type="text" name="MaterialId" class="form-control" placeholder="link" >
                         @error('MaterialId')
                         <div class="text-danger">* {{$message}}</div>
                         @enderror

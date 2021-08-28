@@ -25,31 +25,35 @@
                 <div class="form-group">
                     <label class="col-sm-3 control-label">Lesson Name</label>
                     <div class="col-sm-6">
-                        <input type="text" name="lesson_name" class="form-control">
+                        <input type="text" name="lessonName" class="form-control">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label">Course ID</label>
-                    <div class="col-sm-6">
-                        <input type="text" class="form-control" name="course_ID" >
+                    <label class="col-sm-3 control-label">CourseId</label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-control" name="courseId" >
+                            @foreach($list as $data)
+                                <option value="{{($data->id)}}">{{($data->course)}}</option>
+                            @endforeach
+                        </select>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-3 control-label">List Material ID</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" name="list_material_id">
+                        <input type="text" class="form-control" name="listMaterialId">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-3 control-label">Data Suppor Values</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" name="data_support_values">
+                        <input type="text" class="form-control" name="dataSupportId" value="">
                     </div>
                 </div>
-                <div class="col-md-4 form-group" style="margin-left: 170px;">
+                <div class="form-group">
                     <label class="col-sm-3 control-label col-lg-3" for="inputSuccess">Status</label>
-                    <div class="col-lg-6">
-                        <select class="form-control m-bot15">
+                    <div class="col-lg-2">
+                        <select class="form-control m-bot15" name="status">
                             <option value="1">Active</option>
                         </select>
                     </div>
@@ -62,6 +66,7 @@
             </form>
         </div>
     </section>
+@endsection
 
     {{--    <script>--}}
     {{--        var a = document.getElementById('images');--}}
@@ -71,4 +76,3 @@
     {{--        }--}}
     {{--    </script>--}}
 
-@endsection

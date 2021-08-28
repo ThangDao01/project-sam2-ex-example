@@ -10,40 +10,44 @@
             Form Material-create
         </p>
         <div class="panel-body">
-            @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
+
             <form class="form-horizontal bucket-form" action="/admin/feedback/{{$obj->id}}" method="post">
                 @method('put')
                 @csrf
                 <div class="form-group">
-                    <label class="col-sm-3 control-label">Account</label>
+                    <label class="col-sm-3 control-label">AccountId</label>
                     <div class="col-sm-6">
-                        <input type="text" name="account" class="form-control">
+                        <input type="text" name="AccountId" class="form-control">
+                        @error('AccountId')
+                        <div class="text-danger"> * {{$message}}</div>
+                        @enderror
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label">message</label>
+                    <label class="col-sm-3 control-label">Message</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" name="message">
+                        <input type="text" class="form-control" name="Message">
+                        @error('Message')
+                        <div class="text-danger"> * {{$message}}</div>
+                        @enderror
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label">vote</label>
+                    <label class="col-sm-3 control-label">Vote</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" name="vote">
+                        <input type="text" class="form-control" name="Vote">
+                        @error('Vote')
+                        <div class="text-danger"> * {{$message}}</div>
+                        @enderror
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-3 control-label">Seen</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" name="seen">
+                        <input type="text" class="form-control" name="Seen">
+                        @error('Seen')
+                        <div class="text-danger"> * {{$message}}</div>
+                        @enderror
                     </div>
                 </div>
                 <div class="col-md-12 form-group" style="text-align: center">

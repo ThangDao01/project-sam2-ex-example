@@ -10,15 +10,6 @@
             Form Data-create
         </p>
         <div class="panel-body">
-            {{--            @if ($errors->any())--}}
-            {{--                <div class="alert alert-danger">--}}
-            {{--                    <ul>--}}
-            {{--                        @foreach ($errors->all() as $error)--}}
-            {{--                            <li>{{ $error }}</li>--}}
-            {{--                        @endforeach--}}
-            {{--                    </ul>--}}
-            {{--                </div>--}}
-            {{--            @endif--}}
             <form class="form-horizontal bucket-form" action="/admin/data-support/create" method="post">
                 @csrf
                 <div class="form-group">
@@ -72,7 +63,6 @@
                     <div class="col-sm-6">
                         <input type="text" class="form-control" id="in-images" name="images">
                         <button type="button" id="in-btn-images" class="cloudinary-button">Upload Images</button>
-
                         @error ('images')
                         <div class="text-danger">* {{ $message }}</div>
                         @enderror
