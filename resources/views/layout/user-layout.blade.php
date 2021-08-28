@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="csrf-token" content="vADeoBTpAGDD2RJSSVZgA7BMnu1VHRVTbWtYpXve">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>@yield('title')</title>
+    @yield('title')
     <meta name="description" content="E&K là chương trình dành cho trẻ 0 - 10 tuổi giúp trẻ bắt đầu học tiếng Anh dễ dàng, thú vị và hiệu quả hơn.">
     <meta name="keyword" content="">
     <script src="https://connect.facebook.net/signals/config/251806315213206?v=2.9.44&amp;r=stable" async=""></script>

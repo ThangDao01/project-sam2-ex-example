@@ -47,8 +47,6 @@ Route::get('/huong-dan-hoc', function (){
     return view('user.huongdanhoc');
 });
 
-
-
 /*
  * error
  */
@@ -64,8 +62,14 @@ Route::get('/coming-soon',function (){
 Route::get('/test',function (){
     return view('material.lesson-view');
 });
+Route::get('/test2',function (){
+    return view('test');
+});
 
 Route::get('/cr={id}',[MainUserController::class,'getLessonByCourse']);
+Route::get('/i4-coures',function (){
+    return view('infor-course');
+});
 Route::get('/ls={id}/mt',[MainUserController::class,'checkMaterial']);
 Route::get('/ls={id}/mt={lc}',[MainUserController::class,'createMaterial']);
 

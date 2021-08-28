@@ -1,6 +1,6 @@
 @extends('layout.user-layout')
 @section('title')
-   E&K-Chương trình học
+    <title>E&K-Chương trình học</title>
 @endsection
 @section('detail')
     <iframe src = "https://www.googletagmanager.com/ns.html?id=GTM-PS37S79"
