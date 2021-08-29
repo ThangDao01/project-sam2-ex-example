@@ -382,7 +382,7 @@ class ItemSupport extends Seeder
                 'voice_vi' => 'cautruot.mp3',
                 'voice_en' => 'slide.mp3',
                 'images' => 'slide.png',
-                'key' => 'iteam,green',
+                'key' => 'item,green',
                 'createBy' => 'cuongtmth2008049@fpt.edu.vn',
             ],[
                 'values' => 'submarine',

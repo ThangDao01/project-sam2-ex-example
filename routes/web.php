@@ -126,6 +126,7 @@ Route::get('/admin/material/list', [MaterialController::class,'index']);
 Route::get('/admin/material/edit/id={id}', [MaterialController::class, 'edit']);
 Route::put('/admin/material/{id}', [MaterialController::class, 'update']);
 Route::get('/admin/material/delete/id={id}', [MaterialController::class, 'destroy']);
+//user
 
 Route::get('/chuong-trinh-hoc', function (){
     return view('user.chuongtringhoc');
@@ -148,4 +149,7 @@ Route::get('/huong-dan-hoc', function (){
 
 Route::get('/', function (){
     return view('user.home');
+});
+Route::get('/register', function (){
+    return view('user.dangki');
 });
