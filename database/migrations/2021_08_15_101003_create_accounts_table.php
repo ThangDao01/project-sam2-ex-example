@@ -22,6 +22,7 @@ class CreateAccountsTable extends Migration
             $table->text('PasswordHash');
             $table->string('Salt');
             $table->integer('Age');
+            $table->integer('Phone');
             $table->integer('Role');
             $table->integer('Status');
             $table->timestamps();

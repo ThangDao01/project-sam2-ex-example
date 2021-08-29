@@ -32,10 +32,11 @@
                             <th data-breakpoints="xs sm" data-title="DOB">Email</th>
 
                             <th data-breakpoints="xs">Age</th>
-                            <th data-breakpoints="xs">Role</th>
+                            <th  >Role</th>
                             <th data-breakpoints="xs sm md" data-title="DOB">Status</th>
                             <th data-breakpoints="xs sm md" data-title="DOB">Create At</th>
                             <th data-breakpoints="xs sm md" data-title="DOB">Update At</th>
+                            <th data-breakpoints="xs">actions</th>
 
                         </tr>
                         </thead>
@@ -58,8 +59,17 @@
                             <td>Dennise</td>
                             <td>Fuhrman</td>
                             <td>High School History Teacher</td>
-
                             <td>July 25th 1960</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="actions">
+                                <a href="" class="on-default edit-row">
+                                        <i style="font-size: 20px" class="fa fa-check-square text-success text-active"></i></a>
+                                <a href="" class="on-default remove-row" onclick="return confirm('Chắc xoá danh muc này?')">
+                                    <i style="font-size: 20px" class="fa fa-minus-square-o text-danger text"></i></a>
+                            </td>
                         </tr>
                         </tbody>
                     </table>
