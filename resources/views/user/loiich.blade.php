@@ -1,131 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="csrf-token" content="zguHnwCKfphg3GmNdMmbyFYH6PajTTA1RRzJhudI">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Lợi ích </title>
-    <meta name="keyword" content="">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="{{asset('images/logo-ek-title.png')}}">
-    <script>
-        window.addEventListener('load', function () {
-            (function (w, d, s, l, i) {
-                w[l] = w[l] || [];
-                w[l].push({
-                    'gtm.start':
-                        new Date().getTime(), event: 'gtm.js'
-                });
-                var f = d.getElementsByTagName(s)[0],
-                    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
-                j.async = true;
-                j.src =
-                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-                f.parentNode.insertBefore(j, f);
-            })(window, document, 'script', 'dataLayer', 'GTM-PS37S79');
-            (function (i, s, o, g, r, a, m) {
-                i['GoogleAnalyticsObject'] = r;
-                i[r] = i[r] || function () {
-                    (i[r].q = i[r].q || []).push(arguments)
-                }, i[r].l = 1 * new Date();
-                a = s.createElement(o),
-                    m = s.getElementsByTagName(o)[0];
-                a.async = true;
-                a.src = g;
-                m.parentNode.insertBefore(a, m);
-            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-            ga('create', 'UA-156172818-2', 'auto');
-            ga('send', 'pageview');
-        })
-    </script>
-    <!-- End Google Tag Manager -->
-
-    <link rel="canonical" href="https://www.monkeyjunior.vn/loi-ich.html"/>
-    <link media="all" type="text/css" rel="stylesheet"
-          href="https://www.monkeyjunior.vn/themes/monkey-junior-v2/assets//css/bootstrap.min.css">
-    <link media="all" type="text/css" rel="stylesheet"
-          href="https://www.monkeyjunior.vn/themes/monkey-junior-v2/assets//css/styles.min.css?v=19">
-
-    <script type="text/javascript"
-            src="https://monkeymedia2020.s3.ap-southeast-1.amazonaws.com/upload%2Fweb%2Ffiles__js_web%2Fjquery-3.5.1.min.js"></script>
-    <script type="text/javascript"
-            src="https://monkeymedia2020.s3.ap-southeast-1.amazonaws.com/upload%2Fweb%2Ffiles__js_web%2Fjquery.lazy.min.js"></script>
-
-
-</head>
-<body>
-<div class="home menuTopStatic">
-    <header id="monkey-header" class="monkey-header monkey-bg-white monkey-nav-wrapper">
-        <div class="container-fluid container-xl">
-            <nav class="navbar navbar-expand-lg navbar-light p-0 monkey-nav">
-          <span class="toggler-icon d-mobile">
-            <span class="hamburger"></span>
-          </span>
-                <a class="p-0 m-auto d-desktop" href="/">
-                    <img class="logo" src="{{URL::asset('/images/logo-ek.png')}}" alt="#">
-                </a>
-                <div class="monkey-collapse">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item monkey-nav-item pr-4">
-                            <a class="nav-link nav-link-monkey distance-center">
-                                Giới thiệu
-                                <span class="icon-caret-down"><i class="icon-monkey-dropdown" aria-hidden="true"></i></span>
-                            </a>
-                            <div class="monkey-dropdown-menu">
-                                <a class="d-block monkey-dropdown-item subsite_menu_course" target="_self" href="/chuong-trinh-hoc">
-                                    Chương trình học
-                                </a>
-                            </div>
-                        </li>
-                        <li class="nav-item monkey-nav-item">
-                            <a class="nav-link nav-link-monkey distance-center" target="_self" href="/phuong-phap">
-                                Phương pháp
-                            </a>
-                        </li>
-                        <li class="nav-item monkey-nav-item">
-                            <a class="nav-link nav-link-monkey distance-center" href="/loi-ich" target="_self">
-                                Lợi ích
-                            </a>
-                        </li>
-                        <li class="nav-item monkey-nav-item">
-                            <a class="nav-link nav-link-monkey distance-center" href="/huong-dan-hoc" target="_self">
-                                Hướng dẫn học
-                            </a>
-                        </li>
-
-                        <li class="nav-item monkey-nav-item">
-                            <a class="nav-link nav-link-monkey distance-center" href="/bang-gia" target="_self">
-                                Bảng giá
-                            </a>
-                        </li>
-
-                        <li class="nav-item monkey-nav-item">
-                            <a class="nav-link nav-link-monkey distance-center" href="/ho-tro-khach-hang" target="_blank">
-                                Hỗ trợ khách hàng
-                            </a>
-                        </li>
-                        <li class="nav-item distance-center d-desktop">
-                            <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homems_menu_registration',
-                            'eventAction': 'Click', 'eventLabel': 'menu MS dang ky'})" class="btn monkey-color-green monkey-bc-green rounded-pill monkey-f-bold distance-center hvr-icon-registration-white" href="https://www.monkeyjunior.vn/bang-gia.html">
-                                <i class="icon-lang rounded-circle icon-monkey-registration monkey-fz-18 mr-1 distance-center"></i>Đăng ký
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-        <div class="dropdown-languages nav-item monkey-nav-item d-desktop">
-            <a class="nav-link nav-link-languages d-flex justify-content-end cursor">
-                <img id="icon-lang" class="icon-lang rounded-circle border lazyLoading" data-src="https://monkeymedia.vcdn.com.vn/upload/web/background-web/vi.svg" alt="#" src="https://monkeymedia.vcdn.com.vn/upload/web/background-web/vi.svg">
-            </a>
-
-            <div class="monkey-dropdown-menu monkey-dropdown-languages monkey-bg-white">
-                <a class="dropdown-item item-language" href="https://www.monkeyjunior.vn/">
-                    <span class="mr-2"><img class="icon-lang border rounded-circle" src="https://monkeymedia.vcdn.com.vn/upload/web/background-web/vi.svg" alt="#"></span>Việt Nam</a>
-            </div>
-        </div>
-    </header>
+@extends('layout.user-layout')
+@section('title')
+    E&K - Lợi ích
+@endsection
+@section('detail')
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PS37S79"
             height="0" width="0" style="display:none;visibility:hidden">
     </iframe>
@@ -173,7 +50,7 @@
                    onclick="ga('send',{'hitType': 'event', 'eventCategory': 'homemj_support_button',
                    'eventAction': 'Click', 'eventLabel': 'trang tru button support'})
                    "
-                   href="" target="_blank">
+                   href="/coming-soon" target="_blank">
                     <i class="icon-monkey-support monkey-fz-20"></i>
                     <div class="text-item text-support">Hỗ trợ khách hàng</div>
                 </a>
@@ -275,10 +152,8 @@
                             </h3>
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <div
-                                        class="banner-video background-style distance-center mb-3 lazyLoading"
-                                        data-src="https://media.monkeyuni.com/upload/web/storage_web/11-12-2020_08:37:34_LI_MJ.jpg"
-                                    >
+                                    <div class="banner-video background-style distance-center mb-3 lazyLoading"
+                                         data-src = "{{URL::asset('/images/loi-ich.png')}}">
                                     </div>
 
                                 </div>
@@ -327,7 +202,7 @@
                                     >
                                         <div class="mr-3 media-image effect-hover-circle ">
                                             <img
-                                                data-src="https://media.monkeyuni.com/upload/web/storage_web/01-11-2020_16:29:41_LI3_thumb.jpg"
+                                                data-src="{{asset('/images/anh2-loiich.PNG')}}"
                                                 class=" lazy" alt="#"
                                             />
 
@@ -344,7 +219,7 @@
                                             <p
                                                 class="monkey-f-medium monkey-color-gray mb-4 text-justify custom-text-box-6 "
                                             >
-                                                Với nền tảng là kho từ vựng và mẫu câu khổng lồ, Monkey Junior tự tin
+                                                Với nền tảng là kho từ vựng và mẫu câu khổng lồ, E&K tự tin
                                                 khẳng định giúp trẻ tích lũy và tư duy trực diện hơn 3,000 từ vựng,
                                                 6,000 mẫu câu thuộc nhiều chủ đề tiếng Anh trong giai đoạn đầu tiếp xúc,
                                                 tạo nền tảng vững vàng để trẻ có thể học lên các trình độ...
@@ -367,11 +242,7 @@
                                         class="media parents-share-media"
                                     >
                                         <div class="mr-3 media-image effect-hover-circle ">
-                                            <img
-                                                data-src="https://media.monkeyuni.com/upload/web/storage_web/01-11-2020_16:21:24_LI2_thumb.jpg"
-                                                class=" lazy" alt="#"
-                                            />
-
+                                            <img src="{{asset('/images/anh3-loiich.png')}}" alt="#"/>
                                         </div>
                                         <div class="media-body columns-2-4">
                                             <h5
@@ -387,7 +258,7 @@
                                             >
                                                 Một trong những vấn đề lớn nhất trẻ em Việt Nam gặp phải khi học tiếng
                                                 Anh chính là việc phát âm sai do không có môi trường rèn luyện tiếng Anh
-                                                chuẩn. Với Monkey Junior, bé sẽ phát âm chuẩn ngay từ khi bắt đầu học
+                                                chuẩn. Với E&K, bé sẽ phát âm chuẩn ngay từ khi bắt đầu học
                                                 với các audio do chính người bản xứ đọc.
                                             </p>
                                             <a class="monkey-color-gray monkey-f-bold cursor"
@@ -402,19 +273,19 @@
                                     <h5 class="mb-3">
                                         <a class="monkey-f-bold monkey-fz-18 monkey-color-green d-block d-md-none custom-text-title-2 /loi-ich/lo-trinh-hoc-bai-ban-cua-monkey-junior-giup-toi-uu-thoi-gian-hoc-va-giup-be-hoc-hieu-qua-hon.html"
                                            href="">Lộ
-                                            trình học bài bản của Monkey Junior giúp tối ưu thời gian học và giúp bé học
+                                            trình học bài bản của E&K giúp tối ưu thời gian học và giúp bé học
                                             hiệu quả hơn</a>
                                     </h5>
                                     <div class="media parents-share-media">
                                         <div class="mr-3 media-image effect-hover-circle ">
-                                            <img data-src="https://media.monkeyuni.com/upload/web/storage_web/01-11-2020_16:18:08_LI1_thumb.jpg" class=" lazy" alt="#"/>
+                                            <img data-src="{{asset('/images/anh4-loiich.PNG')}}" class=" lazy" alt="#"/>
 
                                         </div>
                                         <div class="media-body columns-2-4">
                                             <h5 class="mt-0 monkey-f-bold monkey-fz-18 custom-text-title-2 d-none d-md-block">
                                                 <a class="/loi-ich/lo-trinh-hoc-bai-ban-cua-monkey-junior-giup-toi-uu-thoi-gian-hoc-va-giup-be-hoc-hieu-qua-hon.html"
                                                    href="">Lộ
-                                                    trình học bài bản của Monkey Junior giúp tối ưu thời gian học và
+                                                    trình học bài bản của E&K giúp tối ưu thời gian học và
                                                     giúp bé học hiệu quả hơn</a>
 
                                             </h5>
@@ -442,10 +313,7 @@
                                     <div
                                         class="media parents-share-media">
                                         <div class="mr-3 media-image effect-hover-circle ">
-                                            <img
-                                                data-src="https://media.monkeyuni.com/upload/web/storage_web/01-11-2020_16:45:56_LI4_thumb.jpg"
-                                                class=" lazy" alt="#"
-                                            />
+                                            <img src="{{asset('/images/anh5-loiich.PNG')}}" alt="#"/>
 
                                         </div>
                                         <div class="media-body columns-2-4">
@@ -597,7 +465,7 @@
                                                     vấn trong thời gian sớm nhất!</strong></p>
                                         </div>
                                         <div class="mt-2 text-center">
-                                            <a href="#" class="btn rounded-pill  monkey-color-white monkey-bg-green"
+                                            <a href="/coming-soon" class="btn rounded-pill  monkey-color-white monkey-bg-green"
                                                data-dismiss=modal>
                                                 Hoàn thành
                                             </a>
@@ -624,7 +492,7 @@
                                                 mẹ vui lòng thử lại nhé!
                                         </div>
                                         <div class="mt-2 text-center">
-                                            <a href="#" class="btn rounded-pill  monkey-color-white monkey-bg-red"
+                                            <a href="/coming-soon" class="btn rounded-pill  monkey-color-white monkey-bg-red"
                                                data-dismiss=modal>
                                                 Đồng ý
                                             </a>
@@ -702,160 +570,5 @@
             </section>
         </div>
     </main>
-
-    <footer id="footer">
-        <div class="monkey-bg-green title text-center monkey-pt-20 monkey-pb-20 text-uppercase monkey-color-white monkey-fz-30 monkey-f-header">Liên hệ</div>
-        <div class="footer-body monkey-bg-green monkey-pt-25 monkey-pb-25">
-            <div class="container-fluid container-xl">
-                <div class="contact-content text-center">
-                    <ul class="list-inline monkey-color-white ">
-                        <li class="list-inline-item border-line monkey-f-bold text-left mb-2 monkey-color-white"><a x-apple-data-detectors="true">Hotline: 1900 1508</a></li>
-                        <li class="list-inline-item d-lg-none d-block monkey-fz-12 monkey-f-regular text-left mb-2">[7h00 - 22h00 các ngày trong tuần]</li>
-                        <li class="list-inline-item monkey-f-bold">englistkist@k&e.com</li>
-                        <li>
-                            <span class="email monkey-fz-12 monkey-f-regular d-lg-block d-none">[7h00 - 22h00 các ngày trong tuần]</span>
-                        </li>
-                    </ul>
-
-                    <ul class="list-inline">
-                        <li class="list-inline-item cursor">
-                            <a class="size-icon-title monkey-bg-white distance-center rounded-circle" href="https://www.facebook.com/groups/donghanhcungconhocmonkey?utm_source=Brand&amp;utm_medium=middlefooter&amp;utm_campaign=Inbound&amp;utm_content=Chi" target="_blank">
-                                <i class="icon-monkey-share monkey-color-green monkey-fz-18"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item cursor">
-                            <a class="size-icon-title monkey-bg-white distance-center rounded-circle" href="https://www.youtube.com/user/monkeyjuniorapps?utm_source=Brand&amp;utm_medium=topfooter&amp;utm_campaign=Inbound&amp;utm_content=Chi" target="_blank">
-                                <i class="icon-monkey-youtube monkey-color-green monkey-fz-18"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item cursor">
-                            <a class="size-icon-title monkey-bg-white distance-center rounded-circle" href="https://www.facebook.com/Monkey.edu.vn?utm_source=Brand&amp;utm_medium=topfooterMJ&amp;utm_campaign=Inbound&amp;utm_content=Chi" target="_blank">
-                                <i class="icon-monkey-face monkey-color-green monkey-fz-18"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="footer-group mt-2 mb-2 text-center monkey-color-white">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-10 col-xl-9">
-                            <div class="footer-group-body pt-3 pb-3 d-flex justify-content-center align-items-center border monkey-bc-white">
-                                <div class="monkey-fz-14 monkey-f-medium footer-group-text">
-                                    Cộng đồng hơn 140.000 ba mẹ thông thái <span class="monkey-f-bold monkey-fz-16">Đồng hành cùng con học Monkey:</span>
-                                </div>
-                                <a target="_blank" href="https://www.facebook.com/groups/donghanhcungconhocmonkey?utm_source=Brand&amp;utm_medium=middlefooter&amp;utm_campaign=Inbound&amp;utm_content=Chi" class="hvr-icon-registration ml-md-3 btn monkey-bc-white rounded-pill monkey-color-white monkey-fz-14 monkey-f-bold">
-                                    THAM GIA NGAY</a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="monkey-f-bold footer-item monkey-color-white d-block d-lg-flex">
-
-                    <a class="monkey-color-white mr-lg-3 ml-ld-3 d-flex" href="https://www.monkeyvietnam.online/daily?utm_source=Brand&amp;utm_medium=topfooter&amp;utm_campaign=Inbound&amp;utm_content=Chi" target="_blank">
-                        <span class="mr-2">	●</span>
-                        <span>Đăng ký Đại lý</span>
-                    </a>
-                    <a class="monkey-color-white mr-lg-3 ml-ld-3 d-flex" href="https://www.monkey.edu.vn/active-account.html?utm_source=Brand&amp;utm_medium=topfooter&amp;utm_campaign=Inbound&amp;utm_content=Chi" target="_blank">
-                        <span class="mr-2">	●</span>
-                        <span>Kích hoạt tài khoản</span>
-                    </a>
-                    <a class="monkey-color-white mr-lg-3 ml-ld-3 d-flex" href="http://tuyendung.monkey.edu.vn/?utm_source=Brand&amp;utm_medium=topfooter&amp;utm_campaign=Inbound&amp;utm_content=Chi" target="_blank">
-                        <span class="mr-2">	●</span>
-                        <span>Tuyển dụng</span>
-                    </a>
-                    <a class="monkey-color-white mr-lg-3 ml-ld-3 d-flex" href="https://www.monkeyjunior.vn/tai-tu-dong.html?app_id=2" target="_blank">
-                        <span class="mr-2">	●</span>
-                        <span>Tải App</span>
-                    </a>
-                    <a class="monkey-color-white mr-lg-3 ml-ld-3 d-flex" href="https://www.monkey.edu.vn/tin-tuc/chinh-sach-bao-mat.html" target="_self">
-                        <span class="mr-2">	●</span>
-                        <span>Chính sách bảo mật</span>
-                    </a>
-                    <a class="monkey-color-white mr-lg-3 ml-ld-3 d-flex" href="https://www.monkey.edu.vn/tin-tuc/dieu-khoan-su-dung.html" target="_blank">
-                        <span class="mr-2">	●</span>
-                        <span>Điều khoản sử dụng</span>
-                    </a>
-                    <a href="http://www.online.gov.vn/Home/WebDetails/40473" alt="#">
-                        <img data-src="https://monkeymedia.vcdn.com.vn/upload/web/background-web/logo-footer" class="img-certification d-block d-lg-none lazy" alt="#">
-
-                    </a>
-
-                </div>
-                <div class="address-content monkey-pt-20 monkey-pb-20 mt-3 mb-3">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-11">
-                            <div class="row justify-content-end">
-                                <div class="col-lg-9 monkey-f-regular monkey-color-white text-center">
-                                    <p class="monkey-fz-12"></p><p class="monkey-fz-12">© 2020 - Bản quyền của Công Ty Cổ phần Early Start</p>
-
-                                    <p class="monkey-fz-12">Trụ sở chính: Tầng 2, Tòa nhà FS, TTTM TNR Gold Season, số 47 Nguyễn Tuân, P. Thanh Xuân Trung, Q. Thanh Xuân, TP. Hà Nội</p>
-
-                                    <p class="monkey-fz-12 monkey-color-white">Giấy phép DKKD số <a x-apple-data-detectors="true">0106651756</a> do Sở Kế hoạch và Đầu tư TP Hà Nội cấp. Ngày cấp: 01/10/2014</p><p></p>
-                                </div>
-                                <div class="col-lg-2 d-lg-block d-none">
-                                    <a href="http://www.online.gov.vn/Home/WebDetails/40473" alt="#">
-                                        <img data-src="https://monkeymedia.vcdn.com.vn/upload/web/background-web/logo-footer" class="img-certification lazy" alt="#">
-
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-lg-11">
-                        <div class="seo-body text-center monkey-color-white">
-                            <ul class="list-inline monkey-f-regular monkey-fz-12">
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </footer>
-    <div id="fb-root"></div>
-    <div class="fb-customerchat"
-         attribution=setup_tool
-         page_id="1658165124411579"
-         theme_color="#92c83e"
-         logged_in_greeting="Chào ba mẹ! Monkey có thể hỗ trợ ba mẹ thông tin gì?"
-         logged_out_greeting="Chào ba mẹ! Monkey có thể hỗ trợ ba mẹ thông tin gì?">
-    </div>
-    <script>
-        window.addEventListener("scroll", function () {
-            window.fbAsyncInit = function () {
-                FB.init({
-                    xfbml: true,
-                    version: 'v9.0'
-                });
-            };
-
-            (function (d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) return;
-                js = d.createElement(s);
-                js.id = id;
-                js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
-                fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));
-        })
-    </script>
-
-
-</div>
-<script type="text/javascript"
-        src="https://monkeymedia2020.s3.ap-southeast-1.amazonaws.com/upload%2Fweb%2Ffiles__js_web%2Fowl.carousel.min.js"></script>
-<script type="text/javascript"
-        src="https://monkeymedia2020.s3.ap-southeast-1.amazonaws.com/upload%2Fweb%2Ffiles__js_web%2Fbootstrap4.min.js"></script>
-<script type="text/javascript"
-        src="https://monkeymedia2020.s3.ap-southeast-1.amazonaws.com/upload%2Fweb%2Ffiles__js_web%2Fjquery.fancybox.min.js"></script>
-<script type="text/javascript"
-        src="https://monkeymedia2020.s3.ap-southeast-1.amazonaws.com/upload%2Fweb%2Ffiles__js_web%2Fmodernizr-3.6.0.min.js"></script>
-<script type="text/javascript"
-        src="https://www.monkeyjunior.vn/themes/monkey-junior-v2/assets/js/site.js?v=19"></script>
-
-
-</body>
-</html>
+@endsection
 

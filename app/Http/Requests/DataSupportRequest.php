@@ -25,10 +25,10 @@ class DataSupportRequest extends FormRequest
     {
         return [
             'values' => 'required',
-            'words_vi' => 'required',
-            'words_en' => 'required',
-            'voice_vi' => 'required',
-            'voice_en' => 'required',
+            'color' => 'required',
+            'words' => 'required',
+            'video' => 'required',
+            'voice' => 'required',
             'images' => 'required',
             'key' => 'required'
         ];

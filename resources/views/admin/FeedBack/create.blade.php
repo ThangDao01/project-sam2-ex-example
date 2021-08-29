@@ -10,57 +10,47 @@
             Form Material-create
         </p>
         <div class="panel-body">
-            @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
-            <form class="form-horizontal bucket-form" method="get">
+            <form class="form-horizontal bucket-form" action="/admin/feedback/create" method="post">
+                @csrf
                 <div class="form-group">
-                    <label class="col-sm-3 control-label">Values</label>
+                    <label class="col-sm-3 control-label">AccountId</label>
                     <div class="col-sm-6">
-                        <input type="text" name="values" class="form-control">
+                        <input type="text" name="AccountID" class="form-control">
+                    </div>
+                    @error('AccountID')
+                    <div class="text-danger"> * {{$message}}</div>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Message</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" name="Message">
+                        @error('Message')
+                        <div class="text-danger"> * {{$message}}</div>
+                        @enderror
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label">Default</label>
+                    <label class="col-sm-3 control-label">Vote</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" name="Vote">
+                        @error('Vote')
+                        <div class="text-danger"> * {{$message}}</div>
+                        @enderror
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label">Default</label>
+                    <label class="col-sm-3 control-label">Seen</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" name="Seen">
+                        @error('Seen')
+                        <div class="text-danger"> * {{$message}}</div>
+                        @enderror
                     </div>
                 </div>
-                <div class="form-group">
-                    <label class="col-sm-3 control-label">Default</label>
-                    <div class="col-sm-6">
-                        <input type="text" class="form-control">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-3 control-label">Default</label>
-                    <div class="col-sm-6">
-                        <input type="text" class="form-control">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-3 control-label">Default</label>
-                    <div class="col-sm-6">
-                        <input type="text" class="form-control">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-3 control-label">Default</label>
-                    <div class="col-sm-6">
-                        <input type="text" class="form-control">
-                    </div>
+                <div class="col-md-12 form-group" style="text-align: center">
+                    <button type="submit" class="btn btn-info">Submit</button>
+                    <button type="reset" class="btn btn-warning">Reset</button>
                 </div>
             </form>
         </div>

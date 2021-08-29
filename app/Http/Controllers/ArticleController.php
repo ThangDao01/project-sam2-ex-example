@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ArticleRequest;
+use App\Models\Article;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
@@ -14,7 +16,7 @@ class ArticleController extends Controller
     public function index()
     {
         //
-        return view('admin.Article.list');
+        return view('admin.Article.list' , ['list' => Article::paginate(10)]);
 
     }
 
@@ -35,9 +37,18 @@ class ArticleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function create(ArticleRequest $request)
     {
         //
+        $request->validated();
+        $obj = new Article();
+        $obj->title = $request->get('title');
+        $obj->Detail = $request->get('Detail');
+        $obj->AuthorId = $request->get('AuthorId');
+        $obj->save();
+        return redirect('/admin/article/list');
+
+
     }
 
     /**
@@ -60,6 +71,11 @@ class ArticleController extends Controller
     public function edit($id)
     {
         //
+        $obj = Article::find($id);
+        if ($obj == null){
+            return view('error.404', ['msg'=>'không tìm thấy tin tức']);
+        }
+        return view('admin.Article.edit', ['obj' => $obj]);
     }
 
     /**
@@ -72,6 +88,21 @@ class ArticleController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $request->validate([
+            'title'=>'required',
+            'Detail'=>'required',
+            'AuthorId'=>'required',
+        ]
+        );
+        $obj = Article::find($id);
+        if ($obj == null){
+            return view('error.404', ['msg'=>'không tìm thấy tin tức']);
+        }
+        $obj->title = $request->get('title');
+        $obj->Detail = $request->get('Detail');
+        $obj->AuthorId = $request->get('AuthorId');
+        $obj->save();
+        return redirect('/admin/article/list');
     }
 
     /**
@@ -83,5 +114,11 @@ class ArticleController extends Controller
     public function destroy($id)
     {
         //
+        $obj = Article::find($id);
+        if ($obj == null){
+            return view('error.404', ['msg'=>'không tìm thấy tin tức']);
+        }
+        $obj->delete();
+        return redirect('admin/article/list');
     }
 }

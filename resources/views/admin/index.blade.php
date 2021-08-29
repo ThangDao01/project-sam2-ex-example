@@ -384,5 +384,4 @@
                 <div class="clearfix"></div>
             </div>
         </section>
-
 @endsection

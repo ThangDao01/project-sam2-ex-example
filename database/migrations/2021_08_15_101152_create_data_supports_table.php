@@ -16,9 +16,10 @@ class CreateDataSupportsTable extends Migration
         Schema::create('data_supports', function (Blueprint $table) {
             $table->id();
             $table->string('values');
-            $table->string('words_en');
-            $table->string('voice_en');
-            $table->string('video');
+            $table->string('words');
+            $table->string('color')->default('white');
+            $table->string('video')->default('null');
+            $table->string('voice');
             $table->string('images');
             $table->string('key');
             $table->string('createBy');

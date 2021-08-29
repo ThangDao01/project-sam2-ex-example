@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Tracking;
 use Illuminate\Http\Request;
 
 class trackingController extends Controller
@@ -14,7 +15,7 @@ class trackingController extends Controller
     public function index()
     {
         //
-        return view('admin.tracking.list');
+        return view('admin.tracking.list' , ['list' => Tracking::paginate(10)]);
 
     }
 
@@ -60,6 +61,11 @@ class trackingController extends Controller
     public function edit($id)
     {
         //
+        $obj = Tracking::find($id);
+        if ($obj == null){
+            return view('error.404', ['msg'=>'không tìm thấy đối tượng']);
+        }
+        return view('admin.tracking.edit', ['obj'=>$obj]);
     }
 
     /**
@@ -72,6 +78,13 @@ class trackingController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $request->validate([]);
+        $obj = Tracking::find($id);
+        if ($obj == null){
+            return view('error.404', ['msg'=>'không tìm thấy đối tượng']);
+        }
+        $obj->save();
+        return redirect('/admin/tracking/list');
     }
 
     /**
@@ -83,5 +96,11 @@ class trackingController extends Controller
     public function destroy($id)
     {
         //
+        $obj = Tracking::find($id);
+        if ($obj == null){
+            return view('error.404', ['msg'=>'không tìm thấy đối tượng']);
+        }
+        $obj->delete();
+        return redirect('/admin/tracking/list');
     }
 }

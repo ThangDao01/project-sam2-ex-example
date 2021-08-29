@@ -10,50 +10,56 @@
             Form Material-create
         </p>
         <div class="panel-body">
-            @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
-            <form class="form-horizontal bucket-form" method="get">
+            <form class="form-horizontal bucket-form" action="/admin/lesson/create" method="post">
+                @csrf
                 <div class="form-group">
                     <label class="col-sm-3 control-label">Lesson Name</label>
-                    <div class="col-sm-6">
-                        <input type="text" name="lesson_name" class="form-control">
+                    <div class="col-sm-5">
+                        <input type="text" name="lessonName" class="form-control">
+                        @error('lessonName')
+                        <div class="text-danger">* {{$message}}</div>
+                        @enderror
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label">Course ID</label>
-                    <div class="col-sm-6">
-                        <input type="text" class="form-control" name="course_ID" >
+                    <label class="col-sm-3 control-label">CourseId</label>
+                    <div class="col-sm-2">
+                        <select type="text" class="form-control" name="courseId">
+                        @foreach($list as $data)
+                            <option value="{{($data->id)}}">{{($data->id)}}</option>
+                        @endforeach
+
+                        </select>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-3 control-label">List Material ID</label>
-                    <div class="col-sm-6">
-                        <input type="text" class="form-control" name="list_material_ID">
+                    <div class="col-sm-5">
+                        <input type="text" class="form-control" name="listMaterialId">
+                        @error('listMaterialId')
+                        <div class="text-danger">* {{$message}}</div>
+                        @enderror
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-3 control-label">Data Suppor Values</label>
-                    <div class="col-sm-6">
-                        <input type="text" class="form-control" name="data_support_values">
+                    <div class="col-sm-5">
+                        <input type="text" class="form-control" name="dataSupportId">
+                        @error('dataSupportId')
+                        <div class="text-danger">* {{$message}}</div>
+                        @enderror
                     </div>
                 </div>
-                <div class="col-md-4 form-group" style="margin-left: 170px;">
+                <div class="form-group">
                     <label class="col-sm-3 control-label col-lg-3" for="inputSuccess">Status</label>
-                    <div class="col-lg-6">
-                        <select class="form-control m-bot15">
+                    <div class="col-lg-2">
+                        <select class="form-control m-bot15" name="status">
                             <option value="1">Active</option>
                         </select>
                     </div>
                 </div>
 
-                <div class="col-md-12 form-group" style="text-align: center">
+                <div class="col-md-10 form-group" style="text-align: center">
                     <button type="submit" class="btn btn-info">Submit</button>
                     <button type="reset" class="btn btn-warning">Reset</button>
                 </div>

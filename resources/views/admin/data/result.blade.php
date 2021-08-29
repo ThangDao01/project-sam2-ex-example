@@ -26,8 +26,8 @@
     'images' => '{{$result->images}}',
     'key' => '{{$result->key}}',
     'createBy' => '{{$result->key}}',
-    'created_at' => '{{$result->created_at}}',
-    'updated_at' => '{{$result->updated_at}}',
+    'created_At' => '{{$result->created_At}}',
+    'updated_At' => '{{$result->updated_At}}',
     ],
 @endforeach
 <div style="background-color: black;color: white">bỏ dấu ,ở cuối cùng</div>

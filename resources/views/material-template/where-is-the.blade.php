@@ -104,9 +104,9 @@
             @foreach($list as $data)
                 <div class="col-sm-4">
                     <audio id="voice-{{$data->id}}" style="display: none">
-                        <source src="/voice/en/{{$data->voice_en}}" type="audio/ogg">
+                        <source src="{{$data->voice}}" type="audio/ogg">
                     </audio>
-                    <img style="width: 100px;height: 150px;" id="img-{{$data->id}}" src="/images/{{$data->images}}"
+                    <img style="width: 100px;height: 150px;" id="img-{{$data->id}}" src="{{$data->images}}"
                          alt=""
                          @if($data->id == $main->id)
                          data-toggle="modal" data-target="#myModal"
@@ -129,7 +129,7 @@
             @endforeach
             <script>
                 function PlayVoice() {
-                    var audio = new Audio("/voice/en/{{$main->voice_en}}");
+                    var audio = new Audio("{{$main->voice}}");
                     audio.play();
                 }
 

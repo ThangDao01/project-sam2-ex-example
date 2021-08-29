@@ -5,7 +5,12 @@
     <meta charset="UTF-8">
     <meta name="csrf-token" content="vADeoBTpAGDD2RJSSVZgA7BMnu1VHRVTbWtYpXve">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+<<<<<<< HEAD
     <title>Englist Kid - Ứng dụng số 1 cho trẻ mới bắt đầu học tiếng Anh </title>
+=======
+    <link rel="icon" href="{{URL::asset('images/logo-ek-title.png') }}" type="image/gif">
+    <title>E&K - Ứng dụng số 1 cho trẻ mới bắt đầu học tiếng Anh </title>
+>>>>>>> 34a95d3d128e3aae0420b09a4578e0994fa27237
     <meta name="description" content="Monkey Junior là chương trình dành cho trẻ 0 - 10 tuổi giúp trẻ bắt đầu học tiếng Anh dễ dàng, thú vị và hiệu quả hơn.">
     <meta name="keyword" content="">
     <script src="https://connect.facebook.net/signals/config/251806315213206?v=2.9.44&amp;r=stable" async=""></script>
@@ -118,7 +123,6 @@
         </div>
     </div>
 </header>
-@yield('headers')
 <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PS37S79" height="0" width="0" style="display:none;visibility:hidden">
 </iframe>
 <section id="popup-loading" class="popup-loading">
@@ -206,15 +210,13 @@
                                 <div class="monkey-f-header monkey-fz-40 monkey-color-white mb-5">ENGLIST KIST - TIẾNG ANH <br> CHO TRẺ MỚI BẮT ĐẦU
                                 </div>
                                 <div class="monkey-color-white"><p>Tiên phong tại Việt Nam<br>
-                                        về&nbsp;Tiếng Anh và Giáo dục sớm cho mọi trẻ em</p>
+                                        về Tiếng Anh và Giáo dục sớm cho mọi trẻ em</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-
-
         </div>
         <section class="vocabulary-course" id="breadcrumb-monkey">
             <div class="container-fluid container-xl">
@@ -948,7 +950,25 @@
                                                     </p>
 
                                                 </div>
-                                            </div></div></div></div><div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><div class="icon-owlCarousel d-flex justify-content-center align-items-center monkey-color-white monkey-bg-light-silver rounded-circle"><i class="icon-monkey-next"></i> </div></button><button type="button" role="presentation" class="owl-next"><div class="icon-owlCarousel d-flex justify-content-center align-items-center monkey-color-white monkey-bg-light-silver rounded-circle"><i class="icon-monkey-next"></i> </div></button></div><div class="owl-dots disabled"></div></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-nav">
+                                    <button type="button" role="presentation" class="owl-prev">
+                                        <div class="icon-owlCarousel d-flex justify-content-center align-items-center monkey-color-white monkey-bg-light-silver rounded-circle">
+                                            <i class="icon-monkey-next"></i>
+                                        </div>
+                                    </button>
+                                    <button type="button" role="presentation" class="owl-next">
+                                        <div class="icon-owlCarousel d-flex justify-content-center align-items-center monkey-color-white monkey-bg-light-silver rounded-circle">
+                                            <i class="icon-monkey-next"></i>
+                                        </div>
+                                    </button>
+                                </div>
+                                <div class="owl-dots disabled">
+                                </div>
+                            </div>
                             <script type="text/javascript">
                                 $ (document).ready (function () {
                                     let number                = '5';
@@ -1539,7 +1559,7 @@
                     <div class="col-lg-11">
                         <div class="row justify-content-end">
                             <div class="col-lg-9 monkey-f-regular monkey-color-white text-center">
-                                <p class="monkey-fz-12"></p><p class="monkey-fz-12">© 2020 - Bản quyền của Công Ty Cổ phần Early Start</p>
+                                <p class="monkey-fz-12"></p><p class="monkey-fz-12">© 2020 - Bản quyền của Công Ty Cổ phần E&K</p>
 
                                 <p class="monkey-fz-12">Trụ sở chính: Tầng 2, Tòa nhà FS, TTTM TNR Gold Season, số 47 Nguyễn Tuân, P. Thanh Xuân Trung, Q. Thanh Xuân, TP. Hà Nội</p>
 

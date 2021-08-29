@@ -2,113 +2,80 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\MaterialRequest;
 use App\Models\Account;
 use App\Models\DataSupport;
+
+use App\Models\Course;
+use App\Models\Material;
 use Illuminate\Http\Request;
 
 class MaterialController extends Controller
 {
-    public function index($a,$b,$c){
-
-        dd($a,$b,$c);
-
-    }
-
-
-    public function whatIsThis($id)
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
     {
-        $main = DataSupport::find($id);
-        $idKey = DataSupport::where('key', $main->key)->get();
-        $min = DataSupport::where('key', $main->key)->first()->id;
-        $max = $min + sizeof($idKey) - 1;
-        $data1ID = rand($min, $max);
-        $data2ID = rand($min, $max);
-//tạo 2 id random không trùng
-        do {
-            $data1ID = rand($min, $max);
-        } while ($data1ID == $id);
-        do {
-            $data2ID = rand($min, $max);
-        } while ($data2ID == $id || $data2ID == $data1ID);
+        //
+        return view('admin.Material.list', ['list' => Material::paginate(10)]);
 
-// tạo 2 dữ liệu mẫu
-        $data1 = DataSupport::find($data1ID);
-        $data2 = DataSupport::find($data2ID);
-
-// random không trùng đáp án ABC
-        $lc1 = rand(1, 3);
-        $lc2 = rand(1, 3);
-        $lc3 = rand(1, 3);
-        do {
-            $lc2 = rand(1, 3);
-        } while ($lc1 == $lc2);
-        do {
-            $lc3 = rand(1, 3);
-        } while ($lc3 == $lc1 || $lc3 == $lc2);
-
-        $listData[$lc1]=$main;
-        $listData[$lc2]=$data1;
-        $listData[$lc3]=$data2;
-
-        $listDataM = array($listData[1],$listData[2],$listData[3]);
-//        return $listData;
-
-
-        return view('material-template.what-is-this', [
-            'list' => $listDataM,
-            'main' => $main
-        ]);
     }
-    public function listening($id)
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function createMaterial($id, $lc)
     {
-        $main = DataSupport::find($id);
-
-        return view('material-template.listening', [
-            '' => $main
-        ]);
+        //
+        dd($id, $lc);
     }
 
-
-
-    public function whereIsThe($id)
+    public function createView()
     {
-        $main = DataSupport::find($id);
-        $idKey = DataSupport::where('key', $main->key)->get();
-        $min = DataSupport::where('key', $main->key)->first()->id;
-        $max = $min + sizeof($idKey) - 1;
-        $data1ID = rand($min, $max);
-        $data2ID = rand($min, $max);
-//tạo 2 id random không trùng
-        do {
-            $data1ID = rand($min, $max);
-        } while ($data1ID == $id);
-        do {
-            $data2ID = rand($min, $max);
-        } while ($data2ID == $id || $data2ID == $data1ID);
-// tạo 2 dữ liệu mẫu
-        $data1 = DataSupport::find($data1ID);
-        $data2 = DataSupport::find($data2ID);
-
-// random không trùng đáp án ABC
-        $lc1 = rand(1, 3);
-        $lc2 = rand(1, 3);
-        $lc3 = rand(1, 3);
-        do {
-            $lc2 = rand(1, 3);
-        } while ($lc1 == $lc2);
-        do {
-            $lc3 = rand(1, 3);
-        } while ($lc3 == $lc1 || $lc3 == $lc2);
-
-        $listData[$lc1]=$main;
-        $listData[$lc2]=$data1;
-        $listData[$lc3]=$data2;
-
-        $listDataM = array($listData[1],$listData[2],$listData[3]);
-//        return $listData;
-        return view('material-template.where-is-the', [
-            'list' => $listDataM,
-            'main' => $main
-        ]);
+        return view('admin.Material.create');
     }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\Response
+     */
+    public function create(MaterialRequest $request)
+    {
+        //
+        $obj = new Material();
+        $obj->materialName = $request->get('materialName');
+        $obj->materialLocation = $request->get('materialLocation');
+        $obj->listData = $request->get('listData');
+        $obj->status = $request->get('status');
+        $obj->save();
+        return redirect('/admin/material/list');
+    }
+
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+        $obj = Material::find($id);
+        if ($obj == null) {
+            return view('error.404', ['msg' => 'không tìm thấy tin tức']);
+        }
+        return view('admin.material.edit', ['obj' => $obj]);
+    }
+
+
+
+
 }
