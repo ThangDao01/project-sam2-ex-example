@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-class FeedBack extends Seeder
+class Lesson extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,5 +14,9 @@ class FeedBack extends Seeder
     public function run()
     {
         //
+        \Illuminate\Support\Facades\DB::table('data_supports')->insert([
+            'LessonName'=>''
+        ]);
+
     }
 }

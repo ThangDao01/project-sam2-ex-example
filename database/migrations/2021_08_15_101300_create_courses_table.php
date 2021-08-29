@@ -19,7 +19,6 @@ class CreateCoursesTable extends Migration
             $table->string('price');
             $table->text('description');
             $table->text('thumbnail');
-            $table->text('thumbnail');
             $table->string('key');
             $table->integer('TimeFinish');
             $table->string('lesson');

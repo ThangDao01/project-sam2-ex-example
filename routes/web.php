@@ -1,14 +1,14 @@
 <?php
 
+use App\Http\Controllers\AccountController;
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\courseController;
 use App\Http\Controllers\DataController;
 use App\Http\Controllers\MainUserController;
-use \App\Http\Controllers\trackingController;
-use \App\Http\Controllers\courseController;
-use \App\Http\Controllers\AccountController;
-use \App\Http\Controllers\ArticleController;
-use \App\Http\Controllers\lessonController;
-use \App\Http\Controllers\feedbackController;
-use \App\Http\Controllers\MaterialController;
+use App\Http\Controllers\trackingController;
+use App\Http\Controllers\lessonController;
+use App\Http\Controllers\feedbackController;
+use App\Http\Controllers\MaterialController;
 use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,6 +22,23 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//Route::get('/voice-xyz/{id}',[DataController::class,'voice']);
+
+
+
+Route::get('/cr={idCr}',[courseController::class,'index']);
+Route::get('/cr={idCr}/ls={idLs}',[lessonController::class,'index']);
+Route::get('/cr={idCr}/ls={idLs}/mt={crMt}',[MaterialController::class,'index']);
+
+
+
+
+Route::get('/bang-gia',function (){
+    return view('user.banggia');
+});
+
+
+
 
 
 Route::get('/', function (){
@@ -42,12 +59,12 @@ Route::get('/loi-ich', function (){
 Route::get('/bang-gia', function (){
     return view('user.banggia');
 });
+
+
 Route::get('/course',[MainUserController::class,'getCourse']);
 Route::get('/huong-dan-hoc', function (){
     return view('user.huongdanhoc');
 });
-
-
 
 /*
  * error
@@ -61,13 +78,14 @@ Route::get('/coming-soon',function (){
 /*
  * Course
  */
-Route::get('/test',function (){
-    return view('material.lesson-view');
-});
+Route::get('/test/id={id}',[MainUserController::class,'video']);
+
+Route::get('/voice-xyz/id={id}',[MainUserController::class,'whereIsThe']);
 
 Route::get('/cr={id}',[MainUserController::class,'getLessonByCourse']);
 Route::get('/ls={id}/mt',[MainUserController::class,'checkMaterial']);
-Route::get('/ls={id}/mt={lc}',[MainUserController::class,'createMaterial']);
+//Route::get('/ls={id}/mt={lc}',[MainUserController::class,'createMaterial']);
+Route::get('/ls={id}/mt={lc}',[MainUserController::class,'getMaterialView']);
 
 
 Route::get('/auto={id}/key={key}',[lessonController::class,'autoCreateLesson']);
@@ -91,6 +109,16 @@ Route::get('/admin', function () {
 Route::get('/admin/data-support', function () {
     return view('admin.data.list');
 });
+
+//config
+Route::get('/admin/config/create', [DataController::class,'createView']);
+Route::post('/admin/config/create', [DataController::class,'create']);
+Route::get('/admin/config/result', [DataController::class,'seedProMax']);
+Route::get('/admin/config/list', [DataController::class,'index']);
+Route::get('/admin/config/edit/id={id}', [DataController::class, 'edit']);
+Route::post('/admin/config/{id}', [DataController::class, 'update']);
+Route::get('/admin/config/delete/id={id}', [DataController::class, 'destroy']);
+
 
 //data
 Route::get('/admin/data-support/create', [DataController::class,'createView']);
@@ -159,6 +187,7 @@ Route::get('/admin/material/list', [MaterialController::class,'index']);
 Route::get('/admin/material/edit/id={id}', [MaterialController::class, 'edit']);
 Route::post('/admin/material/{id}', [MaterialController::class, 'update']);
 Route::get('/admin/material/delete/id={id}', [MaterialController::class, 'destroy']);
+
 
 
 

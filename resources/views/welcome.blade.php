@@ -5,8 +5,12 @@
     <meta charset="UTF-8">
     <meta name="csrf-token" content="vADeoBTpAGDD2RJSSVZgA7BMnu1VHRVTbWtYpXve">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+<<<<<<< HEAD
+    <title>Englist Kid - Ứng dụng số 1 cho trẻ mới bắt đầu học tiếng Anh </title>
+=======
     <link rel="icon" href="{{URL::asset('images/logo-ek-title.png') }}" type="image/gif">
     <title>E&K - Ứng dụng số 1 cho trẻ mới bắt đầu học tiếng Anh </title>
+>>>>>>> 34a95d3d128e3aae0420b09a4578e0994fa27237
     <meta name="description" content="Monkey Junior là chương trình dành cho trẻ 0 - 10 tuổi giúp trẻ bắt đầu học tiếng Anh dễ dàng, thú vị và hiệu quả hơn.">
     <meta name="keyword" content="">
     <script src="https://connect.facebook.net/signals/config/251806315213206?v=2.9.44&amp;r=stable" async=""></script>
@@ -196,7 +200,7 @@
                 <div class="container-fluid container-xl">
                     <div class="row justify-content-center align-items-center">
                         <div class="col-lg-6">
-                            <div class="monkey-f-header title monkey-fz-30 text-center monkey-color-white mb-4 mt-4 d-mobile">ENGLIST KIST - TIẾNG ANH <br> CHO TRẺ MỚI BẮT ĐẦU
+                            <div class="monkey-f-header title monkey-fz-30 text-center monkey-color-white mb-4 mt-4 d-mobile">ENGLIST KID - TIẾNG ANH <br> CHO TRẺ MỚI BẮT ĐẦU
                             </div>
                             <div class="banner-video background-style distance-center lazyLoading" data-src="{{URL::asset('images/monkey-junior-tieng-anh-cho-tre-moi-bat-dau.png')}}" style="background-image: url('/image/monkey-junior-tieng-anh-cho-tre-moi-bat-dau.png');">
                             </div>

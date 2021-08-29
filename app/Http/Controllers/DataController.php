@@ -7,7 +7,9 @@ use App\Models\DataSupport;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
+
 
 class DataController extends Controller
 {
@@ -20,7 +22,25 @@ class DataController extends Controller
     {
         return view('admin.data.list', ['list' => DataSupport::paginate(10)]);
     }
-    public function testSeed(){
+
+
+    public function voice($id)
+    {
+        $obj = DataSupport::find($id);
+        $lc1 = rand(1, 3);
+        $lc2 = rand(1, 3);
+        $lc3 = rand(1, 3);
+        do {
+            $lc2 = rand(1, 3);
+        } while ($lc1 == $lc2);
+        do {
+            $lc3 = rand(1, 3);
+        } while ($lc3 == $lc1 || $lc3 == $lc2);
+        dd($lc1, $lc2, $lc3);
+    }
+
+    public function testSeed()
+    {
         $data = null;
         if (Session::has('dataSupport')) {
             $data = Session::get('dataSupport');

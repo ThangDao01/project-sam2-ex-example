@@ -30,7 +30,7 @@
                                             <a onclick = " ga('send',{'hitType': 'event', 'eventCategory': 'homemj_price_1nam',
                 'eventAction': 'Click', 'eventLabel': 'trang chu bang gia goi 1 nam'})"
                                                href="/ls={{$lesson->id}}/mt=1" class="btn rounded-pill  monkey-bg-green hvr-icon-registration effect-hover-shine btn-price-list monkey-color-white distance-center" >
-                                                Đăng ký
+                                                Học bài
                                                 <i
                                                     class="ml-2 monkey-color-green icon-monkey-button-registration monkey-bg-white monkey-fz-16 rounded-circle distance-center"
                                                 ></i>
