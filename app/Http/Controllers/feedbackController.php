@@ -42,10 +42,10 @@ class feedbackController extends Controller
         //
         $request->validated();
         $obj = new FeedBack();
-        $obj->accountId = $request->get('AccountID');
-        $obj->message = $request->get('Message');
-        $obj->vote = $request->get('Vote');
-        $obj->seen = $request->get('Seen');
+        $obj->AccountID = $request->get('AccountID');
+        $obj->Message = $request->get('Message');
+        $obj->Vote = $request->get('Vote');
+        $obj->Seen = $request->get('Seen');
         $obj->save();
         return redirect('/admin/feedback/list');
     }
@@ -98,10 +98,10 @@ class feedbackController extends Controller
         if ($obj == null) {
             return view('error.404', ['msg' => 'không tìm thấy tin tức']);
         }
-        $obj->accountId = $request->get('AccountID');
-        $obj->message = $request->get('Message');
-        $obj->vote = $request->get('Vote');
-        $obj->seen = $request->get('Seen');
+        $obj->AccountID = $request->get('AccountID');
+        $obj->Message = $request->get('Message');
+        $obj->Vote = $request->get('Vote');
+        $obj->Seen = $request->get('Seen');
         $obj->save();
         return redirect('/admin/feedback/list');
     }

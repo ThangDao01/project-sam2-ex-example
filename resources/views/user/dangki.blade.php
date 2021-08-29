@@ -18,12 +18,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     <!-- bootstrap-css -->
-
-@include('layout.css-dangki')
+    <link rel="stylesheet" href="{{URL::asset('css/style1.css') }}">
+    <link rel="stylesheet" href="{{URL::asset('css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{URL::asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{URL::asset('fonts/icomoon/style.css')}}">
 
 </head>
-<body>
-<div style="background-image:url({{asset('/images/kids.jpg')}})">
+<body style="background-image:url({{asset('/images/kids.jpg')}})">
+<div >
     <link rel="icon" href="{{URL::asset('/images/logo-ek-title.png') }}" type="image/gif">
 
 
@@ -33,19 +35,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="row align-items-center justify-content-center">
                 <div class="col-md-7 py-5">
                     <h3>Register</h3>
-                    <p class="mb-4">Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur adipisicing.</p>
-                    <form action="#" method="post">
+
+                    <form action="/register" method="post">
+                        @csrf
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group first">
                                     <label for="fname">First Name</label>
-                                    <input type="text" class="form-control" placeholder=" John" id="fname">
+                                    <input type="text" name="FirstName" class="form-control" placeholder=" John" id="fname">
+                                    @error('FirstName')
+                                    <div class="text-danger"> *{{$message}}</div>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group first">
                                     <label for="lname">Last Name</label>
-                                    <input type="text" class="form-control" placeholder=" Smith" id="lname">
+                                    <input type="text" name="LastName" class="form-control" placeholder=" Smith" id="lname">
+                                    @error('password_confirmation')
+                                    <div class="text-danger"> *{{$message}}</div>
+                                    @enderror
                                 </div>
                             </div>
                         </div>
@@ -53,7 +62,32 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <div class="col-md-12">
                                 <div class="form-group first">
                                     <label for="email">Email Address</label>
-                                    <input type="email" class="form-control" placeholder="john@your-domain.com" id="email">
+                                    <input type="email" name="Email" class="form-control" placeholder="john@your-domain.com" id="email">
+                                    @error('Email')
+                                    <div class="text-danger"> *{{$message}}</div>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group last mb-3">
+                                    <label for="password">Password</label>
+                                    <input type="password" name="password" class="form-control" placeholder="Enter Password" id="password">
+                                    @error('password')
+                                    <div class="text-danger"> *{{$message}}</div>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <div class="form-group last mb-3">
+                                    <label for="re-password">Re-type Password</label>
+                                    <input type="password" name="password_confirmation" class="form-control" placeholder="Enter the password_confirmation" id="re-password">
+                                    @error('password_confirmation')
+                                        <div class="text-danger"> *{{$message}}</div>
+                                    @enderror
                                 </div>
                             </div>
                         </div>
@@ -62,31 +96,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <div class="form-group first">
                                     <label for="lname">Phone Number</label>
                                     <input type="text" class="form-control" name="Phone" placeholder="+84" id="lname">
+                                    @error('Phone')
+                                    <div class="text-danger"> *{{$message}}</div>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <div class="form-group first">
-                                    <label for="lname">Facabook</label>
-                                    <input type="text" class="form-control" placeholder="https://facebook.com" id="lname">
+                                <div class="form-group last mb-3">
+                                    <label for="re-password">Age</label>
+                                    <input type="text" name="Age" class="form-control" placeholder="Enter the Age" id="re-password">
+                                    @error('Age')
+                                    <div class="text-danger"> *{{$message}}</div>
+                                    @enderror
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-6">
 
-                                <div class="form-group last mb-3">
-                                    <label for="password">Password</label>
-                                    <input type="password" class="form-control" placeholder="Enter Password" id="password">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-
-                                <div class="form-group last mb-3">
-                                    <label for="re-password">Re-type Password</label>
-                                    <input type="password" class="form-control" placeholder="Enter the Password" id="re-password">
-                                </div>
-                            </div>
-                        </div>
 
                         <div class="d-flex mb-5 mt-4 align-items-center">
                             <div class="d-flex align-items-center">

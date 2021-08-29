@@ -26,9 +26,11 @@ class courseRequest extends FormRequest
         return [
             //
             'course' => 'required',
-            'Price' => 'required',
+            'price' => 'required',
             'Description' => 'required',
             'timeFinish' => 'required',
+            'thumbnail' => 'required',
+            'lesson' => 'required',
             'Status' => 'required',
         ];
     }

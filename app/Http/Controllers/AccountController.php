@@ -7,6 +7,7 @@ use App\Models\Account;
 use App\Models\DataSupport;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class AccountController extends Controller
 {
@@ -21,9 +22,10 @@ class AccountController extends Controller
 
         return view('admin.Account.list' , ['list' => Account::paginate(10)]);
     }
-    public function loginView()
+    public function loginView(Request $request)
     {
         //
+
 
         return view('admin.Account.login' , ['list' => Account::paginate(10)]);
     }
@@ -33,15 +35,30 @@ class AccountController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function registerView()
     {
         //
         return view('admin.Account.register');
     }
 
-    public function Create()
+    public function Create(AccountRequest $request)
     {
         //
+        $request->validated();
+        $obj = new Account();
+        $obj->FirstName = $request->get('FirstName');
+        $obj->LastName = $request->get('LastName');
+        $obj->Email = $request->get('Email');
+        $obj->PasswordHash = $request->get('PasswordHash');
+        $obj->Age = $request->get('Age');
+        $obj->Role = $request->get('Role');
+        $obj->Phone = $request->get('Phone');
+        $obj->Status = 1;
+        $obj->created_at = Carbon::now();
+        $obj->updated_at = Carbon::now();
+        $obj->save();
+        return redirect('/admin/account/list');
 
     }
 
@@ -54,17 +71,7 @@ class AccountController extends Controller
     public function store(AccountRequest $request)
     {
         //
-        $request->validated();
-        $obj = new Account();
-        $obj->CourseName = $request->get('CourseName');
-        $obj->Price = $request->get('Price');
-        $obj->Description = $request->get('Description');
-        $obj->timeFinish = $request->get('timeFinish');
-        $obj->Status = $request->get('Status');
-        $obj->created_at = Carbon::now();
-        $obj->updated_at = Carbon::now();
-        $obj->save();
-        return redirect('/admin/account/list');
+
     }
 
     /**
@@ -103,26 +110,7 @@ class AccountController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate(
-            [
-                'CourseName' => 'required',
-                'Price' => 'required',
-                'Description' => 'required',
-                'timeFinish' => 'required',
-                'Status' => 'required',
-            ]
-        );
-        $obj = Account::find($id);
-        if ($obj == null){
-            return view('admin.error.404', ['msg'=>'không tìm thấy tin tức']);
-        }
-        $obj->CourseName = $request->get('CourseName');
-        $obj->Price = $request->get('Price');
-        $obj->Description = $request->get('Description');
-        $obj->timeFinish = $request->get('timeFinish');
-        $obj->Status = $request->get('Status');
-        $obj->save();
-        return redirect('/admin/account/list');
+
     }
 
     /**

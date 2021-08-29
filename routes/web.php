@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DataController;
+use App\Http\Controllers\MainUserController;
 use \App\Http\Controllers\trackingController;
 use \App\Http\Controllers\courseController;
 use \App\Http\Controllers\AccountController;
@@ -24,7 +25,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function (){
-    return view('welcome');
+    return view('user.home');
 });
 Route::get('/chuong-trinh-hoc', function (){
     return view('user.chuongtringhoc');
@@ -38,6 +39,38 @@ Route::get('/ho-tro-khach-hang', function (){
 Route::get('/loi-ich', function (){
     return view('user.loiich');
 });
+Route::get('/bang-gia', function (){
+    return view('user.banggia');
+});
+Route::get('/course',[MainUserController::class,'getCourse']);
+Route::get('/huong-dan-hoc', function (){
+    return view('user.huongdanhoc');
+});
+
+
+
+/*
+ * error
+ */
+
+Route::get('/coming-soon',function (){
+   return view('error.coming-soon');
+});
+
+
+/*
+ * Course
+ */
+Route::get('/test',function (){
+    return view('material.lesson-view');
+});
+
+Route::get('/cr={id}',[MainUserController::class,'getLessonByCourse']);
+Route::get('/ls={id}/mt',[MainUserController::class,'checkMaterial']);
+Route::get('/ls={id}/mt={lc}',[MainUserController::class,'createMaterial']);
+
+
+Route::get('/auto={id}/key={key}',[lessonController::class,'autoCreateLesson']);
 
 /*
 tool
@@ -65,7 +98,7 @@ Route::post('/admin/data-support/create', [DataController::class,'create']);
 Route::get('/admin/data-support/result', [DataController::class,'seedProMax']);
 Route::get('/admin/data-support/list', [DataController::class,'index']);
 Route::get('/admin/data-support/edit/id={id}', [DataController::class, 'edit']);
-Route::put('/admin/data-support/{id}', [DataController::class, 'update']);
+Route::post('/admin/data-support/{id}', [DataController::class, 'update']);
 Route::get('/admin/data-support/delete/id={id}', [DataController::class, 'destroy']);
 
 
@@ -86,11 +119,10 @@ Route::put('/admin/course/{id}', [courseController::class, 'update']);
 Route::get('/admin/course/delete/id={id}', [courseController::class, 'destroy']);
 
 //account
-Route::get('/admin/account/create', [AccountController::class,'createView']);
+Route::get('/admin/register', [AccountController::class,'registerView']);
+Route::get('/admin/login', [AccountController::class,'loginView']);
 Route::post('/admin/account/create', [AccountController::class,'create']);
 Route::get('/admin/account/list', [AccountController::class,'index']);
-Route::get('/admin/account/edit/id={id}', [AccountController::class, 'edit']);
-Route::put('/admin/account/{id}', [AccountController::class, 'update']);
 Route::get('/admin/account/delete/id={id}', [AccountController::class, 'destroy']);
 
 //Article
@@ -124,32 +156,18 @@ Route::get('/admin/material/create', [MaterialController::class,'createView']);
 Route::post('/admin/material/create', [MaterialController::class,'create']);
 Route::get('/admin/material/list', [MaterialController::class,'index']);
 Route::get('/admin/material/edit/id={id}', [MaterialController::class, 'edit']);
-Route::put('/admin/material/{id}', [MaterialController::class, 'update']);
+Route::post('/admin/material/{id}', [MaterialController::class, 'update']);
 Route::get('/admin/material/delete/id={id}', [MaterialController::class, 'destroy']);
 //user
 
-Route::get('/chuong-trinh-hoc', function (){
-    return view('user.chuongtringhoc');
-});
-Route::get('/phuong-phap', function (){
-    return view('user.phuongphap');
-});
-Route::get('/ho-tro-khach-hang', function (){
-    return view('user.hotrokhachhang');
-});
-Route::get('/loi-ich', function (){
-    return view('user.loiich');
-});
-Route::get('/bang-gia', function (){
-    return view('user.banggia');
-});
-Route::get('/huong-dan-hoc', function (){
-    return view('user.huongdanhoc');
-});
 
 Route::get('/', function (){
     return view('user.home');
 });
-Route::get('/register', function (){
-    return view('user.dangki');
+Route::get('/register', [MainUserController::class, 'userRegister']);
+
+Route::post('/register', [MainUserController::class, 'Create']);
+Route::get('/test',function (){
+    return view('user.dangnhap');
 });
+

@@ -18,7 +18,7 @@
     'images' => '{{$data->images}}',<br>
     'key' => '{{$data->key}}',<br>
     'createBy' => '{{$data->createBy}}',<br>
-    'created_at' =>'{{$data->created_at}}'<br>
+    'created_at' =>'{{$data->created_at}}',<br>
     'updated_at' =>'{{$data->updated_at}}'<br>
     ],<br>
 @endforeach

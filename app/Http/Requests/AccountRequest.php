@@ -25,10 +25,14 @@ class AccountRequest extends FormRequest
     {
         return [
             //
-            'CourseName' => 'required',
-            'Price' => 'required',
-            'Description' => 'required',
-            'timeFinish' => 'required',
+            'FirstName' => 'required',
+            'LastName' => 'required',
+            'Email' => 'required',
+            'password' => 'required',
+            'password_confirmation' =>'required|confirmed|min:8',
+            'Age' => 'required',
+            'Phone' => 'required',
+            'Role' => 'required',
             'Status' => 'required',
         ];
     }
