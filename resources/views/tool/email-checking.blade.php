@@ -23,7 +23,7 @@
 
                                 <tbody>
                                 <tr>
-                                    <td bgcolor="#ff1a1a" style="padding:80px">
+                                    <td bgcolor="#f2bcc2" style="padding:80px">
                                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
 
 
@@ -49,8 +49,8 @@
                                                            cellpadding="0">
                                                         <tbody>
                                                         <tr>
-                                                            <td style="font-size:36px;line-height:42px;font-family:'Motiva Sans',Helvetica,Arial,sans-serif;text-align:left;padding-bottom:30px;color:#bfbfbf;font-weight:bold">
-                                                                Dear thangdao202,
+                                                            <td style="font-size:36px;line-height:42px;font-family:'Motiva Sans',Helvetica,Arial,sans-serif;text-align:left;padding-bottom:30px;color:black;font-weight:bold">
+                                                                thangdao202 thân mến,
                                                             </td>
                                                         </tr>
                                                         </tbody>
@@ -59,9 +59,8 @@
                                                            cellpadding="0">
                                                         <tbody>
                                                         <tr>
-                                                            <td style="font-size:18px;line-height:25px;font-family:'Motiva Sans',Helvetica,Arial,sans-serif;text-align:left;color:#dbdbdb;padding-bottom:30px">
-                                                                Here is the E&K Guard code you need to login
-                                                                to account thangdao202:
+                                                            <td style="font-size:18px;line-height:25px;font-family:'Motiva Sans',Helvetica,Arial,sans-serif;text-align:left;color:black;padding-bottom:30px">
+                                                                Đây là mã E&K Guard bạn cần đăng nhập vào tài khoản thangdao202:
                                                             </td>
                                                         </tr>
                                                         </tbody>
@@ -72,7 +71,7 @@
                                                         <tr>
                                                             <td style="padding-bottom:70px">
                                                                 <table width="100%" border="0" cellspacing="0"
-                                                                       cellpadding="0" bgcolor="#17191c">
+                                                                       cellpadding="0" bgcolor="white">
                                                                     <tbody>
                                                                     <tr>
                                                                         <td style="padding-top:30px;padding-bottom:30px;padding-left:56px;padding-right:56px">
@@ -99,7 +98,7 @@
                                                            cellpadding="0">
                                                         <tbody>
                                                         <tr>
-                                                            <td style="font-size:18px;line-height:25px;font-family:'Motiva Sans',Helvetica,Arial,sans-serif;text-align:left;color:#dbdbdb;padding-bottom:30px">
+                                                            <td style="font-size:18px;line-height:25px;font-family:'Motiva Sans',Helvetica,Arial,sans-serif;text-align:left;color:black;padding-bottom:30px">
                                                                 Email này được tạo do một nỗ lực đăng nhập từ một trang web hoặc thiết bị di động có địa chỉ tại 183.81.123.61 (VN).
                                                                 Nỗ lực đăng nhập bao gồm tên tài khoản và mật khẩu chính xác của bạn. <br> Cần có mã E&K Guard để hoàn tất đăng nhập.
                                                                 Không ai có thể truy cập tài khoản của bạn mà không truy cập email này.<br>
@@ -138,7 +137,7 @@
                                                                                    cellpadding="0">
                                                                                 <tbody>
                                                                                 <tr>
-                                                                                    <td style="font-size:16px;line-height:22px;font-family:'Motiva Sans',Helvetica,Arial,sans-serif;text-align:left;padding-top:20px;padding-bottom:20px;color:#f1f1f1">
+                                                                                    <td style="font-size:16px;line-height:22px;font-family:'Motiva Sans',Helvetica,Arial,sans-serif;text-align:left;padding-top:20px;padding-bottom:20px;color:black">
                                                                                         Cheers,<br>
                                                                                         The E&K
                                                                                     </td>
