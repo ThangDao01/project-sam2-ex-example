@@ -67,6 +67,9 @@ Route::get('/test',function (){
 Route::get('/infor-coures',function (){
     return view('tool.infor-course');
 });
+Route::get('/email-checking',function (){
+    return view('tool.email-checking');
+});
 
 Route::get('/cr={id}',[MainUserController::class,'getLessonByCourse']);
 Route::get('/ls={id}/mt',[MainUserController::class,'checkMaterial']);
