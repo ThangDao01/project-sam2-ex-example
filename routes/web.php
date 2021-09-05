@@ -60,6 +60,9 @@ Route::get('/loi-ich', function (){
 Route::get('/bang-gia', function (){
     return view('user.banggia');
 });
+Route::get('/lisson-view', function (){
+    return view('user.lessonView');
+});
 
 
 Route::get('/course',[MainUserController::class,'getCourse']);

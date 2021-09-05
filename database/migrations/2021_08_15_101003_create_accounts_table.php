@@ -24,6 +24,7 @@ class CreateAccountsTable extends Migration
             $table->integer('Age')->default(null);
             $table->integer('Role')->default(null);
             $table->integer('Status')->default(2);
+            $table->timestamps();
         });
     }
 
