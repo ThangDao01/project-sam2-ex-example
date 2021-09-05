@@ -2,15 +2,37 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Account;
 use App\Models\Course;
 use App\Models\DataSupport;
 use App\Models\Lesson;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class MainUserController extends Controller
 {
     //
-
+    public function getSeed(){
+        $list = Account::all();
+        $date = Carbon::now('Asia/Ho_Chi_Minh');
+        $date2=Carbon::now('Asia/Ho_Chi_Minh');
+        return view('tool.seeder',[
+            'list' => $list,
+            'date' =>$date
+        ]);
+    }
+    public function getCourse(){
+        $obj = Course::all();
+        return view('user.banggia',[
+            'listCourse' => $obj
+        ]);
+    }
+    public function getLessonByCourse($id)
+    {
+//        return $id;
+//        return Lesson::all()->where('courseId', $id);
+        return view('material.lesson-view', ['listLesson' => Lesson::all()->where('courseId', $id)]);
+    }
 
     public function whatIsThis($id)
     {
@@ -110,16 +132,7 @@ class MainUserController extends Controller
             'main' => $main
         ]);
     }
-    public function getCourse(){
-        $obj = Course::all();
-        return view('user.banggia',[
-            'listCourse' => $obj
-        ]);
-    }
-    public function getLessonByCourse($id)
-    {
-        return view('material.lesson-view', ['listLesson' => Lesson::all()->where('courseId', $id)]);
-    }
+
 
     public function getMaterialView($id,$lc){
         $lesson = Lesson::all()->where('id',$id);
@@ -127,10 +140,10 @@ class MainUserController extends Controller
         $main = DataSupport::find($lesson->listMaterialId);
         switch ($lc){
             case 1:
-                return $this->whatIsThis($main->id);
+                return $this->whereIsThe($main->id);
                 break;
             case 2:
-                return $this->whereIsThe($main->id);
+                return $this->whatIsThis($main->id);
                 break;
             case 3:
                 return $this->video($main->id);
@@ -142,4 +155,5 @@ class MainUserController extends Controller
                 return 'null';
         }
     }
+
 }

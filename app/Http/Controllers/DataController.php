@@ -79,8 +79,8 @@ class DataController extends Controller
         $obj->images = $request->get('images');
         $obj->key = $request->get('key');
         $obj->createBy = 'hoadvth2009007@fpt.edu.vn';
-        $obj->created_at = Carbon::now();
-        $obj->updated_at = Carbon::now();
+        $obj->created_at = Carbon::now('Asia/Ho_Chi_Minh');
+        $obj->updated_at = Carbon::now('Asia/Ho_Chi_Minh');
         $obj->save();
         return redirect('/admin/data-support/list');
     }

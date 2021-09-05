@@ -302,7 +302,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </ul>
                     </li>
                     <li class="sub-menu">
-                        <a href="">
+                        <a href="/admin/config">
                             <i class="fa fa-newspaper-o"></i>
                             <span>Article</span>
                         </a>
@@ -310,6 +310,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <li><a href="/admin/article/list">List</a></li>
                             <li><a href="/admin/article/create">Create</a></li>
                         </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="/admin/config">
+                            <i class="fa fa-cogs"></i>
+                            <span>Config</span>
+                        </a>
                     </li>
                     <li>
                         <a >

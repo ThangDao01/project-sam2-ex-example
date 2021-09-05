@@ -170,15 +170,11 @@
                         <span class="mr-2">	●</span>
                         <span>Kích hoạt tài khoản</span>
                     </a>
-                    <a class="monkey-color-white mr-lg-3 ml-ld-3 d-flex" href="/coming-soon" target="_blank">
+                    <a class="monkey-color-white mr-lg-3 ml-ld-3 d-flex" href="/contact-us" target="_blank">
                         <span class="mr-2">	●</span>
-                        <span>Tuyển dụng</span>
+                        <span>Liên hệ </span>
                     </a>
-                    <a class="monkey-color-white mr-lg-3 ml-ld-3 d-flex" href="/coming-soon" target="_blank">
-                        <span class="mr-2">	●</span>
-                        <span>Tải App</span>
-                    </a>
-                    <a class="monkey-color-white mr-lg-3 ml-ld-3 d-flex" href="/coming-soon" target="_self">
+                    <a class="monkey-color-white mr-lg-3 ml-ld-3 d-flex" href="/policy" target="_self">
                         <span class="mr-2">	●</span>
                         <span>Chính sách bảo mật</span>
                     </a>

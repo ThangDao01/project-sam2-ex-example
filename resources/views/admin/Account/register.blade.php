@@ -28,17 +28,72 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="reg-w3">
     <div class="w3layouts-main">
         <h2>Register Now</h2>
-        <form action="#" method="post">
-            <input type="text" class="ggg" name="Name" placeholder="NAME" required="">
-            <input type="email" class="ggg" name="Email" placeholder="E-MAIL" required="">
-            <input type="text" class="ggg" name="Phone" placeholder="PHONE" required="">
-            <input type="password" class="ggg" name="Password" placeholder="PASSWORD" required="">
-            <h4><input type="checkbox"/>I agree to the Terms of Service and Privacy Policy</h4>
+        <form action="/admin/account/create" method="post">
+            @csrf
+            <div class="form-group">
+                <div class="col-lg-12">
+                    <input type="text" class="ggg" name="FirstName" placeholder="FirstName" required="">
+                    @error('FirstName')
+                    <div class="text-danger"> * {{$message}}</div>
+                    @enderror
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-12">
+                    <input type="email" class="ggg" name="LastName" placeholder="LastName" required="">
+                    @error('LastName')
+                    <div class="text-danger"> * {{$message}}</div>
+                    @enderror
+                </div>
+            </div>
+            <div class="form-group">
+
+            </div>
+            <div class="form-group">
+                <div class="col-lg-12">
+                    <input type="text" class="ggg" name="Email" placeholder="Email" required="">
+                    @error('Email')
+                    <div class="text-danger"> * {{$message}}</div>
+                    @enderror
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-12">
+                    <input type="text" class="ggg" name="PasswordHash" placeholder="Password" required="">
+                    @error('PasswordHash')
+                    <div class="text-danger"> * {{$message}}</div>
+                    @enderror
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-6">
+                    <input type="text" class="ggg" name="Age" placeholder="Age" required="">
+                    @error('Age')
+                    <div class="text-danger"> * {{$message}}</div>
+                    @enderror
+                </div>
+                <div class="col-lg-6">
+                    <input type="text" class="ggg" name="Role" placeholder="Role" required="">
+                    @error('Role')
+                    <div class="text-danger"> * {{$message}}</div>
+                    @enderror
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-12">
+                    <input type="text" class="ggg" name="Phone" placeholder="Phone" required="">
+                    @error('Phone')
+                    <div class="text-danger"> * {{$message}}</div>
+                    @enderror
+                </div>
+            </div>
+            <h4>
+                <input type="checkbox"/>I agree to the Terms of Service and Privacy Policy</h4>
 
             <div class="clearfix"></div>
             <input type="submit" value="submit" name="register">
         </form>
-        <p>Already Registered.<a href="/login">Login</a></p>
+        <p>Already Registered.<a href="/admin/login">Login</a></p>
         <p><a href="javascript:history.go(-1)"><i class="fa fa-mail-reply"></i>  GO BACK</a></p>
     </div>
 </div>

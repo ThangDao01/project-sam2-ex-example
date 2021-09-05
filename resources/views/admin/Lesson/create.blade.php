@@ -28,14 +28,18 @@
                         @foreach($list as $data)
                             <option value="{{($data->id)}}">{{($data->id)}}</option>
                         @endforeach
-
                         </select>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-3 control-label">List Material ID</label>
                     <div class="col-sm-5">
-                        <input type="text" class="form-control" name="listMaterialId">
+                        <input type="text" id="material" class="form-control" name="listMaterialId">
+                        <datalist id="material">
+                            <option value="What is this">
+                            <option value="Where is the">
+                            <option value="Story">
+                        </datalist>
                         @error('listMaterialId')
                         <div class="text-danger">* {{$message}}</div>
                         @enderror
@@ -66,6 +70,12 @@
             </form>
         </div>
     </section>
+    <script>
+        var listMaterial = document.getElementById('material');
+        listMaterial.onkeyup = function (){
+
+        }
+    </script>
 
     {{--    <script>--}}
     {{--        var a = document.getElementById('images');--}}

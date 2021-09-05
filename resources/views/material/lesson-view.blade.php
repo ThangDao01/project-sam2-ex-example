@@ -18,12 +18,10 @@
                                         <div class = "text-uppercase monkey-f-bold mb-3" >
                                             {{$lesson->lessonName}}
                                         </div >
-                                        <div
-                                            class = "price-list-item-image monkey-bg-green distance-center"
-                                        >
-                                            <img src = "{{asset('/images/logo-ek.png')}}" alt = "#"/>
+                                        <div class = "price-list-item-image monkey-bg-green distance-center">
+                                            <img src = "{{$lesson->thumbnail()}}" alt = "#"/>
 
-                                        </div >
+                                        </div>
                                         <div
                                             class = "price-list-footer d-flex justify-content-center"
                                         >

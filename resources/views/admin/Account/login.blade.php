@@ -30,7 +30,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="clearfix"></div>
             <input type="submit" value="Sign In" name="login">
         </form>
-        <p>Don't Have an Account ?<a href="/register">Create an account</a></p>
+        <p>Don't Have an Account ?<a href="/admin/register">Create an account</a></p>
         <p><a href="javascript:history.go(-1)"><i class="fa fa-mail-reply"></i>  GO BACK</a></p>
     </div>
 </div>

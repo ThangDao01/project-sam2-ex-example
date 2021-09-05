@@ -61,8 +61,8 @@ class AccountController extends Controller
         $obj->Description = $request->get('Description');
         $obj->timeFinish = $request->get('timeFinish');
         $obj->Status = $request->get('Status');
-        $obj->created_at = Carbon::now();
-        $obj->updated_at = Carbon::now();
+        $obj->created_at = Carbon::now('Asia/Ho_Chi_Minh');
+        $obj->updated_at = Carbon::now('Asia/Ho_Chi_Minh');
         $obj->save();
         return redirect('/admin/account/list');
     }

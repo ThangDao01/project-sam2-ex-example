@@ -176,12 +176,12 @@
                                                 class = "price-list-item monkey-bg-white text-center hvr-float mb-4 monkey_junior"
                                             >
                                                 <div class = "text-uppercase monkey-f-bold mb-3" >
-                                                    {{$course->course}}
+                                                    {{$course->name}}
                                                 </div >
                                                 <div
                                                     class = "price-list-item-image monkey-bg-green distance-center"
                                                 >
-                                                    <img src = "{{asset('/images/logo-ek.png')}}" alt = "#"/>
+                                                    <img src = "{{$course->thumbnail}}" alt = "#"/>
 
                                                 </div >
                                                 <div class = "price-list-content text-center mt-4 mb-4" >
