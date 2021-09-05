@@ -15,14 +15,14 @@ class CreateDataSupportsTable extends Migration
     {
         Schema::create('data_supports', function (Blueprint $table) {
             $table->id();
-            $table->string('values');
-            $table->string('words');
+            $table->string('values')->default(null);
+            $table->string('words')->default(null);
             $table->string('color')->default('white');
             $table->string('video')->default('null');
-            $table->string('voice');
-            $table->string('images');
-            $table->string('key');
-            $table->string('createBy');
+            $table->string('voice')->default(null);
+            $table->string('images')->default(null);
+            $table->string('key')->default(null);
+            $table->string('createBy')->default(null);
             $table->timestamps();
         });
     }

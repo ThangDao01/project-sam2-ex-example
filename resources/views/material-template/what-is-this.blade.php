@@ -105,7 +105,7 @@
                 <audio id="voice-{{$data->id}}" style="display: none">
                     <source src="/voice/en/{{$data->voice_en}}" type="audio/ogg">
                 </audio>
-                <img style="width: 100px;height: 150px;" id="img-{{$data->id}}" src="/images/{{$data->images}}" alt=""
+                <img style="width: 100px;height: 150px;" id="img-{{$data->id}}" src="{{$data->images}}" alt=""
                 @if($data->id == $main->id)
                 data-toggle="modal" data-target="#myModal"
                     @endif

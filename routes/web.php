@@ -2,14 +2,17 @@
 
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\ConfigController;
 use App\Http\Controllers\courseController;
 use App\Http\Controllers\DataController;
+use App\Http\Controllers\EmailController;
 use App\Http\Controllers\MainUserController;
 use App\Http\Controllers\trackingController;
 use App\Http\Controllers\lessonController;
 use App\Http\Controllers\feedbackController;
 use App\Http\Controllers\MaterialController;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,13 +29,6 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/cr={idCr}',[courseController::class,'index']);
-Route::get('/cr={idCr}/ls={idLs}',[lessonController::class,'index']);
-Route::get('/cr={idCr}/ls={idLs}/mt={crMt}',[MaterialController::class,'index']);
-
-
-
-
 Route::get('/bang-gia',function (){
     return view('user.banggia');
 });
@@ -44,6 +40,11 @@ Route::get('/bang-gia',function (){
 Route::get('/', function (){
     return view('user.home');
 });
+Route::get('/login',[UserController::class,'userLoginForm']);
+Route::post('/login',[UserController::class,'UserLogin']);
+Route::get('/register',[UserController::class,'userRegisterForm']);
+Route::post('/register',[UserController::class,'UserRegister']);
+
 Route::get('/chuong-trinh-hoc', function (){
     return view('user.chuongtringhoc');
 });
@@ -66,6 +67,10 @@ Route::get('/huong-dan-hoc', function (){
     return view('user.huongdanhoc');
 });
 
+Route::get('/lesson-detail',function (){
+    return view('material.lesson-detail');
+});
+
 /*
  * error
  */
@@ -78,7 +83,7 @@ Route::get('/coming-soon',function (){
 /*
  * Course
  */
-Route::get('/test/id={id}',[MainUserController::class,'video']);
+Route::get('/test',[MainUserController::class,'getSeed']);
 
 Route::get('/voice-xyz/id={id}',[MainUserController::class,'whereIsThe']);
 
@@ -91,24 +96,39 @@ Route::get('/ls={id}/mt={lc}',[MainUserController::class,'getMaterialView']);
 Route::get('/auto={id}/key={key}',[lessonController::class,'autoCreateLesson']);
 
 /*
-tool
+-----  tool -----
 */
 //ảnh video => url
 Route::get('/cloudinary',function (){
     return view('tool.cloudinary');
 });
 
-/*
-admin
-*/
+Route::get('/mail/{salt}/{email}/{name}',[EmailController::class,'CheckingMail']);
 
+// paint
+Route::get('/paint',function (){
+    return view('tool.paint');
+});
+
+/*
+-----  admin -----
+*/
+Route::get('/contact-us',[ConfigController::class,'Contactus']);
+Route::get('/about-us',[ConfigController::class,'AboutUs']);
+Route::get('/policy',[ConfigController::class,'Policy']);
 
 Route::get('/admin', function () {
     return view('admin.index');
 });
-Route::get('/admin/data-support', function () {
-    return view('admin.data.list');
+Route::get('/admin/login', function () {
+    return view('admin.Account.login');
 });
+Route::get('/admin/register', function () {
+    return view('admin.Account.register');
+});
+Route::get('/admin/config',[ConfigController::class,'index']);
+Route::post('/admin/config/update',[ConfigController::class,'update']);
+
 
 //config
 Route::get('/admin/config/create', [DataController::class,'createView']);

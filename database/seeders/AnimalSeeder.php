@@ -13,7 +13,8 @@ class AnimalSeeder extends Seeder
      */
     public function run()
     {
-        \Illuminate\Support\Facades\DB::table('data_supports')->insert([[ 'values' => 'chicken',
+        \Illuminate\Support\Facades\DB::table('data_supports')->insert([[
+            'values' => 'chicken',
             'words' => 'chicken',
             'color' => 'brown',
             'video' => 'bdF6sck7mio',

@@ -27,11 +27,11 @@ class AccountRequest extends FormRequest
             //
             'FirstName' => 'required',
             'LastName' => 'required',
-            'Email' => 'required',
-            'Password' => 'required',
+            'Email' => 'required|email',
+            'PhoneNumber' => 'required',
+            'password' => 'required|min:8|confirmed',
+            'password_confirmation' => 'required|min:8',
             'Age' => 'required',
-            'Role' => 'required',
-            'Status' => 'required',
         ];
     }
 }

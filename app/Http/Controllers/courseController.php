@@ -11,7 +11,9 @@ use Illuminate\Http\Request;
 
 class courseController extends Controller
 {
-    public function index($id){
+    public function index(){
+
+        return view('admin.course.list', ['list' => Course::paginate(10)]);
 
     }
     /**
@@ -45,8 +47,8 @@ class courseController extends Controller
         $obj->thumbnail = $request->get('thumbnail');
         $obj->lesson = $request->get('lesson');
         $obj->Status = $request->get('Status');
-        $obj->created_at = Carbon::now();
-        $obj->updated_at = Carbon::now();
+        $obj->created_at = Carbon::now('Asia/Ho_Chi_Minh');
+        $obj->updated_at = Carbon::now('Asia/Ho_Chi_Minh');
         $obj->save();
         return redirect('/admin/course/list');
 

@@ -17,9 +17,9 @@ class CreateConfigsTable extends Migration
             $table->id();
             $table->text('contactUs')->default('null');
             $table->text('aboutUs')->default('null');
-            $table->text('policy')->default('null');
-            $table->string('titlePage')->default('null');
-            $table->string('description')->default('null');
+            $table->text('policyPage')->default('null');
+                $table->text('titlePage')->default('null');
+            $table->string('descriptionPage')->default('null');
             $table->string('keywordPage')->default('null');
             $table->timestamps();
         });

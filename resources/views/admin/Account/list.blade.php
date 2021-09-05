@@ -10,11 +10,11 @@
                 @if($list == null)
                     Null table  <i class="fa fa-frown-o"></i>
                 @else()
-                <div class="panel-heading">
-                    Basic table
-                </div>
-                <div>
-                    <table class="table" ui-jq="footable" ui-options="{
+                    <div class="panel-heading">
+                        Basic table
+                    </div>
+                    <div>
+                        <table class="table" ui-jq="footable" ui-options="{
         &quot;paging&quot;: {
           &quot;enabled&quot;: true
         },
@@ -24,34 +24,80 @@
         &quot;sorting&quot;: {
           &quot;enabled&quot;: true
         }}">
-                        <thead>
-                        <tr>
-                            <th data-breakpoints="xs">ID</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th data-breakpoints="xs sm" data-title="DOB">Email</th>
+                            <thead>
+                            <tr>
+                                <th data-breakpoints="xs">ID</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th data-breakpoints="xs sm" data-title="DOB">Email</th>
 
+<<<<<<< HEAD
+                                <th data-breakpoints="xs">Age</th>
+                                <th data-breakpoints="xs">Role</th>
+                                <th data-breakpoints="xs sm md" data-title="DOB">Status</th>
+                                <th data-breakpoints="xs sm md" data-title="DOB">Create At</th>
+                                <th data-breakpoints="xs sm md" data-title="DOB">Update At</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($list as $account)
+                                <tr data-expanded="true">
+                                    <td>{{$account->id}}</td>
+                                    <td>{{$account->FirstName}}</td>
+                                    <td>{{$account->LastName}}</td>
+                                    <td>{{$account->Email}}</td>
+                                    <td>{{$account->Age}}</td>
+                                    <td>
+                                        @if($account->Role==0)
+                                            <p style="color: red">
+                                                Admin
+                                            </p>
+                                        @elseif($account->Role==1)
+                                            <p style="color: #36c">
+                                                Manager
+                                            </p>
+                                        @elseif($account->Role==2)
+                                            <p style="color: green">
+                                                User
+                                            </p>
+                                        @endif
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            @if($account->Status==0)
+                                                <li style="color: red">
+                                                    Deleted
+                                                </li>
+                                            @elseif($account->Status==1)
+                                                <li style="color: #36c">
+                                                    Active
+                                                </li>
+                                            @elseif($account->Status==2)
+                                                <li style="color: green">
+                                                    Online
+                                                </li>
+                                            @endif
+                                        </ul>
+                                    </td>
+                                    <td>{{$account->created_at}}</td>
+                                    <td>{{$account->updated_at}}</td>
+=======
                             <th data-breakpoints="xs">Age</th>
                             <th  >Role</th>
                             <th data-breakpoints="xs sm md" data-title="DOB">Status</th>
                             <th data-breakpoints="xs sm md" data-title="DOB">Create At</th>
                             <th data-breakpoints="xs sm md" data-title="DOB">Update At</th>
                             <th data-breakpoints="xs">actions</th>
+>>>>>>> 04a1b93d66699548cc221308197ba1e260f25062
 
-                        </tr>
-                        </thead>
-                        <tbody>
-                        @foreach($list as $account)
-                        <tr data-expanded="true">
-                            <td>{{$account->id}}</td>
-                            <td>{{$account->FirstName}}</td>
-                            <td>{{$account->LastName}}</td>
-                            <td>{{$account->Email}}</td>
-                            <td>{{$account->Age}}</td>
-                            <td>{{$account->Role}}</td>
-                            <td>{{$account->create_At}}</td>
-                            <td>{{$account->update_At}}</td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
 
+<<<<<<< HEAD
+                    </div>
+=======
                         </tr>
                         @endforeach
                         <tr data-expanded="true">
@@ -75,6 +121,7 @@
                     </table>
 
                 </div>
+>>>>>>> 04a1b93d66699548cc221308197ba1e260f25062
                 @endif
 
             </div>

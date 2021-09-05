@@ -70,7 +70,17 @@ class AccountController extends Controller
     public function store(AccountRequest $request)
     {
         //
-
+        $request->validated();
+        $obj = new Account();
+        $obj->CourseName = $request->get('CourseName');
+        $obj->Price = $request->get('Price');
+        $obj->Description = $request->get('Description');
+        $obj->timeFinish = $request->get('timeFinish');
+        $obj->Status = $request->get('Status');
+        $obj->created_at = Carbon::now('Asia/Ho_Chi_Minh');
+        $obj->updated_at = Carbon::now('Asia/Ho_Chi_Minh');
+        $obj->save();
+        return redirect('/admin/account/list');
     }
 
     /**
