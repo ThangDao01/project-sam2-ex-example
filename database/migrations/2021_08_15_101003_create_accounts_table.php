@@ -23,8 +23,7 @@ class CreateAccountsTable extends Migration
             $table->string('Salt')->default(null);
             $table->integer('Age')->default(null);
             $table->integer('Role')->default(null);
-            $table->integer('Status')->default(0);
-            $table->timestamps();
+            $table->integer('Status')->default(2);
         });
     }
 
