@@ -26,7 +26,7 @@
                     <div class="col-sm-2">
                         <select type="text" class="form-control" name="courseId">
                         @foreach($list as $data)
-                            <option value="{{($data->id)}}">{{($data->id)}}</option>
+                            <option value="{{($data->id)}}">{{($data->name)}}</option>
                         @endforeach
                         </select>
                     </div>

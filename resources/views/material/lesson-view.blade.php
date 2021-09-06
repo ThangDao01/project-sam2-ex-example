@@ -1,7 +1,9 @@
 
 @extends('layout.user-layout')
 @section('title')
-    E&K - Bảng giá
+    <title>
+        E&K - Bảng giá
+    </title>
 @endsection
 @section('detail')
     <section id="price-list" class="price-list position-relative z-index-100">
@@ -25,6 +27,11 @@
                                         <div
                                             class = "price-list-footer d-flex justify-content-center"
                                         >
+                                            <a onclick = " ga('send',{'hitType': 'event', 'eventCategory': 'homemj_price_1nam',
+                'eventAction': 'Click', 'eventLabel': 'trang chu bang gia goi 1 nam'})"
+                                               href="/ls={{$lesson->id}}/mt=1" style="background-color: blueviolet" class="btn rounded-pill  monkey-bg-green hvr-icon-registration effect-hover-shine btn-price-list monkey-color-white distance-center" >
+                                                Chi tiết
+                                            </a>
                                             <a onclick = " ga('send',{'hitType': 'event', 'eventCategory': 'homemj_price_1nam',
                 'eventAction': 'Click', 'eventLabel': 'trang chu bang gia goi 1 nam'})"
                                                href="/ls={{$lesson->id}}/mt=1" class="btn rounded-pill  monkey-bg-green hvr-icon-registration effect-hover-shine btn-price-list monkey-color-white distance-center" >

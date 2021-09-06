@@ -1,5 +1,8 @@
 @extends('layout.user-layout')
-<title>E&K - Bảng giá</title>
+
+@section('title')
+    <title>E&K - Bảng giá</title>
+@endsection
 @section('detail')
     <iframe src = "https://www.googletagmanager.com/ns.html?id=GTM-PS37S79"
             height = "0" width = "0" style = "display:none;visibility:hidden" >

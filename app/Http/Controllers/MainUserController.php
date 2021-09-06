@@ -8,6 +8,7 @@ use App\Models\DataSupport;
 use App\Models\Lesson;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class MainUserController extends Controller
 {
@@ -127,17 +128,21 @@ class MainUserController extends Controller
 
         $listDataM = array($listData[1], $listData[2], $listData[3]);
 //        return $listData;
+//        $nextUrl = 'http://127.0.0.1:8000/ls='+$id+'/mt=2';
+        $nextUrl = $id;
         return view('material-template.where-is-the', [
             'list' => $listDataM,
-            'main' => $main
+            'main' => $main,
         ]);
     }
 
 
     public function getMaterialView($id,$lc){
-        $lesson = Lesson::all()->where('id',$id);
-        $lesson->listMaterialId = 1;
-        $main = DataSupport::find($lesson->listMaterialId);
+//        $lesson = Lesson::all()->where('id',$id)->value('listMaterialId');
+        $lesson = DB::table('lessons')->where('id', $id)->first();
+//        return $lesson;
+
+        $main = DataSupport::find($lesson->dataSupportId);
         switch ($lc){
             case 1:
                 return $this->whereIsThe($main->id);

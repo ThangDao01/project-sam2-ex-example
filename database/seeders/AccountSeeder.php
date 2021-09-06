@@ -52,7 +52,7 @@ class AccountSeeder extends Seeder
                 'PasswordHash' => '$2y$12$kjZmsIxPPiHgLadmoGAI/uVHWReE5tCXKsghk4cO09aBbW8LlgOf.',
                 'Salt' => 'hD84Y',
                 'Age' => '18',
-                'Role' => '2',
+                'Role' => '1',
                 'Status' => '1',
                 'created_at' => '2021-09-05 15:35:47',
                 'updated_at' => '2021-09-05 15:35:47'
@@ -85,7 +85,20 @@ class AccountSeeder extends Seeder
                 'created_at' => '',
                 'updated_at' => ''
             ],
-
+            ///tester
+            [
+                'FirstName' => 'Nguyễn',
+                'LastName' => 'Văn A',
+                'Email' => 'tester01@gmail.com',
+                'PhoneNumber' => '113',
+                'PasswordHash' => '',
+                'Salt' => '12345',
+                'Age' => '5',
+                'Role' => '2',
+                'Status' => '2',
+                'created_at' => '2021-09-05 15:35:47',
+                'updated_at' => '2021-09-05 15:35:47'
+            ],
         ]);
 
     }

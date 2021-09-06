@@ -102,6 +102,12 @@
                                 <i class="icon-lang rounded-circle icon-monkey-registration monkey-fz-18 mr-1 distance-center"></i>Đăng ký
                             </a>
                         </li>
+                        <li class="nav-item distance-center d-desktop">
+                            <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homems_menu_registration',
+                            'eventAction': 'Click', 'eventLabel': 'menu MS dang ky'})" class="btn monkey-color-green monkey-bc-green rounded-pill monkey-f-bold distance-center hvr-icon-registration-white" href="/coming-soon">
+                                <i class="icon-lang rounded-circle icon-monkey-registration monkey-fz-18 mr-1 distance-center"></i>Thông tin
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </nav>
