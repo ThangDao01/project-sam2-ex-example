@@ -20,6 +20,7 @@ class UserController extends Controller
 
     public function UserLogin(Request $request)
     {
+
         $email = $request->get('Email');
         $password = $request->get('password');
         $salt = DB::table('accounts')->where('Email', $email)->value('Salt');
