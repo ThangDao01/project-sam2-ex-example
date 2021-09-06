@@ -22,7 +22,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="log-w3">
     <div class="w3layouts-main" >
         <h2>Sign In Now</h2>
-        <form action="#" method="post">
+        @if(Session::has('message'))
+            <p class=" alert alert-{{ Session::get('type-message') }}">{{ Session::get('message') }}</p>
+        @endif
+        <form action="/admin/login" method="post">
+            @csrf
             <div class="form-group">
             <input type="email" class="ggg" name="Email" placeholder="E-MAIL" required="">
                 @error('Email')
@@ -30,8 +34,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 @enderror
             </div>
             <div class="form-group">
-            <input type="password" class="ggg" name="PasswordHash" placeholder="PASSWORD" required="">
-            @error('PasswordHash')
+            <input type="password" class="ggg" name="password" placeholder="PASSWORD" required="">
+            @error('password')
             <div class="text-danger"> *{{$message}}</div>
             @enderror
             </div>

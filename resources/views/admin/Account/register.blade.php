@@ -18,6 +18,43 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         function hideURLbar() {
             window.scrollTo(0, 1);
         } </script>
+    <style>
+        .text-danger{
+            color: red !important;
+        }
+        .alert-danger{
+            color: red !important;
+        }
+        .alert-success{
+            color: greenyellow !important;
+        }
+        .btn-submit {
+            padding: 12px 38px;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background: #f0bcb4;
+            color: white;
+            border: none;
+            outline: none;
+            display: table;
+            cursor: pointer;
+            margin: 45px auto 31px;
+            transition: 0.5s all;
+            -webkit-transition: 0.5s all;
+            -o-transition: 0.5s all;
+            -moz-transition: 0.5s all;
+            -ms-transition: 0.5s all;
+        }
+        .btn-submit:hover {
+            background:#8b5c7e;
+            transition:0.5s all;
+            -webkit-transition:0.5s all;
+            -o-transition:0.5s all;
+            -moz-transition:0.5s all;
+            -ms-transition:0.5s all;
+        }
+    </style>
     <!-- bootstrap-css -->
 @include('layout.css')
 
@@ -28,11 +65,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="reg-w3">
     <div class="w3layouts-main">
         <h2>Register Now</h2>
-        <form action="/admin/account/create" method="post">
+        <p class="alert alert-danger}">{{ Session::get('message') }}</p>
+    @if(Session::has('message'))
+            <p class="alert alert-{{ Session::get('type-message') }}">{{ Session::get('message') }}</p>
+        @endif
+        <form action="/admin/register" method="post">
             @csrf
             <div class="form-group">
                 <div class="col-lg-12">
-                    <input type="text" class="ggg" name="FirstName" placeholder="FirstName" required="">
+                    <input type="text" class="ggg" name="FirstName" placeholder="FirstName" >
                     @error('FirstName')
                     <div class="text-danger"> * {{$message}}</div>
                     @enderror
@@ -40,7 +81,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <div class="form-group">
                 <div class="col-lg-12">
-                    <input type="email" class="ggg" name="LastName" placeholder="LastName" required="">
+                    <input type="text" class="ggg" name="LastName" placeholder="LastName" >
                     @error('LastName')
                     <div class="text-danger"> * {{$message}}</div>
                     @enderror
@@ -51,7 +92,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <div class="form-group">
                 <div class="col-lg-12">
-                    <input type="text" class="ggg" name="Email" placeholder="Email" required="">
+                    <input type="email" class="ggg" name="Email" placeholder="Email" >
                     @error('Email')
                     <div class="text-danger"> * {{$message}}</div>
                     @enderror
@@ -59,42 +100,40 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <div class="form-group">
                 <div class="col-lg-12">
-                    <input type="text" class="ggg" name="PasswordHash" placeholder="Password" required="">
-                    @error('PasswordHash')
-                    <div class="text-danger"> * {{$message}}</div>
-                    @enderror
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-lg-6">
-                    <input type="text" class="ggg" name="Age" placeholder="Age" required="">
-                    @error('Age')
-                    <div class="text-danger"> * {{$message}}</div>
-                    @enderror
-                </div>
-                <div class="col-lg-6">
-                    <input type="text" class="ggg" name="Role" placeholder="Role" required="">
-                    @error('Role')
+                    <input type="password" class="ggg" name="password" placeholder="Password" >
+                    @error('password')
                     <div class="text-danger"> * {{$message}}</div>
                     @enderror
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-lg-12">
-                    <input type="text" class="ggg" name="Phone" placeholder="Phone" required="">
-                    @error('Phone')
+                    <input type="password" class="ggg" placeholder="Password Confirmation" name="password_confirmation">
+                    @error('password_confirmation')
                     <div class="text-danger"> * {{$message}}</div>
                     @enderror
                 </div>
             </div>
-            <h4>
-                <input type="checkbox"/>I agree to the Terms of Service and Privacy Policy</h4>
-
+            <div class="form-group">
+                <div class="col-lg-4">
+                    <input type="text" class="ggg" name="Age" placeholder="Age" >
+                    @error('Age')
+                    <div class="text-danger"> * {{$message}}</div>
+                    @enderror
+                </div>
+                <div class="col-lg-8">
+                    <input type="text" class="ggg" name="PhoneNumber" placeholder="Phone" >
+                    @error('PhoneNumber')
+                    <div class="text-danger"> * {{$message}}</div>
+                    @enderror
+                </div>
+            </div>
             <div class="clearfix"></div>
-            <input type="submit" value="submit" name="register">
+            <button type="submit" class="btn-submit">Submit
+            </button>
         </form>
         <p>Already Registered.<a href="/admin/login">Login</a></p>
-        <p><a href="javascript:history.go(-1)"><i class="fa fa-mail-reply"></i>  GO BACK</a></p>
+        <p><a href="javascript:history.go(-1)"><i class="fa fa-mail-reply"></i> GO BACK</a></p>
     </div>
 </div>
 

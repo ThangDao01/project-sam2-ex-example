@@ -1,6 +1,8 @@
 @extends('layout.user-layout')
+@section('title')
     <link rel="icon" href="https://res.cloudinary.com/thangdao04/image/upload/v1630304957/x3fsb0r0fo8cou9v2gsx.png" type="image/gif" sizes="16x16">
     <title>E&K - Nơi dành cho trẻ mới bắt đầu học tiếng Anh</title>
+@endsection
 @section('detail')
 <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PS37S79" height="0" width="0" style="display:none;visibility:hidden">
 </iframe>
