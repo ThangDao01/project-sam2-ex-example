@@ -1,7 +1,5 @@
 @extends('layout.user-layout')
-@section('title')
-    E&K - Bảng giá
-@endsection
+<title>E&K - Bảng giá</title>
 @section('detail')
     <iframe src = "https://www.googletagmanager.com/ns.html?id=GTM-PS37S79"
             height = "0" width = "0" style = "display:none;visibility:hidden" >
@@ -140,7 +138,7 @@
                                     >
                                         <li class="breadcrumb-item ">
                                             <a class="monkey-f-medium text-uppercase"
-                                               href="/home">Trang chủ</a>
+                                               href="/">Trang chủ</a>
                                         </li>
                                         <li class="breadcrumb-item active ">
                                             <a href="#"
