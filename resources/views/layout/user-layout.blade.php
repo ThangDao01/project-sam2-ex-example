@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="csrf-token" content="vADeoBTpAGDD2RJSSVZgA7BMnu1VHRVTbWtYpXve">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>@yield('title')</title>
+    @yield('title')
     <meta name="description" content="E&K là chương trình dành cho trẻ 0 - 10 tuổi giúp trẻ bắt đầu học tiếng Anh dễ dàng, thú vị và hiệu quả hơn.">
     <meta name="keyword" content="">
     <script src="https://connect.facebook.net/signals/config/251806315213206?v=2.9.44&amp;r=stable" async=""></script>
@@ -44,6 +44,176 @@
 
     <script type="text/javascript" src="https://monkeymedia2020.s3.ap-southeast-1.amazonaws.com/upload%2Fweb%2Ffiles__js_web%2Fjquery-3.5.1.min.js"></script>
     <script type="text/javascript" src="https://monkeymedia2020.s3.ap-southeast-1.amazonaws.com/upload%2Fweb%2Ffiles__js_web%2Fjquery.lazy.min.js"></script>
+    <style>
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 100px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            top:50px;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        /* The Close Button */
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .padding {
+            padding: 3rem !important
+        }
+
+        .user-card-full {
+            overflow: hidden
+        }
+
+        .card {
+            border-radius: 5px;
+            -webkit-box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+            box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+            border: none;
+            margin-bottom: 30px;
+            top: 15px;
+        }
+
+        .m-r-0 {
+            margin-right: 0px
+        }
+
+        .m-l-0 {
+            margin-left: 0px
+        }
+
+        .user-card-full .user-profile {
+            border-radius: 5px 0 0 5px
+        }
+
+        .bg-c-lite-green {
+            background: -webkit-gradient(linear, left top, right top, from(#f29263), to(#ee5a6f));
+            background: linear-gradient(to right, #ee5a6f, #f29263)
+        }
+
+        .user-profile {
+            padding: 20px 0
+        }
+
+        .card-block {
+            padding: 1.25rem
+        }
+
+        .m-b-25 {
+            margin-bottom: 25px
+        }
+
+        .img-radius {
+            border-radius: 5px
+        }
+
+        h6 {
+            font-size: 14px
+        }
+
+        .card .card-block p {
+            line-height: 25px
+        }
+
+        @media only screen and (min-width: 1400px) {
+            p {
+                font-size: 14px
+            }
+        }
+
+        .card-block {
+            padding: 1.25rem
+        }
+
+        .b-b-default {
+            border-bottom: 1px solid #e0e0e0
+        }
+
+        .m-b-20 {
+            margin-bottom: 20px
+        }
+
+        .p-b-5 {
+            padding-bottom: 5px !important
+        }
+
+        .card .card-block div {
+            line-height: 25px
+        }
+
+        .m-b-10 {
+            margin-bottom: 10px
+        }
+
+        .text-muted {
+            color: #919aa3 !important
+        }
+
+        .b-b-default {
+            border-bottom: 1px solid #e0e0e0
+        }
+
+        .f-w-600 {
+            font-weight: 600
+        }
+
+        .m-b-20 {
+            margin-bottom: 20px
+        }
+
+        .m-t-40 {
+            margin-top: 20px
+        }
+
+        .p-b-5 {
+            padding-bottom: 5px !important
+        }
+
+        .m-b-10 {
+            margin-bottom: 10px
+        }
+
+        .m-t-40 {
+            margin-top: 20px
+        }
+
+        .user-card-full .social-link li {
+            display: inline-block
+        }
+
+        .user-card-full .social-link li a {
+            font-size: 20px;
+            margin: 0 10px 0 0;
+            -webkit-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out
+        }
+    </style>
 </head>
 
 <body class="home">
@@ -53,7 +223,7 @@
           <span class="toggler-icon d-mobile">
             <span class="hamburger"></span>
           </span>
-                <a class="p-0 m-auto d-desktop" href="/home">
+                <a class="p-0 m-auto d-desktop" href="/">
                     <img class="logo" src="{{URL::asset('/images/logo-ek.png')}}" alt="#">
                 </a>
                 <div class="monkey-collapse">
@@ -102,21 +272,72 @@
                                 <i class="icon-lang rounded-circle icon-monkey-registration monkey-fz-18 mr-1 distance-center"></i>Đăng ký
                             </a>
                         </li>
+                        <li class="nav-item distance-center d-desktop">
+                            <button class="btn monkey-color-green monkey-bc-green rounded-pill monkey-f-bold distance-center hvr-icon-registration-white" id="myBtn"><i class="icon-lang rounded-circle icon-monkey-registration monkey-fz-18 mr-1 distance-center"></i>Thông tin</button>
+                        </li>
                     </ul>
                 </div>
             </nav>
         </div>
         <div class="dropdown-languages nav-item monkey-nav-item d-desktop">
             <a class="nav-link nav-link-languages d-flex justify-content-end cursor">
-                <img id="icon-lang" class="icon-lang rounded-circle border lazyLoading" data-src="https://monkeymedia.vcdn.com.vn/upload/web/background-web/vi.svg" alt="#" src="https://monkeymedia.vcdn.com.vn/upload/web/background-web/vi.svg">
+                <img id="icon-lang" class="icon-lang rounded-circle border lazyLoading" data-src="{{asset('images/viet-nam-01-01.png')}}" alt="#" src="{{asset('images/viet-nam-01-01.png')}}">
             </a>
 
             <div class="monkey-dropdown-menu monkey-dropdown-languages monkey-bg-white">
                 <a class="dropdown-item item-language" href="https://www.monkeyjunior.vn/">
-                    <span class="mr-2"><img class="icon-lang border rounded-circle" src="https://monkeymedia.vcdn.com.vn/upload/web/background-web/vi.svg" alt="#"></span>Việt Nam</a>
+                    <span class="mr-2"><img class="icon-lang border rounded-circle" src="{{asset('images/viet-nam-01-01.png')}}" alt="#"></span>Việt Nam</a>
             </div>
         </div>
-
+        <div id="userprofile" class="modal">
+            <div class="modal-content">
+                <div class="col-xl-12 col-md-12" style="margin: auto">
+                    <div class="card user-card-full">
+                        <div class="row m-l-0 m-r-0">
+                            <div class="col-sm-4 bg-c-lite-green user-profile">
+                                <div class="card-block text-center text-white">
+                                    <div class="m-b-25"> <img src="https://img.icons8.com/bubbles/100/000000/user.png" class="img-radius" alt="User-Profile-Image"> </div>
+                                    <h6 class="f-w-600">Hembo Tingor</h6>
+                                    <p>Web Designer</p> <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="card-block">
+                                    <button class="close">&times;</button>
+                                    <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Information</h6>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <p class="m-b-10 f-w-600">Email</p>
+                                            <h6 class="text-muted f-w-400">rntng@gmail.com</h6>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <p class="m-b-10 f-w-600">Phone</p>
+                                            <h6 class="text-muted f-w-400">98979989898</h6>
+                                        </div>
+                                    </div>
+                                    <h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600">Projects</h6>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <p class="m-b-10 f-w-600">Recent</p>
+                                            <h6 class="text-muted f-w-400">Sam Disuja</h6>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <p class="m-b-10 f-w-600">Most Viewed</p>
+                                            <h6 class="text-muted f-w-400">Dinoter husainm</h6>
+                                        </div>
+                                    </div>
+                                    <ul class="social-link list-unstyled m-t-40 m-b-10">
+                                        <li><a href="#!" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="facebook" data-abc="true"><i class="mdi mdi-facebook feather icon-facebook facebook" aria-hidden="true"></i></a></li>
+                                        <li><a href="#!" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="twitter" data-abc="true"><i class="mdi mdi-twitter feather icon-twitter twitter" aria-hidden="true"></i></a></li>
+                                        <li><a href="#!" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="instagram" data-abc="true"><i class="mdi mdi-instagram feather icon-instagram instagram" aria-hidden="true"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </header>
     @yield('detail')
     <footer id="footer">
@@ -221,5 +442,32 @@
 <script type="text/javascript" src="https://monkeymedia2020.s3.ap-southeast-1.amazonaws.com/upload%2Fweb%2Ffiles__js_web%2Fjquery.fancybox.min.js"></script>
 <script type="text/javascript" src="https://monkeymedia2020.s3.ap-southeast-1.amazonaws.com/upload%2Fweb%2Ffiles__js_web%2Fmodernizr-3.6.0.min.js"></script>
 <script type="text/javascript" src="https://www.monkeyjunior.vn/themes/monkey-junior-v2/assets/js/site.js?v=19"></script>
+    <script>
+        // Get the modal
+        var modal = document.getElementById("userprofile");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        // Get the <span> element that closes the modal
+        var close = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        close.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>

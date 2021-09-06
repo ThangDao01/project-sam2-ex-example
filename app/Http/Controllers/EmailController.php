@@ -24,7 +24,7 @@ class EmailController extends Controller
 
     public function CheckingMail($salt, $email, $name)
     {
-        $data = array('title' => 'kiểm tra', 'content' => 'mã kiểm tra', 'code_check' => $salt, 'name' => $name);
+        $data = array('code_check' => $salt, 'name' => $name, 'email' => $email);
         Mail::send('tool.checking-mail', $data, function ($message) use ($name, $email) {
             $message->to($email, $name)->subject
             ('New EK Account Email Verification');
