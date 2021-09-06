@@ -51,6 +51,11 @@ Route::get('/chuong-trinh-hoc', function (){
 Route::get('/phuong-phap', function (){
     return view('user.phuongphap');
 });
+Route::get('/phuong-phap/test', function (){
+    return view('user.phuongphap');
+});
+Route::get('/phuong-phap/tt={url}',[MainUserController::class,'articleDetail']);
+
 Route::get('/ho-tro-khach-hang', function (){
     return view('user.hotrokhachhang');
 });

@@ -20,21 +20,42 @@
                         <div class="text-danger">* {{$message}}</div>
                         @enderror
                     </div>
+                </div><div class="form-group">
+                    <label class="col-sm-3 control-label">Url</label>
+                    <div class="col-sm-5">
+                        <input type="text" class="form-control" name="url">
+                        @error('url')
+                        <div class="text-danger">* {{$message}}</div>
+                        @enderror
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Categories</label>
+                    <div class="col-sm-5">
+                        <select type="text" class="form-control" name="categories">
+                            <option value="phuongphap">Phương Pháp</option>
+                            <option value="loiich">Lợi ích</option>
+                            <option value="huongdan">Hướng dẫn</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-3 control-label">Detail</label>
                     <div class="col-sm-5">
-                        <input type="text" class="form-control" name="Detail">
+                        <textarea style="resize: none; " rows="8" type="text" class="form-control" name="Detail"
+                                  id="ckeditor2"
+                                  placeholder="vui lòng nhập thông tin....">
+                        </textarea>
                         @error('Detail')
                         <div class="text-danger">* {{$message}}</div>
                         @enderror
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label">AuthorId</label>
+                    <label class="col-sm-3 control-label">Author</label>
                     <div class="col-sm-5">
-                        <input type="text" class="form-control" name="AuthorId">
-                        @error('AuthorId')
+                        <input type="text" class="form-control" name="Author">
+                        @error('Author')
                         <div class="text-danger">* {{$message}}</div>
                         @enderror
                     </div>
@@ -48,7 +69,12 @@
             </form>
         </div>
     </section>
+    <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
 
+    <script>
+        CKEDITOR.replace('ckeditor2');
+
+    </script>
     {{--    <script>--}}
     {{--        var a = document.getElementById('images');--}}
     {{--        var demo = document.getElementById('images-demo');--}}

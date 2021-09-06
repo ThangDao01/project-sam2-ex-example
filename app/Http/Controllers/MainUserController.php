@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Account;
+use App\Models\Article;
 use App\Models\Course;
 use App\Models\DataSupport;
 use App\Models\Lesson;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class MainUserController extends Controller
 {
@@ -32,6 +34,13 @@ class MainUserController extends Controller
 //        return $id;
 //        return Lesson::all()->where('courseId', $id);
         return view('material.lesson-view', ['listLesson' => Lesson::all()->where('courseId', $id)]);
+    }
+
+    public function articleDetail($url){
+        $description = DB::table('articles')->where('url', $url)->first();
+        return view('user.article',[
+            'description' =>$description
+        ]);
     }
 
     public function whatIsThis($id)
