@@ -43,12 +43,11 @@ class ArticleController extends Controller
         $request->validated();
         $obj = new Article();
         $obj->title = $request->get('title');
+        $obj->categories = $request->get('categories');
         $obj->Detail = $request->get('Detail');
-        $obj->AuthorId = $request->get('AuthorId');
+        $obj->Author = $request->get('Author');
         $obj->save();
         return redirect('/admin/article/list');
-
-
     }
 
     /**
