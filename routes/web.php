@@ -52,7 +52,7 @@ Route::get('/phuong-phap', function (){
     return view('user.phuongphap');
 });
 Route::get('/phuong-phap/test', function (){
-    return view('user.phuongphap');
+    return view('user.article');
 });
 Route::get('/phuong-phap/tt={url}',[MainUserController::class,'articleDetail']);
 
