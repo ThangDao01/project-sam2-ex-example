@@ -6,7 +6,11 @@ use App\Http\Requests\AccountRequest;
 use App\Models\Account;
 use App\Models\DataSupport;
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
 class AccountController extends Controller
@@ -25,9 +29,21 @@ class AccountController extends Controller
     public function loginView(Request $request)
     {
         //
+        return view('admin.Account.login');
+    }
 
-
-        return view('admin.Account.login' , ['list' => Account::paginate(10)]);
+    public function AdminLogin(Request $request)
+    {
+        $email = $request->get('Email');
+        $password = $request->get('password');
+        $salt = DB::table('accounts')->where('Email', $email)->value('Salt');
+        $PasswordHash = DB::table('accounts')->where('Email', $email)->value('PasswordHash');
+        if (Hash::check($password.$salt, $PasswordHash)) {
+            // The passwords match...
+            return redirect('/admin');
+        } else {
+            dd('no no no');
+        }
     }
 
     /**
@@ -41,47 +57,66 @@ class AccountController extends Controller
         return view('admin.Account.register');
     }
 
-    public function Create(AccountRequest $request)
+    function incrementalHash()
     {
-        //
-        $request->validated();
-        $obj = new Account();
-        $obj->FirstName = $request->get('FirstName');
-        $obj->LastName = $request->get('LastName');
-        $obj->Email = $request->get('Email');
-        $obj->PasswordHash = $request->get('PasswordHash');
-        $obj->Age = $request->get('Age');
-        $obj->Role = $request->get('Role');
-        $obj->Phone = $request->get('Phone');
-        $obj->Status = $request->get('Status');
-        $obj->created_at = Carbon::now();
-        $obj->updated_at = Carbon::now();
-        $obj->save();
-        return redirect('/admin/account/list');
-
+        $characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+        $result = '';
+        for ($i = 0; $i < 5; $i++)
+            $result .= $characters[mt_rand(0, 61)];
+        return $result;
     }
+    public function AdminRegister(AccountRequest $request)
+    {
+        $email = $request->get('Email');
+        $accountCheck = DB::table('accounts')->where('Email', $email)->first();
+        if ($accountCheck) {
+            Session::flash('message', 'Invalid email try another email');
+            Session::flash('type-message', 'danger');
+            return redirect('/admin/register');
+        }
+        $salt= $this->incrementalHash();
+//        $email = new EmailController();
+//        $email->CheckingMail($salt,$email,$request->get('LastName'));
 
+        $request->validated();
+        $account = new Account();
+        $account->Email = $email;
+        $account->FirstName = $request->get('FirstName');
+        $account->LastName = $request->get('LastName');
+        $account->PhoneNumber = $request->get('PhoneNumber');
+        $account->Salt = $salt;
+        $account->Age = $request->get('Age');
+        $account->Role = 2;
+        $account->PasswordHash = Hash::make($request->get('password') . $account->Salt, [
+            'rounds' => 12,
+        ]);
+//        return $account;
+        $account->save();
+        Session::flash('message', 'Account successfully created Please Login to continue');
+        Session::flash('type-message', 'success');
+        return redirect('/admin/login');
+    }
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(AccountRequest $request)
-    {
-        //
-        $request->validated();
-        $obj = new Account();
-        $obj->CourseName = $request->get('CourseName');
-        $obj->Price = $request->get('Price');
-        $obj->Description = $request->get('Description');
-        $obj->timeFinish = $request->get('timeFinish');
-        $obj->Status = $request->get('Status');
-        $obj->created_at = Carbon::now('Asia/Ho_Chi_Minh');
-        $obj->updated_at = Carbon::now('Asia/Ho_Chi_Minh');
-        $obj->save();
-        return redirect('/admin/account/list');
-    }
+//    public function store(AccountRequest $request)
+//    {
+//        //
+//        $request->validated();
+//        $obj = new Account();
+//        $obj->CourseName = $request->get('CourseName');
+//        $obj->Price = $request->get('Price');
+//        $obj->Description = $request->get('Description');
+//        $obj->timeFinish = $request->get('timeFinish');
+//        $obj->Status = $request->get('Status');
+//        $obj->created_at = Carbon::now('Asia/Ho_Chi_Minh');
+//        $obj->updated_at = Carbon::now('Asia/Ho_Chi_Minh');
+//        $obj->save();
+//        return redirect('/admin/account/list');
+//    }
 
     /**
      * Display the specified resource.
