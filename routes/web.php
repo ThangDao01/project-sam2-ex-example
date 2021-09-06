@@ -38,7 +38,7 @@ Route::get('/bang-gia',function (){
 
 
 Route::get('/', function (){
-    return view('welcome');
+    return view('user.home');
 });
 Route::get('/login',[UserController::class,'userLoginForm']);
 Route::post('/login',[UserController::class,'UserLogin']);
