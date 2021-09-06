@@ -31,31 +31,31 @@ class AccountSeeder extends Seeder
             ],
             ///quân
             [
-                'FirstName' => '',
-                'LastName' => '',
-                'Email' => '',
-                'PhoneNumber' => '',
-                'PasswordHash' => '',
-                'Salt' => '',
-                'Age' => '',
-                'Role' => '2',
-                'Status' => '',
-                'created_at' => '',
-                'updated_at' => ''
+                'FirstName' => 'Quân',
+                'LastName' => 'Mạnh',
+                'Email' => 'phungmanhquan2002@gmail.com',
+                'PhoneNumber' => '0364469332',
+                'PasswordHash' => '$2y$12$XPjQ/7UuOlSDJ.nk3CoKIuLIBOFAJ37v4qZc6RzR7Y0TfTigDKucS',
+                'Salt' => 'YD4Na',
+                'Age' => '20',
+                'Role' => '1',
+                'Status' => '2',
+                'created_at' => '2021-09-05 14:45:43',
+                'updated_at' => '2021-09-05 14:45:43'
             ],
             ///hưng
             [
-                'FirstName' => '',
-                'LastName' => '',
-                'Email' => '',
-                'PhoneNumber' => '',
-                'PasswordHash' => '',
-                'Salt' => '',
-                'Age' => '',
+                'FirstName' => 'Phùng',
+                'LastName' => 'Hưng',
+                'Email' => 'hungvietphung36@gmail.com',
+                'PhoneNumber' => '0336086589',
+                'PasswordHash' => '$2y$12$kjZmsIxPPiHgLadmoGAI/uVHWReE5tCXKsghk4cO09aBbW8LlgOf.',
+                'Salt' => 'hD84Y',
+                'Age' => '18',
                 'Role' => '2',
-                'Status' => '',
-                'created_at' => '',
-                'updated_at' => ''
+                'Status' => '1',
+                'created_at' => '2021-09-05 15:35:47',
+                'updated_at' => '2021-09-05 15:35:47'
             ],
             ///cường
             [

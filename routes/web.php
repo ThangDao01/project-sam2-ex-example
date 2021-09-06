@@ -38,7 +38,7 @@ Route::get('/bang-gia',function (){
 
 
 Route::get('/', function (){
-    return view('user.home');
+    return view('welcome');
 });
 Route::get('/login',[UserController::class,'userLoginForm']);
 Route::post('/login',[UserController::class,'UserLogin']);
@@ -59,6 +59,9 @@ Route::get('/loi-ich', function (){
 });
 Route::get('/bang-gia', function (){
     return view('user.banggia');
+});
+Route::get('/lisson-view', function (){
+    return view('user.lessonView');
 });
 
 
@@ -168,8 +171,9 @@ Route::get('/admin/course/delete/id={id}', [courseController::class, 'destroy'])
 
 //account
 Route::get('/admin/register', [AccountController::class,'registerView']);
+Route::post('/admin/register', [AccountController::class,'AdminRegister']);
 Route::get('/admin/login', [AccountController::class,'loginView']);
-Route::post('/admin/account/create', [AccountController::class,'create']);
+Route::post('/admin/login', [AccountController::class,'AdminLogin']);
 Route::get('/admin/account/list', [AccountController::class,'index']);
 Route::get('/admin/account/delete/id={id}', [AccountController::class, 'destroy']);
 

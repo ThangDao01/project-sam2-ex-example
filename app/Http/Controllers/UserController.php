@@ -73,6 +73,7 @@ class UserController extends Controller
         ]);
         $account->created_at = Carbon::now('Asia/Ho_Chi_Minh');
         $account->updated_at = Carbon::now('Asia/Ho_Chi_Minh');
+//        return $account;
         $account->save();
         Session::flash('message', 'Account successfully created Please Login to continue');
         Session::flash('type-message', 'success');

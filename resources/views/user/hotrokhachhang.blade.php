@@ -1,7 +1,5 @@
 @extends('layout.user-layout')
-@section('title')
-    E&K - Hỗ trợ khách hàng
-@endsection
+<title>E&K - Hỗ trợ khách hàng</title>
 @section('detail')
     <section id="popup-loading" class="popup-loading">
         <div class="popup-loading-content distance-center">
@@ -98,7 +96,7 @@
                         >
                             <li class="breadcrumb-item breadcrumb-no-background">
                                 <a class="monkey-f-medium text-uppercase"
-                                   href="/home">Trang chủ</a>
+                                   href="/">Trang chủ</a>
                             </li>
                             <li class="breadcrumb-item active breadcrumb-no-background">
                                 <a href="#"

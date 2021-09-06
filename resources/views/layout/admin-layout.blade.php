@@ -297,8 +297,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </a>
                         <ul class="sub">
                             <li><a href="/admin/account/list">List</a></li>
-                            <li><a href="admin/register">Register</a></li>
-                            <li><a href="admin/login">Logout</a></li>
+                            <li><a href="/admin/register">Register</a></li>
+                            <li><a href="/admin/login">Logout</a></li>
                         </ul>
                     </li>
                     <li class="sub-menu">
