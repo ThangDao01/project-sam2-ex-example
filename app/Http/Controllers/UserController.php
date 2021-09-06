@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\AccountRequest;
 use App\Models\Account;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -19,6 +20,7 @@ class UserController extends Controller
 
     public function UserLogin(Request $request)
     {
+
         $email = $request->get('Email');
         $password = $request->get('password');
         $salt = DB::table('accounts')->where('Email', $email)->value('Salt');
@@ -54,8 +56,8 @@ class UserController extends Controller
             return redirect('/register');
         }
         $salt= $this->incrementalHash();
-        $email = new EmailController();
-        $email->CheckingMail($salt,$email,$request->get('LastName'));
+//        $email = new EmailController();
+//        $email->CheckingMail($salt,$email,$request->get('LastName'));
 
         $request->validated();
         $account = new Account();
@@ -69,7 +71,8 @@ class UserController extends Controller
         $account->PasswordHash = Hash::make($request->get('password') . $account->Salt, [
             'rounds' => 12,
         ]);
-//        return $account;
+        $account->created_at = Carbon::now('Asia/Ho_Chi_Minh');
+        $account->updated_at = Carbon::now('Asia/Ho_Chi_Minh');
         $account->save();
         Session::flash('message', 'Account successfully created Please Login to continue');
         Session::flash('type-message', 'success');

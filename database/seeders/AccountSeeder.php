@@ -59,17 +59,17 @@ class AccountSeeder extends Seeder
             ],
             ///cường
             [
-                'FirstName' => '',
-                'LastName' => '',
-                'Email' => '',
-                'PhoneNumber' => '',
-                'PasswordHash' => '',
-                'Salt' => '',
-                'Age' => '',
+                'FirstName' => 'tran',
+                'LastName' => 'cuong',
+                'Email' => 'trancuong@gmail.com',
+                'PhoneNumber' => '0345157732',
+                'PasswordHash' => '$2y$12$qUtWXzBngNcTMDd1n6edk.uGtSQ7wuvkW7q2YSJPXSGbV0lAeB9qK',
+                'Salt' => 'FeiN8',
+                'Age' => '20',
                 'Role' => '2',
-                'Status' => '',
-                'created_at' => '',
-                'updated_at' => ''
+                'Status' => '2',
+                'created_at' => '2021-09-06 17:00:03',
+                'updated_at' => '2021-09-06 17:00:03'
             ],
             ///hòa
             [
