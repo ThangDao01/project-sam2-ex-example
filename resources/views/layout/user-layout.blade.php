@@ -418,7 +418,7 @@
                                 </div>
                                 <div class="col-lg-2 d-lg-block d-none">
                                     <a href="http://www.online.gov.vn/Home/WebDetails/40473" alt="#">
-                                        <img data-src="https://monkeymedia.vcdn.com.vn/upload/web/background-web/logo-footer" class="img-certification lazy" alt="#">
+                                        <img data-src="{{asset('images/logoSaleNoti.png')}}" class="img-certification lazy" alt="#">
                                     </a>
                                 </div>
                             </div>
