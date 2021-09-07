@@ -18,15 +18,10 @@
                     <div class="col-lg-11">
                         <nav aria-label="breadcrumb">
                             <ol
-                                class="breadcrumb monkey-bg-transparent mb-0 p-0"
-                            >
+                                class="breadcrumb monkey-bg-transparent mb-0 p-0">
                                 <li class="breadcrumb-item breadcrumb-mobile">
                                     <a class="monkey-f-medium text-uppercase"
-                                       href="https://www.monkey.edu.vn/">Trang chủ</a>
-                                </li>
-                                <li class="breadcrumb-item active breadcrumb-mobile">
-                                    <a href="https://www.monkey.edu.vn/loi-ich.html"
-                                       class="monkey-f-bold text-uppercase"> Lợi ích</a>
+                                       href="/">Trang chủ</a>
                                 </li>
                             </ol>
                         </nav>
@@ -99,7 +94,7 @@
                                         <div class = "media-body" >
                                             <h5 class = "mt-0 monkey-f-bold monkey-fz-15" >
                                                 <a class = "cursor"
-                                                   href = "https://www.monkey.edu.vn/ba-me-can-biet/thanh-toan-goi-hoc-monkey-junior-qua-tai-khoan-mobifone.html" >Thanh toán gói học Monkey Junior qua tài khoản Mobifone</a >
+                                                   href = "https://www.monkey.edu.vn/ba-me-can-biet/thanh-toan-goi-hoc-monkey-junior-qua-tai-khoan-mobifone.html" >Thanh toán gói học E&K qua tài khoản Mobifone</a >
 
                                             </h5 >
                                         </div >
@@ -206,10 +201,6 @@
                                     </div>
                                 </div>
                             </div>
-
-
-
-
                         </div>
                     </div>
                 </div>
