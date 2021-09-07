@@ -17,7 +17,7 @@ class AccountSeeder extends Seeder
         \Illuminate\Support\Facades\DB::table('accounts')->insert([
             //thắng
             [
-                'FirstName' => 'Đào',
+                'FirstName' => 'Đào Duy',
                 'LastName' => 'Thắng',
                 'Email' => 'thangdao202@gmail.com',
                 'PhoneNumber' => '113',
@@ -31,8 +31,8 @@ class AccountSeeder extends Seeder
             ],
             ///quân
             [
-                'FirstName' => 'Quân',
-                'LastName' => 'Mạnh',
+                'FirstName' => 'Phùng Mạnh',
+                'LastName' => 'Quân',
                 'Email' => 'phungmanhquan2002@gmail.com',
                 'PhoneNumber' => '0364469332',
                 'PasswordHash' => '$2y$12$XPjQ/7UuOlSDJ.nk3CoKIuLIBOFAJ37v4qZc6RzR7Y0TfTigDKucS',
@@ -45,7 +45,7 @@ class AccountSeeder extends Seeder
             ],
             ///hưng
             [
-                'FirstName' => 'Phùng',
+                'FirstName' => 'Phùng Việt',
                 'LastName' => 'Hưng',
                 'Email' => 'hungvietphung36@gmail.com',
                 'PhoneNumber' => '0336086589',
@@ -59,8 +59,8 @@ class AccountSeeder extends Seeder
             ],
             ///cường
             [
-                'FirstName' => 'tran',
-                'LastName' => 'cuong',
+                'FirstName' => 'Trần Mạnh',
+                'LastName' => 'Cường',
                 'Email' => 'trancuong@gmail.com',
                 'PhoneNumber' => '0345157732',
                 'PasswordHash' => '$2y$12$qUtWXzBngNcTMDd1n6edk.uGtSQ7wuvkW7q2YSJPXSGbV0lAeB9qK',
@@ -73,17 +73,17 @@ class AccountSeeder extends Seeder
             ],
             ///hòa
             [
-                'FirstName' => '',
-                'LastName' => '',
-                'Email' => '',
-                'PhoneNumber' => '',
+                'FirstName' => 'Đặng Văn',
+                'LastName' => 'Hòa',
+                'Email' => 'hoadvth2009007@fpt.edu.vn',
+                'PhoneNumber' => '0817030802',
                 'PasswordHash' => '',
-                'Salt' => '',
-                'Age' => '',
+                'Salt' => 'BfiC6',
+                'Age' => '20',
                 'Role' => '2',
-                'Status' => '',
-                'created_at' => '',
-                'updated_at' => ''
+                'Status' => '2',
+                'created_at' => '2021-09-06 17:00:03',
+                'updated_at' => '2021-09-06 17:00:03'
             ],
 
         ]);
