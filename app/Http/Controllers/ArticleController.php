@@ -42,6 +42,7 @@ class ArticleController extends Controller
         //
         $request->validated();
         $obj = new Article();
+        $obj->url = $request->get('url');
         $obj->title = $request->get('title');
         $obj->categories = $request->get('categories');
         $obj->Detail = $request->get('Detail');
