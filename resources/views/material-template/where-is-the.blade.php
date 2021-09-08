@@ -120,7 +120,8 @@
                                         src="https://img.icons8.com/bubbles/200/000000/trophy.png">
                                     <h4>CONGRATULATIONS!</h4>
                                     <p>Congratulations on successfully completing the lesson</p>
-                                    <button class="btn btn-out btn-square continue">CONTINUE</button>
+                                    <a href="{{$next}}">
+                                    <button class="btn btn-out btn-square continue">CONTINUE</button></a>
                                 </div>
                             </div>
                         </div>
