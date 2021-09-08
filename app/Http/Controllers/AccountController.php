@@ -10,7 +10,9 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
+session_start();
 use Illuminate\Support\Facades\Validator;
 
 class AccountController extends Controller
@@ -20,12 +22,14 @@ class AccountController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
     public function index()
     {
         //
-
         return view('admin.Account.list' , ['list' => Account::paginate(10)]);
     }
+
     public function loginView(Request $request)
     {
         //
@@ -42,7 +46,8 @@ class AccountController extends Controller
             // The passwords match...
             return redirect('/admin');
         } else {
-            dd('no no no');
+            Session::put('error', 'Tên người dùng hoặc mật khẩu không hợp lệ. vui lòng nhập lại');
+            return redirect('/admin/login');
         }
     }
 
@@ -102,21 +107,6 @@ class AccountController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-//    public function store(AccountRequest $request)
-//    {
-//        //
-//        $request->validated();
-//        $obj = new Account();
-//        $obj->CourseName = $request->get('CourseName');
-//        $obj->Price = $request->get('Price');
-//        $obj->Description = $request->get('Description');
-//        $obj->timeFinish = $request->get('timeFinish');
-//        $obj->Status = $request->get('Status');
-//        $obj->created_at = Carbon::now('Asia/Ho_Chi_Minh');
-//        $obj->updated_at = Carbon::now('Asia/Ho_Chi_Minh');
-//        $obj->save();
-//        return redirect('/admin/account/list');
-//    }
 
     /**
      * Display the specified resource.

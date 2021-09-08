@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\FeedBackRequest;
+use App\Models\Account;
 use App\Models\FeedBack;
 use Illuminate\Http\Request;
 
 class feedbackController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +18,7 @@ class feedbackController extends Controller
     public function index()
     {
         //
-        return view('admin.FeedBack.list' , ['list' => FeedBack::all()]);
+        return view('admin.FeedBack.list' , ['list' => FeedBack::paginate(10)]);
     }
 
     /**
@@ -28,26 +30,25 @@ class feedbackController extends Controller
     {
         //
         return view('admin.FeedBack.create');
-
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Routing\Redirector
      */
     public function create(FeedBackRequest $request)
     {
         //
         $request->validated();
         $obj = new FeedBack();
-        $obj->AccountID = $request->get('AccountID');
+        $obj->AccountID = 1;
         $obj->Message = $request->get('Message');
         $obj->Vote = $request->get('Vote');
-        $obj->Seen = $request->get('Seen');
+        $obj->Seen = 0;
         $obj->save();
-        return redirect('/admin/feedback/list');
+        return redirect()->back();
     }
 
     /**

@@ -105,6 +105,7 @@ Route::get('/cloudinary',function (){
 
 Route::get('/mail/{salt}/{email}/{name}',[EmailController::class,'CheckingMail']);
 
+
 // paint
 Route::get('/paint',function (){
     return view('tool.paint');
@@ -195,7 +196,7 @@ Route::get('/admin/lesson/delete/id={id}', [lessonController::class, 'destroy'])
 
 Route::get('/admin/feedback/create', [feedbackController::class,'createView']);
 Route::post('/admin/feedback/create', [feedbackController::class,'create']);
-Route::get('/admin/feedback/list', [feedbackController::class,'index']);
+Route::get('/admin/feedback', [feedbackController::class,'index']);
 Route::get('/admin/feedback/edit/id={id}', [feedbackController::class, 'edit']);
 Route::put('/admin/feedback/{id}', [feedbackController::class, 'update']);
 Route::get('/admin/feedback/delete/id={id}', [feedbackController::class, 'destroy']);

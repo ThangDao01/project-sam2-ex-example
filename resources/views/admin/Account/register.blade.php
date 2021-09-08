@@ -136,6 +136,5 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <p><a href="javascript:history.go(-1)"><i class="fa fa-mail-reply"></i> GO BACK</a></p>
     </div>
 </div>
-
 </body>
 </html>

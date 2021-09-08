@@ -22,6 +22,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="log-w3">
     <div class="w3layouts-main" >
         <h2>Sign In Now</h2>
+        <?php
+        $error = Illuminate\Support\Facades\Session::get('error');
+        if ($error){
+            echo '<span style="color: red;font-size: 17px;width: 100%;text-align: center;font-weight: bold;}">'.$error. '</span>';
+            Illuminate\Support\Facades\Session::put('error', null);
+        }
+        ?>
         @if(Session::has('message'))
             <p class=" alert alert-{{ Session::get('type-message') }}">{{ Session::get('message') }}</p>
         @endif
@@ -40,13 +47,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             @enderror
             </div>
             <span>
-                <input type="checkbox" />Remember Me</span>
+                <input type="checkbox"/>Remember Me</span>
             <h6><a href="#">Forgot Password?</a></h6>
             <div class="clearfix"></div>
             <input type="submit" value="Sign In" name="login">
         </form>
         <p>Don't Have an Account ?<a href="/admin/register">Create an account</a></p>
-        <p><a href="javascript:history.go(-1)"><i class="fa fa-mail-reply"></i>  GO BACK</a></p>
+{{--        <p><a href="javascript:history.go(-1)"><i class="fa fa-mail-reply"></i>  GO BACK</a></p>--}}
     </div>
 </div>
 @include('layout.js-footer')

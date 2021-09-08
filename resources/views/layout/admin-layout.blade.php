@@ -262,11 +262,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <li class="dropdown">
                     <a data-toggle="dropdown" class="dropdown-toggle" href="/coming-soon">
                         <img alt="" src="{{URL::asset('images/user2.png') }}">
-                        <span class="username">John Doe</span>
+{{--                        @foreach($list as $account)--}}
+{{--                        <span class="username">{{$account->LastName}}</span>--}}
+{{--                        @endforeach--}}
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu extended logout">
-                        <li><a href="/coming-soon"><i class=" fa fa-suitcase"></i>Profile</a></li>
+                        <li><a href="/thong-tin-admin"><i class=" fa fa-suitcase"></i>Profile</a></li>
                         <li><a href="/coming-soon"><i class="fa fa-cog"></i> Settings</a></li>
                         <li><a href="{{URL::asset('/admin/login') }}"><i class="fa fa-key"></i> Log Out</a></li>
                     </ul>
