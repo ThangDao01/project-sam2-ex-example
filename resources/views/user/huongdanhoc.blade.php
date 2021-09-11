@@ -113,8 +113,7 @@
                         <div class="col-lg-11">
                             <nav aria-label="breadcrumb">
                                 <ol
-                                    class="breadcrumb monkey-bg-transparent mb-0 p-0"
-                                >
+                                    class="breadcrumb monkey-bg-transparent mb-0 p-0">
                                     <li class="breadcrumb-item ">
                                         <a class="monkey-f-medium text-uppercase"
                                            href="/home">Trang chủ</a>
@@ -134,8 +133,7 @@
                     <div class="row justify-content-center">
                         <div class="col-lg-11">
                             <h3
-                                class="monkey-f-bold monkey-fz-20 mt-4 mb-4 text-uppercase text-center d-mobile monkey-color-green"
-                            >
+                                class="monkey-f-bold monkey-fz-20 mt-4 mb-4 text-uppercase text-center d-mobile monkey-color-green">
                                 E&K ĐỒNG HÀNH CÙNG BA MẸ & CÁC CON<br>TRONG SUỐT QUÁ TRÌNH HỌC
                             </h3>
                             <div class="row">
