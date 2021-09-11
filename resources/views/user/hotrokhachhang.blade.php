@@ -1,4 +1,6 @@
 @extends('layout.user-layout')
+@section('title')
+<title>E&K - Hỗ trợ khách hàng</title>
 <style>
     .vote {
         height: 46px;
@@ -40,8 +42,6 @@
 
     /* Modified from: https://github.com/mukulkant/Star-rating-using-pure-css */
 </style>
-@section('title')
-    E&K - Hỗ trợ khách hàng
 @endsection
 @section('detail')
 
@@ -138,7 +138,7 @@
                             class="breadcrumb monkey-bg-transparent mb-0 p-0">
                             <li class="breadcrumb-item breadcrumb-no-background">
                                 <a class="monkey-f-medium text-uppercase"
-                                   href="/home">Trang chủ</a>
+                                   href="/">Trang chủ</a>
                             </li>
                             <li class="breadcrumb-item active breadcrumb-no-background">
                                 <a href="#"

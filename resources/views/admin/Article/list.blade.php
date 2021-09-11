@@ -44,7 +44,7 @@
                         <td>{{$data->id}}</td>
                         <td>{{$data->title}}</td>
                         <td>{{$data->Detail}}</td>
-                        <td>{{$data->AuthorId}}</td>
+                        <td>{{$data->Author}}</td>
                         <td class="actions">
                             <a href="/admin/article/edit/id={{$data->id}}" class="on-default edit-row">
                                 <i style="font-size: 20px" class="fa fa-pencil-square-o text-success text-active"></i></a>

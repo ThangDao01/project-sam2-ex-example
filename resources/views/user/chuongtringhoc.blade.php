@@ -1,7 +1,5 @@
 @extends('layout.user-layout')
-@section('title')
-   E&K-Chương trình học
-@endsection
+<title>E&K-Chương trình học</title>
 @section('detail')
     <iframe src = "https://www.googletagmanager.com/ns.html?id=GTM-PS37S79"
             height = "0" width = "0" style = "display:none;visibility:hidden" >
@@ -133,7 +131,7 @@
                                 <ol class="breadcrumb monkey-bg-transparent mb-0 p-0">
                                     <li class="breadcrumb-item ">
                                         <a class="monkey-f-medium text-uppercase"
-                                           href="/home">Trang chủ</a>
+                                           href="/">Trang chủ</a>
                                     </li>
                                     <li class="breadcrumb-item active ">
                                         <a href="#"

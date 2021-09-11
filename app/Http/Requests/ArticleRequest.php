@@ -27,7 +27,7 @@ class ArticleRequest extends FormRequest
             //
         'title'=>'required',
         'Detail'=>'required',
-        'AuthorId'=>'required',
+        'Author'=>'required',
         ];
     }
 }

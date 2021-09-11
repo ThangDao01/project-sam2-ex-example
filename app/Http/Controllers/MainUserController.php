@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Account;
+use App\Models\Article;
 use App\Models\Course;
 use App\Models\DataSupport;
 use App\Models\Lesson;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class MainUserController extends Controller
 {
@@ -34,7 +36,41 @@ class MainUserController extends Controller
         return view('material.lesson-view', ['listLesson' => Lesson::all()->where('courseId', $id)]);
     }
 
-    public function whatIsThis($id)
+    public function articleDetail($url){
+        $description = DB::table('articles')->where('url', $url)->first();
+        return view('user.article',[
+            'description' =>$description
+        ]);
+    }
+
+    public function memoryGame($id,$nextLink){
+        $main = DataSupport::find($id);
+        $idKey = DataSupport::where('key', $main->key)->get();
+        $min = DataSupport::where('key', $main->key)->first()->id;
+        $max = $min + sizeof($idKey) - 1;
+        $data1ID = rand($min, $max);
+        $data2ID = rand($min, $max);
+//tạo 2 id random không trùng
+        do {
+            $data1ID = rand($min, $max);
+        } while ($data1ID == $id);
+        do {
+            $data2ID = rand($min, $max);
+        } while ($data2ID == $id || $data2ID == $data1ID);
+
+// tạo 2 dữ liệu mẫu
+        $data1 = DataSupport::find($data1ID);
+        $data2 = DataSupport::find($data2ID);
+
+        $listDataM = array($main,$data1,$data2);
+//        return $listData;
+        return view('material-template.memory-game', [
+            'list' => $listDataM,
+            'next'=>$nextLink
+        ]);
+    }
+
+    public function whatIsThis($id,$nextLink)
     {
         $main = DataSupport::find($id);
         $idKey = DataSupport::where('key', $main->key)->get();
@@ -72,7 +108,8 @@ class MainUserController extends Controller
 //        return $listData;
         return view('material-template.what-is-this', [
             'list' => $listDataM,
-            'main' => $main
+            'main' => $main,
+            'next'=>$nextLink
         ]);
     }
     public function listening($id)
@@ -83,15 +120,16 @@ class MainUserController extends Controller
             'main' => $main
         ]);
     }
-    public function video($id)
+    public function video($id,$nextLink)
     {
         $main = DataSupport::find($id);
         return view('material-template.video', [
-            'main' => $main
+            'main' => $main,
+            'next'=>$nextLink
         ]);
     }
 
-    public function whereIsThe($id)
+    public function whereIsThe($id,$nextLink)
     {
         $main = DataSupport::find($id);
         $idKey = DataSupport::where('key', $main->key)->get();
@@ -129,7 +167,8 @@ class MainUserController extends Controller
 //        return $listData;
         return view('material-template.where-is-the', [
             'list' => $listDataM,
-            'main' => $main
+            'main' => $main,
+            'next'=>$nextLink
         ]);
     }
 
@@ -138,18 +177,20 @@ class MainUserController extends Controller
         $lesson = Lesson::all()->where('id',$id);
         $lesson->listMaterialId = 1;
         $main = DataSupport::find($lesson->listMaterialId);
+        $format = '/ls=%d/mt=%d';
+        $nextLink = sprintf($format, $id, $lc+1);
         switch ($lc){
             case 1:
-                return $this->whereIsThe($main->id);
+                return $this->whereIsThe($main->id,$nextLink);
                 break;
+//            case 2:
+//                return $this->whatIsThis($main->id,$nextLink);
+//                break;
             case 2:
-                return $this->whatIsThis($main->id);
+                return $this->memoryGame($main->id,$nextLink);
                 break;
             case 3:
-                return $this->video($main->id);
-                break;
-            case 4:
-                return $this->listening($main->id);
+                return $this->video($main->id,$nextLink);
                 break;
             default:
                 return 'null';
