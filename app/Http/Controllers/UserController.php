@@ -11,7 +11,8 @@ use Illuminate\Support\Facades\Session;
 
 class UserController extends Controller
 {
-    //
+
+
     public function userLoginForm()
     {
         return view('user.login');
@@ -66,7 +67,7 @@ class UserController extends Controller
         $account->Salt = $salt;
         $account->Age = $request->get('Age');
         $account->Role = 2;
-        $account->PasswordHash = Hash::make($request->get('password') . $account->Salt, [
+        $account->PasswordHash = Hash::make($request->get('password') . $account->Salt,[
             'rounds' => 12,
         ]);
 //        return $account;

@@ -59,6 +59,7 @@
                     <div class="col-lg-2">
                         <select class="form-control m-bot15" name="status">
                             <option value="1">Active</option>
+                            <option value="2">defail</option>
                         </select>
                     </div>
                 </div>
