@@ -38,21 +38,14 @@
                             {!! $description->Detail !!}
                         </div>
                         <div class="col-lg-4">
-                            <section
-                                class="slider-new slider-bar-concerned-parents monkey-bg-white mb-4 d-desktop"
-                            >
-                                <div
-                                    class="title style-title text-uppercase monkey-color-green monkey-fz-22 monkey-f-bold mb-4"
-                                >
+                            <section class="slider-new slider-bar-concerned-parents monkey-bg-white mb-4 d-desktop">
+                                <div class="title style-title text-uppercase monkey-color-green monkey-fz-22 monkey-f-bold mb-4">
                                     Ba mẹ cần biết
                                 </div>
                                 <div class="pb-3 pb-lg-4 border-bottom mt-3 mt-lg-4">
                                     <div class="media mt-3 parents-share-media">
                                         <div class="media-image effect-hover-circle slider-bar-new-item}">
-                                            <img
-                                                data-src="http://media.monkeyuni.com/upload/web/storage_web/18-01-2021_09:25:11_congbohoclieu_thumb.jpg"
-                                                class=" lazyLoading" alt="#"
-                                            />
+                                            <img data-src="http://media.monkeyuni.com/upload/web/storage_web/18-01-2021_09:25:11_congbohoclieu_thumb.jpg" class=" lazyLoading" alt="#"/>
 
                                         </div>
                                         <div class="media-body">
@@ -80,7 +73,6 @@
                                                    href="https://www.monkey.edu.vn/ba-me-can-biet/cach-de-ba-me-tuong-tac-hieu-qua-voi-con-viet-de-se-chia-thang-10-2020.html">Cách
                                                     để ba mẹ tương tác hiệu quả với con - Viết để sẻ chia Tháng
                                                     10/2020</a>
-
                                             </h5>
                                         </div>
                                     </div>
@@ -211,11 +203,6 @@
                                     </div>
                                 </div>
                             </div>
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 9ac10db2f7ea15371388442b3b52999c0eb0e32c
                         </div>
                     </div>
                 </div>

@@ -7,7 +7,7 @@
     </section>
     <section class="panel" style="min-height: 550px;">
         <p class="panel-heading">
-            Form Material-create
+            Form Lesson-create
         </p>
         <div class="panel-body">
             <form class="form-horizontal bucket-form" action="/admin/lesson/create" method="post">

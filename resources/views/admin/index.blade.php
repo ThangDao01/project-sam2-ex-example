@@ -2,6 +2,9 @@
 @section('title')
     Admin
 @endsection
+<?php
+    $admin = new \App\Http\Controllers\MainAdminController();
+    ?>
 @section('detail')
         <section class="wrapper">
             <!-- //market-->
@@ -26,7 +29,7 @@
                         </div>
                         <div class="col-md-8 market-update-left">
                             <h4>Users</h4>
-                            <h3>1,250</h3>
+                            <h3>{{$admin->countUser()}}</h3>
                             <p>Other hand, we denounce</p>
                         </div>
                         <div class="clearfix"></div>
@@ -48,12 +51,14 @@
                 <div class="col-md-3 market-update-gd">
                     <div class="market-update-block clr-block-4">
                         <div class="col-md-4 market-update-right">
-                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                            <i class="fa fa-book" style="font-size: 3em;color: #fff;text-align: left;"></i>
+{{--                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>--}}
                         </div>
                         <div class="col-md-8 market-update-left">
-                            <h4>Orders</h4>
-                            <h3>1,500</h3>
-                            <p>Other hand, we denounce</p>
+                            <h4>Data</h4>
+                            <h6 style="color: white">{{ $admin->countCourse()}} Course</h6>
+                            <h6 style="color: white">{{ $admin->countLesson()}} Lesson</h6>
+                            <h6 style="color: white">{{ $admin->countDataSupport()}} Vocabulary</h6>
                         </div>
                         <div class="clearfix"></div>
                     </div>

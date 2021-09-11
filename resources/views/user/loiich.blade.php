@@ -189,6 +189,45 @@
                                 </div>
                             </div>
                             <div class="monkey-bg-white p-md-4 p-0 border-radius">
+                                @foreach($listData as $article)
+                                    <div class="manual-content-item border-bottom pb-3 mb-3">
+                                        <h5 class="mb-3">
+                                            <a class="monkey-f-bold monkey-fz-18 monkey-color-green d-block d-md-none custom-text-title-2 /loi-ich/{{$article->url}}"
+                                               href="">{{$article->title}}</a>
+                                        </h5>
+                                        <div
+                                            class="media parents-share-media"
+                                        >
+                                            <div class="mr-3 media-image effect-hover-circle ">
+                                                <img
+                                                    data-src="{{$article->thumbnail}}"
+                                                    class=" lazy" alt="#"
+                                                />
+
+                                            </div>
+                                            <div class="media-body columns-2-4">
+                                                <h5
+                                                    class="mt-0 monkey-f-bold monkey-fz-18 custom-text-title-2 d-none d-md-block"
+                                                >
+                                                    <a class="/loi-ich/{{$article->url}}"
+                                                       href="/article={{$article->url}}">{{$article->title}}</a>
+
+                                                </h5>
+                                                <p
+                                                    class="monkey-f-medium monkey-color-gray mb-4 text-justify custom-text-box-6 "
+                                                 style="  text-overflow: ellipsis;">
+{{--                                                    {!! $article->Detail !!}--}}
+                                                </p>
+                                                <a class="monkey-color-gray monkey-f-bold cursor"
+                                                   href="/article={{$article->url}}">
+                                                    Chi tiết</a>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+                                @endforeach
                                 <div class="manual-content-item border-bottom pb-3 mb-3">
                                     <h5 class="mb-3">
                                         <a class="monkey-f-bold monkey-fz-18 monkey-color-green d-block d-md-none custom-text-title-2 /loi-ich/hoc-luong-tu-vung-khong-lo-ngay-tai-nha-cung-monkey-junior.html"
@@ -230,115 +269,6 @@
 
 
                                 </div>
-                                <div class="manual-content-item border-bottom pb-3 mb-3">
-                                    <h5 class="mb-3">
-                                        <a class="monkey-f-bold monkey-fz-18 monkey-color-green d-block d-md-none custom-text-title-2 /loi-ich/phat-am-chuan-anh-my-ngay-tu-dau-cung-monkey-junior.html"
-                                           href="">Phát
-                                            âm chuẩn Anh Mỹ ngay từ đầu cùng E&K</a>
-                                    </h5>
-                                    <div
-                                        class="media parents-share-media"
-                                    >
-                                        <div class="mr-3 media-image effect-hover-circle ">
-                                            <img src="{{asset('/images/anh3-loiich.png')}}" alt="#"/>
-                                        </div>
-                                        <div class="media-body columns-2-4">
-                                            <h5
-                                                class="mt-0 monkey-f-bold monkey-fz-18 custom-text-title-2 d-none d-md-block"
-                                            >
-                                                <a class="/loi-ich/phat-am-chuan-anh-my-ngay-tu-dau-cung-monkey-junior.html"
-                                                   href="">Phát
-                                                    âm chuẩn Anh Mỹ ngay từ đầu cùng E&K</a>
-
-                                            </h5>
-                                            <p
-                                                class="monkey-f-medium monkey-color-gray mb-4 text-justify custom-text-box-6 "
-                                            >
-                                                Một trong những vấn đề lớn nhất trẻ em Việt Nam gặp phải khi học tiếng
-                                                Anh chính là việc phát âm sai do không có môi trường rèn luyện tiếng Anh
-                                                chuẩn. Với E&K, bé sẽ phát âm chuẩn ngay từ khi bắt đầu học
-                                                với các audio do chính người bản xứ đọc.
-                                            </p>
-                                            <a class="monkey-color-gray monkey-f-bold cursor"
-                                               href="">
-                                                Chi tiết</a>
-                                        </div>
-                                    </div>
-
-
-                                </div>
-                                <div class="manual-content-item border-bottom pb-3 mb-3">
-                                    <h5 class="mb-3">
-                                        <a class="monkey-f-bold monkey-fz-18 monkey-color-green d-block d-md-none custom-text-title-2 /loi-ich/lo-trinh-hoc-bai-ban-cua-monkey-junior-giup-toi-uu-thoi-gian-hoc-va-giup-be-hoc-hieu-qua-hon.html"
-                                           href="">Lộ
-                                            trình học bài bản của E&K giúp tối ưu thời gian học và giúp bé học
-                                            hiệu quả hơn</a>
-                                    </h5>
-                                    <div class="media parents-share-media">
-                                        <div class="mr-3 media-image effect-hover-circle ">
-                                            <img data-src="{{asset('/images/anh4-loiich.PNG')}}" class=" lazy" alt="#"/>
-
-                                        </div>
-                                        <div class="media-body columns-2-4">
-                                            <h5 class="mt-0 monkey-f-bold monkey-fz-18 custom-text-title-2 d-none d-md-block">
-                                                <a class="/loi-ich/lo-trinh-hoc-bai-ban-cua-monkey-junior-giup-toi-uu-thoi-gian-hoc-va-giup-be-hoc-hieu-qua-hon.html"
-                                                   href="">Lộ
-                                                    trình học bài bản của E&K giúp tối ưu thời gian học và
-                                                    giúp bé học hiệu quả hơn</a>
-
-                                            </h5>
-                                            <p class="monkey-f-medium monkey-color-gray mb-4 text-justify custom-text-box-6 ">
-                                                Các chuyên gia của E&K đã nghiên cứu về sự ghi nhớ của não bộ
-                                                trẻ để xây dựng một chương trình học bài bản với lộ trình học rõ ràng,
-                                                nhờ đó trẻ học tập, ghi nhớ các từ vựng và mẫu câu hiệu quả hơn trong
-                                                khoảng thời gian tối ưu nhất.
-                                            </p>
-                                            <a class="monkey-color-gray monkey-f-bold cursor"
-                                               href="l">
-                                                Chi tiết</a>
-                                        </div>
-                                    </div>
-
-
-                                </div>
-                                <div class="manual-content-item border-bottom pb-3 mb-3">
-                                    <h5 class="mb-3">
-                                        <a class="monkey-f-bold monkey-fz-18 monkey-color-green d-block d-md-none custom-text-title-2 /loi-ich/chuong-trinh-hoc-cua-monkey-junior-ho-tro-phat-trien-2-ban-cau-nao-cua-tre-trong-giai-doan-vang.html"
-                                           href="">Chương
-                                            trình học của E&K hỗ trợ phát triển 2 bán cầu não của trẻ trong
-                                            giai đoạn vàng</a>
-                                    </h5>
-                                    <div
-                                        class="media parents-share-media">
-                                        <div class="mr-3 media-image effect-hover-circle ">
-                                            <img src="{{asset('/images/anh5-loiich.PNG')}}" alt="#"/>
-
-                                        </div>
-                                        <div class="media-body columns-2-4">
-                                            <h5
-                                                class="mt-0 monkey-f-bold monkey-fz-18 custom-text-title-2 d-none d-md-block">
-                                                <a class="/loi-ich/chuong-trinh-hoc-cua-monkey-junior-ho-tro-phat-trien-2-ban-cau-nao-cua-tre-trong-giai-doan-vang.html"
-                                                   href="">Chương
-                                                    trình học của E&K hỗ trợ phát triển 2 bán cầu não của trẻ
-                                                    trong giai đoạn vàng</a>
-
-                                            </h5>
-                                            <p
-                                                class="monkey-f-medium monkey-color-gray mb-4 text-justify custom-text-box-6 ">
-                                                E&K được các chuyên gia xây dựng với nhiều hoạt động khác nhau
-                                                kích thích sự phát triển hai bán cầu não của trẻ trong giai đoạn “cửa sổ
-                                                cơ hội".
-                                                &nbsp;
-                                            </p>
-                                            <a class="monkey-color-gray monkey-f-bold cursor"
-                                               href="">
-                                                Chi tiết</a>
-                                        </div>
-                                    </div>
-
-
-                                </div>
-
                             </div>
                         </div>
                     </div>

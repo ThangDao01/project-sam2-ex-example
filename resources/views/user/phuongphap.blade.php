@@ -178,6 +178,35 @@
                             </div >
                             <div class="monkey-bg-white p-md-4 p-0 border-radius">
 
+                                @foreach($listData as $article)
+                                    <div class="manual-content-item border-bottom pb-3 mb-3">
+                                        <h5 class="mb-3">
+                                            <a class="monkey-f-bold monkey-fz-18 monkey-color-green d-block d-md-none custom-text-title-2 /phuong-phap/monkey-junior-ap-dung-phuong-phap-trao-the-nhanh-glenn-doman-nhu-the-nao.html" href="/coming-soon">E&K áp dụng phương pháp tráo thẻ nhanh Glenn Doman như thế nào?</a>
+                                        </h5>
+                                        <div
+                                            class="media parents-share-media">
+                                            <div class="mr-3 media-image effect-hover-circle ">
+
+                                                <img src = "{{$article->thumbnail}}" alt = "#"/>
+                                            </div>
+                                            <div class="media-body columns-2-4">
+                                                <h5
+                                                    class="mt-0 monkey-f-bold monkey-fz-18 custom-text-title-2 d-none d-md-block"
+                                                >
+                                                    <a class="/phuong-phap/monkey-junior-ap-dung-phuong-phap-trao-the-nhanh-glenn-doman-nhu-the-nao.html" href="/article={{$article->url}}" >
+                                                        {{$article->title}}</a>
+
+                                                </h5>
+                                                <p
+                                                    class="monkey-f-medium monkey-color-gray mb-4 text-justify custom-text-box-6 "
+                                                >
+                                                    {{-- {!! $article->Detail !!}--}}
+                                                </p>
+                                                <a class="monkey-color-gray monkey-f-bold cursor" href="/article={{$article->url}}"> Chi tiết</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
                                 <div class="manual-content-item border-bottom pb-3 mb-3">
                                     <h5 class="mb-3">
                                         <a class="monkey-f-bold monkey-fz-18 monkey-color-green d-block d-md-none custom-text-title-2 /phuong-phap/monkey-junior-ap-dung-phuong-phap-trao-the-nhanh-glenn-doman-nhu-the-nao.html" href="/coming-soon">E&K áp dụng phương pháp tráo thẻ nhanh Glenn Doman như thế nào?</a>
@@ -205,88 +234,6 @@
                                     </div>
 
 
-                                </div>
-                                <div class="manual-content-item border-bottom pb-3 mb-3">
-                                    <h5 class="mb-3">
-                                        <a class="monkey-f-bold monkey-fz-18 monkey-color-green d-block d-md-none custom-text-title-2 /phuong-phap/phuong-phap-phonics-kich-thich-toi-da-tu-duy-va-tiem-nang-cua-nao-trai.html" href="/coming-soon">Phương pháp Phonics kích thích tối đa tư duy và tiềm năng của não trái</a>
-                                    </h5>
-                                    <div
-                                        class="media parents-share-media"
-                                    >
-                                        <div class="mr-3 media-image effect-hover-circle ">
-                                            <img src = "{{asset('/images/rectangle-42.png')}}" alt = "#"/>
-                                        </div>
-                                        <div class="media-body columns-2-4">
-                                            <h5
-                                                class="mt-0 monkey-f-bold monkey-fz-18 custom-text-title-2 d-none d-md-block"
-                                            >
-                                                <a class="/phuong-phap/phuong-phap-phonics-kich-thich-toi-da-tu-duy-va-tiem-nang-cua-nao-trai.html" href="/coming-soon" >Phương pháp Phonics kích thích tối đa tư duy và tiềm năng của não trái</a>
-
-                                            </h5>
-                                            <p
-                                                class="monkey-f-medium monkey-color-gray mb-4 text-justify custom-text-box-6 "
-                                            >
-                                                Phương pháp phonics dạy trẻ bóc tách từ ngữ để tập đánh vần. Việc kết hợp phương pháp Phonics với các phương pháp Glenn Doman một cách&nbsp;nhịp nhàng trong E&K&nbsp;mang lại hiệu quả tối đa&nbsp;cho trẻ mới bắt đầu học tiếng Anh.&nbsp;
-                                                &nbsp;
-                                            </p>
-                                            <a class="monkey-color-gray monkey-f-bold cursor" href="/coming-soon"> Chi tiết</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="manual-content-item border-bottom pb-3 mb-3">
-                                    <h5 class="mb-3">
-                                        <a class="monkey-f-bold monkey-fz-18 monkey-color-green d-block d-md-none custom-text-title-2 /phuong-phap/phuong-phap-da-giac-quan-trong-monkey-junior-huy-dong-tat-ca-giac-quan-cua-tre-vao-bai-hoc.html" href="/coming-soon">Phương pháp “Đa giác quan” trong E&K - huy động tất cả giác quan của trẻ vào bài học</a>
-                                    </h5>
-                                    <div
-                                        class="media parents-share-media">
-                                        <div class="mr-3 media-image effect-hover-circle ">
-                                            <img src = "{{asset('/images/rectangle-43.png')}}" alt = "#"/>
-                                        </div>
-                                        <div class="media-body columns-2-4">
-                                            <h5
-                                                class="mt-0 monkey-f-bold monkey-fz-18 custom-text-title-2 d-none d-md-block"
-                                            >
-                                                <a class="/phuong-phap/phuong-phap-da-giac-quan-trong-monkey-junior-huy-dong-tat-ca-giac-quan-cua-tre-vao-bai-hoc.html" href="/coming-soon" >Phương pháp “Đa giác quan” trong E&K - huy động tất cả giác quan của trẻ vào bài học</a>
-                                            </h5>
-                                            <p
-                                                class="monkey-f-medium monkey-color-gray mb-4 text-justify custom-text-box-6 "
-                                            >
-                                                Phương pháp này khắc phục những hạn chế của việc học trên thiết bị di động, giúp trẻ mang tất cả các giác quan của trẻ vào bài học để trẻ được là người chủ động tiếp thu kiến thức, ghi nhớ bài học tốt hơn và yêu thích việc học hơn.&nbsp;
-                                                &nbsp;
-                                            </p>
-                                            <a class="monkey-color-gray monkey-f-bold cursor" href="/coming-soon"> Chi tiết</a>
-                                        </div>
-                                    </div>
-
-
-                                </div>
-                                <div class="manual-content-item border-bottom pb-3 mb-3">
-                                    <h5 class="mb-3">
-                                        <a class="monkey-f-bold monkey-fz-18 monkey-color-green d-block d-md-none custom-text-title-2 /phuong-phap/hieu-ve-hoc-tap-thong-qua-vui-choi-xoa-di-sai-lam-thuong-gap-trong-cach-day-con.html" href="/coming-soon">Hiểu về “Học tập thông qua vui chơi” - xóa đi sai lầm thường gặp trong cách dạy con</a>
-                                    </h5>
-                                    <div
-                                        class="media parents-share-media">
-                                        <div class="mr-3 media-image effect-hover-circle ">
-                                            <img
-                                                data-src = "{{URL::asset('/images/t32-web51-1.png')}}"
-                                                class = " lazy" alt = "#"/>
-                                        </div>
-                                        <div class="media-body columns-2-4">
-                                            <h5
-                                                class="mt-0 monkey-f-bold monkey-fz-18 custom-text-title-2 d-none d-md-block">
-                                                <a class="/phuong-phap/hieu-ve-hoc-tap-thong-qua-vui-choi-xoa-di-sai-lam-thuong-gap-trong-cach-day-con.html" href="/coming-soon"
-                                                >Hiểu về “Học tập thông qua vui chơi” - xóa đi sai lầm thường gặp trong cách dạy con</a>
-
-                                            </h5>
-                                            <p class="monkey-f-medium monkey-color-gray mb-4 text-justify custom-text-box-6 ">
-                                                “Liệu con có thực sự học được gì không, hay con chỉ đang chơi đùa?”. Có lẽ đây là câu hỏi của nhiều
-                                                ba mẹ chưa hiểu rõ về phương pháp đã được các nền giáo dục tiên tiến trên
-                                                thế giới áp dụng từ lâu: “học tập thông qua vui chơi” (play-based learning”). Thông qua bài viết này, E&K...
-                                            </p>
-                                            <a class="monkey-color-gray monkey-f-bold cursor" href="/coming-soon">
-                                                Chi tiết</a>
-                                        </div>
-                                    </div>
                                 </div>
 
 

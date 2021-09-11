@@ -31,9 +31,15 @@ class MainUserController extends Controller
     }
     public function getLessonByCourse($id)
     {
-//        return $id;
-//        return Lesson::all()->where('courseId', $id);
-        return view('material.lesson-view', ['listLesson' => Lesson::all()->where('courseId', $id)]);
+        $listLessonId = explode(",", trim(Course::all()->where('id',$id)->pluck('listLessonId'),
+            '["]'));
+        $lesson = array();
+        for ($i=0;$i<count($listLessonId);$i++){
+            if ($listLessonId[$i]){
+                $lesson[$i] = Lesson::find($listLessonId[$i]);
+            }
+        }
+        return view('material.lesson-view', ['listLesson' => $lesson]);
     }
 
     public function articleDetail($url){
@@ -174,23 +180,22 @@ class MainUserController extends Controller
 
 
     public function getMaterialView($id,$lc){
-        $lesson = Lesson::all()->where('id',$id);
-        $lesson->listMaterialId = 1;
-        $main = DataSupport::find($lesson->listMaterialId);
-        $format = '/ls=%d/mt=%d';
-        $nextLink = sprintf($format, $id, $lc+1);
-        switch ($lc){
+        $lesson = Lesson::all()->where('id',$id)->pluck('listMaterialId');
+        $dataId = Lesson::where('id',$id)->first()->dataSupportId;
+        $listMaterialId = explode(",", trim($lesson, '["]'));
+        $nextLink = sprintf('/ls=%d/mt=%d', $id, $lc+1);
+        switch ($listMaterialId[$lc-1]){
             case 1:
-                return $this->whereIsThe($main->id,$nextLink);
+                return $this->whereIsThe($dataId,$nextLink);
                 break;
 //            case 2:
 //                return $this->whatIsThis($main->id,$nextLink);
 //                break;
             case 2:
-                return $this->memoryGame($main->id,$nextLink);
+                return $this->memoryGame($dataId,$nextLink);
                 break;
             case 3:
-                return $this->video($main->id,$nextLink);
+                return $this->video($dataId,$nextLink);
                 break;
             default:
                 return 'null';

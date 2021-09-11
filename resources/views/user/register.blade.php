@@ -117,7 +117,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                         <div class="d-flex mb-5 mt-4 align-items-center">
                             <div class="d-flex align-items-center">
-                                <label class="control control--checkbox mb-0"><span class="caption">Creating an account means you're okay with our <a href="#">Terms and Conditions</a> and our <a href="#">Privacy Policy</a>.</span>
+                                <label class="control control--checkbox mb-0"><span class="caption">Creating an account means you're okay with our <a href="/">Terms and Conditions</a> and our <a href="/policy">Privacy Policy</a>.</span>
                                     <input type="checkbox" checked="checked">
                                     <div class="control__indicator">
 

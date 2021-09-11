@@ -1,6 +1,6 @@
 @extends('layout.user-layout')
 @section('title')
-    <title>E&K - infor</title>
+    <title>E&K - Chi tiết khóa học</title>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <style>
 

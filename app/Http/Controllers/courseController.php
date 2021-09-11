@@ -21,6 +21,13 @@ class courseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function testCheckbox(Request $request){
+        $checkbox = $request->get('checkbox');
+        return $checkbox;
+
+    }
+
+
     public function createview()
     {
         //
@@ -33,25 +40,27 @@ class courseController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Routing\Redirector
      */
-    public function create(courseRequest $request)
+
+
+    public function create(Request $request)
     {
         //
-        $request->validated();
+//        return $obj->id;
+//        $request-validated();
         $obj = new Course();
-        $obj->course = $request->get('course');
+        $obj->name = $request->get('name');
         $obj->Price = $request->get('Price');
         $obj->Description = $request->get('Description');
         $obj->timeFinish = $request->get('timeFinish');
+        $obj->listLessonId = $request->get('listLessonId');
         $obj->thumbnail = $request->get('thumbnail');
-        $obj->lesson = $request->get('lesson');
         $obj->Status = $request->get('Status');
         $obj->created_at = Carbon::now('Asia/Ho_Chi_Minh');
         $obj->updated_at = Carbon::now('Asia/Ho_Chi_Minh');
         $obj->save();
         return redirect('/admin/course/list');
-
     }
 
     /**
