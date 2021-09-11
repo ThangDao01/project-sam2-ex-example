@@ -64,12 +64,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <body>
 <div class="reg-w3">
     <div class="w3layouts-main">
-        <h2>Register Now</h2>
+        <h2>Auth Register Now</h2>
         <p class="alert alert-danger}">{{ Session::get('message') }}</p>
     @if(Session::has('message'))
             <p class="alert alert-{{ Session::get('type-message') }}">{{ Session::get('message') }}</p>
         @endif
-        <form action="/admin/register" method="post">
+        <form action="/auth-login" method="post">
             @csrf
             <div class="form-group">
                 <div class="col-lg-12">
@@ -133,7 +133,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </button>
         </form>
         <p>Already Registered.<a href="/admin/login">Login</a></p>
-        <p><a href="javascript:history.go(-1)"><i class="fa fa-mail-reply"></i> GO BACK</a></p>
     </div>
 </div>
 </body>

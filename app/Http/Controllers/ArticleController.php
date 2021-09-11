@@ -15,7 +15,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        //
+        parent::index();
         return view('admin.Article.list' , ['list' => Article::paginate(10)]);
 
     }
@@ -71,6 +71,8 @@ class ArticleController extends Controller
     public function edit($id)
     {
         //
+        parent::index();
+
         $obj = Article::find($id);
         if ($obj == null){
             return view('error.404', ['msg'=>'không tìm thấy tin tức']);
@@ -114,6 +116,8 @@ class ArticleController extends Controller
     public function destroy($id)
     {
         //
+        parent::index();
+
         $obj = Article::find($id);
         if ($obj == null){
             return view('error.404', ['msg'=>'không tìm thấy tin tức']);

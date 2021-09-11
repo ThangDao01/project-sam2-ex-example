@@ -37,6 +37,8 @@
             ga( 'send', 'pageview' );
         })
     </script>
+
+
     <!-- End Google Tag Manager -->
     <link rel="canonical" href="https://www.monkeyjunior.vn">
     <link media="all" type="text/css" rel="stylesheet" href="https://www.monkeyjunior.vn/themes/monkey-junior-v2/assets//css/bootstrap.min.css">

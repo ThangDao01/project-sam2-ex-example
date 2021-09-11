@@ -15,88 +15,109 @@
                     </div>
                     <div>
                         <table class="table" ui-jq="footable" ui-options="{
-        &quot;paging&quot;: {
-          &quot;enabled&quot;: true
-        },
-        &quot;filtering&quot;: {
-          &quot;enabled&quot;: true
-        },
-        &quot;sorting&quot;: {
-          &quot;enabled&quot;: true
-        }}">
+                            &quot;paging&quot;: {
+                            &quot;enabled&quot;: true
+                                },
+                            &quot;filtering&quot;: {
+                            &quot;enabled&quot;: true
+                            },
+                            &quot;sorting&quot;: {
+                            &quot;enabled&quot;: true
+                            }}">
+                            @if(Session::has('message'))
+                                <p style="color: red" class=" alert alert-{{ Session::get('type-message') }}">{{ Session::get('message') }}</p>
+                            @endif
                             <thead>
                             <tr>
-                                <th data-breakpoints="xs">ID</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th data-breakpoints="xs sm" data-title="DOB">Email</th>
-
-                                <th data-breakpoints="xs">Age</th>
-                                <th data-breakpoints="xs">Role</th>
-                                <th data-breakpoints="xs sm md" data-title="DOB">Status</th>
-                                <th data-breakpoints="xs sm md" data-title="DOB">Create At</th>
-                                <th data-breakpoints="xs sm md" data-title="DOB">Update At</th>
-                                <th data-breakpoints="xs">actions</th>
+                                <th>Tên user</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Age</th>
+                                <th>Author</th>
+                                <th>Admin</th>
+                                <th>User</th>
+                                <th>actions</th>
 
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($list as $account)
-                                <tr data-expanded="true">
-                                    <td>{{$account->id}}</td>
-                                    <td>{{$account->FirstName}}</td>
-                                    <td>{{$account->LastName}}</td>
-                                    <td>{{$account->Email}}</td>
-                                    <td>{{$account->Age}}</td>
-                                    <td>
-                                        @if($account->Role==0)
-                                            <p style="color: red">
-                                                Admin
-                                            </p>
-                                        @elseif($account->Role==1)
-                                            <p style="color: #36c">
-                                                Manager
-                                            </p>
-                                        @elseif($account->Role==2)
-                                            <p style="color: green">
-                                                User
-                                            </p>
-                                        @endif
-                                    </td>
-                                    <td>
-                                        <ul>
-                                            @if($account->Status==0)
-                                                <li style="color: red">
-                                                    Deleted
-                                                </li>
-                                            @elseif($account->Status==1)
-                                                <li style="color: #36c">
-                                                    Active
-                                                </li>
-                                            @elseif($account->Status==2)
-                                                <li style="color: green">
-                                                    Online
-                                                </li>
-                                            @endif
-                                        </ul>
-                                    </td>
-                                    <td>{{$account->created_at}}</td>
-                                    <td>{{$account->updated_at}}</td>
-                                    <th class="actions">
-                                        <a href="" class="on-default edit-row">
-                                            <i style="font-size: 20px" class="fa fa-check-square text-success text-active"></i></a>
-                                        <a href="/admin/account/delete/id={{$account->id}}" class="on-default remove-row" onclick="return confirm('Chắc xoá danh muc này?')">
-                                            <i style="font-size: 20px" class="fa fa-minus-square-o text-danger text"></i></a>
-                                    </th>
-                                </tr>
+                            {{--                            @foreach($list as $account)--}}
+                            {{--                                <tr data-expanded="true">--}}
+                            {{--                                    <td>{{$account->id}}</td>--}}
+                            {{--                                    <td>{{$account->FirstName}}</td>--}}
+                            {{--                                    <td>{{$account->LastName}}</td>--}}
+                            {{--                                    <td>{{$account->Email}}</td>--}}
+                            {{--                                    <td>{{$account->Age}}</td>--}}
+                            {{--                                    <td>--}}
+                            {{--                                        @if($account->Role==0)--}}
+                            {{--                                            <p style="color: red">--}}
+                            {{--                                                Admin--}}
+                            {{--                                            </p>--}}
+                            {{--                                        @elseif($account->Role==1)--}}
+                            {{--                                            <p style="color: #36c">--}}
+                            {{--                                                Manager--}}
+                            {{--                                            </p>--}}
+                            {{--                                        @elseif($account->Role==2)--}}
+                            {{--                                            <p style="color: green">--}}
+                            {{--                                                User--}}
+                            {{--                                            </p>--}}
+                            {{--                                        @endif--}}
+                            {{--                                    </td>--}}
+                            {{--                                    <td>--}}
+                            {{--                                        <ul>--}}
+                            {{--                                            @if($account->Status==0)--}}
+                            {{--                                                <li style="color: red">--}}
+                            {{--                                                    Deleted--}}
+                            {{--                                                </li>--}}
+                            {{--                                            @elseif($account->Status==1)--}}
+                            {{--                                                <li style="color: #36c">--}}
+                            {{--                                                    Active--}}
+                            {{--                                                </li>--}}
+                            {{--                                            @elseif($account->Status==2)--}}
+                            {{--                                                <li style="color: green">--}}
+                            {{--                                                    Online--}}
+                            {{--                                                </li>--}}
+                            {{--                                            @endif--}}
+                            {{--                                        </ul>--}}
+                            {{--                                    </td>--}}
+                            {{--                                    <th class="actions">--}}
+                            {{--                                        <td><input type="checkbox" name="author_role" {{$account->hasRole('author') ? 'checked' : ''}}></td>--}}
+                            {{--                                        <td><input type="checkbox" name="admin_role" {{$account->hasRole('admin') ? 'checked' : ''}}></td>--}}
+                            {{--                                        <td><input type="checkbox" name="user_role" {{$account->hasRole('user') ? 'checked' : ''}}></td>--}}
+
+                            {{--                                    </th>--}}
+                            {{--                                </tr>--}}
+                            {{--                            @endforeach--}}
+                            @foreach($list as $user)
+                                <form action="{{url('/assign-roles')}}" method="POST">
+                                    @csrf
+                                    <tr>
+                                        <td>{{ $user->FirstName }}</td>
+                                        <td>
+                                            {{ $user->Email }}
+                                            <input type="hidden" name="Email" value="{{ $user->Email }}">
+                                            <input type="hidden" name="id" value="{{ $user->id }}">
+                                        </td>
+                                        <td>{{ $user->PhoneNumber }}</td>
+                                        <td>{{ $user->Age}}</td>
+                                        <td><input type="checkbox" name="author_role" {{$user->hasRole('author') ? 'checked' : ''}}></td>
+                                        <td><input type="checkbox" name="admin_role" {{$user->hasRole('admin') ? 'checked' : ''}}></td>
+                                        <td><input type="checkbox" name="user_role" {{$user->hasRole('user') ? 'checked' : ''}}></td>
+                                        <td>
+                                            <p><input type="submit" value="Assign roles" class="btn btn-sm btn-default"></p>
+                                            <p><a style="margin:5px 0;" class="btn btn-sm btn-danger" href="{{url('/delete-user-roles/'.$user->id)}}">Xóa user</a></p>
+                                            <p><a style="margin:5px 0;" class="btn btn-sm btn-success" href="{{url('/impersonate/'.$user->id)}}">Chuyển quyền</a></p>
+                                        </td>
+                                    </tr>
+                                </form>
                             @endforeach
                             </tbody>
                         </table>
                     </div>
-                </div>
-                @endif
-
             </div>
+            @endif
+
+        </div>
         </div>
     </section>
 @endsection

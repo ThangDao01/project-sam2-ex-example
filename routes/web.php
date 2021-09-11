@@ -118,9 +118,7 @@ Route::get('/contact-us',[ConfigController::class,'Contactus']);
 Route::get('/about-us',[ConfigController::class,'AboutUs']);
 Route::get('/policy',[ConfigController::class,'Policy']);
 
-Route::get('/admin', function () {
-    return view('admin.index');
-});
+Route::get('/admin', [AccountController::class, 'index']);
 Route::get('/admin/login', function () {
     return view('admin.Account.login');
 });
@@ -172,8 +170,12 @@ Route::get('/admin/register', [AccountController::class,'registerView']);
 Route::post('/admin/register', [AccountController::class,'AdminRegister']);
 Route::get('/admin/login', [AccountController::class,'loginView']);
 Route::post('/admin/login', [AccountController::class,'AdminLogin']);
-Route::get('/admin/account/list', [AccountController::class,'index']);
-Route::get('/admin/account/delete/id={id}', [AccountController::class, 'destroy']);
+Route::get('/logout-auth', [AccountController::class, 'logout_auth']);
+Route::post('/assign-roles', [\App\Http\Controllers\AdminUserController::class, 'assign_roles']);
+Route::get('/delete-user-roles/{admin_id}', [\App\Http\Controllers\AdminUserController::class, 'delete_user_roles']);
+Route::get('/impersonate/{admin_id}', [\App\Http\Controllers\AdminUserController::class, 'impersonate']);
+Route::get('/impersonate-destroy', [\App\Http\Controllers\AdminUserController::class, 'impersonate_destroy']);
+Route::get('/admin/account/list', [\App\Http\Controllers\AdminUserController::class,'index']);
 
 //Article
 
@@ -209,6 +211,15 @@ Route::get('/admin/material/edit/id={id}', [MaterialController::class, 'edit']);
 Route::post('/admin/material/{id}', [MaterialController::class, 'update']);
 Route::get('/admin/material/delete/id={id}', [MaterialController::class, 'destroy']);
 
+//
+//Route::get('/auth-register', [\App\Http\Controllers\AuthController::class, 'AuthIndex']);
+//Route::get('/login-auth', [\App\Http\Controllers\AuthController::class, 'login_auth']);
+
+//Route::post('/register', [\App\Http\Controllers\AuthController::class, 'Register']);
+//Route::post('/login', [\App\Http\Controllers\AuthController::class, 'login']);
+
+
+//
 
 
 

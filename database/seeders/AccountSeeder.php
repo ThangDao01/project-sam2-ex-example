@@ -2,7 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\Account;
+use App\Models\Roles;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class AccountSeeder extends Seeder
 {
@@ -13,9 +16,11 @@ class AccountSeeder extends Seeder
      */
     public function run()
     {
-        //
-        \Illuminate\Support\Facades\DB::table('accounts')->insert([
-            //thắng
+        Account::truncate();
+        $adminRoles = Roles::where('name', 'admin')->first();
+        $authorRoles = Roles::where('name', 'author')->first();
+        $userRoles = Roles::where('name', 'user')->first();
+        $admin = Account::create(
             [
                 'FirstName' => 'Đào',
                 'LastName' => 'Thắng',
@@ -26,10 +31,10 @@ class AccountSeeder extends Seeder
                 'Age' => '20',
                 'Role' => '0',
                 'Status' => '1',
-                'created_at' => '2021-09-01 06:36:11',
-                'updated_at' => '2021-09-01 06:36:11'
-            ],
-            ///quân
+//                'created_at' => '2021-09-01 06:36:11',
+//                'updated_at' => '2021-09-01 06:36:11'
+            ]);
+        $author = Account::create(
             [
                 'FirstName' => 'Quân',
                 'LastName' => 'Mạnh',
@@ -40,53 +45,26 @@ class AccountSeeder extends Seeder
                 'Age' => '20',
                 'Role' => '1',
                 'Status' => '2',
-                'created_at' => '2021-09-05 14:45:43',
-                'updated_at' => '2021-09-05 14:45:43'
-            ],
-            ///hưng
+//                'created_at' => '2021-09-05 14:45:43',
+//                'updated_at' => '2021-09-05 14:45:43'
+            ]);
+        $user = Account::create(
             [
-                'FirstName' => '',
-                'LastName' => '',
-                'Email' => '',
-                'PhoneNumber' => '',
-                'PasswordHash' => '',
-                'Salt' => '',
-                'Age' => '',
-                'Role' => '2',
-                'Status' => '',
-                'created_at' => '',
-                'updated_at' => ''
-            ],
-            ///cường
-            [
-                'FirstName' => '',
-                'LastName' => '',
-                'Email' => '',
-                'PhoneNumber' => '',
-                'PasswordHash' => '',
-                'Salt' => '',
-                'Age' => '',
-                'Role' => '2',
-                'Status' => '',
-                'created_at' => '',
-                'updated_at' => ''
-            ],
-            ///hòa
-            [
-                'FirstName' => '',
-                'LastName' => '',
-                'Email' => '',
-                'PhoneNumber' => '',
-                'PasswordHash' => '',
-                'Salt' => '',
-                'Age' => '',
-                'Role' => '2',
-                'Status' => '',
-                'created_at' => '',
-                'updated_at' => ''
-            ],
-
-        ]);
+                'FirstName' => 'Manh',
+                'LastName' => 'Quan',
+                'Email' => 'anhquan123@gmail.com',
+                'PhoneNumber' => '0364469332',
+                'PasswordHash' => '12345678',
+                'Salt' => 'yBjwF',
+                'Age' => '20',
+                'Role' => '1',
+                'Status' => '2',
+//                'created_at' => '2021-09-05 14:45:43',
+//                'updated_at' => '2021-09-05 14:45:43'
+            ]);
+        $admin->roles()->attach($adminRoles);
+        $author->roles()->attach($authorRoles);
+        $user->roles()->attach($userRoles);
 
     }
 }
