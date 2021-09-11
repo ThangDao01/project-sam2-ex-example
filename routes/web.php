@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ConfigController;
 use App\Http\Controllers\courseController;
@@ -110,6 +111,7 @@ Route::get('/cloudinary', function () {
 
 Route::get('/mail/{salt}/{email}/{name}', [EmailController::class, 'CheckingMail']);
 
+
 // paint
 Route::get('/paint', function () {
     return view('tool.paint');
@@ -122,9 +124,7 @@ Route::get('/contact-us', [ConfigController::class, 'Contactus']);
 Route::get('/about-us', [ConfigController::class, 'AboutUs']);
 Route::get('/policy', [ConfigController::class, 'Policy']);
 
-Route::get('/admin', function () {
-    return view('admin.index');
-});
+Route::get('/admin', [AccountController::class, 'index']);
 Route::get('/admin/login', function () {
     return view('admin.Account.login');
 });
@@ -172,12 +172,19 @@ Route::put('/admin/course/{id}', [courseController::class, 'update']);
 Route::get('/admin/course/delete/id={id}', [courseController::class, 'destroy']);
 
 //account
-Route::get('/admin/register', [AccountController::class, 'registerView']);
-Route::post('/admin/register', [AccountController::class, 'AdminRegister']);
-Route::get('/admin/login', [AccountController::class, 'loginView']);
-Route::post('/admin/login', [AccountController::class, 'AdminLogin']);
-Route::get('/admin/account/list', [AccountController::class, 'index']);
+
+Route::get('/admin/register', [AccountController::class,'registerView']);
+Route::post('/admin/register', [AccountController::class,'AdminRegister']);
+Route::get('/admin/login', [AccountController::class,'loginView']);
+Route::post('/admin/login', [AccountController::class,'AdminLogin']);
+Route::get('/logout-auth', [AccountController::class, 'logout_auth']);
+Route::post('/assign-roles', [AdminUserController::class, 'assign_roles']);
+Route::get('/delete-user-roles/{admin_id}', [AdminUserController::class, 'delete_user_roles']);
+Route::get('/impersonate/{admin_id}', [AdminUserController::class, 'impersonate']);
+Route::get('/impersonate-destroy', [AdminUserController::class, 'impersonate_destroy']);
+Route::get('/admin/account/list', [AdminUserController::class,'index']);
 Route::get('/admin/account/delete/id={id}', [AccountController::class, 'destroy']);
+
 
 //Article
 
@@ -198,9 +205,9 @@ Route::get('/admin/lesson/delete/id={id}', [lessonController::class, 'destroy'])
 
 //feedback
 
-Route::get('/admin/feedback/create', [feedbackController::class, 'createView']);
-Route::post('/admin/feedback/create', [feedbackController::class, 'create']);
-Route::get('/admin/feedback/list', [feedbackController::class, 'index']);
+Route::get('/admin/feedback/create', [feedbackController::class,'createView']);
+Route::post('/admin/feedback/create', [feedbackController::class,'create']);
+Route::get('/admin/feedback', [feedbackController::class,'index']);
 Route::get('/admin/feedback/edit/id={id}', [feedbackController::class, 'edit']);
 Route::put('/admin/feedback/{id}', [feedbackController::class, 'update']);
 Route::get('/admin/feedback/delete/id={id}', [feedbackController::class, 'destroy']);
@@ -213,6 +220,15 @@ Route::get('/admin/material/edit/id={id}', [MaterialController::class, 'edit']);
 Route::post('/admin/material/{id}', [MaterialController::class, 'update']);
 Route::get('/admin/material/delete/id={id}', [MaterialController::class, 'destroy']);
 
+//
+//Route::get('/auth-register', [\App\Http\Controllers\AuthController::class, 'AuthIndex']);
+//Route::get('/login-auth', [\App\Http\Controllers\AuthController::class, 'login_auth']);
+
+//Route::post('/register', [\App\Http\Controllers\AuthController::class, 'Register']);
+//Route::post('/login', [\App\Http\Controllers\AuthController::class, 'login']);
+
+
+//
 
 
 

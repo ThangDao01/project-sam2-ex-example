@@ -20,6 +20,7 @@ class DataController extends Controller
      */
     public function index()
     {
+        parent::index();
         return view('admin.data.list', ['list' => DataSupport::paginate(10)]);
     }
 
@@ -59,6 +60,8 @@ class DataController extends Controller
      */
     public function createView()
     {
+        parent::index();
+
         return view('admin.data.create');
     }
     public function seedProMax(){
@@ -116,6 +119,8 @@ class DataController extends Controller
     public function edit($id)
     {
         //
+        parent::index();
+
         $obj = DataSupport::find($id);
         if ($obj == null){
             return view('admin.error.404', ['msg'=>'không tìm thấy tin tức']);
@@ -168,6 +173,7 @@ class DataController extends Controller
     public function destroy($id)
     {
         //
+        parent::index();
         $obj = DataSupport::find($id);
         if ($obj == null){
             return view('error.404', ['msg'=>'không tìm thấy tin tức']);

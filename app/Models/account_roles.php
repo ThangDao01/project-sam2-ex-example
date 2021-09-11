@@ -5,12 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class FeedBack extends Model
+class account_roles extends Model
 {
     use HasFactory;
-
-    public function getName(){
-        $account = Account::find($this->id);
-        return $account->LastName;
-    }
 }

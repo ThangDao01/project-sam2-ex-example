@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Tracking;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 
 class trackingController extends Controller
 {
@@ -14,7 +16,7 @@ class trackingController extends Controller
      */
     public function index()
     {
-        //
+        parent::index();
         return view('admin.tracking.list' , ['list' => Tracking::paginate(10)]);
 
     }

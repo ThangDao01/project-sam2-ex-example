@@ -2,7 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\Account;
+use App\Models\Roles;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class AccountSeeder extends Seeder
 {
@@ -13,9 +16,8 @@ class AccountSeeder extends Seeder
      */
     public function run()
     {
-        //
-        \Illuminate\Support\Facades\DB::table('accounts')->insert([
-            //thắng
+        \Illuminate\Support\Facades\DB::table('data_supports')->insert([[
+
             [
                 'FirstName' => 'Đào Duy',
                 'LastName' => 'Thắng',
@@ -24,12 +26,11 @@ class AccountSeeder extends Seeder
                 'PasswordHash' => '$2y$12$nF8.2qC/v5d8Q98fOAvoQO1D.qoXiuI7Cz3aicWD6EaS9vck22esi',
                 'Salt' => 'VaiNoiLuon',
                 'Age' => '20',
-                'Role' => '0',
+                'Role' => '1',
                 'Status' => '1',
                 'created_at' => '2021-09-01 06:36:11',
                 'updated_at' => '2021-09-01 06:36:11'
             ],
-            ///quân
             [
                 'FirstName' => 'Phùng Mạnh',
                 'LastName' => 'Quân',
@@ -38,13 +39,13 @@ class AccountSeeder extends Seeder
                 'PasswordHash' => '$2y$12$XPjQ/7UuOlSDJ.nk3CoKIuLIBOFAJ37v4qZc6RzR7Y0TfTigDKucS',
                 'Salt' => 'YD4Na',
                 'Age' => '20',
-                'Role' => '1',
+                'Role' => '2',
                 'Status' => '2',
                 'created_at' => '2021-09-05 14:45:43',
                 'updated_at' => '2021-09-05 14:45:43'
             ],
-            ///hưng
             [
+
                 'FirstName' => 'Phùng Việt',
                 'LastName' => 'Hưng',
                 'Email' => 'hungvietphung36@gmail.com',
@@ -85,8 +86,6 @@ class AccountSeeder extends Seeder
                 'created_at' => '2021-09-06 17:00:03',
                 'updated_at' => '2021-09-06 17:00:03'
             ],
-
-        ]);
-
+        ]]);
     }
 }
