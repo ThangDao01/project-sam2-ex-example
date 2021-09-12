@@ -17,7 +17,7 @@ class CreateFeedBacksTable extends Migration
             $table->id();
             $table->integer('AccountID')->default(null);
             $table->string('Message')->default(null);
-            $table->integer('Vote')->default(0);
+            $table->integer('Vote')->default(5);
             $table->boolean('Seen')->default(1);
             $table->timestamps();
         });

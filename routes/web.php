@@ -12,7 +12,6 @@ use App\Http\Controllers\trackingController;
 use App\Http\Controllers\lessonController;
 use App\Http\Controllers\feedbackController;
 use App\Http\Controllers\MaterialController;
-use App\Http\Controllers\MainController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
