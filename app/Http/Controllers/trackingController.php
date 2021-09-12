@@ -20,7 +20,6 @@ class trackingController extends Controller
         return view('admin.tracking.list' , ['list' => Tracking::paginate(10)]);
 
     }
-
     /**
      * Show the form for creating a new resource.
      *

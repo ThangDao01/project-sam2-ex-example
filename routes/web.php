@@ -124,9 +124,6 @@ Route::get('/about-us', [ConfigController::class, 'AboutUs']);
 Route::get('/policy', [ConfigController::class, 'Policy']);
 
 Route::get('/admin', [AccountController::class, 'index']);
-Route::get('/admin/login', function () {
-    return view('admin.Account.login');
-});
 Route::get('/admin/register', function () {
     return view('admin.Account.register');
 });
