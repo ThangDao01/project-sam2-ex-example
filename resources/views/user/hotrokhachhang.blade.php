@@ -1,7 +1,12 @@
 @extends('layout.user-layout')
 <<<<<<< HEAD
+<<<<<<< HEAD
 <title>E&K - Hỗ trợ khách hàng</title>
 =======
+=======
+@section('title')
+<title>E&K - Hỗ trợ khách hàng</title>
+>>>>>>> 9219904b145cfed2f4c7a3c491f7889b635d4b48
 <style>
     .vote {
         height: 46px;
@@ -43,10 +48,11 @@
 
     /* Modified from: https://github.com/mukulkant/Star-rating-using-pure-css */
 </style>
-@section('title')
-    E&K - Hỗ trợ khách hàng
 @endsection
+<<<<<<< HEAD
 >>>>>>> 25b7535497b4686dcdf2e1967a030ecc6125909a
+=======
+>>>>>>> 9219904b145cfed2f4c7a3c491f7889b635d4b48
 @section('detail')
 
     <section id="popup-loading" class="popup-loading">

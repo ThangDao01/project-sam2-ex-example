@@ -16,11 +16,8 @@ class AccountSeeder extends Seeder
      */
     public function run()
     {
-        Account::truncate();
-        $adminRoles = Roles::where('name', 'admin')->first();
-        $authorRoles = Roles::where('name', 'author')->first();
-        $userRoles = Roles::where('name', 'user')->first();
-        $admin = Account::create(
+        \Illuminate\Support\Facades\DB::table('data_supports')->insert([[
+
             [
                 'FirstName' => 'Đào Duy',
                 'LastName' => 'Thắng',
@@ -29,12 +26,11 @@ class AccountSeeder extends Seeder
                 'PasswordHash' => '$2y$12$nF8.2qC/v5d8Q98fOAvoQO1D.qoXiuI7Cz3aicWD6EaS9vck22esi',
                 'Salt' => 'VaiNoiLuon',
                 'Age' => '20',
-                'Role' => '0',
+                'Role' => '1',
                 'Status' => '1',
-//                'created_at' => '2021-09-01 06:36:11',
-//                'updated_at' => '2021-09-01 06:36:11'
-            ]);
-        $author = Account::create(
+                'created_at' => '2021-09-01 06:36:11',
+                'updated_at' => '2021-09-01 06:36:11'
+            ],
             [
                 'FirstName' => 'Phùng Mạnh',
                 'LastName' => 'Quân',
@@ -43,14 +39,17 @@ class AccountSeeder extends Seeder
                 'PasswordHash' => '$2y$12$XPjQ/7UuOlSDJ.nk3CoKIuLIBOFAJ37v4qZc6RzR7Y0TfTigDKucS',
                 'Salt' => 'YD4Na',
                 'Age' => '20',
-                'Role' => '1',
+                'Role' => '2',
                 'Status' => '2',
-//                'created_at' => '2021-09-05 14:45:43',
-//                'updated_at' => '2021-09-05 14:45:43'
-            ]);
-        $user = Account::create(
+                'created_at' => '2021-09-05 14:45:43',
+                'updated_at' => '2021-09-05 14:45:43'
+            ],
             [
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9219904b145cfed2f4c7a3c491f7889b635d4b48
                 'FirstName' => 'Phùng Việt',
                 'LastName' => 'Hưng',
                 'Email' => 'hungvietphung36@gmail.com',
@@ -91,6 +90,7 @@ class AccountSeeder extends Seeder
                 'created_at' => '2021-09-06 17:00:03',
                 'updated_at' => '2021-09-06 17:00:03'
             ],
+<<<<<<< HEAD
 
         ]);
 =======
@@ -111,5 +111,8 @@ class AccountSeeder extends Seeder
         $user->roles()->attach($userRoles);
 >>>>>>> 25b7535497b4686dcdf2e1967a030ecc6125909a
 
+=======
+        ]]);
+>>>>>>> 9219904b145cfed2f4c7a3c491f7889b635d4b48
     }
 }

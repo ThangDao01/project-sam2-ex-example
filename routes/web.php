@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ConfigController;
 use App\Http\Controllers\courseController;
@@ -11,7 +12,6 @@ use App\Http\Controllers\trackingController;
 use App\Http\Controllers\lessonController;
 use App\Http\Controllers\feedbackController;
 use App\Http\Controllers\MaterialController;
-use App\Http\Controllers\MainController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -171,25 +171,20 @@ Route::put('/admin/course/{id}', [courseController::class, 'update']);
 Route::get('/admin/course/delete/id={id}', [courseController::class, 'destroy']);
 
 //account
-<<<<<<< HEAD
 Route::get('/admin/register', [AccountController::class, 'registerView']);
 Route::post('/admin/register', [AccountController::class, 'AdminRegister']);
 Route::get('/admin/login', [AccountController::class, 'loginView']);
 Route::post('/admin/login', [AccountController::class, 'AdminLogin']);
-Route::get('/admin/account/list', [AccountController::class, 'index']);
 Route::get('/admin/account/delete/id={id}', [AccountController::class, 'destroy']);
-=======
-Route::get('/admin/register', [AccountController::class,'registerView']);
-Route::post('/admin/register', [AccountController::class,'AdminRegister']);
-Route::get('/admin/login', [AccountController::class,'loginView']);
-Route::post('/admin/login', [AccountController::class,'AdminLogin']);
 Route::get('/logout-auth', [AccountController::class, 'logout_auth']);
+
+
 Route::post('/assign-roles', [\App\Http\Controllers\AdminUserController::class, 'assign_roles']);
 Route::get('/delete-user-roles/{admin_id}', [\App\Http\Controllers\AdminUserController::class, 'delete_user_roles']);
 Route::get('/impersonate/{admin_id}', [\App\Http\Controllers\AdminUserController::class, 'impersonate']);
 Route::get('/impersonate-destroy', [\App\Http\Controllers\AdminUserController::class, 'impersonate_destroy']);
 Route::get('/admin/account/list', [\App\Http\Controllers\AdminUserController::class,'index']);
->>>>>>> 25b7535497b4686dcdf2e1967a030ecc6125909a
+
 
 //Article
 
@@ -210,15 +205,11 @@ Route::get('/admin/lesson/delete/id={id}', [lessonController::class, 'destroy'])
 
 //feedback
 
-<<<<<<< HEAD
-Route::get('/admin/feedback/create', [feedbackController::class, 'createView']);
-Route::post('/admin/feedback/create', [feedbackController::class, 'create']);
-Route::get('/admin/feedback/list', [feedbackController::class, 'index']);
-=======
+
+
 Route::get('/admin/feedback/create', [feedbackController::class,'createView']);
 Route::post('/admin/feedback/create', [feedbackController::class,'create']);
 Route::get('/admin/feedback', [feedbackController::class,'index']);
-//>>>>>>> 25b7535497b4686dcdf2e1967a030ecc6125909a
 Route::get('/admin/feedback/edit/id={id}', [feedbackController::class, 'edit']);
 Route::put('/admin/feedback/{id}', [feedbackController::class, 'update']);
 Route::get('/admin/feedback/delete/id={id}', [feedbackController::class, 'destroy']);
