@@ -8,9 +8,4 @@ use Illuminate\Database\Eloquent\Model;
 class FeedBack extends Model
 {
     use HasFactory;
-
-    public function getName(){
-        $account = Account::find($this->id);
-        return $account->LastName;
-    }
 }

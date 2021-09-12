@@ -16,7 +16,11 @@ class ArticleController extends Controller
     public function index()
     {
         parent::index();
-        return view('admin.Article.list' , ['list' => Article::paginate(10)]);
+        if ($this->authlogin()) {
+            return view('admin.Article.list' , ['list' => Article::paginate(10)]);
+        }else {
+            return $this->pathLogin();
+        }
 
     }
 
@@ -28,7 +32,11 @@ class ArticleController extends Controller
     public function createview()
     {
         //
-        return view('admin.Article.create');
+        if ($this->authlogin()) {
+            return view('admin.Article.create');
+        }else {
+            return $this->pathLogin();
+        }
     }
 
     /**

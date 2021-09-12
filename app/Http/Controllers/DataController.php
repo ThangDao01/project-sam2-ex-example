@@ -21,7 +21,11 @@ class DataController extends Controller
     public function index()
     {
         parent::index();
-        return view('admin.data.list', ['list' => DataSupport::paginate(10)]);
+        if ($this->authlogin()) {
+            return view('admin.data.list', ['list' => DataSupport::paginate(10)]);
+        } else {
+            return $this->pathLogin();
+        }
     }
 
 
@@ -60,9 +64,11 @@ class DataController extends Controller
      */
     public function createView()
     {
-        parent::index();
-
-        return view('admin.data.create');
+        if ($this->authlogin()) {
+            return view('admin.data.create');
+        } else {
+            return $this->pathLogin();
+        }
     }
     public function seedProMax(){
         return view('admin.data.result-seed', ['list' => DataSupport::all()]);

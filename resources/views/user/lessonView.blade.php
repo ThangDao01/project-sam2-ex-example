@@ -2,8 +2,48 @@
 @section('title')
     <title>E&K - infor</title>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
     <style>
 
+        .vote {
+            height: 46px;
+            float: left;
+            padding: 0 10px;
+            position: relative;
+            z-index: 1;
+        }
+        .vote:not(:checked) > input {
+            position:absolute;
+            display: none;
+        }
+        .vote:not(:checked) > label {
+            float:right;
+            width:1em;
+            overflow:hidden;
+            white-space:nowrap;
+            cursor:pointer;
+            font-size:30px;
+            color:#ccc;
+        }
+        .vote:not(:checked) > label:before {
+            content: '★ ';
+        }
+        .vote > input:checked ~ label {
+            color: #ffc700;
+        }
+        .vote:not(:checked) > label:hover,
+        .vote:not(:checked) > label:hover ~ label {
+            color: #deb217;
+        }
+        .vote > input:checked + label:hover,
+        .vote > input:checked + label:hover ~ label,
+        .vote > input:checked ~ label:hover,
+        .vote > input:checked ~ label:hover ~ label,
+        .vote > label:hover ~ input:checked ~ label {
+            color: #c59b08;
+        }
+
+        /* Modified from: https://github.com/mukulkant/Star-rating-using-pure-css */
         /*****************globals*************/
         body {
             font-family: 'open sans';
@@ -398,81 +438,75 @@
                         <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" class="be-ava-comment">
                     </a>
                 </div>
+                @foreach($listComment as $data)
                 <div class="be-comment-content">
-
 				<span class="be-comment-name">
-					<a href="blog-detail-2.html">Ravi Sah</a>
+					<a href="blog-detail-2.html">{{$data->Name}}</a>
 					</span>
                     <span class="be-comment-time">
 					<i class="fa fa-clock-o"></i>
-					May 27, 2015 at 3:14am
+                        {{$data->created_at->toFormattedDateString()}}
 				</span>
-
                     <p class="be-comment-text">
-                        Pellentesque gravida tristique ultrices.
-                        Sed blandit varius mauris, vel volutpat urna hendrerit id.
-                        Curabitur rutrum dolor gravida turpis tristique efficitur.
+                        {!! $data->Message !!}
                     </p>
                 </div>
+                @endforeach
             </div>
-            <div class="be-comment">
-                <div class="be-img-comment">
-                    <a href="blog-detail-2.html">
-                        <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="" class="be-ava-comment">
-                    </a>
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
                 </div>
-                <div class="be-comment-content">
-			<span class="be-comment-name">
-				<a href="blog-detail-2.html">Phoenix, the Creative Studio</a>
-			</span>
-                    <span class="be-comment-time">
-				<i class="fa fa-clock-o"></i>
-				May 27, 2015 at 3:14am
-			</span>
-                    <p class="be-comment-text">
-                        Nunc ornare sed dolor sed mattis. In scelerisque dui a arcu mattis, at maximus eros commodo. Cras magna nunc, cursus lobortis luctus at, sollicitudin vel neque. Duis eleifend lorem non ant. Proin ut ornare lectus, vel eleifend est. Fusce hendrerit dui in turpis tristique blandit.
-                    </p>
-                </div>
-            </div>
-            <div class="be-comment">
-                <div class="be-img-comment">
-                    <a href="blog-detail-2.html">
-                        <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="" class="be-ava-comment">
-                    </a>
-                </div>
-                <div class="be-comment-content">
-			<span class="be-comment-name">
-				<a href="blog-detail-2.html">Cüneyt ŞEN</a>
-			</span>
-                    <span class="be-comment-time">
-				<i class="fa fa-clock-o"></i>
-				May 27, 2015 at 3:14am
-			</span>
-                    <p class="be-comment-text">
-                        Cras magna nunc, cursus lobortis luctus at, sollicitudin vel neque. Duis eleifend lorem non ant
-                    </p>
-                </div>
-            </div>
-            <form class="form-block">
+            @endif
+            <form action="/admin/feedback/create" method="post" class="form-block" style="margin-top: 20px">
+                @csrf
                 <div class="row">
-                    <div class="col-xs-12 col-sm-6">
-                        <div class="form-group fl_icon">
-                            <div class="icon"><i class="fa fa-user"></i></div>
-                            <input class="form-input" type="text" placeholder="Your name">
+                    @if(\Illuminate\Support\Facades\Session::has('account'))
+                        <?php
+                          $account = \Illuminate\Support\Facades\Session::get('account');
+                        ?>
+                        <input class="form-input" type="hidden" name="Name" value="{{$account->LastName}}" placeholder="Your name">
+                        <input class="form-input" type="hidden" name="Email" value="{{$account->Email}}" placeholder="Your email">
+                    @else
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="form-group fl_icon">
+                                <div class="icon"><i class="fa fa-user"></i></div>
+                                <input class="form-input" name="Name"  type="text" placeholder="Your name">
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 fl_icon">
-                        <div class="form-group fl_icon">
-                            <div class="icon"><i class="fa fa-envelope-o"></i></div>
-                            <input class="form-input" type="text" placeholder="Your email">
+                        <div class="col-xs-12 col-sm-6 fl_icon">
+                            <div class="form-group fl_icon">
+                                <div class="icon"><i class="fa fa-envelope-o"></i></div>
+                                <input class="form-input" name="Email" type="text" placeholder="Your email">
+                            </div>
                         </div>
-                    </div>
+                        @endif
                     <div class="col-12">
                         <div class="form-group">
-                            <textarea class="form-input" required="" placeholder="Your text"></textarea>
+                            <textarea class="form-input" name="Message" required="" placeholder="Your text"></textarea>
                         </div>
                     </div>
-                    <a class="btn btn-primary pull-right">submit</a>
+                        <div class="col-12">
+                            <div class="vote">
+                                <input type="radio" id="star5" name="Vote" value="5" />
+                                <label for="star5" title="text">5 stars</label>
+                                <input type="radio" id="star4" name="Vote" value="4" />
+                                <label for="star4" title="text">4 stars</label>
+                                <input type="radio" id="star3" name="Vote" value="3" />
+                                <label for="star3" title="text">3 stars</label>
+                                <input type="radio" id="star2" name="Vote" value="2" />
+                                <label for="star2" title="text">2 stars</label>
+                                <input type="radio" id="star1" name="Vote" value="1" />
+                                <label for="star1" title="text">1 star</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                        <button class="btn btn-primary pull-right">submit</button>
+                        </div>
                 </div>
             </form>
         </div>

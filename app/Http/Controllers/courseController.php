@@ -17,7 +17,12 @@ class courseController extends Controller
 
     public function index(){
         parent::index();
-        return view('admin.course.list', ['list' => Course::paginate(10)]);
+        if ($this->authlogin()) {
+            return view('admin.course.list', ['list' => Course::paginate(10)]);
+
+        } else {
+            return $this->pathLogin();
+        }
 
     }
     /**
@@ -27,10 +32,11 @@ class courseController extends Controller
      */
     public function createview()
     {
-        //
-        parent::index();
-        return view('admin.course.create', ['list' => Lesson::all()]);
-
+        if ($this->authlogin()) {
+            return view('admin.course.create', ['list' => Lesson::all()]);
+        } else {
+            return $this->pathLogin();
+        }
     }
 
 
@@ -42,7 +48,6 @@ class courseController extends Controller
      */
     public function create(courseRequest $request)
     {
-
         //
         $request->validated();
         $obj = new Course();

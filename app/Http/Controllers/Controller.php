@@ -9,19 +9,25 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
+use Illuminate\View\View;
 
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     public function index(){
-        $this->Authlogin();
     }
 
-    private function Authlogin(){
+    public function authlogin(){
         $admin_Role = Session::get('account');
         if ($admin_Role == null || $admin_Role->Role > UserRole::Author){
-            return Redirect::to('/admin/login');
+            return false;
+        }else {
+            return true;
         }
+    }
+
+    public function pathLogin() {
+       return Redirect::to('/admin/login');
     }
 }

@@ -6,6 +6,7 @@ use App\Models\Account;
 use App\Models\Article;
 use App\Models\Course;
 use App\Models\DataSupport;
+use App\Models\FeedBack;
 use App\Models\Lesson;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -14,6 +15,11 @@ use Illuminate\Support\Facades\DB;
 class MainUserController extends Controller
 {
     //
+    public function getComment(){
+        return view('user.lessonView',['listComment' => FeedBack::all()]);
+//        return view('user.lessonView');
+    }
+
     public function getSeed(){
         $list = Account::all();
         $date = Carbon::now('Asia/Ho_Chi_Minh');
