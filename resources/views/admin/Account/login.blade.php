@@ -8,6 +8,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     <!-- bootstrap-css -->
 @include('layout.css')
+    <style>
+        .alert-success{
+            color: green;
+        }
+        .alert-error{
+            color: red !important;
+        }
+    </style>
 
 <!-- //font-awesome icons -->
     @include('layout.js-head')
@@ -22,7 +30,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 {{--        @endif--}}
 
         @if(Session::has('message'))
-            <p style="color: green" class="alert alert">{{Session::get('message') }}</p>
+            <p  class="alert alert-{{Session::get('type') }}">{{Session::get('message') }}</p>
         @endif
 
         <form action="/admin/login" method="post">

@@ -18,12 +18,10 @@ class Controller extends BaseController
         $this->Authlogin();
     }
 
-    public function Authlogin(){
-        $admin_id = Session::get('account');
-        if ($admin_id != null && $admin_id <= UserRole::Admin){
-            return Redirect::to('/admin');
-        }else{
-            return Redirect::to('/admin/login')->send();
+    private function Authlogin(){
+        $admin_Role = Session::get('account');
+        if ($admin_Role == null || $admin_Role->Role > UserRole::Author){
+            return Redirect::to('/admin/login');
         }
     }
 }

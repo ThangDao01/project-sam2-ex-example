@@ -50,14 +50,15 @@ class AccountController extends Controller
         $email = $request->get('Email');
         $password = $request->get('password');
         $salt = DB::table('accounts')->where('Email', $email)->value('Salt');
-        $dataAccount = DB::table('accounts')->where('Email', $email);
-        $PasswordHash = DB::table('accounts')->where('Email', $email);
-        if (Hash::check($password . $salt, $dataAccount->value('PasswordHash'))) {
+        $dataAccount = DB::table('accounts')->where('Email', $email)->first();
+        $PasswordHash = DB::table('accounts')->where('Email', $email)->value('PasswordHash');
+        if (Hash::check($password . $salt, $PasswordHash)) {
             // The passwords match...
-            Session::put("account",$dataAccount->value('Role') );
+            Session::put("account",$dataAccount);
             return redirect('/admin');
         } else {
-            Session::put('error', 'Tên người dùng hoặc mật khẩu không hợp lệ. vui lòng nhập lại');
+            Session::flash('message', 'Tên người dùng hoặc mật khẩu không hợp lệ. vui lòng nhập lại');
+            Session::flash('type','error');
             return redirect('/admin/login');
         }
     }
