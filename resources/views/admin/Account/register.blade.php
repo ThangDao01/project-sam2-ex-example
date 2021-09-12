@@ -73,7 +73,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             @csrf
             <div class="form-group">
                 <div class="col-lg-12">
-                    <input type="text" class="ggg" name="FirstName" placeholder="FirstName" >
+                    <input type="text" class="ggg" name="FirstName" placeholder="FirstName" value="{{old('FirstName')}}" >
                     @error('FirstName')
                     <div class="text-danger"> * {{$message}}</div>
                     @enderror
@@ -81,7 +81,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <div class="form-group">
                 <div class="col-lg-12">
-                    <input type="text" class="ggg" name="LastName" placeholder="LastName" >
+                    <input type="text" class="ggg" name="LastName" placeholder="LastName" value="{{old('LastName')}}" >
                     @error('LastName')
                     <div class="text-danger"> * {{$message}}</div>
                     @enderror
@@ -92,7 +92,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <div class="form-group">
                 <div class="col-lg-12">
-                    <input type="email" class="ggg" name="Email" placeholder="Email" >
+                    <input type="email" class="ggg" name="Email" placeholder="Email" value="{{old('Email')}}">
                     @error('Email')
                     <div class="text-danger"> * {{$message}}</div>
                     @enderror
@@ -116,13 +116,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <div class="form-group">
                 <div class="col-lg-4">
-                    <input type="text" class="ggg" name="Age" placeholder="Age" >
+                    <input type="text" class="ggg" name="Age" placeholder="Age" value="{{old('Age')}}">
                     @error('Age')
                     <div class="text-danger"> * {{$message}}</div>
                     @enderror
                 </div>
                 <div class="col-lg-8">
-                    <input type="text" class="ggg" name="PhoneNumber" placeholder="Phone" >
+                    <input type="text" class="ggg" name="PhoneNumber" placeholder="Phone" value="{{old('PhoneNumber')}}" >
                     @error('PhoneNumber')
                     <div class="text-danger"> * {{$message}}</div>
                     @enderror
@@ -136,6 +136,5 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <p><a href="javascript:history.go(-1)"><i class="fa fa-mail-reply"></i> GO BACK</a></p>
     </div>
 </div>
-
 </body>
 </html>

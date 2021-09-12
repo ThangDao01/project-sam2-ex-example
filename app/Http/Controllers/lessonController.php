@@ -17,7 +17,7 @@ class lessonController extends Controller
      */
     public function index()
     {
-        //
+        parent::index();
         return view('admin.Lesson.list', ['list' => Lesson::paginate(10)]);
 
     }
@@ -30,6 +30,8 @@ class lessonController extends Controller
     public function createview()
     {
         //
+        parent::index();
+
         return view('admin.Lesson.create',['list'=> Course::all()]);
 
     }
@@ -84,6 +86,8 @@ class lessonController extends Controller
     public function edit($id)
     {
         //
+        parent::index();
+
         $obj = Lesson::find($id);
         if ($obj == null) {
             return view('error.404', ['msg' => 'không tìm thấy tin tức']);
@@ -131,6 +135,8 @@ class lessonController extends Controller
     public function destroy($id)
     {
         //
+        parent::index();
+
         $obj = Lesson::find($id);
         if ($obj == null) {
             return view('error.404', ['msg' => 'không tìm thấy tin tức']);

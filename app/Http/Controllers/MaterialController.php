@@ -19,7 +19,7 @@ class MaterialController extends Controller
      */
     public function index()
     {
-        //
+        parent::index();
         return view('admin.Material.list', ['list' => Material::paginate(10)]);
 
     }
@@ -37,6 +37,7 @@ class MaterialController extends Controller
 
     public function createView()
     {
+        parent::index();
         return view('admin.Material.create');
     }
 
