@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
 use App\Models\Tracking;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -17,7 +18,11 @@ class trackingController extends Controller
     public function index()
     {
         parent::index();
-        return view('admin.tracking.list' , ['list' => Tracking::paginate(10)]);
+        if ($this->authlogin()) {
+            return view('admin.tracking.list' , ['list' => Tracking::paginate(10)]);
+        }else {
+            return $this->pathLogin();
+        }
 
     }
     /**
@@ -28,7 +33,11 @@ class trackingController extends Controller
     public function createView()
     {
         //
-        return view('admin.tracking.create');
+        if ($this->authlogin()) {
+            return view('admin.tracking.create');
+        }else {
+            return $this->pathLogin();
+        }
     }
 
     /**

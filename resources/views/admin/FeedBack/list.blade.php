@@ -27,16 +27,15 @@
                 <div class="table-inbox-wrap ">
                     <table class="table table-inbox table-hover">
                         <tbody>
+                        @foreach($list as $data)
                         <tr class="unread">
-                            @foreach($list as $data)
                                 <td class="inbox-small-cells">{{$data->Vote}}<i class="fa fa-star inbox-started"></i></td>
-                                <td class="view-message dont-show"><a>{{$data->getName()}}</a></td>
+                                <td class="view-message dont-show"><a>{{$data->Name}}</a></td>
+                                <td class="view-message dont-show"><a>{{$data->Email}}</a></td>
                                 <td class="view-message"><a>{!! $data->Message !!}</a></td>
-                                <td class="view-message inbox-small-cells"></td>
                                 <td class="view-message text-right">{{$data->created_at->toFormattedDateString()}}</td>
-                            @endforeach
                         </tr>
-
+                        @endforeach
                         <tr class="">
                             <td class="inbox-small-cells"><i class="fa fa-star inbox-started"></i></td>
                             <td class="view-message dont-show"><a href="#">Tasi man <span class="label label-danger pull-right">urgent</span></a></td>

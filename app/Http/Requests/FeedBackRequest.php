@@ -25,6 +25,8 @@ class FeedBackRequest extends FormRequest
     {
         return [
             //
+            'Name' => 'required',
+            'Email' => 'required',
             'Message' => 'required',
             'Vote' => 'required',
         ];

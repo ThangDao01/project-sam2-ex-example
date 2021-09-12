@@ -6,6 +6,7 @@ use App\Http\Requests\LessonRequest;
 use App\Models\Course;
 use App\Models\DataSupport;
 use App\Models\Lesson;
+use App\Models\Material;
 use Illuminate\Http\Request;
 
 class lessonController extends Controller
@@ -17,8 +18,13 @@ class lessonController extends Controller
      */
     public function index()
     {
+
         parent::index();
-        return view('admin.Lesson.list', ['list' => Lesson::paginate(10)]);
+        if ($this->authlogin()) {
+            return view('admin.Lesson.list', ['list' => Lesson::paginate(10)]);
+        } else {
+            return $this->pathLogin();
+        }
 
     }
 
@@ -30,9 +36,12 @@ class lessonController extends Controller
     public function createview()
     {
         //
-        parent::index();
+        if ($this->authlogin()) {
+            return view('admin.Lesson.create',['list'=> Course::all()]);
+        } else {
+            return $this->pathLogin();
+        }
 
-        return view('admin.Lesson.create',['list'=> Course::all()]);
 
     }
 

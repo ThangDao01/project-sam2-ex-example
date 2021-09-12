@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\FeedBackRequest;
 use App\Models\Account;
 use App\Models\FeedBack;
+use App\Models\Lesson;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
@@ -22,7 +23,11 @@ class feedbackController extends Controller
     public function index()
     {
         parent::index();
-        return view('admin.FeedBack.list' , ['list' => FeedBack::paginate(10)]);
+        if ($this->authlogin()) {
+            return view('admin.FeedBack.list' , ['list' => FeedBack::paginate(10)]);
+        } else {
+            return $this->pathLogin();
+        }
     }
 
     /**
@@ -33,8 +38,11 @@ class feedbackController extends Controller
     public function createview()
     {
         //
-
-        return view('admin.FeedBack.create');
+        if ($this->authlogin()) {
+            return view('admin.FeedBack.create');
+        } else {
+            return $this->pathLogin();
+        }
     }
 
     /**
@@ -46,10 +54,10 @@ class feedbackController extends Controller
     public function create(FeedBackRequest $request)
     {
         //
-        parent::index();
         $request->validated();
         $obj = new FeedBack();
-        $obj->AccountID = 1;
+        $obj->Name = $request->get('Name');
+        $obj->Email = $request->get('Email');
         $obj->Message = $request->get('Message');
         $obj->Vote = $request->get('Vote');
         $obj->Seen = 0;
@@ -77,7 +85,6 @@ class feedbackController extends Controller
     public function edit($id)
     {
         //
-        parent::index();
 
         $obj = FeedBack::find($id);
         if ($obj == null){
@@ -98,7 +105,8 @@ class feedbackController extends Controller
         //
 
         $request->validate([
-            'AccountID' => 'required',
+            'Name' => 'required',
+            'Email' => 'required',
             'Message' => 'required',
             'Vote' => 'required',
             'Seen' => 'required',
@@ -108,7 +116,8 @@ class feedbackController extends Controller
         if ($obj == null) {
             return view('error.404', ['msg' => 'không tìm thấy tin tức']);
         }
-        $obj->AccountID = $request->get('AccountID');
+        $obj->Name = $request->get('Name');
+        $obj->Email = $request->get('Email');
         $obj->Message = $request->get('Message');
         $obj->Vote = $request->get('Vote');
         $obj->Seen = $request->get('Seen');
@@ -125,7 +134,6 @@ class feedbackController extends Controller
     public function destroy($id)
     {
         //
-        parent::index();
 
         $obj = FeedBack::find($id);
         if ($obj == null){
