@@ -70,7 +70,7 @@ Route::get('/detail/course/', [MainUserController::class, 'getCourse']);
 
 
 Route::get('/lesson-detail', function () {
-    return view('material.lesson-detail');
+    return view('user.lessonView');
 });
 
 /*

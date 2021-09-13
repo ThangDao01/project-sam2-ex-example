@@ -7,7 +7,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     @yield('title')
     <meta name="description" content="E&K là chương trình dành cho trẻ 0 - 10 tuổi giúp trẻ bắt đầu học tiếng Anh dễ dàng, thú vị và hiệu quả hơn.">
-    <meta name="keyword" content="">
+    <meta name="keyword" content="{{ \App\Http\Controllers\UserController::getkeywordPage()}}">
     <script src="https://connect.facebook.net/signals/config/251806315213206?v=2.9.44&amp;r=stable" async=""></script>
     <script src="https://connect.facebook.net/signals/config/348913062202988?v=2.9.44&amp;r=stable" async=""></script>
     <script src="https://connect.facebook.net/signals/plugins/identity.js?v=2.9.44" async=""></script>

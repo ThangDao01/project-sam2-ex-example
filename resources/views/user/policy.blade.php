@@ -1,6 +1,6 @@
 @extends('layout.user-layout')
 @section('title')
-    E&K - Hỗ trợ khách hàng
+    <title>E&K - Chính sách bảo mật</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">

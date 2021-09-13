@@ -431,7 +431,7 @@
     </div>
     <div class="container body2">
         <div class="be-comment-block">
-            <h1 class="comments-title">Comments (3)</h1>
+            <h1 class="comments-title">Comments ({{$listComment->count()}})</h1>
             <div class="be-comment">
                 <div class="be-img-comment">
                     <a href="blog-detail-2.html">

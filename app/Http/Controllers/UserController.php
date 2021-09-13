@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\AccountRequest;
 use App\Models\Account;
+use App\Models\Config;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -12,7 +13,10 @@ use Illuminate\Support\Facades\Session;
 
 class UserController extends Controller
 {
-
+    static function getkeywordPage()
+    {
+        return Config::all()->pluck('keywordPage');
+    }
 
     public function userLoginForm()
     {
@@ -21,16 +25,22 @@ class UserController extends Controller
 
     public function UserLogin(Request $request)
     {
-
+        if (Session::has("account")) {
+            Session::pull("account");
+        }
         $email = $request->get('Email');
         $password = $request->get('password');
         $salt = DB::table('accounts')->where('Email', $email)->value('Salt');
+        $dataAccount = DB::table('accounts')->where('Email', $email)->first();
         $PasswordHash = DB::table('accounts')->where('Email', $email)->value('PasswordHash');
         if (Hash::check($password.$salt, $PasswordHash)) {
             // The passwords match...
-            dd('ok');
+            Session::put("account",$dataAccount);
+            return redirect('/');
         } else {
-            dd('no no no');
+            Session::flash('message', 'Tài khoản hoặc mật khẩu không hợp lệ');
+            Session::flash('type-message', 'error');
+            return redirect('/login');
         }
     }
     public function userRegisterForm()
