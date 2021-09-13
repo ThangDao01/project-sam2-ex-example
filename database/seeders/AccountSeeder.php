@@ -16,7 +16,7 @@ class AccountSeeder extends Seeder
      */
     public function run()
     {
-        \Illuminate\Support\Facades\DB::table('data_supports')->insert([[
+        \Illuminate\Support\Facades\DB::table('accounts')->insert([[
 
             [
                 'FirstName' => 'Đào Duy',
@@ -53,7 +53,7 @@ class AccountSeeder extends Seeder
                 'PasswordHash' => '$2y$12$kjZmsIxPPiHgLadmoGAI/uVHWReE5tCXKsghk4cO09aBbW8LlgOf.',
                 'Salt' => 'hD84Y',
                 'Age' => '18',
-                'Role' => '2',
+                'Role' => '1',
                 'Status' => '1',
                 'created_at' => '2021-09-05 15:35:47',
                 'updated_at' => '2021-09-05 15:35:47'
@@ -68,7 +68,7 @@ class AccountSeeder extends Seeder
                 'Salt' => 'FeiN8',
                 'Age' => '20',
                 'Role' => '2',
-                'Status' => '2',
+                'Status' => '1',
                 'created_at' => '2021-09-06 17:00:03',
                 'updated_at' => '2021-09-06 17:00:03'
             ],
@@ -82,7 +82,7 @@ class AccountSeeder extends Seeder
                 'Salt' => 'BfiC6',
                 'Age' => '20',
                 'Role' => '2',
-                'Status' => '2',
+                'Status' => '1',
                 'created_at' => '2021-09-06 17:00:03',
                 'updated_at' => '2021-09-06 17:00:03'
             ],

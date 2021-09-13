@@ -36,8 +36,8 @@
                                 <th>Author</th>
                                 <th>Admin</th>
                                 <th>User</th>
+                                <th>Status</th>
                                 <th>actions</th>
-
                             </tr>
                             </thead>
                             <tbody>
@@ -104,6 +104,23 @@
                                         <td><input type="checkbox" name="admin_role" {{$user->hasRole('admin') ? 'checked' : ''}}></td>
                                         <td><input type="checkbox" name="user_role" {{$user->hasRole('user') ? 'checked' : ''}}></td>
                                         <td>
+                                            <ul>
+                                                @if($account->Status==0)
+                                                    <li style="color: red">
+                                                        Deleted
+                                                    </li>
+                                                @elseif($account->Status==1)
+                                                    <li style="color: #36c">
+                                                        Active
+                                                    </li>
+                                                @elseif($account->Status==2)
+                                                    <li style="color: green">
+                                                        Online
+                                                    </li>
+                                                @endif
+                                            </ul>
+                                        </td>
+                                        <td>
                                             <p><input type="submit" value="Assign roles" class="btn btn-sm btn-default"></p>
                                             <p><a style="margin:5px 0;" class="btn btn-sm btn-danger" href="{{url('/delete-user-roles/'.$user->id)}}">Xóa user</a></p>
                                             <p><a style="margin:5px 0;" class="btn btn-sm btn-success" href="{{url('/impersonate/'.$user->id)}}">Chuyển quyền</a></p>
@@ -116,8 +133,6 @@
                     </div>
             </div>
             @endif
-
-        </div>
         </div>
     </section>
 @endsection

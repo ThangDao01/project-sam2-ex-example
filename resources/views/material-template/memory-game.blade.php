@@ -24,6 +24,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script>(function(){
 
+
+
         var Memory = {
 
             init: function(cards){
@@ -80,6 +82,7 @@
 
             win: function(){
                 this.paused = true;
+                votay.play();
                 setTimeout(function(){
                     Memory.showModal();
                     Memory.$game.fadeOut();
@@ -120,20 +123,22 @@
                 return array;
             },
 
+
             buildHTML: function(){
                 var frag = '';
                 this.$cards.each(function(k, v){
-                    frag += '<div class="card" data-id="'+ v.id +'"><div class="inside">\
+                    frag += `<div onclick="PlayVoiceImages('`+v.voice+`')"  class="card" data-id="`+ v.id +`"><div class="inside">\
         <div class="front">\
-        '+ v.img +'\
+        `+ v.img +`\
         </div>\
         <div class="back"><img src="https://res.cloudinary.com/thangdao04/image/upload/v1630303243/g2y8chmwfp0vdklngvo6.png"\
         alt="Codepen" /></div></div>\
-        </div>';
+        </div>`;
                 });
                 return frag;
             }
         };
+
 
         //128 <img src="'+ v.img +'" alt="'+ v.name +'" >
 
@@ -142,13 +147,15 @@
 
             {
                 name: '{{$data->values}}',
-                img: '<img src="{{$data->images}}" alt="{{$data->values}}" >',
+                img: `<img  src="{{$data->images}}" alt="{{$data->values}}" >`,
                 id: {{$data->id}},
+                voice:"{{$data->voice}}",
             },
             {
                 name: '{{$data->values}}',
                 img: '<div style="font-size: 50px;text-transform: capitalize;color: {{$data->color}}">{{$data->values}}</div>',
                 id: {{$data->id}},
+                voice:"{{$data->voice}}",
             },
                 @endforeach
             // {
@@ -187,6 +194,15 @@
 
 
     })();
+</script>
+<script>
+    var votay = new Audio('https://res.cloudinary.com/thangdao04/video/upload/v1631479726/mxwczvywj4nd7ewsyk8h.mp3');
+    votay.volume = 0.5;
+    function PlayVoiceImages(url) {
+        var audioImg = new Audio(url);
+        audioImg.play();
+    }
+
 </script>
 
 </body>

@@ -10,6 +10,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <title>Dev4Fun -
         @yield('title')
     </title>
+
     <link rel="icon" href="{{URL::asset('images/logo-ek-title.png') }}" type="image/gif">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -22,12 +23,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         function hideURLbar() {
             window.scrollTo(0, 1);
         } </script>
+
     <!-- bootstrap-css -->
 @include('layout.css')
 
 <!-- //calendar -->
     <!-- //font-awesome icons -->
     @include('layout.js-head')
+    <style>
+        @yield('css')
+    </style>
 
 </head>
 <body>

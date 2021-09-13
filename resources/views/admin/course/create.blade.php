@@ -15,7 +15,7 @@
                 <div class="form-group">
                     <label class="col-sm-3 control-label">Name</label>
                     <div class="col-sm-4">
-                        <input type="text" name="course" class="form-control" placeholder="vui lòng nhập tên...." >
+                        <input type="text" name="course" class="form-control" placeholder="vui lòng nhập tên....">
                         @error('course')
                         <div class="text-danger">* {{$message}}</div>
                         @enderror
@@ -25,7 +25,8 @@
                 <div class="form-group">
                     <label class="col-sm-3 control-label">price</label>
                     <div class="col-sm-2">
-                    <input type="text" name="price" class="form-control" id="currency-field" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$" data-type="currency" placeholder="$1,000,000.00">
+                        <input type="text" name="price" class="form-control" id="currency-field"
+                               pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$" data-type="currency" placeholder="$1,000,000.00">
                         @error('price')
                         <div class="text-danger">* {{$message}}</div>
                         @enderror
@@ -35,7 +36,7 @@
                         <option value="VND">VND</option>
                     </select>
                 </div>
-                <div class=" form-group">
+                <div class="form-group">
                     <label class="col-sm-3 control-label">Thumbnail</label>
                     <div class="col-sm-5">
                         <input type="hidden" class="form-control" id="in-images" name="thumbnail">
@@ -47,42 +48,72 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label" for="inputSuccess">Lesson</label>
+                    <label class="col-sm-3 control-label" for="lesson">Lesson</label>
                     <div class="col-sm-2">
-                        <select type="text" class="form-control" name="lesson">
-                            @foreach($list as $data)
-                                <option value="{{$data->id}}">{{$data->lessonName}}</option>
-                            @endforeach
-                        </select>
+                        <div id="modalLesson" class="w3-modal">
+                            <div class="w3-modal-content">
+                                <header class="w3-container w3-teal">
+        <span onclick="document.getElementById('modalLesson').style.display='none'"
+              class="w3-button w3-display-topright">&times;</span>
+                                    <h2>Check box to add lesson</h2>
+                                </header>
+                                <div class="w3-container">
+                                    <table class="table table-bordered table-striped mb-none" id="datatable-editable">
+                                        <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>lessonName</th>
+                                            <th>lisMaterialId</th>
+                                            <th>dataSupportId</th>
+                                            <th>Check box</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        @foreach($list as $data)
+                                            <tr class="gradeX">
+                                                <td>{{$data->id}}</td>
+                                                <td>{{$data->lessonName}}</td>
+                                                <td>{{$data->listMaterialId}}</td>
+                                                <td>{{$data->dataSupportId}}</td>
+                                                <td class="actions">
+                                                    <input type="checkbox" class="lessonChecks" value="{{$data->id}}">
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <footer class="w3-container w3-teal" style="text-align: center">
+                                    <button type="button"
+                                            onclick="document.getElementById('modalLesson').style.display='none'"
+                                            class="btn btn-warning">Cancel
+                                    </button>
+                                    <button type="button" onclick="getValue()" class="btn btn-success">Done</button>
+                                </footer>
+                            </div>
+                        </div>
+                        <div>
+                            <input type="text" value="" name="listLesson" id="lesson">
+                            <button type="button" id="in-btn-images" class="cloudinary-button"
+                                    onclick="document.getElementById('modalLesson').style.display='block'">Add Lesson
+                            </button>
+                        </div>
                     </div>
-                    <label class="col-sm-1 control-label">Time Finish(day)</label>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Time Finish(day)</label>
                     <div class="col-sm-2">
-                        <input type="datetime-local" class="form-control" name="timeFinish" >
+                        <input type="number" class="form-control" name="timeFinish">
                         @error('timeFinish')
                         <div class="text-danger">* {{$message}}</div>
                         @enderror
                     </div>
                 </div>
-                <div class=" form-group ">
-                    <label class="col-sm-3 control-label">Key</label>
-                    <div class="col-sm-2">
-                        <select type="text" class="form-control" name="key">
-                            <option value="0">Active</option>
-                            <option value="1">default</option>
-                        </select>
-                    </div>
-                    <label class="col-sm-1 control-label">Status</label>
-                    <div class="col-sm-2">
-                        <select type="text" class="form-control" name="Status">
-                            <option value="1">Active</option>
-                            <option value="2">default</option>
-                        </select>
-                    </div>
-                </div>
                 <div class="form-group">
                     <label class="col-sm-3 control-label">Description</label>
                     <div class="col-sm-8">
-                        <textarea style="resize: none" rows="8" type="text" class="form-control" name="Description" id="ckeditor1"
+                        <textarea style="resize: none" rows="8" type="text" class="form-control" name="Description"
+                                  id="ckeditor1"
                                   placeholder="vui lòng nhập thông tin...."></textarea>
                         @error('Description')
                         <div class="text-danger">* {{$message}}</div>
@@ -121,7 +152,7 @@
                 if (!error && result && result.event === "success") {
                     // console.log('Done! Here is the image info: ', result.info);
                     document.getElementById('in-voice').value = result.info.secure_url;
-                    document.getElementById('demo-voice').innerHTML = `<source  src="`+result.info.secure_url +`" type="audio/ogg">`
+                    document.getElementById('demo-voice').innerHTML = `<source  src="` + result.info.secure_url + `" type="audio/ogg">`
                     console.log(result.info.secure_url);
                 }
             }
@@ -131,17 +162,29 @@
         }, false);
     </script>
     <script>
+        function getValue() {
+            var checks = document.getElementsByClassName('lessonChecks');
+            var listLesson = document.getElementById('lesson');
+            listLesson.value = checks[0].value;
+            for (let i = 1; i < checks.length; i++) {
+                if (checks[i].checked === true) {
+                    listLesson.value +=','+ checks[i].value;
+                }
+            }
+            document.getElementById('modalLesson').style.display = 'none';
+        }
+
         var donvi = "$";
         var donviSelect = document.getElementById('donvi-value');
-        donviSelect.onchange=function (){
+        donviSelect.onchange = function () {
             donvi = donviSelect.value;
         }
 
         $("input[data-type='currency']").on({
-            keyup: function() {
+            keyup: function () {
                 formatCurrency($(this));
             },
-            blur: function() {
+            blur: function () {
                 formatCurrency($(this), "blur");
             }
         });
@@ -161,7 +204,9 @@
             var input_val = input.val();
 
             // don't validate empty input
-            if (input_val === "") { return; }
+            if (input_val === "") {
+                return;
+            }
 
             // original length
             var original_len = input_val.length;
@@ -196,11 +241,11 @@
                 right_side = right_side.substring(0, 2);
 
                 // join number by .
-                if (!(donvi === "$")){
+                if (!(donvi === "$")) {
                     input_val = "$" + left_side + "." + right_side;
 
-                }else{
-                    input_val =  left_side + "." + right_side + "VND";
+                } else {
+                    input_val = left_side + "." + right_side + "VND";
                 }
 
             } else {
@@ -208,11 +253,11 @@
                 // add commas to number
                 // remove all non-digits
                 input_val = formatNumber(input_val);
-                if (donvi === "$"){
+                if (donvi === "$") {
 
                     input_val = "$" + input_val;
-                }else{
-                    input_val =  input_val + " VND";
+                } else {
+                    input_val = input_val + " VND";
 
                 }
                 // final formatting

@@ -181,6 +181,36 @@
                                 </div >
                             </div >
                             <div class="monkey-bg-white p-md-4 p-0 border-radius">
+                                @foreach($listData as $article)
+                                    <div class="manual-content-item border-bottom pb-3 mb-3">
+                                        <h5 class="mb-3">
+                                            <a class="monkey-f-bold monkey-fz-18 monkey-color-green d-block d-md-none custom-text-title-2 /phuong-phap/monkey-junior-ap-dung-phuong-phap-trao-the-nhanh-glenn-doman-nhu-the-nao.html" href="/article={{$article->url}}">{{$article->title}}</a>
+                                        </h5>
+                                        <div
+                                            class="media parents-share-media"
+                                        >
+                                            <div class="mr-3 media-image effect-hover-circle ">
+                                                <img src = "{{$article->thumbnail}}" alt = "#"/>
+                                            </div>
+                                            <div class="media-body columns-2-4">
+                                                <h5
+                                                    class="mt-0 monkey-f-bold monkey-fz-18 custom-text-title-2 d-none d-md-block"
+                                                >
+                                                    <a class="/phuong-phap/monkey-junior-ap-dung-phuong-phap-trao-the-nhanh-glenn-doman-nhu-the-nao.html" href="/coming-soon" >Vai trò của cha mẹ trong việc giúp con bắt đầu học tiếng anh hiệu quả cùng E&K</a>
+
+                                                </h5>
+                                                <p
+                                                    class="monkey-f-medium monkey-color-gray mb-4 text-justify custom-text-box-6 "
+                                                >
+                                                </p>
+                                                <a class="monkey-color-gray monkey-f-bold cursor" href="/article={{$article->url}}"> Chi tiết</a>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+                                @endforeach
 
                                 <div class="manual-content-item border-bottom pb-3 mb-3">
                                     <h5 class="mb-3">
@@ -209,63 +239,6 @@
                                     </div>
 
 
-                                </div>
-                                <div class="manual-content-item border-bottom pb-3 mb-3">
-                                    <h5 class="mb-3">
-                                        <a class="monkey-f-bold monkey-fz-18 monkey-color-green d-block d-md-none custom-text-title-2 /phuong-phap/phuong-phap-phonics-kich-thich-toi-da-tu-duy-va-tiem-nang-cua-nao-trai.html" href="/coming-soon">Hướng dẫn ba mẹ 2 cách khai thác bài học E&K</a>
-                                    </h5>
-                                    <div
-                                        class="media parents-share-media"
-                                    >
-                                        <div class="mr-3 media-image effect-hover-circle ">
-                                            <img src = "{{asset('/images/rectangle-40.png')}}" alt = "#"/>
-                                        </div>
-                                        <div class="media-body columns-2-4">
-                                            <h5
-                                                class="mt-0 monkey-f-bold monkey-fz-18 custom-text-title-2 d-none d-md-block"
-                                            >
-                                                <a class="/phuong-phap/phuong-phap-phonics-kich-thich-toi-da-tu-duy-va-tiem-nang-cua-nao-trai.html" href="/coming-soon" >Hướng dẫn ba mẹ 2 cách khai thác bài học E&K</a>
-
-                                            </h5>
-                                            <p
-                                                class="monkey-f-medium monkey-color-gray mb-4 text-justify custom-text-box-6 "
-                                            >
-
-                                                Ngoài việc học theo lộ trình hệ thống bài học, ba mẹ có thể khai thác E&K bằng việc học theo chủ đề. Ba mẹ cũng nên khéo léo chuyển đổi, kết hợp hai cách học này để mang lại hứng thú học và lợi ích tối ưu khi trẻ mới bắt đầu học tiếng Anh với E&K.&nbsp;
-                                                &nbsp;
-                                            </p>
-                                            <a class="monkey-color-gray monkey-f-bold cursor" href="/coming-soon"> Chi tiết</a>
-                                        </div>
-                                    </div>
-
-
-                                </div>
-                                <div class="manual-content-item border-bottom pb-3 mb-3">
-                                    <h5 class="mb-3">
-                                        <a class="monkey-f-bold monkey-fz-18 monkey-color-green d-block d-md-none custom-text-title-2 /phuong-phap/hieu-ve-hoc-tap-thong-qua-vui-choi-xoa-di-sai-lam-thuong-gap-trong-cach-day-con.html" href="/coming-soon">Hứng thú học - điều kiện tiên quyết để con bắt đầu học tiếng Anh hiệu quả khi học E&K</a>
-                                    </h5>
-                                    <div
-                                        class="media parents-share-media">
-                                        <div class="mr-3 media-image effect-hover-circle ">
-                                            <img
-                                                data-src = "{{URL::asset('/images/t32-web51-1.png')}}"
-                                                class = " lazy" alt = "#"/>
-                                        </div>
-                                        <div class="media-body columns-2-4">
-                                            <h5
-                                                class="mt-0 monkey-f-bold monkey-fz-18 custom-text-title-2 d-none d-md-block">
-                                                <a class="/phuong-phap/hieu-ve-hoc-tap-thong-qua-vui-choi-xoa-di-sai-lam-thuong-gap-trong-cach-day-con.html" href="/coming-soon"
-                                                >Hứng thú học - điều kiện tiên quyết để con bắt đầu học tiếng Anh hiệu quả khi học E&K</a>
-
-                                            </h5>
-                                            <p class="monkey-f-medium monkey-color-gray mb-4 text-justify custom-text-box-6 ">
-                                                Với trẻ nhỏ, làm bất cứ điều gì cũng cần sự hứng thú. Đặc biệt, khi trẻ bắt đầu làm quen với một ngôn ngữ mới, hứng thú học tập lại càng quan trọng hơn.
-                                                &nbsp
-                                            </p>
-                                            <a class="monkey-color-gray monkey-f-bold cursor" href="/coming-soon">
-                                                Chi tiết</a>
-                                        </div>
-                                    </div>
                                 </div>
 
 

@@ -33,9 +33,9 @@
                     <label class="col-sm-3 control-label">Categories</label>
                     <div class="col-sm-5">
                         <select type="text" class="form-control" name="categories">
-                            <option value="phuongphap">Phương Pháp</option>
-                            <option value="loiich">Lợi ích</option>
-                            <option value="huongdan">Hướng dẫn</option>
+                            <option value="phuong-phap">Phương Pháp</option>
+                            <option value="loi-ich">Lợi ích</option>
+                            <option value="huong-dan">Hướng dẫn</option>
                         </select>
                     </div>
                 </div>

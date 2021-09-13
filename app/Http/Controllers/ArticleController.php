@@ -65,9 +65,26 @@ class ArticleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function Loi_ich()
     {
         //
+        return view('user.loiich',[
+            'listData'=>Article::all()->where('categories','loi-ich')
+        ]);
+    }
+    public function Huong_dan()
+    {
+        //
+        return view('user.huongdanhoc',[
+            'listData'=>Article::all()->where('categories','huong_dan')
+        ]);
+    }
+    public function Phuong_phap()
+    {
+        //
+        return view('user.phuongphap',[
+            'listData'=>Article::all()->where('categories','phuong-phap')
+        ]);
     }
 
     /**

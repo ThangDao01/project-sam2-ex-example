@@ -106,7 +106,7 @@
                     <audio id="voice-{{$data->id}}" style="display: none">
                         <source src="{{$data->voice}}" type="audio/ogg">
                     </audio>
-                    <img style="width: 100px;height: 150px;" id="img-{{$data->id}}" src="{{$data->images}}"
+                    <img onclick="PlayVoiceImages('{{$data->voice}}')" style="width: 100px;height: 150px;" id="img-{{$data->id}}" src="{{$data->images}}"
                          alt=""
                          @if($data->id == $main->id)
                          data-toggle="modal" data-target="#myModal"
@@ -133,6 +133,10 @@
                     var audio = new Audio("{{$main->voice}}");
                     audio.play();
                 }
+                function PlayVoiceImages(url) {
+                    var audioImg = new Audio(url.toString());
+                    audioImg.play();
+                }
 
                 var q = document.getElementById('question');
                 q.onload = function () {
@@ -140,13 +144,7 @@
                 }
                 var cong = document.getElementById('img-{{$main->id}}');
                 cong.setAttribute("style", "data-toggle='modal';data-target='#myModal';width: 100px;height: 150px;");
-                @foreach($list as $data)
-                var voice{{$data->id}} = document.getElementById('voice-{{$data->id}}');
-                var img{{$data->id}} = document.getElementById('img-{{$data->id}}');
-                img{{$data->id}}.onclick = function () {
-                    voice{{$data->id}}.play();
-                }
-                @endforeach
+
             </script>
         </div>
     </div>

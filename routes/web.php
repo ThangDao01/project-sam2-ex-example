@@ -7,6 +7,7 @@ use App\Http\Controllers\ConfigController;
 use App\Http\Controllers\courseController;
 use App\Http\Controllers\DataController;
 use App\Http\Controllers\EmailController;
+use App\Http\Controllers\MainAdminController;
 use App\Http\Controllers\MainUserController;
 use App\Http\Controllers\trackingController;
 use App\Http\Controllers\lessonController;
@@ -44,30 +45,29 @@ Route::post('/register', [UserController::class, 'UserRegister']);
 Route::get('/chuong-trinh-hoc', function () {
     return view('user.chuongtringhoc');
 });
-Route::get('/phuong-phap', function () {
-    return view('user.phuongphap');
-});
-Route::get('/phuong-phap/test', function () {
-    return view('user.article');
-});
-Route::get('/phuong-phap/tt={url}', [MainUserController::class, 'articleDetail']);
+Route::get('/phuong-phap', [ArticleController::class,'Phuong_phap']);
+Route::get('/loi-ich', [ArticleController::class,'Loi_ich']);
+Route::get('/huong-dan-hoc', [ArticleController::class,'Huong_dan']);
+
+Route::get('/article={url}', [MainUserController::class, 'articleDetail']);
 
 Route::get('/ho-tro-khach-hang', function () {
     return view('user.hotrokhachhang');
 });
-Route::get('/loi-ich', function () {
-    return view('user.loiich');
-});
 Route::get('/bang-gia', function () {
     return view('user.banggia');
 });
+Route::get('/detail/lesson/id={id}', function () {
+    return view('user.lessonView');
+});
+
 Route::get('/lesson-view', [MainUserController::class,'getComment']);
 
 
+
 Route::get('/course', [MainUserController::class, 'getCourse']);
-Route::get('/huong-dan-hoc', function () {
-    return view('user.huongdanhoc');
-});
+Route::get('/detail/course/', [MainUserController::class, 'getCourse']);
+
 
 Route::get('/lesson-detail', function () {
     return view('material.lesson-detail');
@@ -86,7 +86,14 @@ Route::get('/coming-soon', function () {
  * Course
  */
 Route::get('/account/seed', [MainUserController::class, 'getSeed']);
-Route::get('/test/game',[MainUserController::class,'memoryGame']);
+Route::get('/test',function (){
+    return view('tool.test');
+});
+Route::post('/test',[courseController::class,'testCheckbox']);
+Route::get('/test2',[MainAdminController::class,'testLinhTinh']);
+
+
+
 
 Route::get('/voice-xyz/id={id}', [MainUserController::class, 'whereIsThe']);
 

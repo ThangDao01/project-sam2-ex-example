@@ -1,5 +1,5 @@
 @extends('layout.user-layout')
-<title>E&K - Bảng giá</title>
+<title>E&K - Khóa Học</title>
 @section('detail')
     <iframe src = "https://www.googletagmanager.com/ns.html?id=GTM-PS37S79"
             height = "0" width = "0" style = "display:none;visibility:hidden" >
@@ -111,7 +111,7 @@
                 <div class="col-lg-11">
                     <div class="banner-customer-support-content banner-representative-students-content border-radius">
                         <div class="title monkey-fz-32 monkey-f-header text-uppercase">
-                            Bảng giá
+                            Khóa Học
                         </div>
                         <i class="icon-monkey-form-search-1 d-mobile icon-form-search-1"></i>
                         <i class="icon-monkey-form-search-2 d-mobile icon-form-search-2"></i>
@@ -142,7 +142,7 @@
                                         </li>
                                         <li class="breadcrumb-item active ">
                                             <a href="#"
-                                               class="monkey-f-bold text-uppercase"> Bảng giá</a>
+                                               class="monkey-f-bold text-uppercase">Khóa Học</a>
                                         </li>
                                     </ol>
                                 </nav>
@@ -152,7 +152,7 @@
                                     class = "title-wrapper text-center monkey-fz-32 monkey-f-header distance-center "
                                 >
                                     <div class = "monkey-f-header monkey-fz-30 monkey-color-white monkey-fz-48" >
-                                        <span class = "text-uppercase" >Bảng giá</span >
+                                        <span class = "text-uppercase" >Khóa Học</span >
                                     </div >
                                 </div >
                                 <p class="text-center monkey-fz-24 monkey-color-white mt-3 mb-4">Ba mẹ lựa chọn gói học để đăng ký cho con!</p>
@@ -194,14 +194,37 @@
                                                 <div
                                                     class = "price-list-footer d-flex justify-content-center"
                                                 >
-                                                    <a onclick = " ga('send',{'hitType': 'event', 'eventCategory': 'homemj_price_1nam',
+                                                        <a onclick = ""
+                                                           href="/detail/course/{{$course->id}}" class="btn rounded-pill  monkey-bg-green hvr-icon-registration effect-hover-shine btn-price-list monkey-color-white distance-center" >
+                                                            Chi tiết
+                                                            <i
+                                                                class="ml-2 monkey-color-green icon-monkey-button-registration monkey-bg-white monkey-fz-16 rounded-circle distance-center"
+                                                            ></i>
+                                                        </a>
+                                                </div >
+                                                <div
+                                                    class = "price-list-footer d-flex justify-content-center"
+                                                >
+                                                    @if($course->price == 0)
+                                                        <a onclick = " ga('send',{'hitType': 'event', 'eventCategory': 'homemj_price_1nam',
                 'eventAction': 'Click', 'eventLabel': 'trang chu bang gia goi 1 nam'})"
-                                                       href="/cr={{$course->id}}" class="btn rounded-pill  monkey-bg-green hvr-icon-registration effect-hover-shine btn-price-list monkey-color-white distance-center" >
-                                                        Đăng ký
-                                                        <i
-                                                            class="ml-2 monkey-color-green icon-monkey-button-registration monkey-bg-white monkey-fz-16 rounded-circle distance-center"
-                                                        ></i>
-                                                    </a>
+                                                           href="/cr={{$course->id}}" class="btn rounded-pill  monkey-bg-green hvr-icon-registration effect-hover-shine btn-price-list monkey-color-white distance-center" >
+                                                            Vào học
+                                                            <i
+                                                                class="ml-2 monkey-color-green icon-monkey-button-registration monkey-bg-white monkey-fz-16 rounded-circle distance-center"
+                                                            ></i>
+                                                        </a>
+                                                    @else
+                                                        <a onclick = " ga('send',{'hitType': 'event', 'eventCategory': 'homemj_price_1nam',
+                'eventAction': 'Click', 'eventLabel': 'trang chu bang gia goi 1 nam'})"
+                                                           href="/cr={{$course->id}}" class="btn rounded-pill  monkey-bg-green hvr-icon-registration effect-hover-shine btn-price-list monkey-color-white distance-center" >
+                                                            Đăng ký
+                                                            <i
+                                                                class="ml-2 monkey-color-green icon-monkey-button-registration monkey-bg-white monkey-fz-16 rounded-circle distance-center"
+                                                            ></i>
+                                                        </a>
+                                                    @endif
+
                                                 </div >
                                             </div >
                                         </div >

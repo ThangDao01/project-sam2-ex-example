@@ -14,11 +14,11 @@ class ArticleSeeder extends Seeder
     public function run()
     {
         //
-        \Illuminate\Support\Facades\DB::table('data_supports')->insert([
+        \Illuminate\Support\Facades\DB::table('articles')->insert([
             [
                 'url' => 'phat-am-chuan-anh-my-ngay-tu-dau-cung-monkey-junior',
                 'thumbnail' => 'https://res.cloudinary.com/thangdao04/image/upload/v1631035690/zg0i6yimrkqg3pc9qdrl.png',
-                'categories' => 'loiich',
+                'categories' => 'loi-ich',
                 'title' => 'Phát âm chuẩn Anh Mỹ ngay từ đầu cùng E&K',
                 'Detail' => '<section class="monkey-bg-white new-wrapper">
                                 <div class="title style-title monkey-fz-30 monkey-f-bold">
@@ -72,7 +72,7 @@ class ArticleSeeder extends Seeder
             [
                 'url' => 'hoc-luong-tu-vung-khong-lo-ngay-tai-nha-cung-monkey-junior',
                 'thumbnail' => 'https://res.cloudinary.com/thangdao04/image/upload/v1631035947/uzazpnd4hat7xu8csnkq.png',
-                'categories' => 'loiich',
+                'categories' => 'loi-ich',
                 'title' => 'Học lượng từ vựng khổng lồ ngay tại nhà cùng E&K',
                 'Detail' => '<section class="monkey-bg-white new-wrapper">
                                 <div class="title style-title monkey-fz-30 monkey-f-bold">
@@ -126,7 +126,7 @@ class ArticleSeeder extends Seeder
             [
                 'url' => 'lo-trinh-hoc-bai-ban-cua-monkey-junior-giup-toi-uu-thoi-gian-hoc-va-giup-be-hoc-hieu-qua-hon',
                 'thumbnail' => 'https://res.cloudinary.com/thangdao04/image/upload/v1631036029/zvrsivagpfpgco8il3v3.png',
-                'categories' => 'loiich',
+                'categories' => 'loi-ich',
                 'title' => 'Lộ trình học bài bản của E&K giúp tối ưu thời gian học và giúp bé học hiệu quả hơn',
                 'Detail' => '<section class="monkey-bg-white new-wrapper">
                                 <div class="title style-title monkey-fz-30 monkey-f-bold">
@@ -187,7 +187,7 @@ class ArticleSeeder extends Seeder
             [
                 'url' => 'chuong-trinh-hoc-cua-monkey-junior-ho-tro-phat-trien-2-ban-cau-nao-cua-tre-trong-giai-doan-vang',
                 'thumbnail' => 'https://res.cloudinary.com/thangdao04/image/upload/v1631036110/icbxifneapjhtdjjuhim.png',
-                'categories' => 'loiich',
+                'categories' => 'loi-ich',
                 'title' => 'Chương trình học của E&K hỗ trợ phát triển 2 bán cầu não của trẻ trong giai đoạn vàng',
                 'Detail' => '<section class="monkey-bg-white new-wrapper">
                                 <div class="title style-title monkey-fz-30 monkey-f-bold">
@@ -239,7 +239,7 @@ class ArticleSeeder extends Seeder
                 ],[
                 'url' => 'hung-thu-hoc-dieu-kien-tien-quyet-de-con-bat-dau-hoc-tieng-anh-hieu-qua-khi-hoc-monkey-junior',
                 'thumbnail' => 'https://res.cloudinary.com/thangdao04/image/upload/v1631034215/epu8kzzdan9t0zhoucsq.png',
-                'categories' => 'huongdan',
+                'categories' => 'huong-dan',
                 'title' => 'Hứng thú học - điều kiện tiên quyết để con bắt đầu học tiếng Anh hiệu quả khi học',
                 'Detail' => '<section class="monkey-bg-white new-wrapper">
                                 <div class="monkey-f-bold monkey-fz-30 style-title title">Hứng th&uacute; học - điều kiện ti&ecirc;n quyết để con bắt đầu học tiếng Anh hiệu quả khi học J&amp;K</div>
@@ -367,7 +367,7 @@ class ArticleSeeder extends Seeder
             [
                 'url' => 'vai-tro-cua-ba-me-trong-viec-giup-con-bat-dau-hoc-tieng-anh-hieu-qua-cung-monkey-junior',
                 'thumbnail' => 'https://res.cloudinary.com/thangdao04/image/upload/v1631034215/epu8kzzdan9t0zhoucsq.png',
-                'categories' => 'huongdan',
+                'categories' => 'huong-dan',
                 'title' => 'Vai trò của ba mẹ trong việc giúp con bắt đầu học tiếng Anh hiệu quả cùng',
                 'Detail' => '<section class="monkey-bg-white new-wrapper">
                                 <div class="monkey-f-bold monkey-fz-30 style-title title">Vai tr&ograve; của ba mẹ trong việc gi&uacute;p con bắt đầu học tiếng Anh hiệu quả c&ugrave;ng J&amp;K</div>
@@ -457,7 +457,7 @@ class ArticleSeeder extends Seeder
             [
                 'url' => 'huong-dan-ba-me-2-cach-khai-thac-bai-hoc-monkey-junior',
                 'thumbnail' => 'https://res.cloudinary.com/thangdao04/image/upload/v1631034215/epu8kzzdan9t0zhoucsq.png',
-                'categories' => 'huongdan',
+                'categories' => 'huong-dan',
                 'title' => 'Hướng dẫn ba mẹ 2 cách khai thác bài học',
                 'Detail' => '<section class="monkey-bg-white new-wrapper">
                                 <div class="monkey-f-bold monkey-fz-30 style-title title">Hướng dẫn ba mẹ 2 c&aacute;ch khai th&aacute;c b&agrave;i học</div>
@@ -526,7 +526,7 @@ class ArticleSeeder extends Seeder
             [
                 'url' => 'monkey-junior-ap-dung-phuong-phap-trao-the-nhanh-glenn-doman-nhu-the-nao',
                 'thumbnail' => 'https://res.cloudinary.com/thangdao04/image/upload/v1631035123/ezck4dmabsilbjc0oyzc.png',
-                'categories' => 'phuongphap',
+                'categories' => 'phuong-phap',
                 'title' => 'E&K áp dụng phương pháp tráo thẻ nhanh Glenn Doman như thế nào?',
                 'Detail' => '<section class="monkey-bg-white new-wrapper">
                                 <div class="monkey-f-bold monkey-fz-30 style-title title">E&amp;K &aacute;p dụng phương ph&aacute;p tr&aacute;o thẻ nhanh Glenn Doman như thế n&agrave;o?</div>
@@ -628,7 +628,7 @@ class ArticleSeeder extends Seeder
             [
                 'url' => 'phuong-phap-phonics-kich-thich-toi-da-tu-duy-va-tiem-nang-cua-nao-trai',
                 'thumbnail' => 'https://res.cloudinary.com/thangdao04/image/upload/v1631035281/vij3vmonq78usexzl07u.png',
-                'categories' => 'phuongphap',
+                'categories' => 'phuong-phap',
                 'title' => 'Phương pháp Phonics kích thích tối đa tư duy và tiềm năng của não trái',
                 'Detail' => '<section class="monkey-bg-white new-wrapper">
                                 <div class="monkey-f-bold monkey-fz-30 style-title title">Phương ph&aacute;p Phonics k&iacute;ch th&iacute;ch tối đa tư duy v&agrave; tiềm năng của n&atilde;o tr&aacute;i</div>
@@ -685,7 +685,7 @@ class ArticleSeeder extends Seeder
             [
                 'url' => 'phuong-phap-da-giac-quan-trong-monkey-junior-huy-dong-tat-ca-giac-quan-cua-tre-vao-bai-hoc',
                 'thumbnail' => 'https://res.cloudinary.com/thangdao04/image/upload/v1630948636/cq2jotnhsxqsjvtr0mjg.png',
-                'categories' => 'phuongphap',
+                'categories' => 'phuong-phap',
                 'title' => 'Phương pháp “Đa giác quan” trong E&K - huy động tất cả giác quan của trẻ vào bài học',
                 'Detail' => '<section class="monkey-bg-white new-wrapper">
                                 <div class="monkey-f-bold monkey-fz-30 style-title title">Phương ph&aacute;p &ldquo;Đa gi&aacute;c quan&rdquo; trong E&amp;K - huy động tất cả gi&aacute;c quan của trẻ v&agrave;o b&agrave;i học</div>
@@ -745,7 +745,7 @@ class ArticleSeeder extends Seeder
             [
                 'url' => 'hieu-ve-hoc-tap-thong-qua-vui-choi-xoa-di-sai-lam-thuong-gap-trong-cach-day-con',
                 'thumbnail' => 'https://res.cloudinary.com/thangdao04/image/upload/v1631035559/rbrafqrsl4nb17r0wmuh.png',
-                'categories' => 'phuongphap',
+                'categories' => 'phuong-phap',
                 'title' => 'Hiểu về “Học tập thông qua vui chơi” - xóa đi sai lầm thường gặp trong cách dạy con',
                 'Detail' => '<section class="monkey-bg-white new-wrapper">
                                 <div class="title style-title monkey-fz-30 monkey-f-bold">

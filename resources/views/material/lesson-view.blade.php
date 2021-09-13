@@ -1,7 +1,7 @@
 
 @extends('layout.user-layout')
 @section('title')
-    E&K - Bảng giá
+    <title>E&K -Bài học</title>
 @endsection
 @section('detail')
     <section id="price-list" class="price-list position-relative z-index-100">

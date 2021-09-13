@@ -43,7 +43,7 @@
                     <tr class="gradeX">
                         <td>{{$data->id}}</td>
                         <td>{{$data->title}}</td>
-                        <td>{{$data->Detail}}</td>
+                        <td>{!!$data->Detail!!}</td>
                         <td>{{$data->Author}}</td>
                         <td class="actions">
                             <a href="/admin/article/edit/id={{$data->id}}" class="on-default edit-row">
