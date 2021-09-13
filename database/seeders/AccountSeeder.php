@@ -16,17 +16,16 @@ class AccountSeeder extends Seeder
      */
     public function run()
     {
-        \Illuminate\Support\Facades\DB::table('accounts')->insert([[
-
+        \Illuminate\Support\Facades\DB::table('accounts')->insert([
             [
                 'FirstName' => 'Đào Duy',
                 'LastName' => 'Thắng',
                 'Email' => 'thangdao202@gmail.com',
-                'PhoneNumber' => '113',
-                'PasswordHash' => '$2y$12$nF8.2qC/v5d8Q98fOAvoQO1D.qoXiuI7Cz3aicWD6EaS9vck22esi',
-                'Salt' => 'VaiNoiLuon',
+                'PhoneNumber' => '0369630471',
+                'PasswordHash' => '$2y$12$yVfsbgXZbvTNAlWm394hzefwOdAOvN3LOyp73uiDftyzK8F38Hhuu',
+                'Salt' => 'RHBF1',
                 'Age' => '20',
-                'Role' => '1',
+                'Role' => 1,
                 'Status' => '1',
                 'created_at' => '2021-09-01 06:36:11',
                 'updated_at' => '2021-09-01 06:36:11'
@@ -39,8 +38,8 @@ class AccountSeeder extends Seeder
                 'PasswordHash' => '$2y$12$XPjQ/7UuOlSDJ.nk3CoKIuLIBOFAJ37v4qZc6RzR7Y0TfTigDKucS',
                 'Salt' => 'YD4Na',
                 'Age' => '20',
-                'Role' => '2',
-                'Status' => '2',
+                'Role' => 2,
+                'Status' => '1',
                 'created_at' => '2021-09-05 14:45:43',
                 'updated_at' => '2021-09-05 14:45:43'
             ],
@@ -53,7 +52,7 @@ class AccountSeeder extends Seeder
                 'PasswordHash' => '$2y$12$kjZmsIxPPiHgLadmoGAI/uVHWReE5tCXKsghk4cO09aBbW8LlgOf.',
                 'Salt' => 'hD84Y',
                 'Age' => '18',
-                'Role' => '1',
+                'Role' => 2,
                 'Status' => '1',
                 'created_at' => '2021-09-05 15:35:47',
                 'updated_at' => '2021-09-05 15:35:47'
@@ -67,7 +66,7 @@ class AccountSeeder extends Seeder
                 'PasswordHash' => '$2y$12$qUtWXzBngNcTMDd1n6edk.uGtSQ7wuvkW7q2YSJPXSGbV0lAeB9qK',
                 'Salt' => 'FeiN8',
                 'Age' => '20',
-                'Role' => '2',
+                'Role' => 2,
                 'Status' => '1',
                 'created_at' => '2021-09-06 17:00:03',
                 'updated_at' => '2021-09-06 17:00:03'
@@ -81,11 +80,11 @@ class AccountSeeder extends Seeder
                 'PasswordHash' => '',
                 'Salt' => 'BfiC6',
                 'Age' => '20',
-                'Role' => '2',
+                'Role' => 2,
                 'Status' => '1',
                 'created_at' => '2021-09-06 17:00:03',
                 'updated_at' => '2021-09-06 17:00:03'
             ],
-        ]]);
+        ]);
     }
 }

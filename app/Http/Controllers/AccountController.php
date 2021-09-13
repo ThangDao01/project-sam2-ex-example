@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\AccountRequest;
 use App\Models\Account;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -39,12 +40,15 @@ class AccountController extends Controller
 
     public function AdminLogin(Request $request)
     {
+        if (Session::has("account")){
+            Session::pull("account");
+        }
         $email = $request->get('Email');
         $password = $request->get('password');
         $salt = DB::table('accounts')->where('Email', $email)->value('Salt');
         $dataAccount = DB::table('accounts')->where('Email', $email)->first();
         $PasswordHash = DB::table('accounts')->where('Email', $email)->value('PasswordHash');
-        if (Hash::check($password . $salt, $PasswordHash)) {
+        if (Hash::check($password.$salt, $PasswordHash)) {
             // The passwords match...
             Session::put("account",$dataAccount);
             return redirect('/admin');
@@ -100,6 +104,8 @@ class AccountController extends Controller
         $account->PasswordHash = Hash::make($request->get('password') . $account->Salt, [
             'rounds' => 12,
         ]);
+        $account->created_at = Carbon::now('Asia/Ho_Chi_Minh');
+        $account->updated_at = Carbon::now('Asia/Ho_Chi_Minh');
         $account->save();
         Session::flash('message', 'Account successfully created Please Login to continue');
         Session::flash('type-message', 'success');
