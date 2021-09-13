@@ -195,16 +195,12 @@
                                                     class = "price-list-footer d-flex justify-content-center"
                                                 >
                                                         <a onclick = ""
-                                                           href="/detail/course/{{$course->id}}" class="btn rounded-pill  monkey-bg-green hvr-icon-registration effect-hover-shine btn-price-list monkey-color-white distance-center" >
+                                                           href="/lesson-view" class="btn rounded-pill  monkey-bg-green hvr-icon-registration effect-hover-shine btn-price-list monkey-color-white distance-center" >
                                                             Chi tiết
                                                             <i
                                                                 class="ml-2 monkey-color-green icon-monkey-button-registration monkey-bg-white monkey-fz-16 rounded-circle distance-center"
                                                             ></i>
                                                         </a>
-                                                </div >
-                                                <div
-                                                    class = "price-list-footer d-flex justify-content-center"
-                                                >
                                                     @if($course->price == 0)
                                                         <a onclick = " ga('send',{'hitType': 'event', 'eventCategory': 'homemj_price_1nam',
                 'eventAction': 'Click', 'eventLabel': 'trang chu bang gia goi 1 nam'})"
