@@ -267,13 +267,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <li class="dropdown">
                     <a data-toggle="dropdown" class="dropdown-toggle" href="/coming-soon">
                         <img alt="" src="{{URL::asset('images/user2.png') }}">
-                        <span class="username">John Doe</span>
+                        <span class="username">
+<!--                        --><?php
+//                        $name = \Illuminate\Support\Facades\Auth::user()->LastName;
+//                        if ($name){
+//                        }
+//                        ?>
+                        </span>
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu extended logout">
-                        <li><a href="/coming-soon"><i class=" fa fa-suitcase"></i>Profile</a></li>
+                        <li><a href="/thong-tin-admin"><i class=" fa fa-suitcase"></i>Profile</a></li>
                         <li><a href="/coming-soon"><i class="fa fa-cog"></i> Settings</a></li>
-                        <li><a href="{{URL::asset('/admin/login') }}"><i class="fa fa-key"></i> Log Out</a></li>
+                        <li><a href="{{URL::asset('/logout-auth') }}"><i class="fa fa-key"></i> Log Out</a></li>
                     </ul>
                 </li>
                 <!-- user login dropdown end -->
@@ -295,6 +301,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <span>Dashboard</span>
                         </a>
                     </li>
+{{--                    @hasRole('admin)--}}
                     <li class="sub-menu">
                         <a href="">
                             <i class="fa fa-group"></i>
@@ -306,6 +313,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <li><a href="/admin/login">Logout</a></li>
                         </ul>
                     </li>
+{{--                    @endhasRole--}}
+{{--                    <li class="sub-menu">--}}
+{{--                        <a href="">--}}
+{{--                            <i class="fa fa-group"></i>--}}
+{{--                            <span>user</span>--}}
+{{--                        </a>--}}
+{{--                        <ul class="sub">--}}
+{{--                                <li><a href="/users">List</a></li>--}}
+{{--                            <li><a href="/admin/register">Register</a></li>--}}
+{{--                        </ul>--}}
+{{--                    </li>--}}
                     <li class="sub-menu">
                         <a href="/admin/config">
                             <i class="fa fa-newspaper-o"></i>

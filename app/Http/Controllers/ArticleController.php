@@ -15,8 +15,12 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        //
-        return view('admin.Article.list' , ['list' => Article::paginate(10)]);
+        parent::index();
+        if ($this->authlogin()) {
+            return view('admin.Article.list' , ['list' => Article::paginate(10)]);
+        }else {
+            return $this->pathLogin();
+        }
 
     }
 
@@ -28,7 +32,11 @@ class ArticleController extends Controller
     public function createview()
     {
         //
-        return view('admin.Article.create');
+        if ($this->authlogin()) {
+            return view('admin.Article.create');
+        }else {
+            return $this->pathLogin();
+        }
     }
 
     /**
@@ -88,6 +96,8 @@ class ArticleController extends Controller
     public function edit($id)
     {
         //
+        parent::index();
+
         $obj = Article::find($id);
         if ($obj == null){
             return view('error.404', ['msg'=>'không tìm thấy tin tức']);
@@ -131,6 +141,8 @@ class ArticleController extends Controller
     public function destroy($id)
     {
         //
+        parent::index();
+
         $obj = Article::find($id);
         if ($obj == null){
             return view('error.404', ['msg'=>'không tìm thấy tin tức']);

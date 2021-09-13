@@ -14,10 +14,11 @@ class CreateFeedBacksTable extends Migration
     public function up()
     {
         Schema::create('feed_backs', function (Blueprint $table) {
-            $table->id();
-            $table->integer('AccountID')->default(null);
+            $table->increments('id');
+            $table->string('Name')->default(null);
+            $table->string('Email')->default(null);
             $table->string('Message')->default(null);
-            $table->integer('Vote')->default(0);
+            $table->integer('Vote')->default(5);
             $table->boolean('Seen')->default(1);
             $table->timestamps();
         });

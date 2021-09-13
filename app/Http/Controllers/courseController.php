@@ -8,12 +8,21 @@ use App\Models\Lesson;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 
 class courseController extends Controller
 {
-    public function index(){
 
-        return view('admin.course.list', ['list' => Course::paginate(10)]);
+
+    public function index(){
+        parent::index();
+        if ($this->authlogin()) {
+            return view('admin.course.list', ['list' => Course::paginate(10)]);
+
+        } else {
+            return $this->pathLogin();
+        }
 
     }
     /**
@@ -30,9 +39,11 @@ class courseController extends Controller
 
     public function createview()
     {
-        //
-        return view('admin.course.create', ['list' => Lesson::all()]);
-
+        if ($this->authlogin()) {
+            return view('admin.course.create', ['list' => Lesson::all()]);
+        } else {
+            return $this->pathLogin();
+        }
     }
 
 
@@ -83,6 +94,7 @@ class courseController extends Controller
     public function edit($id)
     {
         //
+        parent::index();
         $obj = Course::find($id);
         if ($obj == null){
             return view('error.404', ['msg'=>'']);
@@ -99,6 +111,7 @@ class courseController extends Controller
      */
     public function update(Request $request, $id)
     {
+
         //
         $request->validate(
             [
@@ -134,7 +147,9 @@ class courseController extends Controller
      */
     public function destroy($id)
     {
+
         //
+        parent::index();
         $obj = Course::find($id);
         if ($obj == null){
             return view('error.404', ['msg'=> 'không tìm thấy tin tức']);

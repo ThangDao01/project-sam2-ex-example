@@ -1,73 +1,144 @@
 @extends('layout.admin-layout')
 @section('detail')
     <!-- start: page -->
-    <section class="panel">
-        <div class="panel-heading">
-            DETAIL
-        </div>
-        <div class="panel-body">
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="mb-md">
-                        <a href="/admin/feedback/create">
-                            <button id="addToTable" class="btn btn-primary">Add <i class="fa fa-plus"></i></button>
-                        </a>
-                    </div>
+    <div class="col-sm-12 mail-w3agile">
+        <section class="panel">
+            <header class="panel-heading wht-bg">
+                <h4 class="gen-case">Inbox (34)
+                    <form action="#" class="pull-right mail-src-position">
+                        <div class="input-append">
+                            <input type="text" class="form-control " placeholder="Search Mail">
+                        </div>
+                    </form>
+                </h4>
+            </header>
+            <div class="panel-body minimal">
+                <div class="mail-option">
+                    <ul class="unstyled inbox-pagination">
+                        <li><span>1-50 of 124</span></li>
+                        <li>
+                            <a class="np-btn" href="#"><i class="fa fa-angle-left  pagination-left"></i></a>
+                        </li>
+                        <li>
+                            <a class="np-btn" href="#"><i class="fa fa-angle-right pagination-right"></i></a>
+                        </li>
+                    </ul>
                 </div>
-                <div class="col-sm-3">
-                </div>
-                <div class="col-sm-3">
-                    <div class="input-group">
-                        <input type="text" class="input-sm form-control" placeholder="Search">
-                        <span class="input-group-btn">
-                            <button class="btn btn-sm btn-default" type="button">Go!</button>
-                        </span>
-                    </div>
+                <div class="table-inbox-wrap ">
+                    <table class="table table-inbox table-hover">
+                        <tbody>
+                        @foreach($list as $data)
+                        <tr class="unread">
+                                <td class="inbox-small-cells">{{$data->Vote}}<i class="fa fa-star inbox-started"></i></td>
+                                <td class="view-message dont-show"><a>{{$data->Name}}</a></td>
+                                <td class="view-message dont-show"><a>{{$data->Email}}</a></td>
+                                <td class="view-message"><a>{!! $data->Message !!}</a></td>
+                                <td class="view-message text-right">{{$data->created_at->toFormattedDateString()}}</td>
+                        </tr>
+                        @endforeach
+                        <tr class="">
+                            <td class="inbox-small-cells"><i class="fa fa-star inbox-started"></i></td>
+                            <td class="view-message dont-show"><a href="#">Tasi man <span class="label label-danger pull-right">urgent</span></a></td>
+                            <td class="view-message"><a href="#">Lorem ipsum dolor sit amet</a></td>
+                            <td class="view-message inbox-small-cells"></td>
+                            <td class="view-message text-right">May 2</td>
+                        </tr>
+                        <tr class="">
+                            <td class="inbox-small-cells"><i class="fa fa-star inbox-started"></i></td>
+                            <td class="view-message dont-show"><a href="#">Facebook</a></td>
+                            <td class="view-message"><a href="#">Dolor sit amet, consectetuer adipiscing</a></td>
+                            <td class="view-message inbox-small-cells"></td>
+                            <td class="view-message text-right">March 14</td>
+                        </tr>
+                        <tr class="">
+                            <td class="inbox-small-cells"><i class="fa fa-star inbox-started"></i></td>
+                            <td class="view-message dont-show">Bafent</td>
+                            <td class="view-message">Lorem ipsum dolor sit amet</td>
+                            <td class="view-message inbox-small-cells"></td>
+                            <td class="view-message text-right">December 19</td>
+                        </tr>
+                        <tr class="">
+                            <td class="inbox-small-cells"><i class="fa fa-star inbox-started"></i></td>
+                            <td class="view-message dont-show">Mogli Marion</td>
+                            <td class="view-message">Lorem ipsum dolor sit amet</td>
+                            <td class="view-message inbox-small-cells"></td>
+                            <td class="view-message text-right">February 09</td>
+                        </tr>
+                        <tr class="">
+                            <td class="inbox-small-cells"><i class="fa fa-star inbox-started"></i></td>
+                            <td class="dont-show">Facebook</td>
+                            <td class="view-message">Dolor sit amet, consectetuer adipiscing</td>
+                            <td class="view-message inbox-small-cells"></td>
+                            <td class="view-message text-right">May 14</td>
+                        </tr>
+                        <tr class="">
+                            <td class="inbox-small-cells"><i class="fa fa-star"></i></td>
+                            <td class="view-message dont-show">Samual</td>
+                            <td class="view-message">Lorem ipsum dolor sit amet</td>
+                            <td class="view-message inbox-small-cells"></td>
+                            <td class="view-message text-right">February 25</td>
+                        </tr>
+                        <tr class="">
+                            <td class="inbox-small-cells"><i class="fa fa-star"></i></td>
+                            <td class="dont-show">Facebook</td>
+                            <td class="view-message view-message">Dolor sit amet, consectetuer adipiscing</td>
+                            <td class="view-message inbox-small-cells"></td>
+                            <td class="view-message text-right">March 14</td>
+                        </tr>
+                        <tr class="">
+                            <td class="inbox-small-cells"><i class="fa fa-star"></i></td>
+                            <td class="view-message dont-show">Dk brain</td>
+                            <td class="view-message">Lorem ipsum dolor sit amet</td>
+                            <td class="view-message inbox-small-cells"></td>
+                            <td class="view-message text-right">April 07</td>
+                        </tr>
+                        <tr class="">
+                            <td class="inbox-small-cells"><i class="fa fa-star"></i></td>
+                            <td class="view-message dont-show">Twitter</td>
+                            <td class="view-message">Dolor sit amet, consectetuer adipiscing</td>
+                            <td class="view-message inbox-small-cells"></td>
+                            <td class="view-message text-right">July 14</td>
+                        </tr>
+                        <tr class="">
+                            <td class="inbox-small-cells"><i class="fa fa-star inbox-started"></i></td>
+                            <td class="view-message dont-show">Samual</td>
+                            <td class="view-message">Lorem ipsum dolor sit amet</td>
+                            <td class="view-message inbox-small-cells"></td>
+                            <td class="view-message text-right">August 10</td>
+                        </tr>
+                        <tr class="">
+                            <td class="inbox-small-cells"><i class="fa fa-star"></i></td>
+                            <td class="view-message dont-show">Facebook</td>
+                            <td class="view-message view-message">Dolor sit amet, consectetuer adipiscing</td>
+                            <td class="view-message inbox-small-cells"></td>
+                            <td class="view-message text-right">April 14</td>
+                        </tr>
+                        <tr class="">
+                            <td class="inbox-small-cells"><i class="fa fa-star"></i></td>
+                            <td class="view-message dont-show">Morlig doen</td>
+                            <td class="view-message">Lorem ipsum dolor sit amet</td>
+                            <td class="view-message inbox-small-cells"></td>
+                            <td class="view-message text-right">June 16</td>
+                        </tr>
+                        <tr class="">
+                            <td class="inbox-small-cells"><i class="fa fa-star inbox-started"></i></td>
+                            <td class="view-message dont-show">Margarita does</td>
+                            <td class="view-message">Lorem ipsum dolor sit amet</td>
+                            <td class="view-message inbox-small-cells"></td>
+                            <td class="view-message text-right">August 30</td>
+                        </tr>
+                        <tr class="">
+                            <td class="inbox-small-cells"><i class="fa fa-star"></i></td>
+                            <td class="view-message dont-show">Facebook</td>
+                            <td class="view-message view-message">Dolor sit amet, consectetuer adipiscing</td>
+                            <td class="view-message inbox-small-cells"></td>
+                            <td class="view-message text-right">May 15</td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
-            <table class="table table-bordered table-striped mb-none" id="datatable-editable">
-                <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Account</th>
-                    <th>vote</th>
-                    <th>Seen</th>
-                    <th>actions</th>
-                </tr>
-                </thead>
-                <tbody>
-                @foreach($list as $data)
-                    <tr class="gradeX">
-                        <td>{{$data->id}}</td>
-                        <td>{{$data->Account}}</td>
-                        <td>{{$data->vote}}</td>
-                        <td>{{$data->Seen}}</td>
-
-                        <td class="actions">
-                            <a href="/admin/feedback/edit/id={{$data->id}}" class="on-default edit-row">
-                                <i style="font-size: 20px" class="fa fa-pencil-square-o text-success text-active"></i></a>
-                            <a href="/admin/feedback/delete/id={{$data->id}}" class="on-default remove-row" onclick="return confirm('Chắc xoá danh muc này?')">
-                                <i style="font-size: 20px" class="fa fa-times text-danger text"></i></a>
-                        </td>
-                    </tr>
-                @endforeach
-                </tbody>
-            </table>
-            <div class="row datatables-footer">
-                <div class="col-sm-12 col-md-6">
-                    <div class="dataTables_info" id="datatable-default_info" role="status" aria-live="polite">
-                        Showing 1 to 10 of 5 entries
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-6">
-                    <div class="dataTables_paginate paging_bs_normal" id="datatable-default_paginate">
-                        {{--                        {!! $list->links() !!}--}}
-                        @include('pagination.default', ['paginator' => $list])
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
+    </div>
     <!-- end: page -->
-    </section>
 @endsection

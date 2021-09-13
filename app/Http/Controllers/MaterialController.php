@@ -8,6 +8,7 @@ use App\Models\DataSupport;
 
 use App\Models\Course;
 use App\Models\Material;
+use App\Models\Tracking;
 use Illuminate\Http\Request;
 
 class MaterialController extends Controller
@@ -19,8 +20,12 @@ class MaterialController extends Controller
      */
     public function index()
     {
-        //
-        return view('admin.Material.list', ['list' => Material::paginate(10)]);
+        parent::index();
+        if ($this->authlogin()) {
+            return view('admin.Material.list', ['list' => Material::paginate(10)]);
+        } else {
+            return $this->pathLogin();
+        }
 
     }
 
@@ -37,7 +42,11 @@ class MaterialController extends Controller
 
     public function createView()
     {
-        return view('admin.Material.create');
+        if ($this->authlogin()) {
+            return view('admin.Material.create');
+        } else {
+            return $this->pathLogin();
+        }
     }
 
     /**
@@ -74,8 +83,6 @@ class MaterialController extends Controller
         }
         return view('admin.material.edit', ['obj' => $obj]);
     }
-
-
 
 
 }

@@ -3,11 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\FeedBackRequest;
+use App\Models\Account;
 use App\Models\FeedBack;
+use App\Models\Lesson;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 
 class feedbackController extends Controller
 {
+
+
+
     /**
      * Display a listing of the resource.
      *
@@ -15,8 +22,12 @@ class feedbackController extends Controller
      */
     public function index()
     {
-        //
-        return view('admin.FeedBack.list' , ['list' => FeedBack::all()]);
+        parent::index();
+        if ($this->authlogin()) {
+            return view('admin.FeedBack.list' , ['list' => FeedBack::paginate(10)]);
+        } else {
+            return $this->pathLogin();
+        }
     }
 
     /**
@@ -27,27 +38,31 @@ class feedbackController extends Controller
     public function createview()
     {
         //
-        return view('admin.FeedBack.create');
-
+        if ($this->authlogin()) {
+            return view('admin.FeedBack.create');
+        } else {
+            return $this->pathLogin();
+        }
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Routing\Redirector
      */
     public function create(FeedBackRequest $request)
     {
         //
         $request->validated();
         $obj = new FeedBack();
-        $obj->AccountID = $request->get('AccountID');
+        $obj->Name = $request->get('Name');
+        $obj->Email = $request->get('Email');
         $obj->Message = $request->get('Message');
         $obj->Vote = $request->get('Vote');
-        $obj->Seen = $request->get('Seen');
+        $obj->Seen = 0;
         $obj->save();
-        return redirect('/admin/feedback/list');
+        return redirect()->back();
     }
 
     /**
@@ -70,6 +85,7 @@ class feedbackController extends Controller
     public function edit($id)
     {
         //
+
         $obj = FeedBack::find($id);
         if ($obj == null){
             return view('error.404', ['msg'=>'không tìm thấy tin tức']);
@@ -87,8 +103,10 @@ class feedbackController extends Controller
     public function update(Request $request, $id)
     {
         //
+
         $request->validate([
-            'AccountID' => 'required',
+            'Name' => 'required',
+            'Email' => 'required',
             'Message' => 'required',
             'Vote' => 'required',
             'Seen' => 'required',
@@ -98,7 +116,8 @@ class feedbackController extends Controller
         if ($obj == null) {
             return view('error.404', ['msg' => 'không tìm thấy tin tức']);
         }
-        $obj->AccountID = $request->get('AccountID');
+        $obj->Name = $request->get('Name');
+        $obj->Email = $request->get('Email');
         $obj->Message = $request->get('Message');
         $obj->Vote = $request->get('Vote');
         $obj->Seen = $request->get('Seen');
@@ -115,6 +134,7 @@ class feedbackController extends Controller
     public function destroy($id)
     {
         //
+
         $obj = FeedBack::find($id);
         if ($obj == null){
             return view('error.404', ['msg'=>'không tìm thấy tin tức']);
