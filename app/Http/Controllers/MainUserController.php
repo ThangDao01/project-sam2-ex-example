@@ -177,6 +177,48 @@ class MainUserController extends Controller
             'next'=>$nextLink
         ]);
     }
+    public function matrix($id,$nextLink)
+    {
+        $main = DataSupport::find($id);
+        $idKey = DataSupport::where('key', $main->key)->get();
+        $min = DataSupport::where('key', $main->key)->first()->id;
+        $max = $min + sizeof($idKey) - 1;
+        $data1ID = rand($min, $max);
+        $data2ID = rand($min, $max);
+//tạo 2 id random không trùng
+        do {
+            $data1ID = rand($min, $max);
+        } while ($data1ID == $id);
+        do {
+            $data2ID = rand($min, $max);
+        } while ($data2ID == $id || $data2ID == $data1ID);
+// tạo 2 dữ liệu mẫu
+        $data1 = DataSupport::find($data1ID);
+        $data2 = DataSupport::find($data2ID);
+
+// random không trùng đáp án ABC
+        $lc1 = rand(1, 3);
+        $lc2 = rand(1, 3);
+        $lc3 = rand(1, 3);
+        do {
+            $lc2 = rand(1, 3);
+        } while ($lc1 == $lc2);
+        do {
+            $lc3 = rand(1, 3);
+        } while ($lc3 == $lc1 || $lc3 == $lc2);
+
+        $listData[$lc1] = $main;
+        $listData[$lc2] = $data1;
+        $listData[$lc3] = $data2;
+
+        $listDataM = array($listData[1], $listData[2], $listData[3]);
+//        return $listData;
+        return view('material-template.matrix', [
+            'list' => $listDataM,
+            'main' => $main,
+            'next'=>$nextLink
+        ]);
+    }
 
 
     public function getMaterialView($id,$lc){
@@ -195,6 +237,9 @@ class MainUserController extends Controller
                 return $this->memoryGame($dataId,$nextLink);
                 break;
             case 3:
+                return $this->matrix($dataId,$nextLink);
+                break;
+            case 4:
                 return $this->video($dataId,$nextLink);
                 break;
             default:

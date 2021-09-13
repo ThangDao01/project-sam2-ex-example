@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Course;
 use App\Models\DataSupport;
 use App\Models\Lesson;
+use App\Models\Material;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use phpDocumentor\Reflection\Types\String_;
@@ -43,13 +44,13 @@ class MainAdminController extends Controller
             ->select('key')
             ->distinct()->get();
     }
+    public function listMaterial(){
+        return Material::all();
+    }
 
     public function testLinhTinh()
     {
-        $listLessonId = explode(",", trim('1,2,3,4,5', '["]'));
-        if (in_array("2", $listLessonId)){
-            return 2;
-        }
-        return $listLessonId;
+        return view('material-template.matrix');
     }
+
 }

@@ -25,6 +25,7 @@
 <script>(function(){
 
 
+
         var Memory = {
 
             init: function(cards){
@@ -81,6 +82,7 @@
 
             win: function(){
                 this.paused = true;
+                votay.play();
                 setTimeout(function(){
                     Memory.showModal();
                     Memory.$game.fadeOut();
@@ -194,10 +196,13 @@
     })();
 </script>
 <script>
+    var votay = new Audio('https://res.cloudinary.com/thangdao04/video/upload/v1631479726/mxwczvywj4nd7ewsyk8h.mp3');
+    votay.volume = 0.5;
     function PlayVoiceImages(url) {
         var audioImg = new Audio(url);
         audioImg.play();
     }
+
 </script>
 
 </body>

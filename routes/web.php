@@ -87,7 +87,7 @@ Route::get('/test',function (){
     return view('tool.test');
 });
 Route::post('/test',[courseController::class,'testCheckbox']);
-    Route::get('/test2',[MainAdminController::class,'testLinhTinh']);
+Route::get('/test2',[MainAdminController::class,'testLinhTinh']);
 
 
 
