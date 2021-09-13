@@ -28,6 +28,8 @@ class Controller extends BaseController
     }
 
     public function pathLogin() {
+        Session::flash('message', 'Bạn cần quyền của Admin hoặc manage để vào admin ');
+        Session::flash('type-message', 'danger');
        return Redirect::to('/admin/login');
     }
 }
