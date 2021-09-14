@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\DB;
 
 class MainUserController extends Controller
 {
+
+
     //
     public function getComment(){
         return view('user.lessonView',['listComment' => FeedBack::all()]);

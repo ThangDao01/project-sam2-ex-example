@@ -231,7 +231,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <!-- user login dropdown start-->
                 <li class="dropdown">
                     <a data-toggle="dropdown" class="dropdown-toggle" href="/coming-soon">
-                        <img alt="" src="{{URL::asset('images/user2.png') }}">
+                        <img alt="" src="https://img.icons8.com/bubbles/100/000000/user.png">
                         <span class="username">John Doe</span>
                         <b class="caret"></b>
                     </a>
@@ -268,11 +268,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <a data-toggle="dropdown" class="dropdown-toggle" href="/coming-soon">
                         <img alt="" src="{{URL::asset('images/user2.png') }}">
                         <span class="username">
-<!--                        --><?php
-//                        $name = \Illuminate\Support\Facades\Auth::user()->LastName;
-//                        if ($name){
-//                        }
-//                        ?>
                         </span>
                         <b class="caret"></b>
                     </a>

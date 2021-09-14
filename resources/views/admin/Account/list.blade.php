@@ -105,15 +105,15 @@
                                         <td><input type="checkbox" name="user_role" {{$user->hasRole('user') ? 'checked' : ''}}></td>
                                         <td>
                                             <ul>
-                                                @if($account->Status==0)
+                                                @if($user->Status==0)
                                                     <li style="color: red">
                                                         Deleted
                                                     </li>
-                                                @elseif($account->Status==1)
+                                                @elseif($user->Status==1)
                                                     <li style="color: #36c">
                                                         Active
                                                     </li>
-                                                @elseif($account->Status==2)
+                                                @elseif($user->Status==2)
                                                     <li style="color: green">
                                                         Online
                                                     </li>
