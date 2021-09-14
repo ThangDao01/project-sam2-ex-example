@@ -21,8 +21,8 @@ class LessonSeeder extends Seeder
                 'listMaterialId'=> '1,2,3,4,5',
                 'dataSupportId' => '1',
                 'status'=> 1,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
+                'created_at' => Carbon::now('Asia/Ho_Chi_Minh'),
+                'updated_at' => Carbon::now('Asia/Ho_Chi_Minh'),
             ],
             [
                 'lessonName' => 'Learning character B',

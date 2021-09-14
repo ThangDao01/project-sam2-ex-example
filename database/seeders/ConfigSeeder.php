@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 
 class ConfigSeeder extends Seeder
@@ -295,6 +296,9 @@ class ConfigSeeder extends Seeder
     <title>E&K - Nơi dành cho trẻ mới bắt đầu học tiếng Anh</title>',
             'descriptionPage'=>'E&K là chương trình dành cho trẻ 0 - 10 tuổi giúp trẻ bắt đầu học tiếng Anh dễ dàng, thú vị và hiệu quả hơn.',
             'keywordPage'=>'EK,ek,Learn English,',
+            'Visitors'=> 123,
+            'created_at' => Carbon::now('Asia/Ho_Chi_Minh'),
+            'updated_at' => Carbon::now('Asia/Ho_Chi_Minh'),
         ]);
 
     }

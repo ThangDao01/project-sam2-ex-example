@@ -37,6 +37,7 @@ Route::get('/bang-gia', function () {
 Route::get('/', function () {
     return view('user.home');
 });
+
 Route::get('/login', [UserController::class, 'userLoginForm']);
 Route::post('/login', [UserController::class, 'UserLogin']);
 Route::get('/register', [UserController::class, 'userRegisterForm']);
@@ -90,7 +91,7 @@ Route::get('/test',function (){
     return view('tool.test');
 });
 Route::post('/test',[courseController::class,'testCheckbox']);
-Route::get('/test2',[MainAdminController::class,'testLinhTinh']);
+Route::get('/test2',[MainAdminController::class,'getVote']);
 
 
 

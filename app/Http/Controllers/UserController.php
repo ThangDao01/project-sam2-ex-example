@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\AccountRequest;
 use App\Models\Account;
+use App\Models\Article;
 use App\Models\Config;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -17,14 +18,21 @@ class UserController extends Controller
     {
         return Config::all()->pluck('keywordPage');
     }
+    static function getArticle(){
+        $articles = Article::all();
+        return $articles;
+    }
 
     public function userLoginForm()
     {
+
         return view('user.login');
     }
 
+
     public function UserLogin(Request $request)
     {
+
         if (Session::has("account")) {
             Session::pull("account");
         }
@@ -35,7 +43,11 @@ class UserController extends Controller
         $PasswordHash = DB::table('accounts')->where('Email', $email)->value('PasswordHash');
         if (Hash::check($password.$salt, $PasswordHash)) {
             // The passwords match...
+            if (Session::has("account")){
+                Session::pull("account");
+            }
             Session::put("account",$dataAccount);
+            $this->Visitors();
             return redirect('/');
         } else {
             Session::flash('message', 'Tài khoản hoặc mật khẩu không hợp lệ');
