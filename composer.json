@@ -13,7 +13,8 @@
         "laravel/framework": "^8.54",
         "laravel/tinker": "^2.5",
         "smorken/ext-http": "^5.0",
-        "swiftmailer/swiftmailer": "^6.2"
+        "swiftmailer/swiftmailer": "^6.2",
+      "ext-mongodb": "*"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
