@@ -51,7 +51,6 @@ class Controller extends BaseController
     }
 
     public function pathLogin() {
-
         Session::flash('message', 'Bạn cần có quyền truy cập để vào trang dành cho admin');
         Session::flash('type', 'danger');
        return Redirect::to('/admin/login');

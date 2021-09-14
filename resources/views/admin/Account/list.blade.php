@@ -33,61 +33,13 @@
                                 <th>Email</th>
                                 <th>Phone</th>
                                 <th>Age</th>
-                                <th>Author</th>
-                                <th>Admin</th>
+                                <th>Manage</th>
                                 <th>User</th>
                                 <th>Status</th>
                                 <th>actions</th>
                             </tr>
                             </thead>
                             <tbody>
-                            {{--                            @foreach($list as $account)--}}
-                            {{--                                <tr data-expanded="true">--}}
-                            {{--                                    <td>{{$account->id}}</td>--}}
-                            {{--                                    <td>{{$account->FirstName}}</td>--}}
-                            {{--                                    <td>{{$account->LastName}}</td>--}}
-                            {{--                                    <td>{{$account->Email}}</td>--}}
-                            {{--                                    <td>{{$account->Age}}</td>--}}
-                            {{--                                    <td>--}}
-                            {{--                                        @if($account->Role==0)--}}
-                            {{--                                            <p style="color: red">--}}
-                            {{--                                                Admin--}}
-                            {{--                                            </p>--}}
-                            {{--                                        @elseif($account->Role==1)--}}
-                            {{--                                            <p style="color: #36c">--}}
-                            {{--                                                Manager--}}
-                            {{--                                            </p>--}}
-                            {{--                                        @elseif($account->Role==2)--}}
-                            {{--                                            <p style="color: green">--}}
-                            {{--                                                User--}}
-                            {{--                                            </p>--}}
-                            {{--                                        @endif--}}
-                            {{--                                    </td>--}}
-                            {{--                                    <td>--}}
-                            {{--                                        <ul>--}}
-                            {{--                                            @if($account->Status==0)--}}
-                            {{--                                                <li style="color: red">--}}
-                            {{--                                                    Deleted--}}
-                            {{--                                                </li>--}}
-                            {{--                                            @elseif($account->Status==1)--}}
-                            {{--                                                <li style="color: #36c">--}}
-                            {{--                                                    Active--}}
-                            {{--                                                </li>--}}
-                            {{--                                            @elseif($account->Status==2)--}}
-                            {{--                                                <li style="color: green">--}}
-                            {{--                                                    Online--}}
-                            {{--                                                </li>--}}
-                            {{--                                            @endif--}}
-                            {{--                                        </ul>--}}
-                            {{--                                    </td>--}}
-                            {{--                                    <th class="actions">--}}
-                            {{--                                        <td><input type="checkbox" name="author_role" {{$account->hasRole('author') ? 'checked' : ''}}></td>--}}
-                            {{--                                        <td><input type="checkbox" name="admin_role" {{$account->hasRole('admin') ? 'checked' : ''}}></td>--}}
-                            {{--                                        <td><input type="checkbox" name="user_role" {{$account->hasRole('user') ? 'checked' : ''}}></td>--}}
-
-                            {{--                                    </th>--}}
-                            {{--                                </tr>--}}
-                            {{--                            @endforeach--}}
                             @foreach($list as $user)
                                 <form action="{{url('/assign-roles')}}" method="POST">
                                     @csrf
@@ -101,7 +53,6 @@
                                         <td>{{ $user->PhoneNumber }}</td>
                                         <td>{{ $user->Age}}</td>
                                         <td><input type="checkbox" name="author_role" {{$user->hasRole('author') ? 'checked' : ''}}></td>
-                                        <td><input type="checkbox" name="admin_role" {{$user->hasRole('admin') ? 'checked' : ''}}></td>
                                         <td><input type="checkbox" name="user_role" {{$user->hasRole('user') ? 'checked' : ''}}></td>
                                         <td>
                                             <ul>
