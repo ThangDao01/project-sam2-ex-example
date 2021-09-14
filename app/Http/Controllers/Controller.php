@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Enums\UserRole;
+use App\Models\Config;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -16,6 +17,18 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     public function index(){
+
+    }
+
+    public function online(){
+        $account = Session::get('account');
+        $account->Status = 2;
+        $account->save();
+    }
+    public function Visitors(){
+        $account = Config::all()->first();
+        $account->Visitors = $account->Visitors+1;
+        $account->save();
     }
 
     public function authlogin(){
@@ -26,10 +39,21 @@ class Controller extends BaseController
             return true;
         }
     }
+    public function userLogin(){
+        $admin_Role = Session::get('account');
+        if ($admin_Role == null){
+            Session::flash('message', 'Bạn cần đăng nhập để sử dụng chức năng này');
+            Session::flash('type', 'danger');
+            return Redirect::to('/login');
+        }else {
+            return true;
+        }
+    }
 
     public function pathLogin() {
-        Session::flash('message', 'Bạn cần quyền của Admin hoặc manage để vào admin ');
-        Session::flash('type-message', 'danger');
+
+        Session::flash('message', 'Bạn cần có quyền truy cập để vào trang dành cho admin');
+        Session::flash('type', 'danger');
        return Redirect::to('/admin/login');
     }
 }

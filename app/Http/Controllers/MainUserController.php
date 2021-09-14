@@ -11,6 +11,7 @@ use App\Models\Lesson;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
 
 class MainUserController extends Controller
 {
@@ -19,6 +20,10 @@ class MainUserController extends Controller
         return view('user.lessonView',['listComment' => FeedBack::all()]);
 //        return view('user.lessonView');
     }
+//    public function (){
+//        return view('user.lessonView',['listComment' => FeedBack::all()]);
+////        return view('user.lessonView');
+//    }
 
     public function getSeed(){
         $list = Account::all();
@@ -37,15 +42,18 @@ class MainUserController extends Controller
     }
     public function getLessonByCourse($id)
     {
-        $listLessonId = explode(",", trim(Course::all()->where('id',$id)->pluck('listLessonId'),
-            '["]'));
-        $lesson = array();
-        for ($i=0;$i<count($listLessonId);$i++){
-            if ($listLessonId[$i]){
-                $lesson[$i] = Lesson::find($listLessonId[$i]);
+        if ($this->userLogin()){
+            $listLessonId = explode(",", trim(Course::all()->where('id',$id)->pluck('listLessonId'),
+                '["]'));
+            $lesson = array();
+            for ($i=0;$i<count($listLessonId);$i++){
+                if ($listLessonId[$i]){
+                    $lesson[$i] = Lesson::find($listLessonId[$i]);
+                }
             }
+            return view('material.lesson-view', ['listLesson' => $lesson]);
         }
-        return view('material.lesson-view', ['listLesson' => $lesson]);
+        return Redirect::to('/login');
     }
 
     public function articleDetail($url){

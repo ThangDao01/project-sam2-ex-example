@@ -15,12 +15,13 @@ class CreateConfigsTable extends Migration
     {
         Schema::create('configs', function (Blueprint $table) {
             $table->id();
-            $table->text('contactUs')->default('null');
-            $table->text('aboutUs')->default('null');
-            $table->text('policyPage')->default('null');
-                $table->text('titlePage')->default('null');
-            $table->string('descriptionPage')->default('null');
-            $table->string('keywordPage')->default('null');
+            $table->text('contactUs');
+            $table->text('aboutUs');
+            $table->text('policyPage');
+            $table->text('titlePage');
+            $table->string('descriptionPage');
+            $table->string('keywordPage');
+            $table->integer('Visitors');
             $table->timestamps();
         });
     }

@@ -2,15 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Account;
 use App\Models\Config;
 use App\Models\Course;
 use App\Models\DataSupport;
+use App\Models\FeedBack;
 use App\Models\Lesson;
 use App\Models\Material;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use phpDocumentor\Reflection\Types\String_;
+use PhpParser\Node\Expr\Array_;
+use voku\helper\ASCII;
 
 class MainAdminController extends Controller
 {
@@ -34,6 +38,24 @@ class MainAdminController extends Controller
     {
         return DB::table('lessons')->count();
     }
+    public function getVote()
+    {
+        $vote = FeedBack::all()->pluck('Vote')->toArray();
+        if ($vote){
+            return round(array_sum($vote)/sizeof($vote),1);
+        }
+        return 0;
+    }
+    public function countVote()
+    {
+        $vote = FeedBack::all()->pluck('Vote')->toArray();
+        return sizeof($vote);
+    }
+    public function countVisitors(){
+        $visitor = Config::all()->first()->value('Visitors');
+        return $visitor;
+    }
+
 
     public function listLesson()
     {
@@ -52,7 +74,9 @@ class MainAdminController extends Controller
 
     public function testLinhTinh()
     {
-        return Config::all()->pluck('keywordPage');
+        $vote = [20,20,18,20,20];
+        $totalVote= array_sum($vote)/sizeof($vote);
+        return $totalVote;
 
 //        return view('material-template.matrix');
     }
