@@ -67,7 +67,7 @@ Route::get('/lesson-view', [MainUserController::class,'getComment']);
 
 
 Route::get('/course', [MainUserController::class, 'getCourse']);
-Route::get('/detail/course/', [MainUserController::class, 'getCourse']);
+Route::get('/detail/cr={id}', [MainUserController::class, 'courseDetail']);
 
 
 Route::get('/lesson-detail', function () {
@@ -91,7 +91,9 @@ Route::get('/test',function (){
     return view('tool.test');
 });
 Route::post('/test',[courseController::class,'testCheckbox']);
-Route::get('/test2',[trackingController::class,]);
+Route::get('/test2',function (){
+    return view('welcome');
+});
 
 
 
@@ -99,6 +101,7 @@ Route::get('/test2',[trackingController::class,]);
 Route::get('/voice-xyz/id={id}', [MainUserController::class, 'whereIsThe']);
 
 Route::get('/cr={id}', [MainUserController::class, 'getLessonByCourse']);
+Route::get('/detail/cr={id}', [MainUserController::class, 'courseDetail']);
 Route::get('/ls={id}/mt', [MainUserController::class, 'checkMaterial']);
 //Route::get('/ls={id}/mt={lc}',[MainUserController::class,'createMaterial']);
 Route::get('/ls={id}/mt={lc}', [MainUserController::class, 'getMaterialView']);
@@ -209,7 +212,7 @@ Route::get('/admin/lesson/delete/id={id}', [lessonController::class, 'destroy'])
 //feedback
 
 Route::get('/admin/feedback/create', [feedbackController::class,'createView']);
-Route::post('/admin/feedback/create', [feedbackController::class,'create']);
+Route::post('/feedback/create', [feedbackController::class,'create']);
 Route::get('/admin/feedback', [feedbackController::class,'index']);
 Route::get('/admin/feedback/edit/id={id}', [feedbackController::class, 'edit']);
 Route::put('/admin/feedback/{id}', [feedbackController::class, 'update']);

@@ -51,15 +51,15 @@ class feedbackController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Routing\Redirector
      */
-    public function create(FeedBackRequest $request)
+    public function create(Request $request)
     {
         //
-        $request->validated();
         $obj = new FeedBack();
         $obj->Name = $request->get('Name');
         $obj->Email = $request->get('Email');
         $obj->Message = $request->get('Message');
-        $obj->Vote = $request->get('Vote');
+        $obj->Location = $request->get('Location');
+        $obj->Vote = $request->get('Vote')?$request->get('Vote'):5;
         $obj->Seen = 0;
         $obj->save();
         return redirect()->back();

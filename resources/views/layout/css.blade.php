@@ -14,4 +14,6 @@
 <!-- calendar -->
 <link rel="stylesheet" href="{{URL::asset('css/monthly.css') }}">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<style></style>
+<style>
+
+</style>
