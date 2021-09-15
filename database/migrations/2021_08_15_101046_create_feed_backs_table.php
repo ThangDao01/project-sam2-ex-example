@@ -20,6 +20,7 @@ class CreateFeedBacksTable extends Migration
             $table->string('Message')->default(null);
             $table->integer('Vote')->default(5);
             $table->boolean('Seen')->default(1);
+            $table->string('Location')->default(null);
             $table->timestamps();
         });
     }

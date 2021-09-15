@@ -62,6 +62,12 @@ class MainAdminController extends Controller
 
     }
 
+    public function seen(){
+        $account = Config::all()->first();
+        $account->Visitors = $account->Visitors+1;
+        $account->save();
+    }
+
     public function listLesson()
     {
         return Lesson::all();

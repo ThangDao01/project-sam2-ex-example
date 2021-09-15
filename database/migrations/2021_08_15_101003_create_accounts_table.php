@@ -20,6 +20,7 @@ class CreateAccountsTable extends Migration
             $table->string('Email')->default(null);
             $table->string('PhoneNumber')->default(null);
             $table->text('PasswordHash')->default(null);
+            $table->string('Avatar')->default('https://res.cloudinary.com/thangdao04/image/upload/v1631744817/mgez61yb53k6cjlvzkxt.png');
             $table->string('Salt')->default(null);
             $table->integer('Age')->default(null);
             $table->integer('Role')->default(null);

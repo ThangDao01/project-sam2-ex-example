@@ -65,6 +65,18 @@ class MainUserController extends Controller
         Session::flash('type', 'danger');
         return Redirect::to('/login');
     }
+    public function courseDetail($id){
+        $location = 'cr='.$id;
+        $comment = FeedBack::all()->where('Location',$location);
+        return view('user.CourseDetail',[
+            'course'=>Course::find($id),
+            'location' =>$location,
+            'listComment'=>$comment]);
+    }
+    public function homeComment(){
+        return FeedBack::all()->where('Location','home');
+
+    }
 
     public function articleDetail($url)
     {

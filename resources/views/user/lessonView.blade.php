@@ -12,29 +12,35 @@
             position: relative;
             z-index: 1;
         }
+
         .vote:not(:checked) > input {
-            position:absolute;
+            position: absolute;
             display: none;
         }
+
         .vote:not(:checked) > label {
-            float:right;
-            width:1em;
-            overflow:hidden;
-            white-space:nowrap;
-            cursor:pointer;
-            font-size:30px;
-            color:#ccc;
+            float: right;
+            width: 1em;
+            overflow: hidden;
+            white-space: nowrap;
+            cursor: pointer;
+            font-size: 30px;
+            color: #ccc;
         }
+
         .vote:not(:checked) > label:before {
             content: '★ ';
         }
+
         .vote > input:checked ~ label {
             color: #ffc700;
         }
+
         .vote:not(:checked) > label:hover,
         .vote:not(:checked) > label:hover ~ label {
             color: #deb217;
         }
+
         .vote > input:checked + label:hover,
         .vote > input:checked + label:hover ~ label,
         .vote > input:checked ~ label:hover,
@@ -49,9 +55,10 @@
             font-family: 'open sans';
             overflow-x: hidden;
         }
-        .body2{
-            margin-top:20px;
-            background-color:#e9ebee;
+
+        .body2 {
+            margin-top: 20px;
+            background-color: #e9ebee;
         }
 
         img {
@@ -260,12 +267,13 @@
                 transform: scale(1);
             }
         }
+
         .be-comment-block {
             margin-bottom: 50px !important;
             border: 1px solid #edeff2;
             border-radius: 2px;
             padding: 50px 70px;
-            border:1px solid #ffffff;
+            border: 1px solid #ffffff;
         }
 
         .comments-title {
@@ -439,18 +447,18 @@
                     </a>
                 </div>
                 @foreach($listComment as $data)
-                <div class="be-comment-content">
+                    <div class="be-comment-content">
 				<span class="be-comment-name">
 					<a href="blog-detail-2.html">{{$data->Name}}</a>
 					</span>
-                    <span class="be-comment-time">
+                        <span class="be-comment-time">
 					<i class="fa fa-clock-o"></i>
                         {{$data->created_at->toFormattedDateString()}}
 				</span>
-                    <p class="be-comment-text">
-                        {!! $data->Message !!}
-                    </p>
-                </div>
+                        <p class="be-comment-text">
+                            {!! $data->Message !!}
+                        </p>
+                    </div>
                 @endforeach
             </div>
             @if ($errors->any())
@@ -467,15 +475,17 @@
                 <div class="row">
                     @if(\Illuminate\Support\Facades\Session::has('account'))
                         <?php
-                          $account = \Illuminate\Support\Facades\Session::get('account');
+                        $account = \Illuminate\Support\Facades\Session::get('account');
                         ?>
-                        <input class="form-input" type="hidden" name="Name" value="{{$account->LastName}}" placeholder="Your name">
-                        <input class="form-input" type="hidden" name="Email" value="{{$account->Email}}" placeholder="Your email">
+                        <input class="form-input" type="hidden" name="Name" value="{{$account->LastName}}"
+                               placeholder="Your name">
+                        <input class="form-input" type="hidden" name="Email" value="{{$account->Email}}"
+                               placeholder="Your email">
                     @else
                         <div class="col-xs-12 col-sm-6">
                             <div class="form-group fl_icon">
                                 <div class="icon"><i class="fa fa-user"></i></div>
-                                <input class="form-input" name="Name"  type="text" placeholder="Your name">
+                                <input class="form-input" name="Name" type="text" placeholder="Your name">
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-6 fl_icon">
@@ -484,29 +494,29 @@
                                 <input class="form-input" name="Email" type="text" placeholder="Your email">
                             </div>
                         </div>
-                        @endif
+                    @endif
                     <div class="col-12">
                         <div class="form-group">
                             <textarea class="form-input" name="Message" required="" placeholder="Your text"></textarea>
                         </div>
                     </div>
-                        <div class="col-12">
-                            <div class="vote">
-                                <input type="radio" id="star5" name="Vote" value="5" />
-                                <label for="star5" title="text">5 stars</label>
-                                <input type="radio" id="star4" name="Vote" value="4" />
-                                <label for="star4" title="text">4 stars</label>
-                                <input type="radio" id="star3" name="Vote" value="3" />
-                                <label for="star3" title="text">3 stars</label>
-                                <input type="radio" id="star2" name="Vote" value="2" />
-                                <label for="star2" title="text">2 stars</label>
-                                <input type="radio" id="star1" name="Vote" value="1" />
-                                <label for="star1" title="text">1 star</label>
-                            </div>
+                    <div class="col-12">
+                        <div class="vote">
+                            <input type="radio" id="star5" name="Vote" value="5"/>
+                            <label for="star5" title="text">5 stars</label>
+                            <input type="radio" id="star4" name="Vote" value="4"/>
+                            <label for="star4" title="text">4 stars</label>
+                            <input type="radio" id="star3" name="Vote" value="3"/>
+                            <label for="star3" title="text">3 stars</label>
+                            <input type="radio" id="star2" name="Vote" value="2"/>
+                            <label for="star2" title="text">2 stars</label>
+                            <input type="radio" id="star1" name="Vote" value="1"/>
+                            <label for="star1" title="text">1 star</label>
                         </div>
-                        <div class="col-6">
+                    </div>
+                    <div class="col-6">
                         <button class="btn btn-primary pull-right">submit</button>
-                        </div>
+                    </div>
                 </div>
             </form>
         </div>

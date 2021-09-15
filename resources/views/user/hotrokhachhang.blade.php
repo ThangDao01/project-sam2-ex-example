@@ -1,47 +1,7 @@
 @extends('layout.user-layout')
 @section('title')
 <title>E&K - Hỗ trợ khách hàng</title>
-<style>
-    .vote {
-        height: 46px;
-        float: left;
-        padding: 0 10px;
-        position: relative;
-        z-index: 1;
-    }
-    .vote:not(:checked) > input {
-        position:absolute;
-        display: none;
-    }
-    .vote:not(:checked) > label {
-        float:right;
-        width:1em;
-        overflow:hidden;
-        white-space:nowrap;
-        cursor:pointer;
-        font-size:30px;
-        color:#ccc;
-    }
-    .vote:not(:checked) > label:before {
-        content: '★ ';
-    }
-    .vote > input:checked ~ label {
-        color: #ffc700;
-    }
-    .vote:not(:checked) > label:hover,
-    .vote:not(:checked) > label:hover ~ label {
-        color: #deb217;
-    }
-    .vote > input:checked + label:hover,
-    .vote > input:checked + label:hover ~ label,
-    .vote > input:checked ~ label:hover,
-    .vote > input:checked ~ label:hover ~ label,
-    .vote > label:hover ~ input:checked ~ label {
-        color: #c59b08;
-    }
-
-    /* Modified from: https://github.com/mukulkant/Star-rating-using-pure-css */
-</style>
+    <style></style>
 @endsection
 @section('detail')
 
@@ -663,38 +623,54 @@
                                                     </div>
                                                 </div>
                                                 <div class="panel-body">
-                                                    <form class="form-horizontal bucket-form" action="/admin/feedback/create" method="post">
+                                                    <form action="/feedback/create" method="post" class="form-block" style="margin-top: 20px">
                                                         @csrf
-                                                        <div class="form-group">
-                                                            <label
-                                                                class="col-sm-3 control-label"></label>
-                                                            <textarea style="resize: none" rows="8" type="text"
-                                                                      class="form-control" name="Message"
-                                                                      id="ckeditor1"
-                                                                      placeholder="vui lòng nhập thông tin...."></textarea>
-                                                            @error('Message')
-                                                            <div class="text-danger"> * {{$message}}</div>
-                                                            @enderror
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <div class="vote">
-                                                                <input type="radio" id="star5" name="Vote" value="5" />
-                                                                <label for="star5" title="text">5 stars</label>
-                                                                <input type="radio" id="star4" name="Vote" value="4" />
-                                                                <label for="star4" title="text">4 stars</label>
-                                                                <input type="radio" id="star3" name="Vote" value="3" />
-                                                                <label for="star3" title="text">3 stars</label>
-                                                                <input type="radio" id="star2" name="Vote" value="2" />
-                                                                <label for="star2" title="text">2 stars</label>
-                                                                <input type="radio" id="star1" name="Vote" value="1" />
-                                                                <label for="star1" title="text">1 star</label>
+                                                        <div class="row">
+                                                            @if(\Illuminate\Support\Facades\Session::has('account'))
+                                                                <?php
+                                                                $account = \Illuminate\Support\Facades\Session::get('account');
+                                                                ?>
+                                                                <input class="form-input" type="hidden" name="Name" value="{{$account->LastName}}"
+                                                                       placeholder="Your name">
+                                                                <input class="form-input" type="hidden" name="Email" value="{{$account->Email}}"
+                                                                       placeholder="Your email">
+                                                            @else
+                                                                <input class="form-input" type="hidden" name="Location" value="feedback"
+                                                                       placeholder="Your email">
+                                                                <div class="col-xs-12 col-sm-6">
+                                                                    <div class="form-group fl_icon">
+                                                                        <div class="icon"><i class="fa fa-user"></i></div>
+                                                                        <input class="form-input" name="Name" type="text" placeholder="Your name" required>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-xs-12 col-sm-6 fl_icon">
+                                                                    <div class="form-group fl_icon">
+                                                                        <div class="icon"><i class="fa fa-envelope-o"></i></div>
+                                                                        <input class="form-input" name="Email" type="text" placeholder="Your email" required>
+                                                                    </div>
+                                                                </div>
+                                                            @endif
+                                                            <div class="col-12">
+                                                                <div class="form-group">
+                                                                    <textarea class="form-input" name="Message" required placeholder="Feed back "></textarea>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <div class="col-md-10 form-group" style="text-align: center">
-                                                                <button type="submit" class="btn btn-info">Send</button>
+                                                            <div class="col-12">
+                                                                <div class="vote">
+                                                                    <input type="radio" id="star5" name="Vote" value="5"/>
+                                                                    <label for="star5" title="text">5 stars</label>
+                                                                    <input type="radio" id="star4" name="Vote" value="4"/>
+                                                                    <label for="star4" title="text">4 stars</label>
+                                                                    <input type="radio" id="star3" name="Vote" value="3"/>
+                                                                    <label for="star3" title="text">3 stars</label>
+                                                                    <input type="radio" id="star2" name="Vote" value="2"/>
+                                                                    <label for="star2" title="text">2 stars</label>
+                                                                    <input type="radio" id="star1" name="Vote" value="1"/>
+                                                                    <label for="star1" title="text">1 star</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <button class="btn btn-primary pull-right">submit</button>
                                                             </div>
                                                         </div>
                                                     </form>

@@ -492,7 +492,7 @@
                 <div class="d-desktop">
                     <div class="title-wrapper text-center monkey-fz-32 monkey-f-header distance-center mb-4">
                         <div class="monkey-f-header monkey-fz-30 monkey-color-green">
-                            <span class="text-uppercase">"TRẺ SƠ SINH ĐẾN NGÀY THỨ 3 MỚI BẮT ĐẦU DẠY DỖ LÀ ĐÃ CHẬM MẤT 2 NGÀY"<br>- NHÀ SINH HỌC NGƯỜI NGA IVAN PETROVICH PAVLOV -</span>
+                            <span class="text-uppercase">"HÃY ĐỂ LẠI BÌNH LUẬN CỦA BẠN Ở ĐÂY"</span>
                         </div>
                     </div>
                 </div>
@@ -513,56 +513,97 @@
                     <div class="col-lg-11">
                         <div class="registration-wrapper background-style p-3 monkey-bg-red d-flex monkey-mt-20">
                             <div class="media">
-                                <div class="mr-3 d-desktop media-title monkey-color-white monkey-f-bold monkey-fz-19">
-                                    <p>
-                                        Kích hoạt tư duy ngôn ngữ và giúp con bắt đầu học Tiếng Anh với E&K ngay hôm nay!
-                                    </p>
-                                </div>
-                                <div class="media-body">
-                                    <form id="form-registration-2" class="form-registration background-style" onsubmit="registrationOrder2(event)">
-                                        <div class="monkey-bg-white form-body overflow-hidden">
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                    <div class="input-group-text monkey-bg-transparent">
-                                                        <i class="icon-monkey-name monkey-color-green monkey-fz-18"></i>
-                                                    </div>
+                                <div class="container body2">
+                                    <div class="be-comment-block">
+                                        <?php
+                                        $main = new \App\Http\Controllers\MainUserController();
+                                        $listComment = $main->homeComment();
+                                        ?>
+                                        <h1 class="comments-title">Comments ({{$listComment->count()}})</h1>
+                                        <div class="be-comment">
+                                            <div class="be-img-comment">
+                                                <a>
+                                                    <img src="https://res.cloudinary.com/thangdao04/image/upload/v1631744817/mgez61yb53k6cjlvzkxt.png" alt="" class="be-ava-comment">
+                                                </a>
+                                            </div>
+                                            @foreach($listComment as $data)
+                                                <div class="be-comment-content">
+				<span class="be-comment-name">
+					<a>{{$data->Name}}</a>
+					</span>
+                                                    <span class="be-comment-time">
+					<i class="fa fa-clock-o"></i>
+                        {{$data->created_at->toFormattedDateString()}}
+				</span>
+                                                    <p class="be-comment-text">
+                                                        {!! $data->Message !!}
+                                                    </p>
                                                 </div>
-                                                <input type="text" class="form-control" placeholder="Họ tên" id="form-registration-name-2">
-                                            </div>
-                                            <div class="monkey-color-red pl-3 pt-2 pb-2" id="val-name-2" style="display: none">
-                                                <i class="monkey-fz-12">*Vui lòng kiểm tra lại họ tên</i>
-                                            </div>
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                    <div class="input-group-text monkey-bg-transparent">
-                                                        <i class="icon-monkey-phone monkey-color-green monkey-fz-16"></i>
-                                                    </div>
-                                                </div>
-                                                <input type="text" class="form-control" placeholder="Số điện thoại" id="form-registration-phone-2">
-                                            </div>
-                                            <div class="monkey-color-red pl-3 pt-2 pb-2" id="val-phone-2" style="display: none">
-                                                <i class="monkey-fz-12">*Vui lòng kiểm tra lại SĐT</i>
-                                            </div>
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                    <div class="input-group-text monkey-bg-transparent">
-                                                        <i class="icon-monkey-email monkey-color-green monkey-fz-12"></i>
-                                                    </div>
-                                                </div>
-                                                <input type="text" class="form-control" placeholder="Email" id="form-registration-email-2">
-                                            </div>
-                                            <div class="monkey-color-red pl-3 pt-2 pb-2" id="val-email-2" style="display: none">
-                                                <i class="monkey-fz-12">*Vui lòng kiểm tra lại Email</i>
-                                            </div>
+                                            @endforeach
                                         </div>
-                                        <div class="text-center">
-                                            <button id="button-registration-2" type="submit" data-toggle="modal" class="mt-3 monkey-color-white btn-registration btn btn-warning rounded-pill monkey-fz-f17">
-                                                <i class="icon-monkey-loading monkey-fz-20 mr-2 align-middle" id="icon-loading-1" style="display: none"></i>
-                                                Đăng ký tư vấn miễn phí
-                                            </button>
-                                        </div>
-                                    </form>
+                                        @if ($errors->any())
+                                            <div class="alert alert-danger">
+                                                <ul>
+                                                    @foreach ($errors->all() as $error)
+                                                        <li>{{ $error }}</li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                        @endif
+                                        <form action="/feedback/create" method="post" class="form-block" style="margin-top: 20px">
+                                            @csrf
+                                            <div class="row">
+                                                @if(\Illuminate\Support\Facades\Session::has('account'))
+                                                    <?php
+                                                    $account = \Illuminate\Support\Facades\Session::get('account');
+                                                    ?>
+                                                    <input class="form-input" type="hidden" name="Name" value="{{$account->LastName}}"
+                                                           placeholder="Your name">
+                                                    <input class="form-input" type="hidden" name="Email" value="{{$account->Email}}"
+                                                           placeholder="Your email">
+                                                @else
+                                                    <input class="form-input" type="hidden" name="Location" value="home"
+                                                           placeholder="Your email">
+                                                    <div class="col-xs-12 col-sm-6">
+                                                        <div class="form-group fl_icon">
+                                                            <div class="icon"><i class="fa fa-user"></i></div>
+                                                            <input class="form-input" name="Name" type="text" placeholder="Your name" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-6 fl_icon">
+                                                        <div class="form-group fl_icon">
+                                                            <div class="icon"><i class="fa fa-envelope-o"></i></div>
+                                                            <input class="form-input" name="Email" type="text" placeholder="Your email" required>
+                                                        </div>
+                                                    </div>
+                                                @endif
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <textarea class="form-input" name="Message" required placeholder="Your text"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="vote">
+                                                        <input type="radio" id="star5" name="Vote" value="5"/>
+                                                        <label for="star5" title="text">5 stars</label>
+                                                        <input type="radio" id="star4" name="Vote" value="4"/>
+                                                        <label for="star4" title="text">4 stars</label>
+                                                        <input type="radio" id="star3" name="Vote" value="3"/>
+                                                        <label for="star3" title="text">3 stars</label>
+                                                        <input type="radio" id="star2" name="Vote" value="2"/>
+                                                        <label for="star2" title="text">2 stars</label>
+                                                        <input type="radio" id="star1" name="Vote" value="1"/>
+                                                        <label for="star1" title="text">1 star</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <button class="btn btn-primary pull-right">submit</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
+
                             </div>
                         </div>
                     </div>
