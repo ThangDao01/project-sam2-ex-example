@@ -138,6 +138,8 @@
             height: 100px;
             width: 100px;
         }
+        .finish{
+        }
         table{
 
         }
@@ -175,6 +177,62 @@
             cursor: pointer
         }
 
+        @keyframes jump {
+            0%   {transform: translate3d(0,0,0) scale3d(1,1,1);}
+            40%  {transform: translate3d(0,20%,0) scale3d(.7,1.3,1);}
+            100% {transform: translate3d(0,30%,0) scale3d(1.1,.5,1);}
+        }
+        .jump{
+            transform-origin: 50% 50%;
+            animation: jump .5s linear alternate infinite;
+        }
+
+        /* For demo: */
+        body {text-align: center;}
+        .container {
+            margin-top: 200px
+        }
+
+        .card {
+            margin: auto;
+            position: relative;
+            display: flex;
+            width: 450px;
+            flex-direction: column;
+            min-width: 0;
+            word-wrap: break-word;
+            background-color: #fff;
+            background-clip: border-box;
+            border: 1px solid #d2d2dc;
+            border-radius: 4px;
+            -webkit-box-shadow: 0px 0px 5px 0px rgb(249, 249, 250);
+            -moz-box-shadow: 0px 0px 5px 0px rgba(212, 182, 212, 1);
+            box-shadow: 0px 0px 5px 0px rgb(161, 163, 164)
+        }
+
+        .card .card-body {
+            padding: 1rem 1rem
+        }
+
+        .card-body {
+            flex: 1 1 auto;
+            padding: 1.25rem
+        }
+
+        p {
+            font-size: 14px
+        }
+
+        h4 {
+            margin-top: 18px
+        }
+
+        .cross {
+            padding: 10px;
+            color: #d6312d;
+            cursor: pointer
+        }
+
         .continue:focus {
             outline: none
         }
@@ -192,71 +250,74 @@
         .continue:hover {
             background-color: #D32F2F !important
         }
+
     </style>
     @include('layout.css')
+
 </head>
 <body>
-<div class="col-12" style="text-align: center;margin-top: 50px">
-    <table class="col-8" style="margin: auto">
-        <tr>
-            <td class="td-none"></td>
-            <td class="td-data-1 td-data"></td>
-            <td class="td-data-2 td-data"></td>
-            <td class="td-data-1 td-data"></td>
-            <td class="td-data-2 td-data"></td>
-            <td class="td-data-1 td-data"></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td class="td-data-2 td-data"></td>
-            <td class="td-data-1 td-data"></td>
-            <td class="td-data-2 td-data"></td>
-            <td class="td-data-1 td-data"></td>
-            <td class="td-data-2 td-data"></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td class="td-data-1 td-data"></td>
-            <td class="td-data-2 td-data"></td>
-            <td class="td-data-1 td-data"></td>
-            <td class="td-data-2 td-data"></td>
-            <td class="td-data-1 td-data"></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td class="td-data-2 td-data"></td>
-            <td class="td-data-1 td-data"></td>
-            <td class="td-data-2 td-data"></td>
-            <td class="td-data-1 td-data"></td>
-            <td class="td-data-2 td-data"></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td class="td-data-1 td-data"></td>
-            <td class="td-data-2 td-data"></td>
-            <td class="td-data-1 td-data"></td>
-            <td class="td-data-2 td-data"></td>
-            <td class="td-data-1 td-data"></td>
-            <td class="td-none ends"></td>
-        </tr>
-    </table>
-
-</div>
-<div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-        <div class="card">
-            <div class="text-right cross"><i class="fa fa-times"></i></div>
-            <div class="card-body text-center"><img
-                    src="https://img.icons8.com/bubbles/200/000000/trophy.png">
-                <h4>CONGRATULATIONS!</h4>
-                <p>Congratulations on successfully completing the lesson</p>
-                <a href="{{$next}}">
-                    <button class="btn btn-out btn-square continue">CONTINUE</button></a>
-            </div>
-        </div>
+<div class="card" id="cong" style="display: none">
+    <div class="text-right cross"><i class="fa fa-times"></i></div>
+    <div class="card-body text-center"><img src="https://img.icons8.com/bubbles/200/000000/trophy.png">
+        <h4>CONGRATULATIONS!</h4>
+        <p>Congratulations on successfully completing the lesson</p>
+        <a href="{{$next}}">
+            <button class="btn btn-out btn-square continue">CONTINUE</button></a>
     </div>
 </div>
+<div class="col-12" style="text-align: center;margin-top: 50px" id="matrixBox">
+    <table class="col-8" style="margin: auto">
+        <tr>
+            <td class="td-none">
+                <i style="font-size: 100px;" class="fa fa-arrow-right" aria-hidden="true"></i>
+            </td>
+            <td class="td-data-1 td-data"></td>
+            <td class="td-data-2 td-data"></td>
+            <td class="td-data-1 td-data"></td>
+            <td class="td-data-2 td-data"></td>
+            <td class="td-data-1 td-data"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="td-data-2 td-data"></td>
+            <td class="td-data-1 td-data"></td>
+            <td class="td-data-2 td-data"></td>
+            <td class="td-data-1 td-data"></td>
+            <td class="td-data-2 td-data"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="td-data-1 td-data"></td>
+            <td class="td-data-2 td-data"></td>
+            <td class="td-data-1 td-data"></td>
+            <td class="td-data-2 td-data"></td>
+            <td class="td-data-1 td-data"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="td-data-2 td-data"></td>
+            <td class="td-data-1 td-data"></td>
+            <td class="td-data-2 td-data"></td>
+            <td class="td-data-1 td-data"></td>
+            <td class="td-data-2 td-data"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="td-data-1 td-data"></td>
+            <td class="td-data-2 td-data"></td>
+            <td class="td-data-1 td-data"></td>
+            <td class="td-data-2 td-data"></td>
+            <td class="td-data-1 td-data"></td>
+            <td class="td-none ends finish" id="end" >
+                <img data-toggle='modal' data-target='#myModal'  src="https://res.cloudinary.com/thangdao04/image/upload/v1631696934/pbyxwa65t9thdhj6kvhf.png" style="width: 100px;margin: 0" alt="">
+            </td>
+        </tr>
+    </table>
+</div>
+
 <script>
+
+
     var tdData = $(".td-data");
     var randomMatrix = Math.floor(Math.random() * (3));
     var as2D = [[
@@ -298,7 +359,7 @@
                 tdData[i].innerHTML= `<img src="https://res.cloudinary.com/thangdao04/image/upload/v1630141975/ogggb4gnvaroqz10rtmy.png" class="no link buzz-out-on-hover" style="width: 50px" alt="">`;
             }
         }
-        $(".ok").hover(function() {
+        $(".ok").click(function() {
             // alert(this.indexOf($(".ok")));
             // alert(this.indexOf(ListCorrect));
 
@@ -306,22 +367,29 @@
                     correct++;
                 }
                 this.parentNode.style.backgroundColor= 'yellow';
-                this.classList.remove("ok");
+                // alert(this.parentNode.innerHTML);
+            // this.$("img:first").addClass("jump");
+            this.classList.add("jump");
+            $(this).classList.remove("ok");
             });
         $(".no")
-            .hover(function() {
+            .click(function() {
                 // $(this).addClass( "block" );
             });
-        $(".ends")
-            .hover(function(){
+        $(".ends").click(function(){
                 if(correct>=correctMax){
+                    cong.style.display = 'block';
+                    matrixBox.style.display = 'none';
+
                     Clap.play();
-                    // $("#myModal").parentNode.style.display='block';
                 }
             });
     });
     var Clap = new Audio('https://res.cloudinary.com/thangdao04/video/upload/v1631479726/mxwczvywj4nd7ewsyk8h.mp3');
     Clap.volume = 0.5;
+    var cong = document.getElementById('cong');
+    var matrixBox = document.getElementById('matrixBox');
+    // cong.setAttribute("style", "data-toggle='modal';data-target='#EndModal';");
     var ListCorrect =$(".ok");
     alert(ListCorrect[0].html);
 

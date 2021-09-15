@@ -40,13 +40,13 @@ class Controller extends BaseController
         }
     }
     public function userLogin(){
-        $admin_Role = Session::get('account');
-        if ($admin_Role == null){
+
+        if (Session::has('account')){
+           return true;
+        }else {
             Session::flash('message', 'Bạn cần đăng nhập để sử dụng chức năng này');
             Session::flash('type', 'danger');
             return Redirect::to('/login');
-        }else {
-            return true;
         }
     }
 

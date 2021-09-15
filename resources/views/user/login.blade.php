@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,26 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="icon" type="image/png" href="https://colorlib.com/etc/lf/Login_v2/images/icons/favicon.ico" />
+    <link rel="icon" type="image/png" href="https://colorlib.com/etc/lf/Login_v2/images/icons/favicon.ico"/>
 
-    <link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v2/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://colorlib.com/etc/lf/Login_v2/vendor/bootstrap/css/bootstrap.min.css">
 
-    <link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v2/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://colorlib.com/etc/lf/Login_v2/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 
-    <link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v2/fonts/iconic/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://colorlib.com/etc/lf/Login_v2/fonts/iconic/css/material-design-iconic-font.min.css">
 
     <link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v2/vendor/animate/animate.css">
 
-    <link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v2/vendor/css-hamburgers/hamburgers.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://colorlib.com/etc/lf/Login_v2/vendor/css-hamburgers/hamburgers.min.css">
 
-    <link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v2/vendor/animsition/css/animsition.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://colorlib.com/etc/lf/Login_v2/vendor/animsition/css/animsition.min.css">
 
     <link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v2/vendor/select2/select2.min.css">
 
-    <link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v2/vendor/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://colorlib.com/etc/lf/Login_v2/vendor/daterangepicker/daterangepicker.css">
 
     <link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v2/css/util.css">
     <link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v2/css/main.css">
+    @include('layout.css')
 
     <meta name="robots" content="noindex, follow">
 </head>
@@ -35,12 +41,16 @@
         <div class="wrap-login100">
             <form action="/login" method="post" class="login100-form validate-form">
                 @csrf
-<span class="login100-form-title p-b-26">
+                <span class="login100-form-title p-b-26">
 Welcome
 </span>
                 <span class="login100-form-title p-b-48">
-<i class="zmdi zmdi-font"></i>
+                    <img src="https://res.cloudinary.com/thangdao04/image/upload/v1630303243/g2y8chmwfp0vdklngvo6.png" style="width: 150px;" alt="">
+
 </span>
+                @if(Session::has('message'))
+                    <p  class="alert alert-{{Session::get('type') }}">{{Session::get('message') }}</p>
+                @endif
                 <div class="wrap-input100 validate-input" data-validate="Valid email is: a@b.c">
                     <input class="input100" type="text" name="Email">
                     <span class="focus-input100" data-placeholder="Email"></span>
@@ -64,7 +74,7 @@ Welcome
 <span class="txt1">
 Don’t have an account?
 </span>
-                    <a class="txt2" href="https://colorlib.com/etc/lf/Login_v2/#">
+                    <a class="txt2" href="/register">
                         Sign Up
                     </a>
                 </div>
@@ -93,11 +103,16 @@ Don’t have an account?
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
     gtag('js', new Date());
 
     gtag('config', 'UA-23581568-13');
 </script>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"rayId":"68a6e43e1f8e34a5","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2021.8.1","si":10}'></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon='{"rayId":"68a6e43e1f8e34a5","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2021.8.1","si":10}'></script>
 </body>
 </html>

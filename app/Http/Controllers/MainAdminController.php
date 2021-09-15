@@ -55,7 +55,12 @@ class MainAdminController extends Controller
         $visitor = Config::all()->first()->value('Visitors');
         return $visitor;
     }
+    public function TestMail(){
+        $send_mail = new EmailController();
+        $send_mail->ThankYouMail('hackersupper04@gmail.com', 'Đào Thắng');
+        return 1;
 
+    }
 
     public function listLesson()
     {
