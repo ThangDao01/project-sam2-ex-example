@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Login V2</title>
+    <title>Login Dev4Fun</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="icon" type="image/png" href="https://colorlib.com/etc/lf/Login_v2/images/icons/favicon.ico"/>
+    <link rel="icon" type="image/png" href="{{URL::asset('/images/logo-ek.png')}}"/>
 
     <link rel="stylesheet" type="text/css"
           href="https://colorlib.com/etc/lf/Login_v2/vendor/bootstrap/css/bootstrap.min.css">
@@ -41,9 +41,7 @@
         <div class="wrap-login100">
             <form action="/login" method="post" class="login100-form validate-form">
                 @csrf
-                <span class="login100-form-title p-b-26">
-Welcome
-</span>
+                <span class="login100-form-title p-b-26">Welcome</span>
                 <span class="login100-form-title p-b-48">
                     <img src="https://res.cloudinary.com/thangdao04/image/upload/v1630303243/g2y8chmwfp0vdklngvo6.png" style="width: 150px;" alt="">
 
@@ -56,9 +54,9 @@ Welcome
                     <span class="focus-input100" data-placeholder="Email"></span>
                 </div>
                 <div class="wrap-input100 validate-input" data-validate="Enter password">
-<span class="btn-show-pass">
-<i class="zmdi zmdi-eye"></i>
-</span>
+                    <span class="btn-show-pass"><i class="zmdi zmdi-eye">
+                        </i>
+                    </span>
                     <input class="input100" type="password" name="password">
                     <span class="focus-input100" data-placeholder="Password"></span>
                 </div>
@@ -70,10 +68,7 @@ Welcome
                         </button>
                     </div>
                 </div>
-                <div class="text-center p-t-115">
-<span class="txt1">
-Don’t have an account?
-</span>
+                <div class="text-center p-t-115"><span class="txt1">Don’t have an account?</span>
                     <a class="txt2" href="/register">
                         Sign Up
                     </a>

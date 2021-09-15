@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Session;
 
 class MainUserController extends Controller
 {
+
+
     //
     public function getComment()
     {
