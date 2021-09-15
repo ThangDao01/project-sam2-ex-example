@@ -16,10 +16,13 @@ class AdminUserController extends Controller
     public function index()
     {
         parent::index();
-        $list = Account::with('roles')->orderBy('id','DESC')->paginate(5);
-        return view('admin.Account.list')->with(compact('list'));
+        if ($this->authlogin()){
+            $list = Account::with('roles')->orderBy('id','ASC')->paginate(5);
+            return view('admin.Account.list')->with(compact('list'));
+        }else {
+            return $this->pathLogin();
+        }
     }
-
     public function impersonate($id){
         $user = Account::where('id',$id)->first();
         if($user){
@@ -57,7 +60,6 @@ class AdminUserController extends Controller
         }
         $user = Account::where('Email',$data['Email'])->first();
         $user->roles()->detach();
-
         if($request['author_role']){
             $user->roles()->attach(Roles::where('name','author')->first());
         }
@@ -69,7 +71,6 @@ class AdminUserController extends Controller
         }
         return redirect()->back()->with('message','Cấp quyền thành công');
     }
-
     public function store_users(Request $request){
         $data = $request->all();
         $admin = new Account();
