@@ -151,12 +151,12 @@
                 id: {{$data->id}},
                 voice:"{{$data->voice}}",
             },
-            {
-                name: '{{$data->values}}',
-                img: '<div style="font-size: 50px;text-transform: capitalize;color: {{$data->color}}">{{$data->values}}</div>',
-                id: {{$data->id}},
-                voice:"{{$data->voice}}",
-            },
+            {{--{--}}
+            {{--    name: '{{$data->values}}',--}}
+            {{--    img: '<div style="font-size: 50px;text-transform: capitalize;color: {{$data->color}}">{{$data->values}}</div>',--}}
+            {{--    id: {{$data->id}},--}}
+            {{--    voice:"{{$data->voice}}",--}}
+            {{--},--}}
                 @endforeach
             // {
             //     name: "php",

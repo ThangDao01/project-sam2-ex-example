@@ -31,6 +31,7 @@
 
     <link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v2/css/util.css">
     <link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v2/css/main.css">
+    @include('layout.css')
 
     <meta name="robots" content="noindex, follow">
 </head>
@@ -41,7 +42,13 @@
             <form action="/login" method="post" class="login100-form validate-form">
                 @csrf
                 <span class="login100-form-title p-b-26">Welcome</span>
-                <span class="login100-form-title p-b-48"><i class="zmdi zmdi-font"></i></span>
+                <span class="login100-form-title p-b-48">
+                    <img src="https://res.cloudinary.com/thangdao04/image/upload/v1630303243/g2y8chmwfp0vdklngvo6.png" style="width: 150px;" alt="">
+
+</span>
+                @if(Session::has('message'))
+                    <p  class="alert alert-{{Session::get('type') }}">{{Session::get('message') }}</p>
+                @endif
                 <div class="wrap-input100 validate-input" data-validate="Valid email is: a@b.c">
                     <input class="input100" type="text" name="Email">
                     <span class="focus-input100" data-placeholder="Email"></span>

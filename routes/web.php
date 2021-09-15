@@ -29,16 +29,17 @@ use Illuminate\Support\Facades\Route;
 //Route::get('/voice-xyz/{id}',[DataController::class,'voice']);
 
 
-Route::get('/bang-gia', function () {
+Route::get('/bang-gia', function(){
     return view('user.banggia');
 });
 
 
-Route::get('/', function () {
+Route::get('/', function (){
     return view('user.home');
 });
+
 Route::get('/login', [UserController::class, 'userLoginForm']);
-Route::post('/login', [UserController::class, 'UserLogin']);
+Route::post('/login', [UserController::class, 'processLogin']);
 Route::get('/register', [UserController::class, 'userRegisterForm']);
 Route::post('/register', [UserController::class, 'UserRegister']);
 
@@ -90,7 +91,7 @@ Route::get('/test',function (){
     return view('tool.test');
 });
 Route::post('/test',[courseController::class,'testCheckbox']);
-Route::get('/test2',[MainAdminController::class,'testLinhTinh']);
+Route::get('/test2',[trackingController::class,]);
 
 
 
@@ -159,7 +160,8 @@ Route::get('/admin/data-support/delete/id={id}', [DataController::class, 'destro
 //tracking
 Route::get('/admin/tracking/create', [trackingController::class, 'createView']);
 Route::post('/admin/tracking/create', [trackingController::class, 'create']);
-Route::get('/admin/tracking/list', [trackingController::class, 'index']);
+Route::get('/admin/tracking', [trackingController::class, 'index']);
+Route::post('/admin/tracking/comment', [trackingController::class, 'index']);
 Route::get('/admin/tracking/edit/id={id}', [trackingController::class, 'edit']);
 Route::put('/admin/tracking/{id}', [trackingController::class, 'update']);
 Route::get('/admin/tracking/delete/id={id}', [trackingController::class, 'destroy']);
@@ -226,7 +228,6 @@ Route::get('/admin/material/delete/id={id}', [MaterialController::class, 'destro
 //Route::get('/login-auth', [\App\Http\Controllers\AuthController::class, 'login_auth']);
 
 //Route::post('/register', [\App\Http\Controllers\AuthController::class, 'Register']);
-//Route::post('/login', [\App\Http\Controllers\AuthController::class, 'login']);
 
 
 //

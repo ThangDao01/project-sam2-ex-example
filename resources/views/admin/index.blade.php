@@ -16,8 +16,22 @@
                         </div>
                         <div class="col-md-8 market-update-left">
                             <h4>Visitors</h4>
-                            <h3>13,500</h3>
-                            <p>Other hand, we denounce</p>
+                            <h3>{{$admin->countVisitors()}}</h3>
+                            <p>Total visits to the website</p>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div class="col-md-3 market-update-gd">
+                    <div class="market-update-block clr-block-3">
+                        <div class="col-md-4 market-update-right">
+                            <i class="fa fa-check-circle-o" style="font-size: 3em;color: #fff;text-align: left;"></i>
+
+                        </div>
+                        <div class="col-md-8 market-update-left">
+                            <h4>Reviews</h4>
+                            <h3>{{ $admin->getVote()}} <i class="fa fa-star inbox-started"></i></h3>
+                            <p>{{ $admin->countVote()}} (voted form Web and Course)</p>
                         </div>
                         <div class="clearfix"></div>
                     </div>
@@ -30,19 +44,6 @@
                         <div class="col-md-8 market-update-left">
                             <h4>Users</h4>
                             <h3>{{$admin->countUser()}}</h3>
-                            <p>Other hand, we denounce</p>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
-                <div class="col-md-3 market-update-gd">
-                    <div class="market-update-block clr-block-3">
-                        <div class="col-md-4 market-update-right">
-                            <i class="fa fa-usd"></i>
-                        </div>
-                        <div class="col-md-8 market-update-left">
-                            <h4>Sales</h4>
-                            <h3>1,500</h3>
                             <p>Other hand, we denounce</p>
                         </div>
                         <div class="clearfix"></div>

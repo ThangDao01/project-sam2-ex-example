@@ -135,9 +135,8 @@
                         @foreach($admin->listMaterial() as $material)
                             <li class="checkbox-material-li">
                                 <input class="MaterialChecks" value="{{$material->id}}" type="checkbox" id="myCheckbox{{$material->id}}"/>
-
-                                <label onclick="getValue()" for="myCheckbox{{$material->id}}"><img
-                                        src="{{$material->thumbnail}}"/> {{$material->name}}</label>
+                                <label onclick="getValue()" class="checkbox-label" for="myCheckbox{{$material->id}}"><img src="{{$material->thumbnail}}"/></label>
+                                <p>{{$material->id}}:{{$material->name}}</p>
                             </li>
                         @endforeach
                     </ul>
@@ -155,11 +154,12 @@
 
         }
 
+
         function getValue() {
             var checks = document.getElementsByClassName('MaterialChecks');
             var listMaterial = document.getElementById('material');
-            listMaterial.value = checks[0].value;
-            for (let i = 1; i < checks.length; i++) {
+            listMaterial.value = '';
+            for (let i = 0; i < checks.length; i++) {
                 if (checks[i].checked === true) {
                     listMaterial.value += ',' + checks[i].value;
                 }

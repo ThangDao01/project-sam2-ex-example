@@ -18,7 +18,7 @@ class AccountController extends Controller
     public function index()
     {
         parent::index();
-        if ($this->authlogin()) {
+        if ($this->authlogin()){
             return View('admin.index');
         }else {
             return $this->pathLogin();
@@ -34,15 +34,15 @@ class AccountController extends Controller
     public function logout_auth()
     {
         Auth::logout();
+        $account = Account::find(Session::get('account')->id);
+        $account->Status = 1;
+        $account->save();
         Session::forget('account');
         return redirect('/admin/login');
     }
 
     public function AdminLogin(Request $request)
     {
-        if (Session::has("account")){
-            Session::pull("account");
-        }
         $email = $request->get('Email');
         $password = $request->get('password');
         $salt = DB::table('accounts')->where('Email', $email)->value('Salt');
@@ -50,6 +50,13 @@ class AccountController extends Controller
         $PasswordHash = DB::table('accounts')->where('Email', $email)->value('PasswordHash');
         if (Hash::check($password.$salt, $PasswordHash)) {
             // The passwords match...
+            if (Session::has("account")){
+                Session::pull("account");
+            }
+            $this->Visitors();
+            $account = Account::find($dataAccount->id);
+            $account->Status = 2;
+            $account->save();
             Session::put("account",$dataAccount);
             return redirect('/admin');
         } else {

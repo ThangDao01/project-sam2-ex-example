@@ -15,6 +15,8 @@ class ConfigController extends Controller
     public function index()
     {
         //
+        parent::index();
+
         $obj = Config::find(1);
         return view('admin.Config.viewConfig',[
             'config'=>$obj,
@@ -42,14 +44,12 @@ class ConfigController extends Controller
         return view('user.about-us',[
             'config'=>$obj,
         ]);
-
     }
     public function Policy(){
         $obj = Config::find(1);
         return view('user.policy',[
             'config'=>$obj,
         ]);
-
     }
 
     /**

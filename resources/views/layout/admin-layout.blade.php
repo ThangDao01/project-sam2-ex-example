@@ -250,7 +250,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <header class="header fixed-top clearfix">
         <!--logo start-->
         <div class="brand">
-            <a href="index.html" class="logo">
+            <a href="/admin" class="logo">
                 ADMIN
             </a>
             <div class="sidebar-toggle-box">
@@ -336,14 +336,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </a>
                     </li>
                     <li>
-                        <a >
+                        <a href="/admin/tracking">
                             <i class="fa fa-glass"></i>
                             <span>Tracking</span>
                         </a>
-                        <ul class="sub">
-                            <li><a href="/admin/tracking/list">List</a></li>
-                            <li><a href="/admin/tracking/create">Create</a></li>
-                        </ul>
                     </li>
                     <li class="sub-menu">
                         <a href="">

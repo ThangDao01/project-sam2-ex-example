@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\AccountRequest;
 use App\Models\Account;
+use App\Models\Article;
 use App\Models\Config;
+use App\Models\Course;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -15,7 +17,13 @@ class UserController extends Controller
 {
     static function getkeywordPage()
     {
-        return Config::all()->pluck('keywordPage');
+
+        return trim(Config::all()->first()->pluck('keywordPage'),
+            '["]');
+    }
+    static function getArticle(){
+        $articles = Article::all();
+        return $articles;
     }
 
     public function userLoginForm()
@@ -23,19 +31,21 @@ class UserController extends Controller
         return view('user.login');
     }
 
-    public function UserLogin(Request $request)
+
+    public function processLogin(Request $request)
     {
-        if (Session::has("account")) {
-            Session::pull("account");
-        }
         $email = $request->get('Email');
         $password = $request->get('password');
         $salt = DB::table('accounts')->where('Email', $email)->value('Salt');
-        $dataAccount = DB::table('accounts')->where('Email', $email)->first();
         $PasswordHash = DB::table('accounts')->where('Email', $email)->value('PasswordHash');
         if (Hash::check($password.$salt, $PasswordHash)) {
             // The passwords match...
+            if (Session::has("account")){
+                Session::pull("account");
+            }
+            $dataAccount = DB::table('accounts')->where('Email', $email)->first();
             Session::put("account",$dataAccount);
+            $this->Visitors();
             return redirect('/');
         } else {
             Session::flash('message', 'Tài khoản hoặc mật khẩu không hợp lệ');
@@ -67,9 +77,6 @@ class UserController extends Controller
             return redirect('/register');
         }
         $salt= $this->incrementalHash();
-//        $email = new EmailController();
-//        $email->CheckingMail($salt,$email,$request->get('LastName'));
-
         $request->validated();
         $account = new Account();
         $account->Email = $email;
@@ -85,6 +92,8 @@ class UserController extends Controller
         $account->created_at = Carbon::now('Asia/Ho_Chi_Minh');
         $account->updated_at = Carbon::now('Asia/Ho_Chi_Minh');
 //        return $account;
+        $send_mail = new EmailController();
+        $send_mail->ThankYouMail($email, $account->LastName);
         $account->save();
         Session::flash('message', 'Account successfully created Please Login to continue');
         Session::flash('type-message', 'success');

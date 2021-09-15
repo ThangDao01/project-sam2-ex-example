@@ -16,7 +16,7 @@ class ArticleSeeder extends Seeder
         //
         \Illuminate\Support\Facades\DB::table('articles')->insert([
             [
-                'url' => 'phat-am-chuan-anh-my-ngay-tu-dau-cung-monkey-junior',
+                'url' => 'phat-am-chuan-anh-my-ngay-tu-dau-cung-E&K',
                 'thumbnail' => 'https://res.cloudinary.com/thangdao04/image/upload/v1631035690/zg0i6yimrkqg3pc9qdrl.png',
                 'categories' => 'loi-ich',
                 'title' => 'Phát âm chuẩn Anh Mỹ ngay từ đầu cùng E&K',
@@ -70,7 +70,7 @@ class ArticleSeeder extends Seeder
                 'updated_at' => '2021-09-06 16:26:04'
             ],
             [
-                'url' => 'hoc-luong-tu-vung-khong-lo-ngay-tai-nha-cung-monkey-junior',
+                'url' => 'hoc-luong-tu-vung-khong-lo-ngay-tai-nha-cung-E&K',
                 'thumbnail' => 'https://res.cloudinary.com/thangdao04/image/upload/v1631035947/uzazpnd4hat7xu8csnkq.png',
                 'categories' => 'loi-ich',
                 'title' => 'Học lượng từ vựng khổng lồ ngay tại nhà cùng E&K',
@@ -124,7 +124,7 @@ class ArticleSeeder extends Seeder
                 'updated_at' => '2021-09-06 16:49:53'
             ],
             [
-                'url' => 'lo-trinh-hoc-bai-ban-cua-monkey-junior-giup-toi-uu-thoi-gian-hoc-va-giup-be-hoc-hieu-qua-hon',
+                'url' => 'lo-trinh-hoc-bai-ban-cua-E&K-giup-toi-uu-thoi-gian-hoc-va-giup-be-hoc-hieu-qua-hon',
                 'thumbnail' => 'https://res.cloudinary.com/thangdao04/image/upload/v1631036029/zvrsivagpfpgco8il3v3.png',
                 'categories' => 'loi-ich',
                 'title' => 'Lộ trình học bài bản của E&K giúp tối ưu thời gian học và giúp bé học hiệu quả hơn',
@@ -185,7 +185,7 @@ class ArticleSeeder extends Seeder
                 'updated_at' => '2021-09-01 06:36:11'
             ],
             [
-                'url' => 'chuong-trinh-hoc-cua-monkey-junior-ho-tro-phat-trien-2-ban-cau-nao-cua-tre-trong-giai-doan-vang',
+                'url' => 'chuong-trinh-hoc-cua-E&K-ho-tro-phat-trien-2-ban-cau-nao-cua-tre-trong-giai-doan-vang',
                 'thumbnail' => 'https://res.cloudinary.com/thangdao04/image/upload/v1631036110/icbxifneapjhtdjjuhim.png',
                 'categories' => 'loi-ich',
                 'title' => 'Chương trình học của E&K hỗ trợ phát triển 2 bán cầu não của trẻ trong giai đoạn vàng',
@@ -237,7 +237,7 @@ class ArticleSeeder extends Seeder
                 'created_at' => '2021-09-01 06:36:11',
                 'updated_at' => '2021-09-01 06:36:11'
                 ],[
-                'url' => 'hung-thu-hoc-dieu-kien-tien-quyet-de-con-bat-dau-hoc-tieng-anh-hieu-qua-khi-hoc-monkey-junior',
+                'url' => 'hung-thu-hoc-dieu-kien-tien-quyet-de-con-bat-dau-hoc-tieng-anh-hieu-qua-khi-hoc-E&K',
                 'thumbnail' => 'https://res.cloudinary.com/thangdao04/image/upload/v1631034215/epu8kzzdan9t0zhoucsq.png',
                 'categories' => 'huong-dan',
                 'title' => 'Hứng thú học - điều kiện tiên quyết để con bắt đầu học tiếng Anh hiệu quả khi học',
@@ -333,7 +333,7 @@ class ArticleSeeder extends Seeder
 
                                     <p style="text-align:justify">Để hiểu được lời khuy&ecirc;n n&agrave;y, ba mẹ cần bắt đầu từ việc hiểu về c&aacute;ch x&acirc;y dựng chương tr&igrave;nh học của E&K.</p>
 
-                                    <p style="text-align:justify">Chương tr&igrave;nh học của E&K được x&acirc;y dựng bởi c&aacute;c chuy&ecirc;n gia ng&ocirc;n ngữ h&agrave;ng đầu của Mỹ v&agrave; Việt Nam, đảm bảo t&iacute;nh kế thừa v&agrave; t&iacute;nh ph&aacute;t triển. C&aacute;c b&agrave;i học c&oacute; t&iacute;nh lặp lại, b&agrave;i học sau kế thừa b&agrave;i học trước, với những t&iacute;nh to&aacute;n kỹ c&agrave;ng, để tần suất lặp lại vừa đủ v&agrave; trải đều ở c&aacute;c b&agrave;i học. T&iacute;nh ph&aacute;t triển được thể hiện ở sự biến h&oacute;a đa dạng trong h&igrave;nh thức thể hiện (m&agrave;u sắc, h&igrave;nh ảnh, giọng đọc&hellip;) với c&ugrave;ng một kiến thức. Điều n&agrave;y gi&uacute;p kiến thức vừa được lặp đi lặp lại m&agrave; vẫn tạo ra được sự hứng th&uacute; v&agrave; mới lạ cho trẻ. V&igrave; vậy, ba mẹ <em><strong><a href="https://www.monkey.edu.vn/ba-me-can-biet/co-nen-cho-con-hoc-lai-bai-hoc-trong-monkey-junior.html">ho&agrave;n to&agrave;n kh&ocirc;ng cần cho trẻ học lại b&agrave;i đ&atilde; học</a></strong></em> m&agrave; vẫn y&ecirc;n t&acirc;m rằng trẻ c&oacute; thể nhớ được kiến thức.</p>
+                                    <p style="text-align:justify">Chương tr&igrave;nh học của E&K được x&acirc;y dựng bởi c&aacute;c chuy&ecirc;n gia ng&ocirc;n ngữ h&agrave;ng đầu của Mỹ v&agrave; Việt Nam, đảm bảo t&iacute;nh kế thừa v&agrave; t&iacute;nh ph&aacute;t triển. C&aacute;c b&agrave;i học c&oacute; t&iacute;nh lặp lại, b&agrave;i học sau kế thừa b&agrave;i học trước, với những t&iacute;nh to&aacute;n kỹ c&agrave;ng, để tần suất lặp lại vừa đủ v&agrave; trải đều ở c&aacute;c b&agrave;i học. T&iacute;nh ph&aacute;t triển được thể hiện ở sự biến h&oacute;a đa dạng trong h&igrave;nh thức thể hiện (m&agrave;u sắc, h&igrave;nh ảnh, giọng đọc&hellip;) với c&ugrave;ng một kiến thức. Điều n&agrave;y gi&uacute;p kiến thức vừa được lặp đi lặp lại m&agrave; vẫn tạo ra được sự hứng th&uacute; v&agrave; mới lạ cho trẻ. V&igrave; vậy, ba mẹ <em><strong><a href="https://www.monkey.edu.vn/ba-me-can-biet/co-nen-cho-con-hoc-lai-bai-hoc-trong-E&K.html">ho&agrave;n to&agrave;n kh&ocirc;ng cần cho trẻ học lại b&agrave;i đ&atilde; học</a></strong></em> m&agrave; vẫn y&ecirc;n t&acirc;m rằng trẻ c&oacute; thể nhớ được kiến thức.</p>
 
                                     <p style="text-align:justify">&nbsp;</p>
 
@@ -365,7 +365,7 @@ class ArticleSeeder extends Seeder
                 'updated_at' => '2021-09-06 17:00:03'
             ],
             [
-                'url' => 'vai-tro-cua-ba-me-trong-viec-giup-con-bat-dau-hoc-tieng-anh-hieu-qua-cung-monkey-junior',
+                'url' => 'vai-tro-cua-ba-me-trong-viec-giup-con-bat-dau-hoc-tieng-anh-hieu-qua-cung-E&K',
                 'thumbnail' => 'https://res.cloudinary.com/thangdao04/image/upload/v1631034215/epu8kzzdan9t0zhoucsq.png',
                 'categories' => 'huong-dan',
                 'title' => 'Vai trò của ba mẹ trong việc giúp con bắt đầu học tiếng Anh hiệu quả cùng',
@@ -455,7 +455,7 @@ class ArticleSeeder extends Seeder
                 'updated_at' => '2021-09-06 17:00:03'
             ],
             [
-                'url' => 'huong-dan-ba-me-2-cach-khai-thac-bai-hoc-monkey-junior',
+                'url' => 'huong-dan-ba-me-2-cach-khai-thac-bai-hoc-E&K',
                 'thumbnail' => 'https://res.cloudinary.com/thangdao04/image/upload/v1631034215/epu8kzzdan9t0zhoucsq.png',
                 'categories' => 'huong-dan',
                 'title' => 'Hướng dẫn ba mẹ 2 cách khai thác bài học',
@@ -524,7 +524,7 @@ class ArticleSeeder extends Seeder
                 'updated_at' => '2021-09-06 17:00:03'
             ],
             [
-                'url' => 'monkey-junior-ap-dung-phuong-phap-trao-the-nhanh-glenn-doman-nhu-the-nao',
+                'url' => 'E&K-ap-dung-phuong-phap-trao-the-nhanh-glenn-doman-nhu-the-nao',
                 'thumbnail' => 'https://res.cloudinary.com/thangdao04/image/upload/v1631035123/ezck4dmabsilbjc0oyzc.png',
                 'categories' => 'phuong-phap',
                 'title' => 'E&K áp dụng phương pháp tráo thẻ nhanh Glenn Doman như thế nào?',
@@ -683,7 +683,7 @@ class ArticleSeeder extends Seeder
                 'updated_at' => '2021-09-05 15:35:47'
             ],
             [
-                'url' => 'phuong-phap-da-giac-quan-trong-monkey-junior-huy-dong-tat-ca-giac-quan-cua-tre-vao-bai-hoc',
+                'url' => 'phuong-phap-da-giac-quan-trong-E&K-huy-dong-tat-ca-giac-quan-cua-tre-vao-bai-hoc',
                 'thumbnail' => 'https://res.cloudinary.com/thangdao04/image/upload/v1630948636/cq2jotnhsxqsjvtr0mjg.png',
                 'categories' => 'phuong-phap',
                 'title' => 'Phương pháp “Đa giác quan” trong E&K - huy động tất cả giác quan của trẻ vào bài học',

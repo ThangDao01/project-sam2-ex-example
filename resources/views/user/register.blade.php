@@ -26,7 +26,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 
 </head>
-<body style="background-image:url({{asset('/images/kids.jpg')}})">
+<body  style="background-image:url({{asset('/images/kids.jpg')}}); background-repeat: no-repeat;
+    background-size: cover;">
 <div >
     <link rel="icon" href="{{URL::asset('/images/logo-ek-title.png') }}" type="image/gif">
 
