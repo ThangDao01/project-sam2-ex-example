@@ -8,7 +8,7 @@
     @yield('title')
     <meta name="description"
           content="E&K là chương trình dành cho trẻ 0 - 10 tuổi giúp trẻ bắt đầu học tiếng Anh dễ dàng, thú vị và hiệu quả hơn.">
-    <meta name="keyword" content="{{ \App\Http\Controllers\UserController::getkeywordPage()}}">
+    <meta name="keyword" content="{{\App\Http\Controllers\UserController::getkeywordPage()}}">
     <script src="https://connect.facebook.net/signals/config/251806315213206?v=2.9.44&amp;r=stable" async=""></script>
     <script src="https://connect.facebook.net/signals/config/348913062202988?v=2.9.44&amp;r=stable" async=""></script>
     <script src="https://connect.facebook.net/signals/plugins/identity.js?v=2.9.44" async=""></script>
@@ -285,6 +285,15 @@
                     </li>
                     @if(\Illuminate\Support\Facades\Session::has('account'))
                         <li class="nav-item distance-center d-desktop">
+                            <button
+                                class="btn monkey-color-green monkey-bc-green rounded-pill monkey-f-bold distance-center hvr-icon-registration-white"
+                                id="myBtn"><i
+                                    class="icon-lang rounded-circle icon-monkey-registration monkey-fz-18 mr-1 distance-center"></i>Thông
+                                tin tài khoản
+                            </button>
+                        </li>
+                    @else
+                        <li class="nav-item distance-center d-desktop">
                             <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homems_menu_registration',
                             'eventAction': 'Click', 'eventLabel': 'menu MS dang ky'})"
                                class="btn monkey-color-green monkey-bc-green rounded-pill monkey-f-bold distance-center hvr-icon-registration-white"
@@ -292,15 +301,6 @@
                                 <i class="icon-lang rounded-circle icon-monkey-registration monkey-fz-18 mr-1 distance-center"></i>Đăng
                                 nhập
                             </a>
-                        </li>
-                    @else
-                        <li class="nav-item distance-center d-desktop">
-                            <button
-                                class="btn monkey-color-green monkey-bc-green rounded-pill monkey-f-bold distance-center hvr-icon-registration-white"
-                                id="myBtn"><i
-                                    class="icon-lang rounded-circle icon-monkey-registration monkey-fz-18 mr-1 distance-center"></i>Thông
-                                tin tài khoản
-                            </button>
                         </li>
                     @endif
                 </ul>

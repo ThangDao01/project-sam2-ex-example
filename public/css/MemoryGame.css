@@ -44,9 +44,10 @@ body {
   }
 }
 .card {
+    border-radius: 30px;
   float: left;
   width: 33.3333%;
-  height: 25%;
+  height: 45%;
   padding: 5px;
   text-align: center;
   display: block;

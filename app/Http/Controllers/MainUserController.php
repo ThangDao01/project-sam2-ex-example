@@ -12,12 +12,14 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 
 class MainUserController extends Controller
 {
     //
-    public function getComment(){
-        return view('user.lessonView',['listComment' => FeedBack::all()]);
+    public function getComment()
+    {
+        return view('user.lessonView', ['listComment' => FeedBack::all()]);
 //        return view('user.lessonView');
     }
 //    public function (){
@@ -25,45 +27,53 @@ class MainUserController extends Controller
 ////        return view('user.lessonView');
 //    }
 
-    public function getSeed(){
+    public function getSeed()
+    {
         $list = Account::all();
         $date = Carbon::now('Asia/Ho_Chi_Minh');
-        $date2=Carbon::now('Asia/Ho_Chi_Minh');
-        return view('tool.seeder',[
+        $date2 = Carbon::now('Asia/Ho_Chi_Minh');
+        return view('tool.seeder', [
             'list' => $list,
-            'date' =>$date
+            'date' => $date
         ]);
     }
-    public function getCourse(){
+
+    public function getCourse()
+    {
         $obj = Course::all();
-        return view('user.banggia',[
+        return view('user.banggia', [
             'listCourse' => $obj
         ]);
     }
+
     public function getLessonByCourse($id)
     {
-        if ($this->userLogin()){
-            $listLessonId = explode(",", trim(Course::all()->where('id',$id)->pluck('listLessonId'),
+        if (Session::has('account')) {
+            $listLessonId = explode(",", trim(Course::all()->where('id', $id)->pluck('listLessonId'),
                 '["]'));
             $lesson = array();
-            for ($i=0;$i<count($listLessonId);$i++){
-                if ($listLessonId[$i]){
+            for ($i = 0; $i < count($listLessonId); $i++) {
+                if ($listLessonId[$i]) {
                     $lesson[$i] = Lesson::find($listLessonId[$i]);
                 }
             }
             return view('material.lesson-view', ['listLesson' => $lesson]);
         }
+        Session::flash('message', 'Bạn cần đăng nhập để sử dụng chức năng này');
+        Session::flash('type', 'danger');
         return Redirect::to('/login');
     }
 
-    public function articleDetail($url){
+    public function articleDetail($url)
+    {
         $description = DB::table('articles')->where('url', $url)->first();
-        return view('user.article',[
-            'description' =>$description
+        return view('user.article', [
+            'description' => $description
         ]);
     }
 
-    public function memoryGame($id,$nextLink){
+    public function memoryGame($id, $nextLink)
+    {
         $main = DataSupport::find($id);
         $idKey = DataSupport::where('key', $main->key)->get();
         $min = DataSupport::where('key', $main->key)->first()->id;
@@ -82,15 +92,15 @@ class MainUserController extends Controller
         $data1 = DataSupport::find($data1ID);
         $data2 = DataSupport::find($data2ID);
 
-        $listDataM = array($main,$data1,$data2);
+        $listDataM = array($main, $data1, $data2);
 //        return $listData;
         return view('material-template.memory-game', [
             'list' => $listDataM,
-            'next'=>$nextLink
+            'next' => $nextLink
         ]);
     }
 
-    public function whatIsThis($id,$nextLink)
+    public function whatIsThis($id, $nextLink)
     {
         $main = DataSupport::find($id);
         $idKey = DataSupport::where('key', $main->key)->get();
@@ -129,9 +139,10 @@ class MainUserController extends Controller
         return view('material-template.what-is-this', [
             'list' => $listDataM,
             'main' => $main,
-            'next'=>$nextLink
+            'next' => $nextLink
         ]);
     }
+
     public function listening($id)
     {
         $main = DataSupport::find($id);
@@ -140,16 +151,17 @@ class MainUserController extends Controller
             'main' => $main
         ]);
     }
-    public function video($id,$nextLink)
+
+    public function video($id, $nextLink)
     {
         $main = DataSupport::find($id);
         return view('material-template.video', [
             'main' => $main,
-            'next'=>$nextLink
+            'next' => $nextLink
         ]);
     }
 
-    public function whereIsThe($id,$nextLink)
+    public function whereIsThe($id, $nextLink)
     {
         $main = DataSupport::find($id);
         $idKey = DataSupport::where('key', $main->key)->get();
@@ -188,10 +200,11 @@ class MainUserController extends Controller
         return view('material-template.where-is-the', [
             'list' => $listDataM,
             'main' => $main,
-            'next'=>$nextLink
+            'next' => $nextLink
         ]);
     }
-    public function matrix($id,$nextLink)
+
+    public function matrix($id, $nextLink)
     {
         $main = DataSupport::find($id);
         $idKey = DataSupport::where('key', $main->key)->get();
@@ -230,35 +243,42 @@ class MainUserController extends Controller
         return view('material-template.matrix', [
             'list' => $listDataM,
             'main' => $main,
-            'next'=>$nextLink
+            'next' => $nextLink
         ]);
     }
 
 
-    public function getMaterialView($id,$lc){
-        $lesson = Lesson::all()->where('id',$id)->pluck('listMaterialId');
-        $dataId = Lesson::where('id',$id)->first()->dataSupportId;
-        $listMaterialId = explode(",", trim($lesson, '["]'));
-        $nextLink = sprintf('/ls=%d/mt=%d', $id, $lc+1);
-        switch ($listMaterialId[$lc-1]){
-            case 1:
-                return $this->whereIsThe($dataId,$nextLink);
-                break;
+    public function getMaterialView($id, $lc)
+    {
+        if (Session::has('account')) {
+
+            $lesson = Lesson::all()->where('id', $id)->pluck('listMaterialId');
+            $dataId = Lesson::where('id', $id)->first()->dataSupportId;
+            $listMaterialId = explode(",", trim($lesson, '["]'));
+            $nextLink = sprintf('/ls=%d/mt=%d', $id, $lc + 1);
+            switch ($listMaterialId[$lc - 1]) {
+                case 1:
+                    return $this->whereIsThe($dataId, $nextLink);
+                    break;
 //            case 2:
 //                return $this->whatIsThis($main->id,$nextLink);
 //                break;
-            case 2:
-                return $this->memoryGame($dataId,$nextLink);
-                break;
-            case 3:
-                return $this->matrix($dataId,$nextLink);
-                break;
-            case 4:
-                return $this->video($dataId,$nextLink);
-                break;
-            default:
-                return 'null';
-        }
-    }
+                case 2:
+                    return $this->matrix($dataId, $nextLink);
+                    break;
+                case 3:
+                    return $this->memoryGame($dataId, $nextLink);
 
+                    break;
+                case 4:
+                    return $this->video($dataId, $nextLink);
+                    break;
+                default:
+                    return 'null';
+            }
+        }
+        Session::flash('message', 'Bạn cần đăng nhập để sử dụng chức năng này');
+        Session::flash('type', 'danger');
+        return Redirect::to('/login');
+    }
 }

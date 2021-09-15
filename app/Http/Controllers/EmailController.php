@@ -11,15 +11,16 @@ class EmailController extends Controller
 {
     //
     //cài thằng này: composer require swiftmailer/swiftmailer
-    public function ThankYouMail(Request $request)
+
+    public function ThankYouMail($email,$name)
     {
         $data = array('title' => 'Xin chao vietnam', 'content' => 'Day la noi dung');
-        Mail::send('tool.mail', $data, function ($message) {
-            $message->to('thangdao202@gmail.com', 'Đào Thắng')->subject
-            ('Laravel HTML Testing Mail');
+        Mail::send('tool.mail', $data, function ($message) use ($name, $email) {
+            $message->to($email,$name)->subject
+            ('E&K - Cảm ơn đã sử dụng dịch vụ của chúng tôi');
             $message->from('ek.englishforkid@gmail.com', 'EK');
         });
-        return "Okie";
+        return true;
     }
 
     public function CheckingMail($salt, $email, $name)

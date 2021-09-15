@@ -39,6 +39,10 @@ class trackingController extends Controller
             return $this->pathLogin();
         }
     }
+    public function comment()
+    {
+
+    }
 
     /**
      * Store a newly created resource in storage.
