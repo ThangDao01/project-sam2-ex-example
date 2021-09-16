@@ -128,7 +128,12 @@
                     </div>
                 </div>
             @endforeach
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
             <script>
+                function sleep(ms) {
+                    return new Promise((resolve) => setTimeout(resolve, ms));
+                }
                 function PlayVoice() {
                     var audio = new Audio("{{$main->voice}}");
                     audio.play();
@@ -144,6 +149,11 @@
                 }
                 var cong = document.getElementById('img-{{$main->id}}');
                 cong.setAttribute("style", "data-toggle='modal';data-target='#myModal';width: 100px;height: 150px;");
+
+                $(document).ready(function () {
+                    setTimeout(() => { alert(1) }, 10000);
+
+                });
 
             </script>
         </div>
