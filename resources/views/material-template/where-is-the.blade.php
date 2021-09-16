@@ -149,12 +149,9 @@
                 }
                 var cong = document.getElementById('img-{{$main->id}}');
                 cong.setAttribute("style", "data-toggle='modal';data-target='#myModal';width: 100px;height: 150px;");
-
                 $(document).ready(function () {
                     setTimeout(() => { alert(1) }, 10000);
-
                 });
-
             </script>
         </div>
     </div>

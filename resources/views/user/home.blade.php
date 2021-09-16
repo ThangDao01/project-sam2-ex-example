@@ -726,75 +726,27 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="media mt-5 parents-share-media">
-                                        <div class="media-image effect-hover-circle }">
-                                            <img src="{{asset('/images/rectangle-46.png')}}" alt="#">
-                                        </div>
-                                        <div class="media-body">
-                                            <h5 class="mt-0 monkey-f-bold monkey-fz-17">
-                                                <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homemj_news_post',
-                                    'eventAction': 'Click', 'eventLabel': 'trang chu MJ tiêu đề ba me can biet'})" class="cursor" href="/coming-soon">Hỏi đáp Thử thách Kể chuyện Người bạn “10 triệu”</a>
 
-                                            </h5>
-                                            <div class="monkey-fz-15 monkey-f-medium monkey-color-gray text-justify">
-                                                Tại bài viết này, E&K sẽ giải đáp mọi thắc mắc cho ba mẹ về chương trình Kể chuyện Người bạn “10 triệu” được tổ...
+                                <?php
+                                $article =\App\Http\Controllers\UserController::getArticle();
+                                ?>
+                                @for($i = 1; $i < 8; $i+=2)
+                                        <div class="col-lg-6">
+                                            <div class="media mt-5 parents-share-media">
+                                                <div class="media-image effect-hover-circle }">
+                                                    <img src="{{$article[$i]->thumbnail}}" alt="{{$article[$i]->url}}">
+                                                </div>
+                                                <div class="media-body">
+                                                    <h5 class="mt-0 monkey-f-bold monkey-fz-17">
+                                                        <a onclick="" class="cursor" href="/article={{$article[$i]->url}}">{{$article[$i]->title}}</a>
+
+                                                    </h5>
+                                                    <div class="monkey-fz-15 monkey-f-medium monkey-color-gray text-justify">
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="media mt-5 parents-share-media">
-                                        <div class="media-image effect-hover-circle }">
-                                            <img src="{{asset('/images/rectangle-45.png')}}" alt="#">
-                                        </div>
-                                        <div class="media-body">
-                                            <h5 class="mt-0 monkey-f-bold monkey-fz-17">
-                                                <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homemj_news_post',
-                                    'eventAction': 'Click', 'eventLabel': 'trang chu MJ tiêu đề ba me can biet'})" class="cursor" href="/coming-soon">Thể lệ Thử thách Kể chuyện Người bạn “10 triệu”</a>
-
-                                            </h5>
-                                            <div class="monkey-fz-15 monkey-f-medium monkey-color-gray text-justify">
-                                                Nhân dịp E&K đạt mốc 10 triệu người dùng, E&K tổ chức Thử thách Kể chuyện Người bạn “10 triệu”. Đây là dịp để...
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="media mt-5 parents-share-media">
-                                        <div class="media-image effect-hover-circle }">
-                                            <img src="{{asset('/images/rectangle-44.png')}}" alt="#">
-                                        </div>
-                                        <div class="media-body">
-                                            <h5 class="mt-0 monkey-f-bold monkey-fz-17">
-                                                <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homemj_news_post',
-                                    'eventAction': 'Click', 'eventLabel': 'trang chu MJ tiêu đề ba me can biet'})" class="cursor" href="/coming-soon">Hỏi đáp về chương trình "Khi ở nhà Mẹ là cô giáo"</a>
-
-                                            </h5>
-                                            <div class="monkey-fz-15 monkey-f-medium monkey-color-gray text-justify">
-                                                Tại bài viết này, E&K sẽ giải đáp các thắc mắc của ba mẹ về chương trình "Khi ở nhà Mẹ là cô giáo".
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="media mt-5 parents-share-media">
-                                        <div class="media-image effect-hover-circle }">
-                                            <img data-src="https://monkeymedia.vcdn.com.vn/upload/web/storage_web/09-06-2021_16:21:42_vdsc5_thumb.jpg" class=" lazy" alt="#">
-
-                                        </div>
-                                        <div class="media-body">
-                                            <h5 class="mt-0 monkey-f-bold monkey-fz-17">
-                                                <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homemj_news_post',
-                                    'eventAction': 'Click', 'eventLabel': 'trang chu MJ tiêu đề ba me can biet'})" class="cursor" href="">Bé Jerry và mẹ Ngọc Trần đã học tiếng Anh như thế nào - Viết để sẻ chia Tháng 10/2020</a>
-
-                                            </h5>
-                                            <div class="monkey-fz-15 monkey-f-medium monkey-color-gray text-justify">
-                                                Dưới đây là chia sẻ của mẹ Ngọc Trần trong hoạt động "Viết để sẻ chia". Hoạt động này được E&K phát động và tổ...
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                @endfor
                             </div>
                         </div>
                     </div>

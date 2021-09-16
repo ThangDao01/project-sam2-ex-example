@@ -17,7 +17,7 @@ class AdminUserController extends Controller
     {
         parent::index();
         if ($this->authlogin()){
-            $list = Account::with('roles')->orderBy('id','ASC')->paginate(5);
+            $list = Account::with('roles')->orderBy('id','ASC')->paginate(10);
             return view('admin.Account.list')->with(compact('list'));
         }else {
             return $this->pathLogin();
