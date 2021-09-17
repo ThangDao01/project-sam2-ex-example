@@ -169,7 +169,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </li>
                         <li>
                             <a href="/coming-soon">
-                                <span class="photo"><img alt="avatar" src="{{URL::asset('images/user2.png') }}"></span>
+                                <span class="photo"><img alt="avatar" src="https://res.cloudinary.com/thangdao04/image/upload/v1631744817/mgez61yb53k6cjlvzkxt.png"></span>
                                 <span class="subject">
                                 <span class="from">Mr. Perfect</span>
                                 <span class="time">2 hour ago</span>
@@ -266,7 +266,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <!-- user login dropdown start-->
                 <li class="dropdown">
                     <a data-toggle="dropdown" class="dropdown-toggle" href="/coming-soon">
-                        <img alt="" src="{{URL::asset('images/user2.png') }}">
+                        <img alt="" src="https://res.cloudinary.com/thangdao04/image/upload/v1631744817/mgez61yb53k6cjlvzkxt.png">
                         <span class="username">
                         </span>
                         <b class="caret"></b>
