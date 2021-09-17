@@ -6,11 +6,98 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/MemoryGame.css')}}"/>
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Anton"/>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <style>
+        .modalGuide {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 100px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modalGuide-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        /* The Close Button */
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .modalGuide-header {
+            padding: 2px 16px;;
+            background-color: #5cb85c;
+            color: white;
+        }
+        .btn-success {
+            color: #fff;
+            background-color: #5cb85c;
+            border-color: #4cae4c;
+        }
+        .btn {
+            display: inline-block;
+            padding: 6px 12px;
+            margin-bottom: 0;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.42857143;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            -ms-touch-action: manipulation;
+            touch-action: manipulation;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-image: none;
+            border: 1px solid transparent;
+            border-radius: 4px;
+        }
+    </style>
 </head>
 <body>
-<div class="wrap">
+<!-- Guide-->
+<div id="GuideModal" class="modalGuide" style="display: block">
+    <!-- Modal content -->
+    <div class="modalGuide-content" style="width: 40%;">
+        <div class="modalGuide-header">
+            <span class="close closeGuideModal" >&times;</span>
+            <h2> Guid (Memory)</h2>
+        </div>
+        <div class="modalGuide-body" style="text-align: center">
+            <p>Find the same cards
+            </p>
+            <p>Click to hear the sound</p>
+        </div>
+        <div class="modalGuide-footer" style="text-align: center">
+            <button class="closeGuideModal btn btn-success">Get started</button>
+        </div>
+    </div>
+</div>
+<!-- End Guide-->
+<div class="wrap" id="Game" >
     <div class="game"></div>
-
     <div class="modal-overlay">
         <div class="modal">
             <h2 class="winner">You Win!</h2>
@@ -22,6 +109,7 @@
     </div>
 </div><!-- End Wrap -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
 <script>(function(){
 
 
@@ -196,6 +284,20 @@
     })();
 </script>
 <script>
+    var modalGuide = document.getElementById("GuideModal");
+    var Game = document.getElementById("Game");
+    Game.style.display = "none";
+
+    // var btnClose = document.getElementById("CloseGuideModal");
+    //
+    // btnClose.onclick = function() {
+    //     modalGuide.style.display = "none";
+    // }
+    $(".closeGuideModal").click(function (){
+        modalGuide.style.display = "none";
+        Game.style.display = "block";
+
+    })
     var votay = new Audio('https://res.cloudinary.com/thangdao04/video/upload/v1631479726/mxwczvywj4nd7ewsyk8h.mp3');
     votay.volume = 0.5;
     function PlayVoiceImages(url) {

@@ -149,6 +149,18 @@ class AccountSeeder extends Seeder
                 'Status' => '1',
                 'created_at' => '2021-09-09 22:14:27',
                 'updated_at' => '2021-09-09 22:14:27'
+            ],[
+                'FirstName' => 'Khách',
+                'LastName' => 'Khách Hàng 01',
+                'Email' => 'user01@gmail.com',
+                'PhoneNumber' => '1234567890',
+                'PasswordHash' => '$2y$12$kGP8ZSSOWqcAPz043U5FiuG4N943uyYtzCnJHGFm37zE/1202wHKS',
+                'Salt' => '5xv4a',
+                'Age' => '21',
+                'Role' => 3,
+                'Status' => '1',
+                'created_at' => '2021-09-09 22:14:27',
+                'updated_at' => '2021-09-09 22:14:27'
             ],
         ]);
     }

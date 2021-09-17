@@ -8,6 +8,7 @@ use App\Models\Course;
 use App\Models\DataSupport;
 use App\Models\FeedBack;
 use App\Models\Lesson;
+use App\Models\Tracking;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -59,12 +60,26 @@ class MainUserController extends Controller
                     $lesson[$i] = Lesson::find($listLessonId[$i]);
                 }
             }
+            if (Session::has('course')){
+                Session::pull('course');
+            }
+            Session::put('course', $id);
             return view('material.lesson-view', ['listLesson' => $lesson]);
         }
         Session::flash('message', 'Bạn cần đăng nhập để sử dụng chức năng này');
         Session::flash('type', 'danger');
         return Redirect::to('/login');
     }
+
+    public function goTracking($id,$ls){
+        $nextLink = sprintf('/ls=%d/mt=1', $ls);
+        if (Session::has('course')){
+            Session::pull('course');
+        }
+        Session::put('course', $id);
+        return redirect($nextLink);
+    }
+
     public function courseDetail($id){
         $location = 'cr='.$id;
         $comment = FeedBack::all()->where('Location',$location);
@@ -166,6 +181,7 @@ class MainUserController extends Controller
         ]);
     }
 
+
     public function video($id, $nextLink)
     {
         $main = DataSupport::find($id);
@@ -248,11 +264,10 @@ class MainUserController extends Controller
             $lc3 = rand(1, 3);
         } while ($lc3 == $lc1 || $lc3 == $lc2);
 
-        $listData[$lc1] = $main;
-        $listData[$lc2] = $data1;
-        $listData[$lc3] = $data2;
+        $listData[1] = $data2;
+        $listData[2] = $data1;
 
-        $listDataM = array($listData[1], $listData[2], $listData[3]);
+        $listDataM = array($listData[1], $listData[2]);
 //        return $listData;
         return view('material-template.matrix', [
             'list' => $listDataM,
@@ -265,11 +280,30 @@ class MainUserController extends Controller
     public function getMaterialView($id, $lc)
     {
         if (Session::has('account')) {
-
+            $account =  Session::get('account');
+            if (Session::has('course')){
+                $crID =  Session::get('course');
+                $checkTrack = Tracking::all()->where('email',$account->Email)->where('CourseId',$crID)->first();
+                if ($checkTrack){
+                    $checkTrack->LessonId = $id;
+                    $checkTrack->updated_at = Carbon::now('Asia/Ho_Chi_Minh');
+                    $checkTrack->LessonFinish = $checkTrack->LessonFinish+1;
+                    $checkTrack->save();
+                }else{
+                    $track = new Tracking();
+                    $track->email = $account->Email;
+                    $track->CourseId = $crID;
+                    $track->LessonId = $id;
+                    $track->updated_at = Carbon::now('Asia/Ho_Chi_Minh');
+                    $track->save();
+                }
+            }
             $lesson = Lesson::all()->where('id', $id)->pluck('listMaterialId');
             $dataId = Lesson::where('id', $id)->first()->dataSupportId;
             $listMaterialId = explode(",", trim($lesson, '["]'));
             $nextLink = sprintf('/ls=%d/mt=%d', $id, $lc + 1);
+            $nextLink2 = sprintf('/ls=%d/mt=%d', $id+1, 1);
+
             switch ($listMaterialId[$lc - 1]) {
                 case 1:
                     return $this->whereIsThe($dataId, $nextLink);
@@ -282,10 +316,9 @@ class MainUserController extends Controller
                     break;
                 case 3:
                     return $this->memoryGame($dataId, $nextLink);
-
                     break;
                 case 4:
-                    return $this->video($dataId, $nextLink);
+                    return $this->video($dataId, $nextLink2);
                     break;
                 default:
                     return 'null';

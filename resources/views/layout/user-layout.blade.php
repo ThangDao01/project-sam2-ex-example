@@ -640,6 +640,7 @@
                     @if(\Illuminate\Support\Facades\Session::has('account'))
                         <?php
                         $account = \Illuminate\Support\Facades\Session::get('account');
+                        $accCl = new \App\Http\Controllers\UserController();
                         ?>
                         <li class="nav-item distance-center d-desktop">
                             <button
@@ -649,6 +650,7 @@
                                 tin tài khoản
                             </button>
                         </li>
+
                     @else
                         <li class="nav-item distance-center d-desktop">
                             <a onclick=" ga('send',{'hitType': 'event', 'eventCategory': 'homems_menu_registration',
@@ -695,6 +697,8 @@
 
                                     </div>
                                     <h6 class="f-w-600">{{$account->FirstName}} {{$account->LastName}}</h6>
+
+                                    <a href="/logout">Log out</a>
                                     <i
                                         class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
                                 </div>
@@ -726,16 +730,33 @@
                                         </div>
                                     </div>
                                     <h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600">Tracking</h6>
+                                    @if($accCl->getTracking())
                                     <div class="row">
-                                        <div class="col-sm-6">
-                                            <p class="m-b-10 f-w-600">Recent</p>
-                                            <h6 class="text-muted f-w-400">Sam Disuja</h6>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <p class="m-b-10 f-w-600">Most Viewed</p>
-                                            <h6 class="text-muted f-w-400">Dinoter husainm</h6>
-                                        </div>
+                                        <table class="table">
+                                            <thead>
+                                            <tr>
+                                                <th scope="col">Course</th>
+                                                <th scope="col">Lesson</th>
+                                                <th scope="col">Action</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            @foreach($accCl->getTracking() as $data)
+                                            <tr>
+{{--                                                <td>{{$data->getCourse()}}</td>--}}
+{{--                                                <td>{{$data->getLesson()}}</td>--}}
+                                                <td>{{$data->getCourse()}}</td>
+                                                <td>{{$data->getLesson()}}</td>
+{{--                                                <td>{{$data->coutDay()}} ago</td>--}}
+                                                <td>{{$data->coutDay()}} ago</td>
+{{--                                                <td><a href="/ls={{$data->LessonId}}/mt=1"><button class="btn monkey-color-green monkey-bc-green  monkey-f-bold distance-center">Let's go <i class="fa fa-arrow-right"></i></button></a></td>--}}
+                                                <td><a href="/goto/cr={{$data->CourseId}}/ls={{$data->LessonId}}"><button class="btn monkey-color-green monkey-bc-green  monkey-f-bold distance-center">Let's go <i class="fa fa-arrow-right"></i></button></a></td>
+                                            </tr>
+                                            @endforeach
+                                            </tbody>
+                                        </table>
                                     </div>
+                                    @endif
                                     <ul class="social-link list-unstyled m-t-40 m-b-10">
                                         <li><a href="#!" data-toggle="tooltip" data-placement="bottom" title=""
                                                data-original-title="facebook" data-abc="true"><i

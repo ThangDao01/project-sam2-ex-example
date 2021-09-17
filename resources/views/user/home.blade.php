@@ -521,12 +521,13 @@
                                         ?>
                                         <h1 class="comments-title">Comments ({{$listComment->count()}})</h1>
                                         <div class="be-comment">
-                                            <div class="be-img-comment">
-                                                <a>
-                                                    <img src="https://res.cloudinary.com/thangdao04/image/upload/v1631744817/mgez61yb53k6cjlvzkxt.png" alt="" class="be-ava-comment">
-                                                </a>
-                                            </div>
+
                                             @foreach($listComment as $data)
+                                                <div class="be-img-comment">
+                                                    <a>
+                                                        <img src="https://res.cloudinary.com/thangdao04/image/upload/v1631744817/mgez61yb53k6cjlvzkxt.png" alt="" class="be-ava-comment">
+                                                    </a>
+                                                </div>
                                                 <div class="be-comment-content">
 				<span class="be-comment-name">
 					<a>{{$data->Name}}</a>
@@ -562,8 +563,7 @@
                                                     <input class="form-input" type="hidden" name="Email" value="{{$account->Email}}"
                                                            placeholder="Your email">
                                                 @else
-                                                    <input class="form-input" type="hidden" name="Location" value="home"
-                                                           placeholder="Your email">
+
                                                     <div class="col-xs-12 col-sm-6">
                                                         <div class="form-group fl_icon">
                                                             <div class="icon"><i class="fa fa-user"></i></div>
@@ -577,6 +577,7 @@
                                                         </div>
                                                     </div>
                                                 @endif
+                                                    <input class="form-input" type="hidden" name="Location" value="home">
                                                 <div class="col-12">
                                                     <div class="form-group">
                                                         <textarea class="form-input" name="Message" required placeholder="Your text"></textarea>

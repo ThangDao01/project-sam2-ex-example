@@ -7,6 +7,7 @@ use App\Models\Account;
 use App\Models\Article;
 use App\Models\Config;
 use App\Models\Course;
+use App\Models\Tracking;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -30,8 +31,15 @@ class UserController extends Controller
     {
         return view('user.login');
     }
+    public function getTracking()
+    {
+        $acc = Session::get('account');
 
+        return Tracking::all()->where('email', $acc->Email);
+        $list = DB::table('trackings')->where('email' ,$acc->Email);
 
+        return $list;
+    }
     public function processLogin(Request $request)
     {
         $email = $request->get('Email');
@@ -43,7 +51,7 @@ class UserController extends Controller
             if (Session::has("account")){
                 Session::pull("account");
             }
-            $dataAccount = DB::table('accounts')->where('Email', $email)->first();
+            $dataAccount = Account::all()->where('Email', $email)->first();
             Session::put("account",$dataAccount);
             $this->Visitors();
             return redirect('/');
@@ -85,7 +93,7 @@ class UserController extends Controller
         $account->PhoneNumber = $request->get('PhoneNumber');
         $account->Salt = $salt;
         $account->Age = $request->get('Age');
-        $account->Role = 2;
+        $account->Role = 3;
         $account->PasswordHash = Hash::make($request->get('password') . $account->Salt,[
             'rounds' => 12,
         ]);

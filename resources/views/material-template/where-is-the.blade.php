@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>E&K-Where Is The</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -93,10 +93,71 @@
         .continue:hover {
             background-color: #D32F2F !important
         }
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 100px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        /* The Close Button */
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .modal-header {
+            padding: 2px 16px;;
+            background-color: #5cb85c;
+            color: white;
+        }
     </style>
 </head>
 <body>
-<div class="col-12 text-center" style="padding-top: 70px">
+<!-- Guide-->
+<div id="GuideModal" class="modal" style="display: block">
+    <!-- Modal content -->
+    <div class="modal-content" style="width: 40%;">
+        <div class="modal-header">
+            <span class="close closeGuideModal" >&times;</span>
+            <h2> Guid (Question)</h2>
+        </div>
+        <div class="modal-body">
+            <p>Find the correct answer of question</p>
+            <p>click to hear the sound</p>
+        </div>
+        <div class="modal-footer" style="text-align: center">
+            <button class="closeGuideModal btn btn-success">Get started</button>
+        </div>
+    </div>
+</div>
+<!-- End Guide-->
+
+
+<div class="col-12 text-center" id="Game" style="padding-top: 70px;display: none">
     <div class="container col-8">
         <div class="row">
             <div class="col-lg-12" style="font-size: 30px;text-align: center;color: white" id="question">where is
@@ -112,7 +173,7 @@
                          data-toggle="modal" data-target="#myModal"
                         @endif
                     >
-                    <div class="modal fade" id="myModal" role="dialog">
+                    <div class="modal" id="myModal" data-backdrop="false" role="dialog">
                         <div class="modal-dialog">
                             <div class="card">
                                 <div class="text-right cross"><i class="fa fa-times"></i></div>
@@ -128,34 +189,52 @@
                     </div>
                 </div>
             @endforeach
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-
-            <script>
-                function sleep(ms) {
-                    return new Promise((resolve) => setTimeout(resolve, ms));
-                }
-                function PlayVoice() {
-                    var audio = new Audio("{{$main->voice}}");
-                    audio.play();
-                }
-                function PlayVoiceImages(url) {
-                    var audioImg = new Audio(url.toString());
-                    audioImg.play();
-                }
-
-                var q = document.getElementById('question');
-                q.onload = function () {
-                    alert(1);
-                }
-                var cong = document.getElementById('img-{{$main->id}}');
-                cong.setAttribute("style", "data-toggle='modal';data-target='#myModal';width: 100px;height: 150px;");
-                $(document).ready(function () {
-                    setTimeout(() => { alert(1) }, 10000);
-                });
-            </script>
         </div>
     </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+    var modalGuide = document.getElementById("GuideModal");
+    var Game = document.getElementById("Game");
 
+    // var btnClose = document.getElementById("CloseGuideModal");
+    //
+    // btnClose.onclick = function() {
+    //     modalGuide.style.display = "none";
+    // }
+    $(".closeGuideModal").click(function (){
+        modalGuide.style.display = "none";
+        Game.style.display = "block";
+
+    })
+
+
+    function sleep(ms) {
+        return new Promise((resolve) => setTimeout(resolve, ms));
+    }
+    function PlayVoice() {
+        var audio = new Audio("{{$main->voice}}");
+        audio.play();
+    }
+    function PlayVoiceImages(url) {
+        var audioImg = new Audio(url.toString());
+        audioImg.play();
+    }
+
+    var q = document.getElementById('question');
+    q.onload = function () {
+        alert(1);
+    }
+    var cong = document.getElementById('img-{{$main->id}}');
+    cong.setAttribute("style", "data-toggle='modal';data-target='#myModal';width: 100px;height: 150px;");
+    $(document).ready(function () {
+        setTimeout(() => {  }, 10000);
+    });
+</script>
+<script type="text/javascript">
+    $(window).on('load', function() {
+        $('#modalAbandonedCart').style.display="block";
+    });
+</script>
 </body>
 </html>

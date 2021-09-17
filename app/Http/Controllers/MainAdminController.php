@@ -12,6 +12,7 @@ use App\Models\Material;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 use phpDocumentor\Reflection\Types\String_;
 use PhpParser\Node\Expr\Array_;
 use voku\helper\ASCII;
@@ -81,6 +82,12 @@ class MainAdminController extends Controller
     }
     public function listMaterial(){
         return Material::all();
+    }
+    public function CheckCr(){
+        if (Session::has('course')){
+            return 1;
+        }
+        return 2;
     }
 
     public function testLinhTinh()

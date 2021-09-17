@@ -11,10 +11,12 @@ class Tracking extends Model
     use HasFactory;
 
     public function getCourse(){
-        return Course::find($this->CourseId)->value('name');
+        return trim(Course::all()->where('id',$this->CourseId)->pluck('name'), '["]');
+
+//        return 1;
     }
     public function getLesson(){
-        return Lesson::find($this->LessonId)->value('name');
+        return trim(Lesson::all()->where('id',$this->LessonId)->pluck('name'), '["]');
     }
     public function coutDay(){
         $now = Carbon::now('Asia/Ho_Chi_Minh');
