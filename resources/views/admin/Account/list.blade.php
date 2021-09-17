@@ -33,15 +33,16 @@
                                 <th>Email</th>
                                 <th>Phone</th>
                                 <th>Age</th>
+                                <th>Auth</th>
+                                <th>Status</th>
                                 <th>Manage</th>
                                 <th>User</th>
-                                <th>Status</th>
                                 <th>actions</th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach($list as $user)
-                                <form action="{{url('/assign-roles')}}" method="POST">
+                                <form action="{{url('/assign-roles')}}"  method="POST">
                                     @csrf
                                     <tr>
                                         <td>{{ $user->LastName }}</td>
@@ -52,8 +53,23 @@
                                         </td>
                                         <td>{{ $user->PhoneNumber }}</td>
                                         <td>{{ $user->Age}}</td>
-                                        <td><input type="checkbox" name="author_role" {{$user->hasRole('author') ? 'checked' : ''}}></td>
-                                        <td><input type="checkbox" name="user_role" {{$user->hasRole('user') ? 'checked' : ''}}></td>
+                                        <td>
+                                            <ul>
+                                                @if($user->Role==1)
+                                                    <li style="color: red">
+                                                        Admin
+                                                    </li>
+                                                @elseif($user->Role==2)
+                                                    <li style="color: #36c">
+                                                        Manage
+                                                    </li>
+                                                @elseif($user->Role==3)
+                                                    <li style="color: green">
+                                                        User
+                                                    </li>
+                                                @endif
+                                            </ul>
+                                        </td>
                                         <td>
                                             <ul>
                                                 @if($user->Status==0)
@@ -71,6 +87,9 @@
                                                 @endif
                                             </ul>
                                         </td>
+
+                                        <td><input type="checkbox" name="author_role" {{$user->hasRole('author') ? 'checked' : ''}}></td>
+                                        <td><input type="checkbox" name="user_role" {{$user->hasRole('user') ? 'checked' : ''}}></td>
                                         <td>
                                             <p><input type="submit" value="Assign roles" class="btn btn-sm btn-default"></p>
                                             <p><a style="margin:5px 0;" class="btn btn-sm btn-danger" href="{{url('/delete-user-roles/'.$user->id)}}">Xóa user</a></p>

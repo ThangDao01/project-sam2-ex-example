@@ -27,5 +27,6 @@ class DatabaseSeeder extends Seeder
         $this->call(AnimalSeeder::class);
         $this->call(ItemSupport::class);
         $this->call(TrackingSeeder::class);
+        $this->call(FeedBackSeeder::class);
     }
 }

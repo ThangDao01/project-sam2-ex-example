@@ -91,9 +91,7 @@ Route::get('/test',function (){
     return view('tool.test');
 });
 Route::post('/test',[courseController::class,'testCheckbox']);
-Route::get('/test2',function (){
-    return view('welcome');
-});
+Route::get('/test2',[UserController::class,'getTracking']);
 
 
 
@@ -102,6 +100,7 @@ Route::get('/voice-xyz/id={id}', [MainUserController::class, 'whereIsThe']);
 
 Route::get('/cr={id}', [MainUserController::class, 'getLessonByCourse']);
 Route::get('/detail/cr={id}', [MainUserController::class, 'courseDetail']);
+Route::get('/goto/cr={id}/ls={lc}', [MainUserController::class, 'goTracking']);
 Route::get('/ls={id}/mt', [MainUserController::class, 'checkMaterial']);
 //Route::get('/ls={id}/mt={lc}',[MainUserController::class,'createMaterial']);
 Route::get('/ls={id}/mt={lc}', [MainUserController::class, 'getMaterialView']);

@@ -47,7 +47,7 @@
 
 </span>
                 @if(Session::has('message'))
-                    <p  class="alert alert-{{Session::get('type') }}">{{Session::get('message') }}</p>
+                    <p  class="alert alert-{{Session::get('type-message') }}">{{Session::get('message') }}</p>
                 @endif
                 <div class="wrap-input100 validate-input" data-validate="Valid email is: a@b.c">
                     <input class="input100" type="text" name="Email">

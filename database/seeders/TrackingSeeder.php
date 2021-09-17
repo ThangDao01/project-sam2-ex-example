@@ -17,10 +17,24 @@ class TrackingSeeder extends Seeder
         //
         \Illuminate\Support\Facades\DB::table('trackings')->insert([
             [
-                'CourseId'=>1,
-                'LessonId'=>1,
+                'CourseId'=>2,
+                'LessonId'=>4,
                 'LessonFinish'=>1,
-                'email'=>'user01@gmail.com',
+                'email'=>'nguyennga@gmail.com',
+                'comment'=>'',
+                'updated_at'=>Carbon::yesterday('Asia/Ho_Chi_Minh'),
+            ],[
+                'CourseId'=>1,
+                'LessonId'=>7,
+                'LessonFinish'=>1,
+                'email'=>'longdjok@gmail.com',
+                'comment'=>'',
+                'updated_at'=>Carbon::yesterday('Asia/Ho_Chi_Minh'),
+            ],[
+                'CourseId'=>1,
+                'LessonId'=>4,
+                'LessonFinish'=>1,
+                'email'=>'longdjok@gmail.com',
                 'comment'=>'',
                 'updated_at'=>Carbon::yesterday('Asia/Ho_Chi_Minh'),
             ],

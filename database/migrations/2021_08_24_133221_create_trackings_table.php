@@ -15,11 +15,11 @@ class CreateTrackingsTable extends Migration
     {
         Schema::create('trackings', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('CourseId');
-            $table->integer('LessonId');
-            $table->integer('LessonFinish');
+            $table->integer('CourseId')->default(1);
+            $table->integer('LessonId')->default(1);
+            $table->integer('LessonFinish')->default(1);
             $table->string('email');
-            $table->text('comment');
+            $table->text('comment')->default('null');
             $table->timestamps();
         });
     }

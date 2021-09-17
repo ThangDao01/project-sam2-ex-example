@@ -38,7 +38,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="row align-items-center justify-content-center">
                 <div class="col-md-7 py-5">
                     <h3>Register</h3>
-
+                    @if(Session::has('message'))
+                        <p  class="alert alert-{{Session::get('type-message') }}">{{Session::get('message') }}</p>
+                    @endif
                     <form action="/register" method="post">
                         @csrf
                         <div class="row">
@@ -118,7 +120,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                         <div class="d-flex mb-5 mt-4 align-items-center">
                             <div class="d-flex align-items-center">
-                                <label class="control control--checkbox mb-0"><span class="caption">Creating an account means you're okay with our <a href="/">Terms and Conditions</a> and our <a href="/policy">Privacy Policy</a>.</span>
+                                <label class="control control--checkbox mb-0"><span class="caption">Creating an account means you're okay with our <a href="/policy">Privacy Policy</a>.</span>
                                     <input type="checkbox" checked="checked">
                                     <div class="control__indicator">
 
